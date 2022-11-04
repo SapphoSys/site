@@ -1,15 +1,22 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Footer from '../components/footer.astro';
-import Project from '../components/parallel.astro';
+import Layout from '@layouts/layout.astro';
+import Footer from '@components/footer.astro';
+import Project from '@components/parallel.astro';
 import { Icon } from 'astro-icon';
+
+// URL variables
+const github = 'https://github.com';
+const twitch = 'https://twitch.tv';
+const twitter = 'https://twitter.com';
+const bungie = 'https://www.bungie.net/7/en/User/Profile';
 ---
 
-<Layout color="CA2917" 
-	description="This site covers Guardians who contributed to Destiny 2 in a meaningful way, and have received the Parallel Program emblem." 
-	icon="/parallel.png" 
-	siteName="Parallel Program Report" 
-	title="Parallel Program Report"
+<Layout 
+  color="#ca2917" 
+  description="This site covers Guardians who contributed to Destiny 2 in a meaningful way, and have received the Parallel Program emblem." 
+  icon="/parallel.png" 
+  siteName="Parallel Program Report" 
+  title="Parallel Program Report"
 >
     <!-- <h3><a href="/">solely</a> > parallel.html</h3> -->
 
@@ -20,9 +27,9 @@ import { Icon } from 'astro-icon';
             and have received the <a href="https://destinyemblemcollector.com/emblem?id=3936625542" 
                 title="Parallel Program Emblem" target="_blank">Parallel Program emblem</a>.</p>
         <p>Have the emblem, but not on this list? Or would you simply like to send feedback?
-            Make a GitHub issue <a href="https://github.com/solelychloe/arciniega.one/issues/new?assignees=&labels=&template=parallel-program-request.md&title=Parallel+Program+Request" 
-                title="github.com/solelychloe/arciniega.one" target="_blank">here</a>
-            or contact me via Twitter at <a href="https://twitter.com/solelychloe" 
+            Make a GitHub issue <a href={`${github}/solelychloe/arciniega.one/issues/new?assignees=&labels=&template=parallel-program-request.md&title=Parallel+Program+Request`} 
+                title="GitHub Issue link" target="_blank">here</a>
+            or contact me via Twitter at <a href={`${twitter}/solelychloe"`} 
                 title="Twitter: @solelychloe" target="_blank">@solelychloe</a>.</p>
     </header>
 
@@ -32,14 +39,14 @@ import { Icon } from 'astro-icon';
         <p slot="project-description">A Discord bot that provides detailed access to Destiny 2 information. Check profile stats, clan ranking, and have scheduled LFG posts.</p>
     
         <ul>
-            <li><a href="https://twitter.com/TorKallon" target="_blank">Tor Kallon</a>: Charlemagne Developer</li>
-            <li><a href="https://twitter.com/Hanxa13" target="_blank">Hanxa13</a>: Charlemagne Community Support</li>
-            <li><a href="https://twitter.com/icemanxbe" target="_blank">icemanxbe</a>: Charlemagne Community Support</li>
-            <li><a href="https://twitter.com/KramRM" target="_blank">KramRM</a>: Charlemagne Server Admin</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/12511952?bgn=littleben4242" target="_blank">littleben4242</a>: Charlemagne Community Support</li>
-            <li><a href="https://twitter.com/lorathxplorer_" target="_blank">LoraTheXplorer</a>: Charlemagne Server Admin</li>
-            <li><a href="https://twitter.com/panda_pax" target="_blank">PandaPaxxy</a>: Charlemagne Community Support</li>
-            <li><a href="https://twitter.com/TheSpartanAsh" target="_blank">TheSpartanAsh</a>: Charlemagne Server Admin</li>
+            <li><a href={`${twitter}/TorKallon`} target="_blank">Tor Kallon</a>: Charlemagne Developer</li>
+            <li><a href={`${twitter}/Hanxa13`} target="_blank">Hanxa13</a>: Charlemagne Community Support</li>
+            <li><a href={`${twitter}/icemanxbe`} target="_blank">icemanxbe</a>: Charlemagne Community Support</li>
+            <li><a href={`${twitter}/KramRM`} target="_blank">KramRM</a>: Charlemagne Server Admin</li>
+            <li><a href={`${bungie}/254/12511952?bgn=littleben4242`} target="_blank">littleben4242</a>: Charlemagne Community Support</li>
+            <li><a href={`${twitter}/lorathexplorer_`} target="_blank">LoraTheXplorer</a>: Charlemagne Server Admin</li>
+            <li><a href={`${twitter}/panda_pax`} target="_blank">PandaPaxxy</a>: Charlemagne Community Support</li>
+            <li><a href={`${twitter}/TheSpartanAsh`} target="_blank">TheSpartanAsh</a>: Charlemagne Server Admin</li>
         </ul>
     </Project>
 
@@ -49,27 +56,27 @@ import { Icon } from 'astro-icon';
         <p slot="project-description">Build the loadout, swap items and check stats at any time to Become Legend.</p>
 
         <ul>
-            <li><b><a href="https://twitter.com/BHollis" target="_blank">Ben Hollis</a>: DIM Maintainer</b></li>
-            <li><b><a href="https://twitter.com/RickCasey" target="_blank">Rick Casey</a>: DIM Maintainer</b></li>
-            <li><b><a href="https://www.bungie.net/7/en/User/Profile/254/9303125?bgn=hax">eutral</a>: DIM Developer</b></li>
-            <li><a href="https://twitter.com/48klocs" target="_blank">48klocs</a>: DIM Contributor</li>
-            <li><a href="https://twitter.com/Agenwolf" target="_blank">Agenwolf</a>: DIM Polish (pl-PL) translator</li>
-            <li><a href="https://twitter.com/Apokalipsys_ZR7" target="_blank">Apokalipsys_ZR7</a>: DIM Spanish (es-ES) translator</li>
-            <li><a href="https://twitter.com/DelphiActual" target="_blank">DelphiActual</a>: DIM Contributor</li>
-            <li><a href="https://twitter.com/awittitz"target="_blank">duckmanBR</a>: DIM Brazillian-Portuguese (pt-BR) translator</li>
-            <li><a href="https://twitter.com/EAGLEMCHNG" target="_blank">EAGLEMCHNG</a>: DIM Mexican-Spanish (es-MX) translator</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/9310830/JulianCDC" target="_blank">JulianCDC</a>: DIM French (fr-FR) translator</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/6321371/Korben-85" target="_blank">Korben85</a>: DIM German (de-DE) translator</li>
-            <li><a href="https://twitter.com/liminal_ace" target="_blank">Liminal Ace</a>: DIM Contributor</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/18033083/lion0738" target="_blank">lion0738</a>: DIM Korean (ko-KR) translator</li>
+            <li><b><a href={`${twitter}/BHollis`} target="_blank">Ben Hollis</a>: DIM Maintainer</b></li>
+            <li><b><a href={`${twitter}/RickCasey`} target="_blank">Rick Casey</a>: DIM Maintainer</b></li>
+            <li><b><a href={`${bungie}/254/9303125?bgn=hax`} target="_blank">eutral</a>: DIM Developer</b></li>
+            <li><a href={`${twitter}/48klocs`} target="_blank">48klocs</a>: DIM Contributor</li>
+            <li><a href={`${twitter}/Agenwolf`} target="_blank">Agenwolf</a>: DIM Polish (pl-PL) translator</li>
+            <li><a href={`${twitter}/Apokalipsys_ZR7`} target="_blank">Apokalipsys_ZR7</a>: DIM Spanish (es-ES) translator</li>
+            <li><a href={`${twitter}/DelphiActual`} target="_blank">DelphiActual</a>: DIM Contributor</li>
+            <li><a href={`${twitter}/awittitz`} target="_blank">duckmanBR</a>: DIM Brazillian-Portuguese (pt-BR) translator</li>
+            <li><a href={`${twitter}/EAGLEMCHNG`} target="_blank">EAGLEMCHNG</a>: DIM Mexican-Spanish (es-MX) translator</li>
+            <li><a href={`${bungie}/254/9310830/JulianCDC`} target="_blank">JulianCDC</a>: DIM French (fr-FR) translator</li>
+            <li><a href={`${bungie}/254/6321371/Korben-85`} target="_blank">Korben85</a>: DIM German (de-DE) translator</li>
+            <li><a href={`${twitter}/liminal_ace`} target="_blank">Liminal Ace</a>: DIM Contributor</li>
+            <li><a href={`${bungie}/254/18033083/lion0738`} target="_blank">lion0738</a>: DIM Korean (ko-KR) translator</li>
             <li><a href="https://nwl.ms" target="_blank">nwL</a>: DIM German (de-DE) translator</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/4611686018467182993?bgn=Pixel" target="_blank">Pixel</a>: DIM Contributor</li>
-            <li><a href="https://github.com/robojumper" target="_blank">robojumper</a>: DIM Contributor</li>
-            <li><a href="https://twitter.com/solelychloe" target="_blank">solelychloe</a>: DIM Russian (ru-RU) translator</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/6067944?bgn=TekiRush" target="_blank">TekiRush</a>: DIM Contributor</li>
-            <li><a href="https://twitter.com/Theovorn" target="_blank">Theovorn</a>: DIM Italian (it-IT) translator</li>
-            <li><a href="https://github.com/xyx0826" target="_blank">xyx0826</a>: DIM Simplified Chinese (zh-CN) translator</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/1/4611686018432954171/GT" target="_blank">YeezyGT</a>: DIM wishlist curator</li>
+            <li><a href={`${bungie}/254/4611686018467182993?bgn=Pixel`} target="_blank">Pixel</a>: DIM Contributor</li>
+            <li><a href={`${github}/robojumper`} target="_blank">robojumper</a>: DIM Contributor</li>
+            <li><a href={`${twitter}/solelychloe`} target="_blank">solelychloe</a>: DIM Russian (ru-RU) translator</li>
+            <li><a href={`${bungie}/254/6067944?bgn=TekiRush`} target="_blank">TekiRush</a>: DIM Contributor</li>
+            <li><a href={`${twitter}/Theovorn`} target="_blank">Theovorn</a>: DIM Italian (it-IT) translator</li>
+            <li><a href={`${github}/xyx0826`} target="_blank">xyx0826</a>: DIM Simplified Chinese (zh-CN) translator</li>
+            <li><a href={`${bungie}/1/4611686018432954171/GT`} target="_blank">YeezyGT</a>: DIM wishlist curator</li>
         </ul>
     </Project>
 
@@ -80,7 +87,7 @@ import { Icon } from 'astro-icon';
 
         <ul>
             <li><b><a href="https://mattjarrett.dev/" target="_blank">Matt Jarett</a>: Destiny Insights Founder</b></li>
-            <li><a href="https://twitter.com/TinCanBeef" target="_blank">TinCanBeef</a>: Destiny Insights Contributor </li>
+            <li><a href={`${twitter}/TinCanBeef`} target="_blank">TinCanBeef</a>: Destiny Insights Contributor </li>
         </ul>
     </Project>
 
@@ -90,15 +97,15 @@ import { Icon } from 'astro-icon';
         <p slot="project-description">A collection of tools for Destiny. Destiny Recipes includes the Pre-seasonal checklist, a Vault Cleaner, and a Loot Companion.</p>
 
         <ul>
-            <li><b><a href="https://twitter.com/HerrExion" target="_blank">HerrExion</a>: Destiny Recipes Founder</b></li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/24744287/ARTES" target="_blank">ARTES</a>: Destiny Recipes Polish (pl-PL) translator</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/20726422/Catchup" target="_blank">Catchup</a>: Destiny Recipes German (de-DE) translator</li>
-            <li><a href="https://twitter.com/iNotFly" target="_blank">Fly</a>: Destiny Recipes Italian (it-IT) translator</li>
-            <li><a href="https://twitter.com/Frozty4628" target="_blank">Frozty</a>: Destiny Recipes Chinese (zh-CN) translator</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/3/4611686018483638871/gevoup" target="_blank">gevoup</a>: Destiny Recipes Russian (ru-RU) translator</li>
-            <li><a href="https://twitter.com/R4ndomizor" target="_blank">R4NDO</a>: Destiny Recipes Japanese (ja-JP) translator</li>
-            <li><a href="https://twitter.com/TheBossManSho" target="_blank">Sho</a>: Destiny Recipes Serbian (sr-SP) translator</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/8270684/ThePanicEnd" target="_blank">ThePanicEnd</a>: Destiny Recipes Mexican-Spanish (es-MX) translator</li>
+            <li><b><a href={`${twitter}/HerrExion`} target="_blank">HerrExion</a>: Destiny Recipes Founder</b></li>
+            <li><a href={`${bungie}/254/24744287/ARTES`} target="_blank">ARTES</a>: Destiny Recipes Polish (pl-PL) translator</li>
+            <li><a href={`${bungie}/254/20726422/Catchup`} target="_blank">Catchup</a>: Destiny Recipes German (de-DE) translator</li>
+            <li><a href={`${twitter}/iNotFly`} target="_blank">Fly</a>: Destiny Recipes Italian (it-IT) translator</li>
+            <li><a href={`${twitter}/Frozty4628`} target="_blank">Frozty</a>: Destiny Recipes Chinese (zh-CN) translator</li>
+            <li><a href={`${bungie}/3/4611686018483638871/gevoup`} target="_blank">gevoup</a>: Destiny Recipes Russian (ru-RU) translator</li>
+            <li><a href={`${twitter}/R4ndomizor`} target="_blank">R4NDO</a>: Destiny Recipes Japanese (ja-JP) translator</li>
+            <li><a href={`${twitter}/TheBossManSho`} target="_blank">Sho</a>: Destiny Recipes Serbian (sr-SP) translator</li>
+            <li><a href={`${bungie}/254/8270684/ThePanicEnd`} target="_blank">ThePanicEnd</a>: Destiny Recipes Mexican-Spanish (es-MX) translator</li>
         </ul>
     </Project>
 
@@ -108,8 +115,8 @@ import { Icon } from 'astro-icon';
         <p slot="project-description">Track your missing gear, armor sets, and pursuit badges.</p>
 
         <ul>
-            <li><b><a href="https://twitter.com/Jakosaur" target="_blank">Jakosaur</a>: Destiny Sets Developer</b></li>
-            <li><b><a href="https://twitter.com/joshhunt" target="_blank">joshhunt</a>: Destiny Sets Developer</b></li>
+            <li><b><a href={`${twitter}/Jakosaur`} target="_blank">Jakosaur</a>: Destiny Sets Developer</b></li>
+            <li><b><a href={`${twitter}/joshhunt`} target="_blank">joshhunt</a>: Destiny Sets Developer</b></li>
         </ul>
     </Project>
 
@@ -119,16 +126,16 @@ import { Icon } from 'astro-icon';
         <p slot="project-description">The website for detailed profile and weapon statistics. Compete against the top players in featured leaderboards.</p>
 
         <ul>
-            <li><b><a href="https://twitter.com/JayDTR01" target="_blank">MoreofJay</a>: DestinyTracker Social Media Lead & Content Manager</b></li>
-            <li><b><a href="https://twitter.com/Protheon_" target="_blank">Protheon</a>: DestinyTracker Community Manager</b></li>
-            <li><b><a href="https://twitter.com/Suttledge" target="_blank">Suttledge</a>: DestinyTracker Writer & Team Lead</b></li>
-            <li><a href="https://twitter.com/dragosnuv" target="_blank">Dragosnuv</a>: DestinyTracker member</li>
-            <li><a href="https://twitter.com/vfinklee" target="_blank">Finkle</a>: DestinyTracker Partner</li>
-            <li><a href="https://twitter.com/HeatherLovelyy" target="_blank">HeatherLovely</a>: DestinyTracker Content Creator</li>
-            <li><a href="https://twitter.com/illPhysics" target="_blank">illPhysics</a>: DestinyTracker member</li>
-            <li><a href="https://twitter.com/Separer" target="_blank">Separer</a>: DestinyTracker member</li>
-            <li><a href="https://twitter.com/Sweaty0rNot" target="_blank">SweatyOrNot</a>: DestinyTracker member</li>
-            <li><a href="https://twitter.com/TooHardcore" target="_blank">TooHardcore</a>: DestinyTracker member</li>
+            <li><b><a href={`${twitter}/JayDTR01`} target="_blank">MoreofJay</a>: DestinyTracker Social Media Lead & Content Manager</b></li>
+            <li><b><a href={`${twitter}/Protheon_`} target="_blank">Protheon</a>: DestinyTracker Community Manager</b></li>
+            <li><b><a href={`${twitter}/Suttledge`} target="_blank">Suttledge</a>: DestinyTracker Writer & Team Lead</b></li>
+            <li><a href={`${twitter}/dragosnuv`} target="_blank">Dragosnuv</a>: DestinyTracker member</li>
+            <li><a href={`${twitter}/vfinklee`} target="_blank">Finkle</a>: DestinyTracker Partner</li>
+            <li><a href={`${twitter}/HeatherLovelyy`} target="_blank">HeatherLovely</a>: DestinyTracker Content Creator</li>
+            <li><a href={`${twitter}/illPhysics`} target="_blank">illPhysics</a>: DestinyTracker member</li>
+            <li><a href={`${twitter}/Separer`} target="_blank">Separer</a>: DestinyTracker member</li>
+            <li><a href={`${twitter}/Sweaty0rNot`} target="_blank">SweatyOrNot</a>: DestinyTracker member</li>
+            <li><a href={`${twitter}/TooHardcore`} target="_blank">TooHardcore</a>: DestinyTracker member</li>
         </ul>
     </Project>
 
@@ -138,8 +145,8 @@ import { Icon } from 'astro-icon';
         <p slot="project-description">A mini app that lets you pin bounties, triumphs, and quests on top of Destiny 2.</p>
 
         <ul>
-            <li><b><a href="https://twitter.com/joshhunt" target="_blank">joshhunt</a>: Ghost Overlay Developer</b></li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/66567?bgn=kapowaz" target="_blank">kapowaz</a>: Ghost Overlay Contributor</li>
+            <li><b><a href={`${twitter}/joshhunt`} target="_blank">joshhunt</a>: Ghost Overlay Developer</b></li>
+            <li><a href={`${bungie}/254/66567?bgn=kapowaz`} target="_blank">kapowaz</a>: Ghost Overlay Contributor</li>
         </ul>
     </Project>
 
@@ -149,8 +156,8 @@ import { Icon } from 'astro-icon';
         <p slot="project-description">Find yourself in the Twitch VODs that your Destiny 2 teammates and opponents recorded.</p>
 
         <ul>
-            <li><b><a href="https://twitter.com/ChrisFried" target="_blank">Chris Fried</a>: Guardian Theater Founder</b></li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/5116514?bgn=RealAngryMonkey">RealAngryMonkey</a>: GuardianTheater contributor</li>
+            <li><b><a href={`${twitter}/ChrisFried`} target="_blank">Chris Fried</a>: Guardian Theater Founder</b></li>
+            <li><a href={`${bungie}/254/5116514?bgn=RealAngryMonkey`} target="_blank">RealAngryMonkey</a>: GuardianTheater contributor</li>
         </ul>
     </Project>
 
@@ -160,17 +167,17 @@ import { Icon } from 'astro-icon';
         <p slot="project-description">Categorizing Destiny Lore.</p>
 
         <ul>
-            <li><b><a href="https://twitter.com/baxt3r" target="_blank">baxter</a>: Ishtar Collective Founder</b></li>
-            <li><b><a href="https://twitter.com/nev_rtheless" target="_blank">nev</a>: Ishtar Collective Transcript Manager</b></li>
-            <li><b><a href="https://twitter.com/Throudin" target="_blank">Throudin</a>: Ishtar Collective Developer</b></li>
-            <li><b><a href="https://twitter.com/unisys12" target="_blank">unisys12</a>: Ishtar Collective Engineer</b></li>
-            <li><b><a href="https://twitter.com/waferbaby" target="_blank">waferbaby</a>: Ishtar Collective Engineer</b></li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/10724644/erinhc" target="_blank">erinhc</a>: Ishtar Collective archivist</li>
-            <li><a href="https://twitter.com/depyootee" target="_blank">firecracker ace</a>: Ishtar Collective Discord Mod</li>
-            <li><a href="https://twitter.com/MyNinjaH8sU" target="_blank">MyNinjaH8sU</a>: Ishtar Collective Contributor</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/9657131/n0rmaln0rman" target="_blank">n0rmaln0rman</a>: Ishtar Collective Contributor</li>
-            <li><a href="https://twitter.com/Sean_Vertigo" target="_blank">Vertigo</a>: Ishtar Collective archivist</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/21511557?bgn=Wafflesquad" target="_blank">Wafflesquad</a>: Ishtar Collective archivist</li>     
+            <li><b><a href={`${twitter}/baxt3r`} target="_blank">baxter</a>: Ishtar Collective Founder</b></li>
+            <li><b><a href={`${twitter}/nev_rtheless`} target="_blank">nev</a>: Ishtar Collective Transcript Manager</b></li>
+            <li><b><a href={`${twitter}/Throudin`} target="_blank">Throudin</a>: Ishtar Collective Developer</b></li>
+            <li><b><a href={`${twitter}/unisys12`} target="_blank">unisys12</a>: Ishtar Collective Engineer</b></li>
+            <li><b><a href={`${twitter}/waferbaby`} target="_blank">waferbaby</a>: Ishtar Collective Engineer</b></li>
+            <li><a href={`${bungie}/254/10724644/erinhc`} target="_blank">erinhc</a>: Ishtar Collective archivist</li>
+            <li><a href={`${twitter}/depyootee`} target="_blank">firecracker ace</a>: Ishtar Collective Discord Mod</li>
+            <li><a href={`${twitter}/MyNinjaH8sU`} target="_blank">MyNinjaH8sU</a>: Ishtar Collective Contributor</li>
+            <li><a href={`${bungie}/254/9657131/n0rmaln0rman`} target="_blank">n0rmaln0rman</a>: Ishtar Collective Contributor</li>
+            <li><a href={`${twitter}/Sean_Vertigo`} target="_blank">Vertigo</a>: Ishtar Collective archivist</li>
+            <li><a href={`${bungie}/254/21511557?bgn=Wafflesquad`} target="_blank">Wafflesquad</a>: Ishtar Collective archivist</li>     
         </ul>
     </Project>
 
@@ -180,11 +187,11 @@ import { Icon } from 'astro-icon';
         <p slot="project-description">Tap into your Guardian's arsenal, vault, and inventory; all from your device.</p>
 
         <ul>
-            <li><b><a href="https://twitter.com/IshtarCommander" target="_blank">Nigel Hietala</a>: Ishtar Commander Founder</b></li>
-            <li><a href="https://www.twitch.tv/cowgod77" target="_blank">cowgod77</a>: Ishtar Commander Contributor</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/8338415?bgn=Daskeladden" target="_blank">Daskeladden</a>: Ishtar Commander Contributor</li>
-            <li><a href="https://twitter.com/asacre45" target="_blank">Ethan_e_e_e</a>: Ishtar Commander Japanese (ja-JP) translator</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/9691563?bgn=WhiskyEnjoyer" target="_blank">WhiskyEnjoyer</a>: Ishtar Commander Contributor</li>
+            <li><b><a href={`${twitter}/IshtarCommander`} target="_blank">Nigel Hietala</a>: Ishtar Commander Founder</b></li>
+            <li><a href={`${twitch}/cowgod77`} target="_blank">cowgod77</a>: Ishtar Commander Contributor</li>
+            <li><a href={`${bungie}/254/8338415?bgn=Daskeladden`} target="_blank">Daskeladden</a>: Ishtar Commander Contributor</li>
+            <li><a href={`${twitter}/asacre45`} target="_blank">Ethan_e_e_e</a>: Ishtar Commander Japanese (ja-JP) translator</li>
+            <li><a href={`${bungie}/254/9691563?bgn=WhiskyEnjoyer`} target="_blank">WhiskyEnjoyer</a>: Ishtar Commander Contributor</li>
         </ul>
     </Project>
 
@@ -194,10 +201,10 @@ import { Icon } from 'astro-icon';
         <p slot="project-description">A multi-purpose Destiny Discord bot. Track daily rotations, emblems, and more.</p>
 
         <ul>
-            <li><b><a href="https://twitter.com/axsLeaf" target="_blank">Leaf</a>: Levante Bot Developer</b></li>
-            <li><b><a href="https://twitter.com/OatsFx" target="_blank">OatsFX</a>: Levante Bot Owner</b></li>
-            <li><a href="https://twitter.com/GoGo__Destiny" target="_blank">GoGo</a>: Levante Bot Networking and Communications</li>
-            <li><a href="https://twitter.com/ThyJaken" target="_blank">Jaken</a>: Levante Bot Staff</li>
+            <li><b><a href={`${twitter}/axsLeaf`} target="_blank">Leaf</a>: Levante Bot Developer</b></li>
+            <li><b><a href={`${twitter}/OatsFx`} target="_blank">OatsFX</a>: Levante Bot Owner</b></li>
+            <li><a href={`${twitter}/gogotheworld`} target="_blank">GoGo</a>: Levante Bot Networking and Communications</li>
+            <li><a href={`${twitter}/ThyJaken`} target="_blank">Jaken</a>: Levante Bot Staff</li>
         </ul>
     </Project>
 
@@ -207,44 +214,44 @@ import { Icon } from 'astro-icon';
         <p slot="project-description">An item manager for Destiny 2 that will make your Guardian's life a lot easier.</p>
 
         <ul>
-            <li><b><a href="https://github.com/joaopmarquesini" target="_blank">jaoryuken</a>: Little Light Developer</b></li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/3/4611686018487414074?bgn=alexcerlini" target="_blank">alexcerlini</a>: Little Light Brazillian-Portuguese (pt-BR) translator</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/13201753" target="_blank">alexfa55</a>: Little Light Spanish (es-ES) translator</li>
-            <li><a href="https://twitter.com/latinoskeleton" target="_blank">Azared</a>: Little Light Wishlist Curator</li>
-            <li><a href="https://twitter.com/Beenlab" target="_blank">Beenlab</a>: Little Light Wishlist Curator</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/3/4611686018470846720?bgn=Big%2520Bird" target="_blank">Big Bird</a>: Little Light Wishlist Curator</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/17202624" target="_blank">Eysenor</a>: Little Light Italian (it-IT) translator</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/18497128/iMahou" target="_blank">iMahou</a>: Little Light Wishlist Curator</li>
-            <li><a href="https://twitter.com/MrMatcha_" target="_blank">iMatcha</a>: Little Light Wishlist Curator</li>
-            <li><a href="https://twitter.com/jzturrini" target="_blank">Juarez Turrini</a>: Little Light Brazillian-Portuguese (pt-BR) translator</li>
-            <li><a href="https://twitter.com/kj415j45" target="_blank">kj415j45</a>: Little Light Chinese (zh-CN) translator</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/24382833/yehard" target="_blank">Lazycoder</a>: Little Light Russian (ru-RU) translator</li>
-            <li><a href="https://twitter.com/MyNameIsAlph" target="_blank">MyNameIsAlph</a>: Little Light Wishlist Curator</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/2/4611686018451719977?bgn=Nicolas" target="_blank">Nicolas</a>: Little Light Polish (pl-PL) translator </li>
-            <li><a href="https://twitter.com/panda_pax" target="_blank">PandaPaxxy</a>: Little Light Wishlist Curator</li>
-            <li><a href="https://twitter.com/RaSSieL86" target="_blank">RaSSieL</a>: Little Light Spanish (es-ES) translator</li>
-            <li><a href="https://twitter.com/D2Reign" target="_blank">Reign</a>: Little Light Polish (pl-PL) translator </li>
-            <li><a href="https://twitter.com/riceOtaku" target="_blank">riceOtaku</a>: Little Light Japanese (ja-JP) translator</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/3/4611686018468562417?bgn=Viridis%2520Draco" target="_blank">Viridis Draco</a>: Little Light Italian (it-IT) translator</li>
+            <li><b><a href={`${github}/joaopmarquesini`} target="_blank">jaoryuken</a>: Little Light Developer</b></li>
+            <li><a href={`${bungie}/3/4611686018487414074?bgn=alexcerlini`} target="_blank">alexcerlini</a>: Little Light Brazillian-Portuguese (pt-BR) translator</li>
+            <li><a href={`${bungie}/254/13201753`} target="_blank">alexfa55</a>: Little Light Spanish (es-ES) translator</li>
+            <li><a href={`${twitter}/latinoskeleton`} target="_blank">Azared</a>: Little Light Wishlist Curator</li>
+            <li><a href={`${twitter}/Beenlab`} target="_blank">Beenlab</a>: Little Light Wishlist Curator</li>
+            <li><a href={`${bungie}/3/4611686018470846720?bgn=Big%2520Bird`} target="_blank">Big Bird</a>: Little Light Wishlist Curator</li>
+            <li><a href={`${bungie}/254/17202624`} target="_blank">Eysenor</a>: Little Light Italian (it-IT) translator</li>
+            <li><a href={`${bungie}/254/18497128/iMahou`} target="_blank">iMahou</a>: Little Light Wishlist Curator</li>
+            <li><a href={`${twitter}/MrMatcha_`} target="_blank">iMatcha</a>: Little Light Wishlist Curator</li>
+            <li><a href={`${twitter}/jzturrini`} target="_blank">Juarez Turrini</a>: Little Light Brazillian-Portuguese (pt-BR) translator</li>
+            <li><a href={`${twitter}/kj415j45`} target="_blank">kj415j45</a>: Little Light Chinese (zh-CN) translator</li>
+            <li><a href={`${bungie}/254/24382833/yehard`} target="_blank">Lazycoder</a>: Little Light Russian (ru-RU) translator</li>
+            <li><a href={`${twitter}/MyNameIsAlph`} target="_blank">MyNameIsAlph</a>: Little Light Wishlist Curator</li>
+            <li><a href={`${bungie}/2/4611686018451719977?bgn=Nicolas`} target="_blank">Nicolas</a>: Little Light Polish (pl-PL) translator </li>
+            <li><a href={`${twitter}/panda_pax`} target="_blank">PandaPaxxy</a>: Little Light Wishlist Curator</li>
+            <li><a href={`${twitter}/RaSSieL86`} target="_blank">RaSSieL</a>: Little Light Spanish (es-ES) translator</li>
+            <li><a href={`${twitter}/D2Reign`} target="_blank">Reign</a>: Little Light Polish (pl-PL) translator </li>
+            <li><a href={`${twitter}/riceOtaku`} target="_blank">riceOtaku</a>: Little Light Japanese (ja-JP) translator</li>
+            <li><a href={`${bungie}/3/4611686018468562417?bgn=Viridis%2520Draco`} target="_blank">Viridis Draco</a>: Little Light Italian (it-IT) translator</li>
         </ul>
     </Project>
 
     <Project class="lostsector">
-        <h2 slot="project-name"><a href="https://twitter.com/D2LostSector" title="Lost Sector Report" target="_blank">Lost Sector Report <Icon size={16} name="mdi:external-link" /></a>
+        <h2 slot="project-name"><a href={`${twitter}/D2LostSector`} title="Lost Sector Report" target="_blank">Lost Sector Report <Icon size={16} name="mdi:external-link" /></a>
         <img slot="project-icon" src="/images/parallel/LostSector.png" alt="LS Report Logo" title="LS Report Logo" class="parallel-img" width="50" height="50" /></h2>
         <p slot="project-description">Your daily Destiny 2 Legend & Master Lost Sector report.</p>
 
         <ul>
-            <li><b><a href="https://twitter.com/QuiffBoy" target="_blank">Quiff Boy</a>: D2LostSector Founder</b></li>
-            <li><b><a href="https://www.bungie.net/7/en/User/Profile/2/4611686018473009644?bgn=Fauxres" target="_blank">Fauxres</a>: D2LostSector Discord Admin</b></li>
-            <li><b><a href="https://www.bungie.net/7/en/User/Profile/2/4611686018446760774" target="_blank">Nerfs</a>: D2LostSector Discord Admin</b></li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/11415300?bgn=AbnormalBenjy7" target="_blank">AbnormalBenjy7</a>: D2LostSector Contributor</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/5038249?bgn=Bazz1984" target="_blank">Bazz1984</a>: D2LostSector Contributor</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/14560907?bgn=knight2qb3" target="_blank">knight2qb3</a>: D2LostSector Contributor</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/4994187?bgn=Papilli0n" target="_blank">Papilli0n</a>: D2LostSector Contributor</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/11080142?bgn=Raver%2520boyz" target="_blank">Raver boyz</a>: D2LostSector Contributor</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/54741?bgn=Sep7ember" target="_blank">Sep7ember</a>: D2LostSector Contributor</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/6392697?bgn=Syriis" target="_blank">Syriis</a>: D2LostSector Contributor</li>
+            <li><b><a href={`${twitter}/QuiffBoy`} target="_blank">Quiff Boy</a>: D2LostSector Founder</b></li>
+            <li><b><a href={`${bungie}/2/4611686018473009644?bgn=Fauxres`} target="_blank">Fauxres</a>: D2LostSector Discord Admin</b></li>
+            <li><b><a href={`${bungie}/2/4611686018446760774`} target="_blank">Nerfs</a>: D2LostSector Discord Admin</b></li>
+            <li><a href={`${bungie}/254/11415300?bgn=AbnormalBenjy7`} target="_blank">AbnormalBenjy7</a>: D2LostSector Contributor</li>
+            <li><a href={`${bungie}/254/5038249?bgn=Bazz1984`} target="_blank">Bazz1984</a>: D2LostSector Contributor</li>
+            <li><a href={`${bungie}/254/14560907?bgn=knight2qb3`} target="_blank">knight2qb3</a>: D2LostSector Contributor</li>
+            <li><a href={`${bungie}/254/4994187?bgn=Papilli0n`} target="_blank">Papilli0n</a>: D2LostSector Contributor</li>
+            <li><a href={`${bungie}/254/11080142?bgn=Raver%2520boyz`} target="_blank">Raver boyz</a>: D2LostSector Contributor</li>
+            <li><a href={`${bungie}/254/54741?bgn=Sep7ember`} target="_blank">Sep7ember</a>: D2LostSector Contributor</li>
+            <li><a href={`${bungie}/254/6392697?bgn=Syriis`} target="_blank">Syriis</a>: D2LostSector Contributor</li>
     </ul>
     </Project>
 
@@ -254,9 +261,9 @@ import { Icon } from 'astro-icon';
         <p slot="project-description">A calendar heatmap of time spent playing Destiny 2.</p>
 
         <ul>
-            <li><b><a href="https://twitter.com/ChrisFried" target="_blank">Chris Fried</a>: Scrublandeux Developer</b></li>
-            <li><a href="https://twitter.com/Myjulot" target="_blank">Myjulot</a>: Scrublandeux Contributor</li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/6672089?bgn=Sylent" target="_blank">SylentButDedly</a>: Scrublandeux Contributor</li>
+            <li><b><a href={`${twitter}/ChrisFried`} target="_blank">Chris Fried</a>: Scrublandeux Developer</b></li>
+            <li><a href={`${twitter}/Myjulot`} target="_blank">Myjulot</a>: Scrublandeux Contributor</li>
+            <li><a href={`${bungie}/254/6672089?bgn=Sylent`} target="_blank">SylentButDedly</a>: Scrublandeux Contributor</li>
         </ul>
     </Project>
 
@@ -266,8 +273,8 @@ import { Icon } from 'astro-icon';
         <p slot="project-description">A summary of what's available in Destiny today.</p>
 
         <ul>
-            <li><b><a href="https://twitter.com/JPDeathBlade" target="_blank">JpDeathBlade</a>: TodayInDestiny Developer </b></li>
-            <li><a href="https://www.bungie.net/7/en/User/Profile/254/20614816?bgn=CthulhuReigns" target="_blank">CthulhuReigns</a>: TodayInDestiny Contributor</li>
+            <li><b><a href={`${twitter}/JPDeathBlade`} target="_blank">JpDeathBlade</a>: TodayInDestiny Developer </b></li>
+            <li><a href={`${bungie}/254/20614816?bgn=CthulhuReigns`} target="_blank">CthulhuReigns</a>: TodayInDestiny Contributor</li>
         </ul>
     </Project>
 
@@ -277,9 +284,9 @@ import { Icon } from 'astro-icon';
         <p slot="project-description">The ultimate companion for Destiny's Trials of Osiris. Look up everything on your opponents or yourself and see your game improve!</p>
 
         <ul>
-            <li><b><a href="https://www.bungie.net/7/en/User/Profile/254/167493/Marruk" target="_blank">Marruk</a>: Trials Report Developer</b></li>
-            <li><b><a href="https://twitter.com/Steffwiz" target="_blank">Steffwiz</a>: Trials Report Developer</b></li>
-            <li><b><a href="https://www.bungie.net/7/en/User/Profile/254/5996932/VlakafatakafA" target="_blank">VlakafatakafA</a>: Trials Report Developer</b></li>
+            <li><b><a href={`${bungie}/254/167493/Marruk`} target="_blank">Marruk</a>: Trials Report Developer</b></li>
+            <li><b><a href={`${twitter}/Steffwiz`} target="_blank">Steffwiz</a>: Trials Report Developer</b></li>
+            <li><b><a href={`${bungie}/254/5996932/VlakafatakafA`} target="_blank">VlakafatakafA</a>: Trials Report Developer</b></li>
         </ul>
     </Project>
 
@@ -287,43 +294,43 @@ import { Icon } from 'astro-icon';
         <h2>Other Resources</h2>
 
             <ul>
-                <li><a href="https://twitter.com/Vault_Destiny" title="abarrachs" target="_blank" >abarrachs</a>: 
-                    <a href="https://twitter.com/Vault_Destiny" title="Vault Item Manager" target="_blank">Vault Item Manager</a>,
+                <li><a href={`${twitter}/Vault_Destiny`} title="abarrachs" target="_blank" >abarrachs</a>: 
+                    <a href={`${twitter}/Vault_Destiny`} title="Vault Item Manager" target="_blank">Vault Item Manager</a>,
                 a lightning-fast item manager app for Destiny.</li>
-                <li><a href="https://github.com/afpac" title="afpac" target="_blank">afpac</a>: 
+                <li><a href={`${github}/afpac`} title="afpac" target="_blank">afpac</a>: 
                     <a href="https://light.gg" title="light.gg" target="_blank">light.gg</a>,
                 the large Destiny 2 database. Find weapons, quests, and more.</li>
-                <li><a href="https://twitter.com/BlazeBoss17"  title="BlazeBoss17" target="_blank">BlazeBoss17</a>: 
+                <li><a href={`${twitter}/BlazeBoss17`} title="BlazeBoss17" target="_blank">BlazeBoss17</a>: 
                     <a href="https://raid.report" title="Raid Report" target="_blank">Raid Report</a>, 
                 a summary of Raid statistics for Destiny. Look up raid clears, speedruns, and sherpas.</li>
-                <li><a href="https://twitter.com/ChrisFried" title="Chris Fried" target="_blank">Chris Fried</a>: 
+                <li><a href={`${twitter}/ChrisFried`} title="Chris Fried" target="_blank">Chris Fried</a>: 
                     <a href="https://chrisfried.github.io/party-randomizer/" title="Party Randomizer" target="_blank">Party Randomizer</a>,
                 a fun tool to randomize your Destiny 2 loadout!</li>
-                <li><a href="https://twitter.com/aundre_kerr" title="dre" target="_blank">dre</a>: 
+                <li><a href={`${twitter}/aundre_kerr`} title="dre" target="_blank">dre</a>: 
                     <a href="https://d2gunsmith.com" title="D2Gunsmith" target="_blank">D2Gunsmith</a>,
                 a Destiny 2 weapon crafting simulation tool.</li>
-                <li><a href="https://twitter.com/Rollfinder" title="DrGodroll" target="_blank">DrGodroll</a>: 
+                <li><a href={`${twitter}/Rollfinder`} title="DrGodroll" target="_blank">DrGodroll</a>: 
                     <a href="https://rollfinder.net" title="Rollfinder" target="_blank">Rollfinder</a>,
                 a tool for finding your god rolls in Destiny. Has unique filters, the option search per stats and an up-to-date database!</li>
-                <li><a href="https://www.bungie.net/7/en/User/Profile/254/2283837?bgn=E5%2520Dweezil" title="Dweezil" target="_blank">Dweezil</a>: 
+                <li><a href={`${bungie}/254/2283837?bgn=E5%2520Dweezil`} title="Dweezil" target="_blank">Dweezil</a>: 
                     <a href="https://www.d2checklist.com/" title="D2Checklist" target="_blank">D2Checklist</a>,
                 a report on Destiny 2 progress & stats. Includes PvP, Raids, weekly PvE activities, and more.</li>
-                <li><a href="https://github.com/nxtlo" title="Fate" target="_blank">Fate</a>: 
-                    <a href="https://github.com/nxtlo/aiobungie" title="aiobungie" target="_blank">aiobungie</a>,
+                <li><a href={`${github}/nxtlo`} title="Fate" target="_blank">Fate</a>: 
+                    <a href={`${github}/nxtlo/aiobungie`} title="aiobungie" target="_blank">aiobungie</a>,
                 an API wrapper for Destiny 2, utilizing Python and asyncio.</li>
-                <li><a href="https://twitter.com/FraWolf__" title="FraWolf" target="_blank">FraWolf</a>: 
-                    <a href="https://github.com/FraWolf/quria" title="Quria" target="_blank">Quria</a>,
+                <li><a href={`${twitter}/FraWolf__`} title="FraWolf" target="_blank">FraWolf</a>: 
+                    <a href={`${github}/FraWolf/quria`} title="Quria" target="_blank">Quria</a>,
                 a user-friendly Destiny 2 API wrapper, written in TypeScript. </li>
-                <li><a href="https://twitter.com/Jansten" title="Jansten" target="_blank">Jansten</a>: 
+                <li><a href={`${twitter}/Jansten`} title="Jansten" target="_blank">Jansten</a>: 
                     <a href="https://destinyemblemcollector.com" title="Destiny Emblem Collector" target="_blank">Destiny Emblem Collector</a>,
                 the most complete source for Destiny emblems: how they look like, how to get them, and whether they're still available.</li>
-                <li><a href="https://twitter.com/KramRM" title="KramRM" target="_blank">KramRM</a>: 
+                <li><a href={`${twitter}/KramRM`} title="KramRM" target="_blank">KramRM</a>: 
                     <a href="https://cosmodrome.page" title="Cosmodrome" target="_blank">Cosmodrome</a>,
                 a directory of third-party Destiny resources.</li>
                 <li><a href="https://whaskell.pw/" title="Leaf" target="_blank">Leaf</a>:
                     <a href="https://tryfelicity.one/" title="Felicity" target="_blank">Felicity</a>,
                 a multi-purpose Destiny Discord bot, which includes features like Twitch/YouTube feeds, a roll finder, Collections guide, and more.</li>
-                <li><a href="https://twitter.com/LegionlessTV" title="Legionless" target="_blank">Legionless</a>: 
+                <li><a href={`${twitter}/LegionlessTV`} title="Legionless" target="_blank">Legionless</a>: 
                 Lost Sector guides on Twitter & helping Destiny players conquer various Lost Sectors across the Sol System.</li>
                 <li><a href="https://lieuweberg.com/" title="Lieuwe Berg" target="_blank">Lieuwe Berg</a>: 
                     <a href="https://richdestiny.app" title="rich-destiny" target="_blank">rich-destiny</a>, 
@@ -331,16 +338,16 @@ import { Icon } from 'astro-icon';
                 <li><a href="https://lowlidev.com.au" title="lowlines" target="_blank">lowlines</a>: 
                     <a href="https://lowlidev.com.au/destiny" title="lowlidev for Destiny" target="_blank">lowlidev for Destiny</a>, 
                 a multi-purpose tool for Destiny 2, which includes collectibles, Gear Viewer, maps, and more.</li>
-                <li><a href="https://twitter.com/mal027" title="Mal" target="_blank">Mal</a>: 
+                <li><a href={`${twitter}/mal027`} title="Mal" target="_blank">Mal</a>: 
                     <a href="https://shatteredvault.com/" title="Shattered Vault" target="_blank">Shattered Vault</a>,
                 a Destiny resource that aims to provide weekly reset information, essential guides, and links to popular third-party apps.</li>
-                <li><a href="https://github.com/EndGameGl" title="MeGl" target="_blank">MeGl</a>: 
-                    <a href="https://github.com/EndGameGl/DotNetBungieAPI" title="DotNetBungieAPI" target="_blank">DotNetBungieAPI</a>,
+                <li><a href={`${github}/EndGameGl`} title="MeGl" target="_blank">MeGl</a>: 
+                    <a href={`${github}/EndGameGl/DotNetBungieAPI`} title="DotNetBungieAPI" target="_blank">DotNetBungieAPI</a>,
                 a .NET Destiny API wrapper.</li>
-                <li><a href="https://twitter.com/mesh" title="mesh" target="_blank">mesh</a>: 
+                <li><a href={`${twitter}/mesh`} title="mesh" target="_blank">mesh</a>: 
                     <a href="https://redrix.io" title="Redrix" target="_blank">Redrix</a>,
                 a Destiny app which provides tools to improve your PvP skills. Also includes leaderboards!</li>
-                <li><a href="https://twitter.com/MijagoCoding" title="Mijago" target="_blank">Mijago</a>: 
+                <li><a href={`${twitter}/MijagoCoding`} title="Mijago" target="_blank">Mijago</a>: 
                 <ul>
                     <li><a href="https://d2armorpicker.com" title="D2ArmorPicker" target="_blank">D2ArmorPicker</a>,
                     a powerful tool to optimize your Destiny 2 loadout stats with just a few clicks.</li> 
@@ -349,13 +356,13 @@ import { Icon } from 'astro-icon';
                     a Destiny Discord bot for your information needs. Look up Guardians, items, rotations, and rolls with just a few commands!</li>
                 </ul>
                 </li>
-                <li><a href="https://github.com/julesrx/" title="Myjulot" target="_blank">Myjulot</a>: 
+                <li><a href={`${github}/julesrx/`} title="Myjulot" target="_blank">Myjulot</a>: 
                     <a href="https://glory.report" title="glory.report" target="_blank">glory.report</a>,
                 a resource of PvP tools for Destiny. Includes player encounters, daily reports, and more.</li>
-                <li><a href="https://twitter.com/Niven5111" title="niv" target="_blank">niv</a>: 
+                <li><a href={`${twitter}/Niven5111`} title="niv" target="_blank">niv</a>: 
                     <a href="https://destinyhistory.com" title="Destiny History" target="_blank">Destiny History</a>,
                 a tool to highlight the history of Destiny, with a timeline tailored for you.</li>
-                <li><a href="https://twitter.com/Marvindotgg" title="Terrii" target="_blank">Terrii</a>: 
+                <li><a href={`${twitter}/Marvindotgg`} title="Terrii" target="_blank">Terrii</a>: 
                 <ul>
                     <li><a href="https://guardianstats.com" title="GuardianStats" target="_blank">GuardianStats</a>,
                     a Destiny website that provides insights and player statistics.</li>
@@ -365,7 +372,7 @@ import { Icon } from 'astro-icon';
                     </li>
                 </ul>
                 </li>
-                <li><a href="https://twitter.com/justrealmilk" title="Tom Chapman" target="_blank">Tom Chapman</a>: 
+                <li><a href={`${twitter}/justrealmilk`} title="Tom Chapman" target="_blank">Tom Chapman</a>: 
                 <ul>
                     <li><a href="https://bray.tech" title="Braytech" target="_blank">Braytech</a>,
                     a powerful Destiny application that allows users to view and map checklists, track and view triumphs, inspect collectibles, and so much more.</li>
@@ -381,7 +388,7 @@ import { Icon } from 'astro-icon';
                     <a href="https://destinycommand.com" title="DestinyCommand" target="_blank">DestinyCommand</a>,
                 an application you can add to your chat bot that allows you and your viewers to check stats across Destiny as a whole. 
                 Whether it be Trials stats, K/D, loadout or just checking the amount of times you’ve achieved a certain medal.</li>
-                <li><a href="https://twitter.com/G1_Zeta" title="Zeta" target="_blank">Zeta</a>: 
+                <li><a href={`${twitter}/ZetaTauEpsilon`} title="Zeta" target="_blank">Zeta</a>: 
                     <a href="https://strike.farm" title="strike.farm" target="_blank">strike.farm</a>,
                 a Destiny tool that allows you to make the daily Strike modifiers work in your favor!</li>
             </ul>
@@ -393,11 +400,9 @@ import { Icon } from 'astro-icon';
     <br>Some content and images are the property of Bungie.</p>
 
     <p>Compiled with the help of 
-        <b><a href="https://bray.tech" 
-            title="Braytech" target="_blank">Braytech</a></b>
+        <b><a href="https://bray.tech" title="Braytech" target="_blank">Braytech</a></b>
         and 
-        <b><a href="https://destinyemblemcollector.com/" 
-            title="Destiny Emblem Collector" target="_blank">Destiny Emblem Collector</a></b>.
+        <b><a href="https://destinyemblemcollector.com/" title="Destiny Emblem Collector" target="_blank">Destiny Emblem Collector</a></b>.
     </p>
 </Footer>
 </Layout>

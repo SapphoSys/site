@@ -1,15 +1,15 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Footer from '../components/footer.astro';
-import '../scripts/details-polyfill'
+import Layout from '@layouts/layout.astro';
+import Footer from '@components/footer.astro';
+import '@assets/details-polyfill'
 ---
 
 <Layout 
-	color="#e0802c"
-	description="Translator, developer, hobbyist sysadmin."
-	icon="/favicon.png"
-	siteName="Chloe Arciniega"
-	title="Chloe Arciniega"
+  color="#e0802c"
+  description="Translator, developer, hobbyist sysadmin."
+  icon="/favicon.png"
+  siteName="Chloe Arciniega"
+  title="Chloe Arciniega"
 >
 
 <header class="me">
@@ -33,7 +33,7 @@ import '../scripts/details-polyfill'
 	<p>Hiya! I am Chloe.</p>
 	<p>I'm a trans computer science student girl, who likes to build software and translate projects around the Internet.</p>
 
-	<p>If you're interested in checking out my stuff, go <a href="/projects" title="Projects">here</a>!</p>
+	<p>If you're interested in checking out my stuff, go <a href="/projects" title="My Projects">here</a>!</p>
 
 	<details class="description">
 		<summary class="expand">Click to expand...</summary>
@@ -41,9 +41,10 @@ import '../scripts/details-polyfill'
 		<p>As someone who has impaired vision, I also try and strive for accessibility where possible, with subtitles & alt text for my content being where I want to start.</p>
 		<p>Often, I like to experiment with 
 			<a href="https://www.rust-lang.org/" title="Rust Programming Language">Rust</a>, 
-			<a href="https://www.typescriptlang.org/" title="TypeScript, JS with syntax for types">TypeScript</a>,
-			<a href="https://sass-lang.com/" title="SASS">SASS</a>, and 
-			<a href="https://www.postgresql.org/" title="PostgreSQL">PostgreSQL</a> for database management.
+			<a href="https://www.typescriptlang.org/" title="TypeScript, JavaScript with syntax for types">TypeScript</a>,
+			<a href="https://sass-lang.com/" title="SASS (Syntactically Awesome Style Sheets)">SASS</a>,
+			<a href="https://astro.build" title="Astro Site Builder">Astro</a>, 
+			and <a href="https://www.postgresql.org/" title="PostgreSQL Database">PostgreSQL</a> for database management.
 		</p>
 		<p>I like tinkering with vintage computer hardware! Also as an aspiring sysadmin, I do transforming hardware into NAS, running media & game servers, and utilizing Virtual Machines when the need arises.</p>
 		<p>In my spare time, I like to play video games, listen to my music playlist, learning other languages (Czech, German, etc), and a lot more.</p>

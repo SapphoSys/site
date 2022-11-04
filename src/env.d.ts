@@ -1,5 +1,5 @@
-/// <reference types="astro/client" />
+/// <reference types='astro/client' />
 
-declare module "*.txt" {
+declare module '*.txt' {
   export const plainText: string;
 }
