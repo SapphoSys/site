@@ -7,11 +7,4 @@ export default defineConfig({
   site: 'https://arciniega.one',
   trailingSlash: 'ignore',
   integrations: [sitemap(), prefetch()],
-  vite: {
-    build: {
-      rollupOptions: {
-        input: '~/src/assets/details-polyfill.js'
-      }
-    }
-  }
 });
