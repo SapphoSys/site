@@ -1,0 +1,312 @@
+/*
+© 2021-present Chloe Arciniega <https://arciniega.one>
+Licensed under MIT.
+*/
+
+:root {
+  --bg-color: #120c0e;
+  --color: #d9d8dc;
+  --accent-color: #eb99a1;
+  --hover-color: #da4453;
+  --pre-color: #40363a;
+  --font: "Inter", -apple-system, system-ui, "Helvetica", "Arial", sans-serif;
+}
+
+/* Custom */
+hr {
+  border-color: var(--accent-color);
+}
+
+.links {
+  font-size: 1.1em;
+  margin-top: 0.6em;
+}
+
+.underline {
+  border-bottom: 0.1em solid;
+  border-bottom-color: var(--accent-color);
+  padding-bottom: 0.2em;
+  width: fit-content;
+}
+
+.aka {
+  font-size: 0.9em;
+  margin-bottom: 1em;
+  margin-top: -1em;
+}
+
+.pronouns {
+  font-size: 0.9em;
+  margin-top: -1em;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  margin-top: -0.4em;
+  margin-bottom: -0.2em;
+}
+
+summary {
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(87px, 1fr));
+}
+
+.grid p {
+  margin: 0;
+}
+.grid a:hover {
+  border-bottom: none;
+}
+
+footer {
+  margin-top: 1.5em;
+  text-align: center;
+  bottom: 0;
+}
+
+/* Body */
+html {
+  font-family: var(--font);
+  font-size: 63%;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--color);
+  font-size: 1.8rem;
+  line-height: 1.5;
+  margin: auto;
+  max-width: 53em;
+  padding: 13px;
+}
+
+@media (max-width: 684px) {
+  body {
+    font-size: 1.53rem;
+  }
+}
+@media (max-width: 382px) {
+  body {
+    font-size: 1.35rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+}
+
+h1 {
+  font-size: 2.35em;
+}
+h2 {
+  font-size: 2em;
+}
+h3 {
+  font-size: 1.75em;
+}
+h4 {
+  font-size: 1.5em;
+}
+h5 {
+  font-size: 1.25em;
+}
+h6 {
+  font-size: 1em;
+}
+
+p {
+  margin-top: 0px;
+}
+small,
+sub,
+sup {
+  font-size: 75%;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 2px solid var(--color);
+  color: var(--hover-color);
+}
+
+ul {
+  margin-bottom: 2.5rem;
+  margin-top: 0px;
+  padding-left: 1.4em;
+}
+
+li {
+  margin-bottom: 0.4em;
+}
+li img {
+  margin-bottom: 1px;
+}
+
+blockquote {
+  background-color: var(--bg-color);
+  border-left: 5px solid var(--accent-color);
+  margin-bottom: 2.5rem;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-bottom: 0.8em;
+  padding-left: 1em;
+  padding-right: 0.8em;
+  padding-top: 0.8em;
+}
+
+blockquote p {
+  margin-bottom: 0;
+}
+img,
+video {
+  height: auto;
+  margin-top: 0px;
+  max-width: 100%;
+}
+
+/* Pre and Code */
+pre {
+  background-color: var(--pre-color);
+  display: block;
+  margin-bottom: 2.5rem;
+  margin-top: 0px;
+  padding: 1em;
+  overflow-x: auto;
+}
+
+code {
+  background-color: var(--pre-color);
+  font-size: 0.9em;
+  padding: 0 0.5em;
+  white-space: pre-wrap;
+}
+
+pre > code {
+  background-color: transparent;
+  padding: 0;
+  white-space: pre;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  text-align: justify;
+  width: 100%;
+}
+
+td,
+th {
+  border-bottom: 1px solid var(--bg-color);
+  padding: 0.5em;
+}
+
+/* Buttons, forms and input */
+input,
+textarea {
+  border: 1px solid var(--color);
+}
+input:focus,
+textarea:focus {
+  border: 1px solid var(--accent-color);
+}
+
+textarea {
+  width: 100%;
+}
+
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  background-color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 1px;
+  box-sizing: border-box;
+  color: var(--bg-color);
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.button[disabled],
+button[disabled],
+input[type="submit"][disabled],
+input[type="reset"][disabled],
+input[type="button"][disabled] {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.button:focus:enabled,
+.button:hover:enabled,
+button:focus:enabled,
+button:hover:enabled,
+input[type="submit"]:focus:enabled,
+input[type="submit"]:hover:enabled,
+input[type="reset"]:focus:enabled,
+input[type="reset"]:hover:enabled,
+input[type="button"]:focus:enabled,
+input[type="button"]:hover:enabled {
+  background-color: var(--hover-color);
+  border-color: var(--hover-color);
+  color: var(--bg-color);
+  outline: 0;
+}
+
+textarea,
+select,
+input {
+  background-color: var(--bg-color);
+  border: 1px solid var(--bg-color);
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: var(--color);
+  margin-bottom: 10px;
+  padding: 6px 10px;
+}
+
+textarea:focus,
+select:focus,
+input:focus {
+  border: 1px solid var(--accent-color);
+  outline: 0;
+}
+
+input[type="checkbox"]:focus {
+  outline: 1px dotted var(--accent-color);
+}
+
+label,
+legend,
+fieldset {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
