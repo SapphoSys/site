@@ -7,7 +7,8 @@ My own, personal website, powered by [Astro](https://astro.build).
 Make sure you have **Node.js 17+** installed.
 
 1. `git clone https://github.com/solelychloe/site`
-2. `yarn install`  
+2. `yarn install`
+  
 You can now serve this website using `yarn astro dev`, or `yarn astro preview`. Pages will update automatically on file save.  
 If you want to build this website, run `yarn astro build`.
 
