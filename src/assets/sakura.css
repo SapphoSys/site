@@ -13,9 +13,7 @@ Licensed under MIT.
 }
 
 /* Custom */
-hr {
-  border-color: var(--accent-color);
-}
+hr { border-color: var(--accent-color); }
 
 .links {
   font-size: 1.1em;
@@ -56,12 +54,8 @@ summary {
   grid-template-columns: repeat(auto-fit, minmax(87px, 1fr));
 }
 
-.grid p {
-  margin: 0;
-}
-.grid a:hover {
-  border-bottom: none;
-}
+.grid p { margin: 0; }
+.grid a:hover { border-bottom: none; }
 
 footer {
   margin-top: 1.5em;
@@ -90,18 +84,16 @@ body {
     font-size: 1.53rem;
   }
 }
+
 @media (max-width: 382px) {
   body {
     font-size: 1.35rem;
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2,
+h3, h4,
+h5, h6 {
   font-family: var(--font);
   font-weight: 700;
   line-height: 1.1;
@@ -113,33 +105,15 @@ h6 {
   -ms-word-break: break-all;
 }
 
-h1 {
-  font-size: 2.35em;
-}
-h2 {
-  font-size: 2em;
-}
-h3 {
-  font-size: 1.75em;
-}
-h4 {
-  font-size: 1.5em;
-}
-h5 {
-  font-size: 1.25em;
-}
-h6 {
-  font-size: 1em;
-}
+h1 { font-size: 2.35em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.75em; }
+h4 { font-size: 1.5em; }
+h5 { font-size: 1.25em; }
+h6 { font-size: 1em; }
 
-p {
-  margin-top: 0px;
-}
-small,
-sub,
-sup {
-  font-size: 75%;
-}
+p { margin-top: 0px; }
+small, sub, sup { font-size: 75%; }
 
 a {
   color: var(--accent-color);
@@ -157,12 +131,8 @@ ul {
   padding-left: 1.4em;
 }
 
-li {
-  margin-bottom: 0.4em;
-}
-li img {
-  margin-bottom: 1px;
-}
+li { margin-bottom: 0.4em; }
+li img { margin-bottom: 1px; }
 
 blockquote {
   background-color: var(--bg-color);
@@ -176,9 +146,7 @@ blockquote {
   padding-top: 0.8em;
 }
 
-blockquote p {
-  margin-bottom: 0;
-}
+blockquote p { margin-bottom: 0; }
 img,
 video {
   height: auto;
@@ -223,18 +191,9 @@ th {
 }
 
 /* Buttons, forms and input */
-input,
-textarea {
-  border: 1px solid var(--color);
-}
-input:focus,
-textarea:focus {
-  border: 1px solid var(--accent-color);
-}
-
-textarea {
-  width: 100%;
-}
+input, textarea { border: 1px solid var(--color); }
+input:focus, textarea:focus { border: 1px solid var(--accent-color); }
+textarea { width: 100%; }
 
 .button,
 button,
