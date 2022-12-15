@@ -1,3 +1,10 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/parallel",
+      "destination": "https://www.parallel.report",
+      "statusCode": 301
+    }
+  ]
 }

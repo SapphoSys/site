@@ -1,6 +1,6 @@
 {
   "name": "site",
-  "version": "3.0.0",
+  "version": "3.0.5",
   "author": "Chloe Arciniega <solely@riseup.net>",
   "license": "MIT",
   "type": "module",
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "prettier": "^2.7.1",
-    "prettier-plugin-astro": "^0.7.0"
+    "prettier-plugin-astro": "^0.7.0",
+    "svgo": "2.8.0"
   }
 }

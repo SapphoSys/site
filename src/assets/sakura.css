@@ -15,6 +15,8 @@ Licensed under MIT.
 /* Custom */
 hr { border-color: var(--accent-color); }
 
+svg[astro-icon="mdi:external-link"] { margin-bottom: 10px; }
+
 .links {
   font-size: 1.1em;
   margin-top: 0.6em;
