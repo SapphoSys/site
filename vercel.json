@@ -6,5 +6,11 @@
       "destination": "https://www.parallel.report",
       "statusCode": 301
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/js/script.js",
+      "destination": "https://stats.ovy.sh/js/script.js"
+    }
   ]
 }
