@@ -15,8 +15,6 @@ Licensed under MIT.
 /* Custom */
 hr { border-color: var(--accent-color); }
 
-svg[astro-icon="mdi:external-link"] { margin-bottom: 10px; }
-
 .links {
   font-size: 1.1em;
   margin-top: 0.6em;
@@ -60,9 +58,8 @@ summary {
 .grid a:hover { border-bottom: none; }
 
 footer {
-  margin-top: 1.5em;
+  margin-top: 1em;
   text-align: center;
-  bottom: 0;
 }
 
 /* Body */
