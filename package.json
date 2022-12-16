@@ -25,7 +25,7 @@
     "postcss": "^8.4.20"
   },
   "devDependencies": {
-    "prettier": "^2.7.1",
+    "@types/prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.7.0",
     "svgo": "2.8.0"
   }
