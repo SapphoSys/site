@@ -1,0 +1,24 @@
+/*
+© 2023 Chloe Arciniega <https://arciniega.one>
+Licensed under MIT.
+*/
+
+@import './sakura';
+
+:root {
+    --bg-color: #120c0e;
+    --color: #d9d8dc;
+    --accent-color: #eb99a1;
+    --hover-color: #da4453;
+    --pre-color: #40363a;
+    --font: 'Inter', -apple-system, system-ui, 'Helvetica', 'Arial', sans-serif;
+}
+
+hr {
+    border-color: var(--accent-color);
+}
+
+summary {
+    color: var(--accent-color);
+    cursor: pointer;
+}

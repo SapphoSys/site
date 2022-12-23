@@ -1,0 +1,20 @@
+# build output
+dist/
+.output/
+
+# dependencies
+node_modules/
+
+# lock
+package-lock.json
+yarn.lock
+
+# environment variables
+.env
+.env.production
+
+# README
+README.md
+
+# Prettier is a bit iffy with MDX files. Need to investigate this later.
+src/pages/projects.mdx

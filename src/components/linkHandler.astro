@@ -1,0 +1,15 @@
+---
+import { Icon } from 'astro-icon';
+
+export interface Props {
+    link: string;
+    title?: string;
+}
+
+const { icon, link, title } = Astro.props;
+---
+
+<a href={link} title={title} target="_blank">
+    {title}
+    {icon ? <Icon size={10} name="mdi:external-link" /> : false}
+</a>

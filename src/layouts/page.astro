@@ -1,0 +1,27 @@
+---
+import Head from '@components/head.astro';
+
+import '@fontsource/inter';
+import '@assets/sakura.css';
+
+export interface Props {
+    description: string;
+    siteName: string;
+    title: string;
+}
+
+const {
+    content: { description, siteName, title }
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <Head description={description} siteName={siteName} title={title} />
+    </head>
+
+    <body>
+        <slot />
+    </body>
+</html>
