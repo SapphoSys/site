@@ -1,13 +1,24 @@
+---
+import Link from '@components/linkHandler.astro';
+---
+
 <footer>
-  <slot />
-  <hr />
-  <span>© 2021-present Chloe Arciniega/solely.</span>
-  <br />
-  <a href="/" title="Home Page">Home</a>
-  |
-  <a href="credits.txt" title="Credits" target="_blank">Credits</a>
-  |
-  <a href="domains.txt" title="Domain List" target="_blank">Domain List</a>
-  |
-  <a href="https://github.com/solelychloe/site/blob/master/LICENSE" title="MIT License" target="_blank">License</a>
+    <slot />
+    <hr />
+
+    <span>© 2023 Chloe Arciniega/solely.</span>
+
+    <nav>
+        <a href="/" title="Home Page" rel="prefetch">Home</a> |
+        <a href="credits.txt" title="Credits" target="_blank" rel="prefetch">Credits</a> |
+        <a href="domains.txt" title="Domain List" target="_blank" rel="prefetch">Domain List</a> |
+        <Link link="https://github.com/solelychloe/site/blob/master/LICENSE" title="MIT License" />
+    </nav>
 </footer>
+
+<style>
+    footer {
+        margin-top: 1em;
+        text-align: center;
+    }
+</style>

@@ -1,11 +1,12 @@
-// https://astro.build/config
-
 import { defineConfig } from 'astro/config';
+
+import mdx from '@astrojs/mdx';
 import prefetch from '@astrojs/prefetch';
 import sitemap from '@astrojs/sitemap';
 import compress from 'astro-compress';
 
+// https://astro.build/config
 export default defineConfig({
-  integrations: [sitemap(), prefetch(), compress()],
-  site: 'https://arciniega.one',
+    integrations: [mdx(), sitemap(), prefetch(), compress()],
+    site: 'https://arciniega.one'
 });

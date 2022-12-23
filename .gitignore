@@ -11,7 +11,6 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-lerna-debug.log*
 
 # yarn
 .yarn-integrity
@@ -19,10 +18,7 @@ lerna-debug.log*
 # environment variables
 .env
 .env.production
-.env.test
 
-# macOS-specific files
+# OS-specific files
 .DS_Store
-
-# Windows-specific files
 desktop.ini
