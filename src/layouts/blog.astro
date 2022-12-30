@@ -17,15 +17,18 @@ let author = Astro.props.author ?? content.author ?? '';
 let description = Astro.props.description ?? content.description ?? '';
 let image = Astro.props.image ?? content.image ?? '';
 let pubDate = Astro.props.pubDate ?? content.pubDate ?? '';
+let tags = Astro.props.tags ?? content.tags ?? '';
 let title = Astro.props.title ?? content.title ?? '';
 ---
 
 <Layout description={description} siteName={Astro.site?.hostname} title={title}>
     <Line>My blog</Line>
 
+    <!-- Title -->
     <h2>{title}</h2>
 
-    <p>
+    <!-- Date and author  -->
+    <time>
         <Icon size={20} name="mdi:calendar" />
         {
             new Date(pubDate).toLocaleDateString('en-us', {
@@ -33,13 +36,23 @@ let title = Astro.props.title ?? content.title ?? '';
                 month: 'short',
                 day: 'numeric'
             })
-        }
+        },
+    </time>
+
+    <span>
         <Icon size={20} name="mdi:account" />
         {author}
+    </span>
+
+    <p>
+        <Icon size={20} name="mdi:tag" />
+        {tags ? tags.join(', ') : tags}
     </p>
 
-    <img src={image.url} title={image.alt} />
+    <!-- Checks if the post's image exists -->
+    {image.url ? <img src={image.url} title={image.alt} /> : null}
 
+    <!-- The blog's content itself -->
     <slot />
 
     <Footer />

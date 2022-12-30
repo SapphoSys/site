@@ -6,10 +6,12 @@ import Layout from '@layouts/page.astro';
 import Footer from '@components/footer.astro';
 import Line from '@components/underline.astro';
 
-// Obtain posts from "blog/" and sort it by date.
-const posts = (await Astro.glob('../pages/blog/*.{md,mdx}')).sort(
+// Obtain posts from "blog/", sort it by date and hide draft posts.
+const retrieved = (await Astro.glob('../pages/blog/*.{md,mdx}')).sort(
     (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
 );
+
+const posts = retrieved.filter((post) => !post.frontmatter.draft);
 ---
 
 <Layout
@@ -17,7 +19,6 @@ const posts = (await Astro.glob('../pages/blog/*.{md,mdx}')).sort(
     siteName="arciniega.one"
     title="Blog | Chloe Arciniega"
 >
-
     <Line>My blog</Line>
 
     {
@@ -35,8 +36,18 @@ const posts = (await Astro.glob('../pages/blog/*.{md,mdx}')).sort(
                         year: 'numeric',
                         month: 'short',
                         day: 'numeric'
-                    })}
+                    })},
                 </time>
+
+                <span>
+                    <Icon size={20} name="mdi:account" />
+                    {post.frontmatter.author}
+                </span>
+
+                <p>
+                    <Icon size={20} name="mdi:tag" />
+                    {post.frontmatter.tags ? post.frontmatter.tags.join(', ') : post.frontmatter.tags}
+                </p>
             </article>
         ))
     }
