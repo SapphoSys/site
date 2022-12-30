@@ -1,7 +1,8 @@
 ---
 import { SEO } from 'astro-seo';
+import { socials } from '~/constants.cjs';
 
-export interface Props {
+interface Props {
     description: string;
     siteName: string;
     title: string;
@@ -17,6 +18,7 @@ const { description, siteName, title } = Astro.props;
 <!-- Base -->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+
 <meta name="generator" content={Astro.generator} />
 
 <!-- Flavor -->
@@ -50,7 +52,7 @@ const { description, siteName, title } = Astro.props;
             { rel: 'icon', href: image.pathname },
 
             // Mastodon verification
-            { rel: 'me', href: 'https://tech.lgbt/@solely' }
+            { rel: 'me', href: `${socials.mastodon.link}` }
         ]
     }}
 />

@@ -1,0 +1,46 @@
+---
+import Layout from '@layouts/page.astro';
+
+import { Icon } from 'astro-icon';
+
+import Footer from '@components/footer.astro';
+import Line from '@components/underline.astro';
+
+interface Props {
+    description: string;
+    title: string;
+}
+
+const { content } = Astro.props;
+
+let author = Astro.props.author ?? content.author ?? '';
+let description = Astro.props.description ?? content.description ?? '';
+let image = Astro.props.image ?? content.image ?? '';
+let pubDate = Astro.props.pubDate ?? content.pubDate ?? '';
+let title = Astro.props.title ?? content.title ?? '';
+---
+
+<Layout description={description} siteName={Astro.site?.hostname} title={title} />
+
+<Line>My blog</Line>
+
+<h2>{title}</h2>
+
+<p>
+    <Icon size={20} name="mdi:calendar" />
+    {
+        new Date(pubDate).toLocaleDateString('en-us', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+        })
+    }
+    <Icon size={20} name="mdi:account" />
+    {author}
+</p>
+
+<img src={image.url} title={image.alt} />
+
+<slot />
+
+<Footer />

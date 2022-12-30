@@ -2,17 +2,19 @@
 import Head from '@components/head.astro';
 
 import '@fontsource/inter';
-import '@assets/sakura.css';
+import '@styles/sakura.css';
 
-export interface Props {
+interface Props {
     description: string;
-    siteName: string;
+    siteName?: string;
     title: string;
 }
 
-const {
-    content: { description, siteName, title }
-} = Astro.props;
+const { content } = Astro.props;
+
+let description = Astro.props.description ?? content.description ?? '';
+let siteName = Astro.props.siteName ?? content.siteName ?? '';
+let title = Astro.props.title ?? content.title ?? '';
 ---
 
 <!DOCTYPE html>

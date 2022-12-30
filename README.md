@@ -6,10 +6,10 @@ My own personal website, powered by [Astro](https://astro.build).
 
 To deploy this website, use a service like Vercel, Netlify, Render, or Heroku:
 
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/solelychloe/site 'Deploy to Vercel') 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/solelychloe/site 'Deploy to Netlify') 
-[![Deploy to Render](https://binbashbanana.github.io/deploy-buttons/buttons/official/render.svg)](https://render.com/deploy?repo=https://github.com/solelychloe/site 'Deploy to Render') 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/solelychloe/site 'Deploy to Heroku')
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/solelychloe/arciniega.one 'Deploy to Vercel') 
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/solelychloe/arciniega.one 'Deploy to Netlify') 
+[![Deploy to Render](https://binbashbanana.github.io/deploy-buttons/buttons/official/render.svg)](https://render.com/deploy?repo=https://github.com/solelychloe/arciniega.one 'Deploy to Render') 
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/solelychloe/arciniega.one 'Deploy to Heroku')
 
 > Make sure that you change the `site` variable in `astro.config.mjs` if you plan on making your site public.
 

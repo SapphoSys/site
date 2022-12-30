@@ -1,0 +1,50 @@
+---
+import { Icon } from 'astro-icon';
+
+import Layout from '@layouts/page.astro';
+
+import Footer from '@components/footer.astro';
+import Line from '@components/underline.astro';
+
+// Obtain posts from "blog/" and sort it by date.
+const posts = (await Astro.glob('../pages/blog/*.{md,mdx}')).sort(
+    (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+);
+---
+
+<Layout
+    description="Translator, developer, hobbyist sysadmin."
+    siteName="arciniega.one"
+    title="Blog | Chloe Arciniega"
+/>
+
+<Line>My blog</Line>
+
+{
+    posts.map((post) => (
+        <article>
+            <h2>
+                <a href={post.url} title={post.frontmatter.title}>
+                    {post.frontmatter.title}
+                </a>
+            </h2>
+
+            <time>
+                <Icon size={20} name="mdi:calendar" />
+                {new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                })}
+            </time>
+        </article>
+    ))
+}
+
+<Footer />
+
+<style>
+    a:visited {
+        color: #cc8c93;
+    }
+</style>
