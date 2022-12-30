@@ -6,8 +6,12 @@ import compress from 'astro-compress';
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [mdx({
-        drafts: true,
-    }), prefetch(), compress()],
+    integrations: [
+        mdx({
+            drafts: true
+        }),
+        prefetch(),
+        compress()
+    ],
     site: 'https://arciniega.one'
 });
