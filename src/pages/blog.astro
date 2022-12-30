@@ -16,35 +16,36 @@ const posts = (await Astro.glob('../pages/blog/*.{md,mdx}')).sort(
     description="Translator, developer, hobbyist sysadmin."
     siteName="arciniega.one"
     title="Blog | Chloe Arciniega"
-/>
+>
 
-<Line>My blog</Line>
+    <Line>My blog</Line>
 
-{
-    posts.map((post) => (
-        <article>
-            <h2>
-                <a href={post.url} title={post.frontmatter.title}>
-                    {post.frontmatter.title}
-                </a>
-            </h2>
+    {
+        posts.map((post) => (
+            <article>
+                <h2>
+                    <a href={post.url} title={post.frontmatter.title}>
+                        {post.frontmatter.title}
+                    </a>
+                </h2>
 
-            <time>
-                <Icon size={20} name="mdi:calendar" />
-                {new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric'
-                })}
-            </time>
-        </article>
-    ))
-}
-
-<Footer />
-
-<style>
-    a:visited {
-        color: #cc8c93;
+                <time>
+                    <Icon size={20} name="mdi:calendar" />
+                    {new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                    })}
+                </time>
+            </article>
+        ))
     }
-</style>
+
+    <Footer />
+
+    <style>
+        a:visited {
+            color: #cc8c93;
+        }
+    </style>
+</Layout>

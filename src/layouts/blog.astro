@@ -20,27 +20,27 @@ let pubDate = Astro.props.pubDate ?? content.pubDate ?? '';
 let title = Astro.props.title ?? content.title ?? '';
 ---
 
-<Layout description={description} siteName={Astro.site?.hostname} title={title} />
+<Layout description={description} siteName={Astro.site?.hostname} title={title}>
+    <Line>My blog</Line>
 
-<Line>My blog</Line>
+    <h2>{title}</h2>
 
-<h2>{title}</h2>
+    <p>
+        <Icon size={20} name="mdi:calendar" />
+        {
+            new Date(pubDate).toLocaleDateString('en-us', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            })
+        }
+        <Icon size={20} name="mdi:account" />
+        {author}
+    </p>
 
-<p>
-    <Icon size={20} name="mdi:calendar" />
-    {
-        new Date(pubDate).toLocaleDateString('en-us', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric'
-        })
-    }
-    <Icon size={20} name="mdi:account" />
-    {author}
-</p>
+    <img src={image.url} title={image.alt} />
 
-<img src={image.url} title={image.alt} />
+    <slot />
 
-<slot />
-
-<Footer />
+    <Footer />
+</Layout>
