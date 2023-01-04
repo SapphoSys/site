@@ -6,21 +6,25 @@ siteName: arciniega.one
 title: Chloe Arciniega
 ---
 
-import Description from '@components/description.mdx';
 import Footer from '@components/footer.astro';
 import Line from '@components/underline.astro';
-import Me from '@components/me.astro';
-import Socials from '@components/socials.astro';
+
+import Description from '@components/home/description.mdx';
+import Me from '@components/home/me.astro';
+import Socials from '@components/home/socials.astro';
 
 <Me />
 <Socials />
 
 <Line>About me</Line>
-Hiya! I am Chloe. I also go by solely or solelychloe on the Internet. I'm a trans computer science student
-girl, who likes to build software and translate projects around the Internet.
+Hiya! I am Chloe. I also go by solely or solelychloe on the Internet.
 
-If you're interested in checking out my stuff, go visit my [contributions page](/projects 'My contributions page')!
+I'm a trans computer science student girl, who likes to build software and translate projects around the Internet.
+
+If you're interested in checking out my stuff, go visit my [contributions page](projects)!
 
 <Description />
 
 <Footer />
+
+[projects]: /projects 'My contributions page'

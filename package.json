@@ -1,6 +1,6 @@
 {
     "name": "site",
-    "version": "3.3.5",
+    "version": "3.4.5",
     "author": "Chloe Arciniega <solely@riseup.net>",
     "license": "MIT",
     "type": "module",
@@ -16,6 +16,8 @@
     "dependencies": {
         "@astrojs/mdx": "^0.13.0",
         "@astrojs/prefetch": "^0.1.1",
+        "@astrojs/rss": "^2.0.0",
+        "@astrojs/sitemap": "^1.0.0",
         "@fontsource/inter": "^4.5.14",
         "astro": "^1.6.0",
         "astro-compress": "^1.1.22",

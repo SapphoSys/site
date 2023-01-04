@@ -56,4 +56,10 @@ let title = Astro.props.title ?? content.title ?? '';
     <slot />
 
     <Footer />
+
+    <style>
+        [astro-icon] {
+            margin-bottom: -4px;
+        }
+    </style>
 </Layout>

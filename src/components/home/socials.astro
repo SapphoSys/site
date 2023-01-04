@@ -1,0 +1,83 @@
+---
+import { socials } from '~/constants.cjs';
+---
+
+<section class="links">
+    {
+        socials?.discord ? (
+            <a
+                href={`https://discord.com/users/${socials.discord.id}`}
+                aria-label={`Discord: ${socials.discord.alt}`}
+                title={`Discord: ${socials.discord.alt}`}
+                target="_blank"
+            >
+                Discord [{socials.discord.alt}]
+            </a>
+        ) : (
+            ''
+        )
+    }
+    {
+        socials?.mastodon ? (
+            <a
+                href={socials.mastodon.link}
+                aria-label={`Mastodon: ${socials.mastodon.alt}`}
+                title={`Mastodon: ${socials.mastodon.alt}`}
+                target="_blank"
+            >
+                Mastodon
+            </a>
+        ) : (
+            ''
+        )
+    }
+    {
+        socials?.github ? (
+            <a
+                href={`https://github.com/${socials.github}`}
+                aria-label={`GitHub: ${socials.github}`}
+                title={`GitHub: ${socials.github}`}
+                target="_blank"
+            >
+                GitHub
+            </a>
+        ) : (
+            ''
+        )
+    }
+    {
+        socials?.telegram ? (
+            <a
+                href={`https://t.me/${socials.telegram}`}
+                aria-label={`Telegram: ${socials.telegram}`}
+                title={`Telegram: ${socials.telegram}`}
+                target="_blank"
+            >
+                Telegram
+            </a>
+        ) : (
+            ''
+        )
+    }
+    {
+        socials?.mail ? (
+            <a
+                href={`mailto:${socials.mail}`}
+                aria-label={`Mail: ${socials.mail}`}
+                title={`Mail: ${socials.mail}`}
+                target="_blank"
+            >
+                Mail
+            </a>
+        ) : (
+            ''
+        )
+    }
+</section>
+
+<style>
+    .links {
+        font-size: 1.1em;
+        margin-top: 0.6em;
+    }
+</style>

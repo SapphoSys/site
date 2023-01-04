@@ -1,6 +1,7 @@
 ---
 import { SEO } from 'astro-seo';
-import { socials } from '~/constants.cjs';
+
+import { base, socials } from '~/constants.cjs';
 
 interface Props {
     description: string;
@@ -10,9 +11,9 @@ interface Props {
 
 // Favicon
 const image = new URL(Astro.site!);
-image.pathname = '/favicon.png';
+image.pathname = base.favicon?.fileName || '/favicon.png';
 
-const { description, siteName, title } = Astro.props;
+const { description, siteName, title } = Astro.props as Props;
 ---
 
 <!-- Base -->
@@ -22,7 +23,7 @@ const { description, siteName, title } = Astro.props;
 <meta name="generator" content={Astro.generator} />
 
 <!-- Flavor -->
-<meta name="theme-color" content="#e0802c" />
+<meta name="theme-color" content={base.color} />
 
 <!-- SEO -->
 <SEO
@@ -32,27 +33,27 @@ const { description, siteName, title } = Astro.props;
         basic: {
             title: title,
             type: 'website',
-            image: image.toString()
+            image: image?.toString()
         },
         optional: {
             siteName,
             description
         },
         image: {
-            alt: 'A pink love heart with stars around it, making it look like it is sparkling or shimmering.'
+            alt: base.favicon?.alt
         }
     }}
     twitter={{
         card: 'summary',
-        creator: '@solelychloe'
+        creator: socials?.twitter || ''
     }}
     extend={{
         link: [
             // Icon
-            { rel: 'icon', href: image.pathname },
+            { rel: 'icon', href: image?.pathname },
 
             // Mastodon verification
-            { rel: 'me', href: `${socials.mastodon.link}` }
+            { rel: 'me', href: `${socials?.mastodon.link}` || '' }
         ]
     }}
 />

@@ -14,10 +14,6 @@
     --font: 'Inter', -apple-system, system-ui, 'Helvetica', 'Arial', sans-serif;
 }
 
-[astro-icon] {
-    margin-bottom: -3px;
-}
-
 hr {
     border-color: var(--accent-color);
 }
