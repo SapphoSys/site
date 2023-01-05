@@ -33,19 +33,19 @@ const { description, siteName, title } = Astro.props as Props;
         basic: {
             title: title,
             type: 'website',
-            image: image?.toString()
+            image: image?.toString(),
         },
         optional: {
             siteName,
-            description
+            description,
         },
         image: {
-            alt: base.favicon?.alt
-        }
+            alt: base.favicon?.alt,
+        },
     }}
     twitter={{
         card: 'summary',
-        creator: socials?.twitter || ''
+        creator: socials?.twitter || '',
     }}
     extend={{
         link: [
@@ -53,7 +53,7 @@ const { description, siteName, title } = Astro.props as Props;
             { rel: 'icon', href: image?.pathname },
 
             // Mastodon verification
-            { rel: 'me', href: `${socials?.mastodon.link}` || '' }
-        ]
+            { rel: 'me', href: `${socials?.mastodon.link}` || '' },
+        ],
     }}
 />

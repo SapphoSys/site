@@ -7,13 +7,13 @@ import compress from 'astro-compress';
 
 // https://astro.build/config
 export default defineConfig({
+    site: 'https://www.arciniega.one',
     integrations: [
         mdx({
-            drafts: true
+            drafts: true,
         }),
         prefetch(),
         sitemap(),
-        compress()
+        compress(),
     ],
-    site: 'https://arciniega.one'
 });

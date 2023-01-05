@@ -6,14 +6,14 @@ import Link from '@components/link.astro';
     <slot />
     <hr />
 
-    <span>© {new Date().getFullYear()} Chloe Arciniega/solely.</span>
+    <span>© {new Date().getFullYear()} Chloe Arciniega.</span>
 
     <nav>
-        <a href="/" title="Home page" rel="prefetch">Home</a> |
-        <a href="/blog" title="My blog" rel="prefetch">Blog</a> |
-        <a href="/credits.txt" title="Credits" target="_blank" rel="prefetch">Credits</a> |
-        <a href="/domains.txt" title="Domain list" target="_blank" rel="prefetch">Domain list</a> |
-        <Link link="https://github.com/solelychloe/arciniega.one" title="Source" />
+        <Link href="/" title="Home" rel="prefetch">Home</Link> |
+        <Link href="/blog" title="Blog" rel="prefetch">Blog</Link> |
+        <Link href="/credits.txt" title="Credits" rel="prefetch">Credits</Link> |
+        <Link href="/domains.txt" title="Domains" rel="prefetch">Domains</Link> |
+        <Link href="https://github.com/solelychloe/arciniega.one" title="Source code" target="_blank">Source</Link>
     </nav>
 </footer>
 

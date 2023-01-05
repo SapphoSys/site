@@ -5,15 +5,15 @@ module.exports = {
         {
             files: '*.astro',
             options: {
-                parser: 'astro'
-            }
-        }
+                parser: 'astro',
+            },
+        },
     ],
     proseWrap: 'preserve',
-    printWidth: 100,
+    printWidth: 120,
     quoteProps: 'preserve',
     semi: true,
     singleQuote: true,
     tabWidth: 4,
-    trailingComma: 'none'
+    trailingComma: 'es5',
 };

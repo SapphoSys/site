@@ -7,57 +7,34 @@ import { socials } from '~/constants.cjs';
         socials?.discord ? (
             <a
                 href={`https://discord.com/users/${socials.discord.id}`}
-                aria-label={`Discord: ${socials.discord.alt}`}
                 title={`Discord: ${socials.discord.alt}`}
                 target="_blank"
             >
                 Discord [{socials.discord.alt}]
             </a>
-        ) : (
-            ''
-        )
+        ) : null
     }
+
     {
         socials?.mastodon ? (
-            <a
-                href={socials.mastodon.link}
-                aria-label={`Mastodon: ${socials.mastodon.alt}`}
-                title={`Mastodon: ${socials.mastodon.alt}`}
-                target="_blank"
-            >
+            <a href={socials.mastodon.link} title={`Mastodon: ${socials.mastodon.alt}`} target="_blank">
                 Mastodon
             </a>
-        ) : (
-            ''
-        )
+        ) : null
     }
     {
         socials?.github ? (
-            <a
-                href={`https://github.com/${socials.github}`}
-                aria-label={`GitHub: ${socials.github}`}
-                title={`GitHub: ${socials.github}`}
-                target="_blank"
-            >
-                GitHub
+            <a href={`https://github.com/${socials.github}`} title={`GitHub: ${socials.github}`} target="_blank">
+                {"GitHub"}
             </a>
-        ) : (
-            ''
-        )
+        ) : null
     }
     {
         socials?.telegram ? (
-            <a
-                href={`https://t.me/${socials.telegram}`}
-                aria-label={`Telegram: ${socials.telegram}`}
-                title={`Telegram: ${socials.telegram}`}
-                target="_blank"
-            >
+            <a href={`https://t.me/${socials.telegram}`} title={`Telegram: ${socials.telegram}`} target="_blank">
                 Telegram
             </a>
-        ) : (
-            ''
-        )
+        ) : null
     }
     {
         socials?.mail ? (
@@ -69,9 +46,7 @@ import { socials } from '~/constants.cjs';
             >
                 Mail
             </a>
-        ) : (
-            ''
-        )
+        ) : null
     }
 </section>
 

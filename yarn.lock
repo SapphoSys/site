@@ -20,6 +20,11 @@
   resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-0.31.3.tgz#31fbc91119e939c26d51ab92e7bc0af5c8f801cb"
   integrity sha512-WbA05QH5xkdaJ3XtzDuYOjtqsip2InW5rk156sSdaHs5qN2NroUHbzWZthHJwmNAAjQSGXVIj+O6jQj81zzX/Q==
 
+"@astrojs/compiler@^0.31.3":
+  version "0.31.4"
+  resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-0.31.4.tgz#fa5aaeb3e6f3640f6f7625849b724a4d28d662e4"
+  integrity sha512-6bBFeDTtPOn4jZaiD3p0f05MEGQL9pw2Zbfj546oFETNmjJFWO3nzHz6/m+P53calknCvyVzZ5YhoBLIvzn5iw==
+
 "@astrojs/language-server@^0.28.3":
   version "0.28.3"
   resolved "https://registry.yarnpkg.com/@astrojs/language-server/-/language-server-0.28.3.tgz#968472b0e8876bb7583230c745b0f0646a09d510"
@@ -3363,6 +3368,16 @@ prettier-plugin-astro@^0.7.0:
   integrity sha512-ehCUx7MqHWvkHwUmxxAWLsL35pFaCTM5YXQ8xjG/1W6dY2yBhvEks+2aCfjeI5zmMrZNCXkiMQtpznSlLSLrxw==
   dependencies:
     "@astrojs/compiler" "^0.29.3"
+    prettier "^2.7.1"
+    sass-formatter "^0.7.5"
+    synckit "^0.8.4"
+
+prettier-plugin-astro@^0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-astro/-/prettier-plugin-astro-0.7.2.tgz#d761cde54714c6871c731bec179d4cf75e2d86d6"
+  integrity sha512-mmifnkG160BtC727gqoimoxnZT/dwr8ASxpoGGl6EHevhfblSOeu+pwH1LAm5Qu1MynizktztFujHHaijLCkww==
+  dependencies:
+    "@astrojs/compiler" "^0.31.3"
     prettier "^2.7.1"
     sass-formatter "^0.7.5"
     synckit "^0.8.4"

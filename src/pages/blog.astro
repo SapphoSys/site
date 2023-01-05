@@ -34,7 +34,7 @@ const posts = retrieved.filter((post) => !post.frontmatter.draft);
                     {new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
                         year: 'numeric',
                         month: 'short',
-                        day: 'numeric'
+                        day: 'numeric',
                     })}
                 </time>
                 |
@@ -44,9 +44,7 @@ const posts = retrieved.filter((post) => !post.frontmatter.draft);
                 </span>
                 <p>
                     <Icon size={20} name="mdi:tag" />
-                    {post.frontmatter.tags
-                        ? post.frontmatter.tags.join(', ')
-                        : post.frontmatter.tags}
+                    {post.frontmatter.tags ? post.frontmatter.tags.join(', ') : post.frontmatter.tags}
                 </p>
             </article>
         ))
