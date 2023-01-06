@@ -48,6 +48,10 @@ const { description, siteName, title } = Astro.props as Props;
         creator: socials?.twitter || '',
     }}
     extend={{
+        meta: [
+            // Keywords
+            { name: 'keywords', content: `${base.seo.keywords}` || '' },
+        ],
         link: [
             // Icon
             { rel: 'icon', href: image?.pathname },

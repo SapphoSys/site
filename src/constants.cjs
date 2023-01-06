@@ -9,6 +9,11 @@ export const base = {
         // File name for the favicon (for example, /favicon.png)
         fileName: '/favicon.png',
     },
+    // SEO information
+    seo: {
+        // Keywords for search engines
+        keywords: ['solelychloe', 'chloe arciniega', 'solely chloe', 'chloe solely'],
+    },
 };
 
 // Social links that appear on the home page.
