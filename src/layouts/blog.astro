@@ -7,18 +7,24 @@ import Footer from '@components/footer.astro';
 import Line from '@components/underline.astro';
 
 interface Props {
+    author: string;
     description: string;
+    image: string;
+    pubDate: Date;
+    tags: Array<String>;
     title: string;
 }
 
 const { content } = Astro.props;
 
-let author = Astro.props.author ?? content.author ?? '';
-let description = Astro.props.description ?? content.description ?? '';
-let image = Astro.props.image ?? content.image ?? '';
-let pubDate = Astro.props.pubDate ?? content.pubDate ?? '';
-let tags = Astro.props.tags ?? content.tags ?? '';
-let title = Astro.props.title ?? content.title ?? '';
+const {
+    author = content.author ?? '',
+    description = content.description ?? '',
+    image = content.image ?? '',
+    pubDate = content.pubDate ?? '',
+    tags = content.tags ?? '',
+    title = content.title ?? '',
+} = Astro.props as Props;
 ---
 
 <Layout description={description} siteName={Astro.site?.hostname} title={title}>

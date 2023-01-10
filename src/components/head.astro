@@ -16,11 +16,17 @@ image.pathname = base.favicon?.fileName || '/favicon.png';
 const { description, siteName, title } = Astro.props as Props;
 ---
 
-<!-- Base -->
+<!-- Compatibility -->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+<!-- Astro metadata & Plausible analytics information -->
 <meta name="generator" content={Astro.generator} />
+{
+    import.meta.env.MODE === 'production' && !!base.siteName && (
+        <script defer data-domain={base.siteName} data-api="/api/event" src="/js/script.js" />
+    )
+}
 
 <!-- Flavor -->
 <meta name="theme-color" content={base.color} />

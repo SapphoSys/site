@@ -1,17 +1,18 @@
 {
     "name": "site",
-    "version": "3.4.5",
+    "version": "3.4.6",
     "author": "Chloe Arciniega <solely@riseup.net>",
     "license": "MIT",
     "type": "module",
     "private": true,
     "scripts": {
         "astro": "astro",
-        "build": "yarn test && yarn lint && astro build",
-        "dev": "yarn lint && astro dev",
+        "astro:check": "astro check",
+        "build": "yarn build:check && yarn lint && astro build",
+        "build:check": "yarn astro:check && tsc --noEmit",
         "lint": "prettier --write .",
-        "preview": "yarn lint && astro preview",
-        "test": "astro check && tsc --noEmit"
+        "start": "yarn lint && astro preview",
+        "start:dev": "yarn lint && astro dev"
     },
     "dependencies": {
         "@astrojs/mdx": "^0.13.0",

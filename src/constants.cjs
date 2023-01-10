@@ -14,6 +14,8 @@ export const base = {
         // Keywords for search engines
         keywords: ['solelychloe', 'chloe arciniega', 'solely chloe', 'chloe solely'],
     },
+    // The site name. Used for Plausible Analytics (will appear as https://example.com)
+    siteName: 'arciniega.one',
 };
 
 // Social links that appear on the home page.
