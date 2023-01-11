@@ -20,9 +20,9 @@ _GitHub Pages is not recommended for deploying this site._
 To customize and tailor this website for yourself, you'll want to:
 
 - Edit the `src/constants.cjs` file. This acts as the website's configuration. 
-- Edit the `me.astro` and `description.mdx` files found in `src/components/home/` file to your credentials.
+- Edit the `me.astro` and `description.mdx` files found in the `src/components/home/` folder to your credentials.
 - Edit the footer in `src/components/footer.astro`.
-- Edit `index.mdx` and `projects.mdx` in `src/pages/`.
+- Edit the `index.mdx` and `projects.mdx` files in `src/pages/`. This is the main content that will be displayed on the site.
 - Optional:
     - Change the `site` variable in `astro.config.mjs` if you plan on making your site public.
     - Edit the variables found in `src/styles/custom.scss` to stylize the website to your needs.
@@ -38,7 +38,7 @@ To customize and tailor this website for yourself, you'll want to:
 3. `yarn install`
 
 - To preview, run `yarn dev`. Pages will update automatically on file save.
-- To build your site, run `yarn build`. Afterwards, you can run `yarn preview` to serve the site from the `dist/` folder.
+- To build your site, run `yarn build`. Afterwards, you can run `yarn start` to serve the site from the `dist/` folder.
 
 You're now up and running!
 
