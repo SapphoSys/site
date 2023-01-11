@@ -1,7 +1,7 @@
 ---
 import { SEO } from 'astro-seo';
 
-import { base, socials } from '~/constants.cjs';
+import { base, feed, socials } from '~/constants.cjs';
 
 interface Props {
     description: string;
@@ -16,54 +16,61 @@ image.pathname = base.favicon?.fileName || '/favicon.png';
 const { description, siteName, title } = Astro.props as Props;
 ---
 
-<!-- Compatibility -->
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+    <!-- Compatibility -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<!-- Astro metadata & Plausible analytics information -->
-<meta name="generator" content={Astro.generator} />
-{
-    import.meta.env.MODE === 'production' && !!base.siteName && (
-        <script defer data-domain={base.siteName} data-api="/api/event" src="/js/script.js" />
-    )
-}
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title={feed.title} href={`https://www.${base.site}/rss.xml`} />
 
-<!-- Flavor -->
-<meta name="theme-color" content={base.color} />
+    <!-- Metadata & analytics -->
+    <meta name="generator" content={Astro.generator} />
+    {
+        import.meta.env.MODE === 'production' && !!base.plausible.analytics && !!base.site && (
+            <script defer data-domain={base.site} data-api="/api/event" src="/js/script.js" />
+        )
+    }
 
-<!-- SEO -->
-<SEO
-    title={title}
-    description={description}
-    openGraph={{
-        basic: {
-            title: title,
-            type: 'website',
-            image: image?.toString(),
-        },
-        optional: {
-            siteName,
-            description,
-        },
-        image: {
-            alt: base.favicon?.alt,
-        },
-    }}
-    twitter={{
-        card: 'summary',
-        creator: socials?.twitter || '',
-    }}
-    extend={{
-        meta: [
-            // Keywords
-            { name: 'keywords', content: `${base.seo.keywords}` || '' },
-        ],
-        link: [
-            // Icon
-            { rel: 'icon', href: image?.pathname },
+    <!-- Flavor -->
+    <meta name="theme-color" content={base.color} />
 
-            // Mastodon verification
-            { rel: 'me', href: `${socials?.mastodon.link}` || '' },
-        ],
-    }}
-/>
+    <!-- SEO -->
+    <SEO
+        title={title}
+        description={description}
+        openGraph={{
+            basic: {
+                title,
+                type: 'website',
+                image: image?.toString(),
+            },
+            optional: {
+                siteName,
+                description,
+            },
+            image: {
+                alt: base.favicon?.alt,
+            },
+        }}
+        twitter={{
+            card: 'summary',
+            creator: socials?.twitter || '',
+        }}
+        extend={{
+            meta: [
+                // Keywords
+                { name: 'keywords', content: `${base.seo.keywords}` || '' },
+            ],
+            link: [
+                // Icon
+                { rel: 'icon', href: image?.pathname },
+
+                // Mastodon verification
+                { rel: 'me', href: `${socials?.mastodon.link}` || '' },
+            ],
+        }}
+    />
+
+    <slot />
+</head>

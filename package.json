@@ -10,6 +10,7 @@
         "astro:check": "astro check",
         "build": "yarn build:check && yarn lint && astro build",
         "build:check": "yarn astro:check && tsc --noEmit",
+        "dev": "yarn start:dev",
         "lint": "prettier --write .",
         "start": "yarn lint && astro preview",
         "start:dev": "yarn lint && astro dev"
@@ -25,11 +26,16 @@
         "astro-icon": "^0.8.0",
         "astro-seo": "^0.6.0",
         "autoprefixer": "^10.4.13",
-        "postcss": "^8.4.20"
+        "cssnano": "^5.1.14",
+        "postcss": "^8.4.20",
+        "rehype-autolink-headings": "^6.1.1",
+        "rehype-external-links": "^2.0.1",
+        "rehype-slug": "^5.1.0"
     },
     "devDependencies": {
         "@types/prettier": "^2.7.1",
         "prettier-plugin-astro": "^0.7.2",
+        "sass": "^1.57.1",
         "svgo": "2.8.0"
     }
 }

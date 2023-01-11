@@ -2,6 +2,7 @@
     // Astro TSConfig configuration
     "extends": "astro/tsconfigs/strict",
     "compilerOptions": {
+        "allowJs": true,
         // @types/mdx seems to be broken without this. Weird.
         "skipLibCheck": true,
         // Aliases

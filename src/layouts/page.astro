@@ -2,7 +2,7 @@
 import Head from '@components/head.astro';
 
 import '@fontsource/inter';
-import '@styles/sakura.css';
+import '@styles/sakura.scss';
 
 interface Props {
     description: string;
@@ -12,15 +12,19 @@ interface Props {
 
 const { content } = Astro.props;
 
-let description = Astro.props.description ?? content.description ?? '';
-let siteName = Astro.props.siteName ?? content.siteName ?? '';
-let title = Astro.props.title ?? content.title ?? '';
+const {
+    description = content.description ?? '',
+    siteName = content.siteName ?? '',
+    title = content.title ?? '',
+} = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <Head description={description} siteName={siteName} title={title} />
+        <Head description={description} siteName={siteName} title={title}>
+            <slot name="head" />
+        </Head>
     </head>
 
     <body>

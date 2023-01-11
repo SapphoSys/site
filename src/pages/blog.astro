@@ -7,8 +7,8 @@ import Footer from '@components/footer.astro';
 import Line from '@components/underline.astro';
 
 // Obtain posts from "blog/", sort it by date and hide draft posts.
-const retrieved = (await Astro.glob('../pages/blog/*.{md,mdx}')).sort(
-    (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+const retrieved = (await Astro.glob('../pages/posts/*.{md,mdx}')).sort(
+    (a, b) => new Date(b.frontmatter.created).valueOf() - new Date(a.frontmatter.created).valueOf()
 );
 
 const posts = retrieved.filter((post) => !post.frontmatter.draft);
@@ -24,28 +24,36 @@ const posts = retrieved.filter((post) => !post.frontmatter.draft);
     {
         posts.map((post) => (
             <article>
-                <h2>
-                    <a href={post.url} title={post.frontmatter.title}>
-                        {post.frontmatter.title}
-                    </a>
-                </h2>
-                <time>
-                    <Icon size={20} name="mdi:calendar" />
-                    {new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric',
-                    })}
-                </time>
+                {post.frontmatter.title && (
+                    <h2 class="title">
+                        <a href={post.url} title={post.frontmatter.title}>
+                            {post.frontmatter.title}
+                        </a>
+                    </h2>
+                )}
+                {post.frontmatter.created && (
+                    <time class="date">
+                        <Icon size={20} name="mdi:calendar" />
+                        {new Date(post.frontmatter.created).toLocaleDateString('en-us', {
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric',
+                        })}
+                    </time>
+                )}
                 |
-                <span>
-                    <Icon size={20} name="mdi:account" />
-                    {post.frontmatter.author}
-                </span>
-                <p>
-                    <Icon size={20} name="mdi:tag" />
-                    {post.frontmatter.tags ? post.frontmatter.tags.join(', ') : post.frontmatter.tags}
-                </p>
+                {post.frontmatter.author && (
+                    <span class="author">
+                        <Icon size={20} name="mdi:account" />
+                        {post.frontmatter.author}
+                    </span>
+                )}
+                {post.frontmatter.tags ? (
+                    <p class="tags">
+                        <Icon size={20} name="mdi:tag" />
+                        {post.frontmatter.tags && post.frontmatter.tags.join(', ')}
+                    </p>
+                ) : null}
             </article>
         ))
     }

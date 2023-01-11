@@ -1,0 +1,22 @@
+/*
+    © 2023 Chloe Arciniega <https://www.arciniega.one>
+    Licensed under MIT.
+*/
+
+$font: 'Inter', -apple-system, system-ui, 'Helvetica', 'Arial', sans-serif;
+$text-size: 1.8rem;
+
+$accent: #eb99a1;
+$background: #120c0e;
+$hover: #da4453;
+$pre: #40363a;
+$text: #d9d8dc;
+
+hr {
+    border-color: $accent;
+}
+
+summary {
+    color: $accent;
+    cursor: pointer;
+}
