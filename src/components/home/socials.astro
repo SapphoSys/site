@@ -3,56 +3,56 @@ import { socials } from '~/constants.cjs';
 ---
 
 <section class="links">
-    {
-        socials?.discord ? (
-            <a
-                href={`https://discord.com/users/${socials.discord.id}`}
-                title={`Discord: ${socials.discord.alt}`}
-                target="_blank"
-            >
-                Discord [{socials.discord.alt}]
-            </a>
-        ) : null
-    }
+  {
+    socials?.discord ? (
+      <a
+        href={`https://discord.com/users/${socials.discord.id}`}
+        title={`Discord: ${socials.discord.alt}`}
+        target="_blank"
+      >
+        Discord [{socials.discord.alt}]
+      </a>
+    ) : null
+  }
 
-    {
-        socials?.mastodon ? (
-            <a href={socials.mastodon.link} title={`Mastodon: ${socials.mastodon.alt}`} target="_blank">
-                Mastodon
-            </a>
-        ) : null
-    }
-    {
-        socials?.github ? (
-            <a href={`https://github.com/${socials.github}`} title={`GitHub: ${socials.github}`} target="_blank">
-                {'GitHub'}
-            </a>
-        ) : null
-    }
-    {
-        socials?.telegram ? (
-            <a href={`https://t.me/${socials.telegram}`} title={`Telegram: ${socials.telegram}`} target="_blank">
-                Telegram
-            </a>
-        ) : null
-    }
-    {
-        socials?.mail ? (
-            <a
-                href={`mailto:${socials.mail}`}
-                aria-label={`Mail: ${socials.mail}`}
-                title={`Mail: ${socials.mail}`}
-                target="_blank"
-            >
-                Mail
-            </a>
-        ) : null
-    }
+  {
+    socials?.mastodon ? (
+      <a href={socials.mastodon.link} title={`Mastodon: ${socials.mastodon.alt}`} target="_blank">
+        Mastodon
+      </a>
+    ) : null
+  }
+  {
+    socials?.github ? (
+      <a href={`https://github.com/${socials.github}`} title={`GitHub: ${socials.github}`} target="_blank">
+        {'GitHub'}
+      </a>
+    ) : null
+  }
+  {
+    socials?.telegram ? (
+      <a href={`https://t.me/${socials.telegram}`} title={`Telegram: ${socials.telegram}`} target="_blank">
+        Telegram
+      </a>
+    ) : null
+  }
+  {
+    socials?.mail ? (
+      <a
+        href={`mailto:${socials.mail}`}
+        aria-label={`Mail: ${socials.mail}`}
+        title={`Mail: ${socials.mail}`}
+        target="_blank"
+      >
+        Mail
+      </a>
+    ) : null
+  }
 </section>
 
 <style>
-    .links {
-        font-size: 1.1em;
-        margin-top: 0.6em;
-    }
+  .links {
+    font-size: 1.1em;
+    margin-top: 0.6em;
+  }
 </style>

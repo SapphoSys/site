@@ -1,17 +1,17 @@
 {
-    // Astro TSConfig configuration
-    "extends": "astro/tsconfigs/strict",
-    "compilerOptions": {
-        "allowJs": true,
-        // @types/mdx seems to be broken without this. Weird.
-        "skipLibCheck": true,
-        // Aliases
-        "baseUrl": ".",
-        "paths": {
-            "~/*": ["src/*"],
-            "@components/*": ["src/components/*"],
-            "@layouts/*": ["src/layouts/*"],
-            "@styles/*": ["src/styles/*"]
-        }
+  // Astro TSConfig configuration
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "allowJs": true,
+    // @types/mdx seems to be broken without this. Weird.
+    "skipLibCheck": true,
+    // Aliases
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@styles/*": ["src/styles/*"]
     }
+  }
 }

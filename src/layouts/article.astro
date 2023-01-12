@@ -1,14 +1,12 @@
 ---
 import Layout from '@layouts/page.astro';
 
-import { feed } from '~/constants.cjs';
-
-import { Icon } from 'astro-icon';
-
 import Comments from '@components/blog/comments.astro';
 import Footer from '@components/footer.astro';
 import Line from '@components/underline.astro';
 
+import { feed } from '~/constants.cjs';
+import { Icon } from 'astro-icon';
 import type { MarkdownLayoutProps } from 'astro';
 import type { PostFrontmatter } from '~/types';
 
@@ -19,54 +17,54 @@ const checkComments = (feed.comments && frontmatter.comments) ?? true;
 ---
 
 <Layout description={frontmatter.description} siteName={Astro.site?.hostname} title={frontmatter.title}>
-    {checkComments && <meta slot="head" name="giscus:backlink" content={Astro.url.pathname} />}
-    <Line>My blog</Line>
+  {checkComments && <meta slot="head" name="giscus:backlink" content={Astro.url.pathname} />}
+  <Line>My blog</Line>
 
-    <!-- Title -->
-    <h2 class="title">{frontmatter.title}</h2>
+  <!-- Title -->
+  <h2 class="title">{frontmatter.title}</h2>
 
-    <!-- Date and author -->
-    <time class="date">
-        <Icon size={20} name="mdi:calendar" />
-        {
-            new Date(frontmatter.created).toLocaleDateString('en-us', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-            })
-        }
-    </time>
-    |
-    <span class="author">
-        <Icon size={20} name="mdi:account" />
-        {frontmatter.author}
-    </span>
-
-    <!-- Tags -->
+  <!-- Date and author -->
+  <time class="date">
+    <Icon size={20} name="mdi:calendar" />
     {
-        frontmatter.tags ? (
-            <p class="tags">
-                <Icon size={20} name="mdi:tag" />
-                {frontmatter.tags && frontmatter.tags.join(', ')}
-            </p>
-        ) : null
+      new Date(frontmatter.created).toLocaleDateString('en-us', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      })
     }
+  </time>
+  |
+  <span class="author">
+    <Icon size={20} name="mdi:account" />
+    {frontmatter.author}
+  </span>
 
-    <!-- Checks if the post's image exists -->
-    {frontmatter.image?.url && <img src={frontmatter.image?.url} title={frontmatter.image?.alt} />}
+  <!-- Tags -->
+  {
+    frontmatter.tags ? (
+      <p class="tags">
+        <Icon size={20} name="mdi:tag" />
+        {frontmatter.tags && frontmatter.tags.join(', ')}
+      </p>
+    ) : null
+  }
 
-    <!-- The blog's content itself -->
-    <slot />
+  <!-- Checks if the post's image exists -->
+  {frontmatter.image?.url && <img src={frontmatter.image?.url} title={frontmatter.image?.alt} />}
 
-    <!-- Comments provided by Giscus -->
-    {checkComments && <Comments />}
+  <!-- The blog's content itself -->
+  <slot />
 
-    <!-- Footer -->
-    <Footer />
+  <!-- Comments provided by Giscus -->
+  {checkComments && <Comments />}
 
-    <style>
-        [astro-icon] {
-            margin-bottom: -4px;
-        }
-    </style>
+  <!-- Footer -->
+  <Footer />
+
+  <style>
+    [astro-icon] {
+      margin-bottom: -4px;
+    }
+  </style>
 </Layout>

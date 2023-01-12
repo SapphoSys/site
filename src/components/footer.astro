@@ -3,26 +3,26 @@ import Link from '@components/link.astro';
 ---
 
 <footer>
-    <slot />
-    <hr />
+  <slot />
+  <hr />
 
-    <span>
-        © {new Date().getFullYear()}
-        Chloe Arciniega.
-    </span>
+  <span>
+    © {new Date().getFullYear()}
+    Chloe Arciniega.
+  </span>
 
-    <nav>
-        <Link href="/" title="Home" rel="prefetch">Home</Link> |
-        <Link href="/blog" title="Blog" rel="prefetch">Blog</Link> |
-        <Link href="/credits.txt" title="Credits" rel="prefetch">Credits</Link> |
-        <Link href="/domains.txt" title="Domains" rel="prefetch">Domains</Link> |
-        <Link href="https://github.com/solelychloe/arciniega.one" title="Source code" target="_blank">Source</Link>
-    </nav>
+  <nav>
+    <Link href="/" title="Home" rel="prefetch">Home</Link> |
+    <Link href="/blog" title="Blog" rel="prefetch">Blog</Link> |
+    <Link href="/credits.txt" title="Credits" rel="prefetch">Credits</Link> |
+    <Link href="/domains.txt" title="Domains" rel="prefetch">Domains</Link> |
+    <Link href="https://github.com/solelychloe/arciniega.one" title="Source code" target="_blank">Source</Link>
+  </nav>
 </footer>
 
 <style>
-    footer {
-        margin-top: 1em;
-        text-align: center;
-    }
+  footer {
+    margin-top: 1em;
+    text-align: center;
+  }
 </style>

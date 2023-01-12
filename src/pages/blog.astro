@@ -2,71 +2,75 @@
 import { Icon } from 'astro-icon';
 
 import Layout from '@layouts/page.astro';
+import type { MarkdownLayoutProps } from 'astro';
+import type { PostFrontmatter } from '~/types';
 
 import Footer from '@components/footer.astro';
 import Line from '@components/underline.astro';
 
+type Post = MarkdownLayoutProps<PostFrontmatter>;
+
 // Obtain posts from "blog/", sort it by date and hide draft posts.
-const retrieved = (await Astro.glob('../pages/posts/*.{md,mdx}')).sort(
-    (a, b) => new Date(b.frontmatter.created).valueOf() - new Date(a.frontmatter.created).valueOf()
+const retrieved = (await Astro.glob<Post>('../pages/posts/*.{md,mdx}')).sort(
+  (a, b) => new Date(b.frontmatter.created).valueOf() - new Date(a.frontmatter.created).valueOf()
 );
 
 const posts = retrieved.filter((post) => !post.frontmatter.draft);
 ---
 
 <Layout
-    description="A personal blog, comprising of whatever stuff I find interesting to post."
-    siteName="arciniega.one"
-    title="Blog | Chloe Arciniega"
+  description="A personal blog, comprising of whatever stuff I find interesting to post."
+  siteName="arciniega.one"
+  title="Blog | Chloe Arciniega"
 >
-    <Line>My blog</Line>
+  <Line>My blog</Line>
 
-    {
-        posts.map((post) => (
-            <article>
-                {post.frontmatter.title && (
-                    <h2 class="title">
-                        <a href={post.url} title={post.frontmatter.title}>
-                            {post.frontmatter.title}
-                        </a>
-                    </h2>
-                )}
-                {post.frontmatter.created && (
-                    <time class="date">
-                        <Icon size={20} name="mdi:calendar" />
-                        {new Date(post.frontmatter.created).toLocaleDateString('en-us', {
-                            year: 'numeric',
-                            month: 'short',
-                            day: 'numeric',
-                        })}
-                    </time>
-                )}
-                |
-                {post.frontmatter.author && (
-                    <span class="author">
-                        <Icon size={20} name="mdi:account" />
-                        {post.frontmatter.author}
-                    </span>
-                )}
-                {post.frontmatter.tags ? (
-                    <p class="tags">
-                        <Icon size={20} name="mdi:tag" />
-                        {post.frontmatter.tags && post.frontmatter.tags.join(', ')}
-                    </p>
-                ) : null}
-            </article>
-        ))
+  {
+    posts.map((post) => (
+      <article>
+        {post.frontmatter.title && (
+          <h2 class="title">
+            <a href={post.url} title={post.frontmatter.title}>
+              {post.frontmatter.title}
+            </a>
+          </h2>
+        )}
+        {post.frontmatter.created && (
+          <time class="date">
+            <Icon size={20} name="mdi:calendar" />
+            {new Date(post.frontmatter.created).toLocaleDateString('en-us', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric',
+            })}
+          </time>
+        )}
+        |
+        {post.frontmatter.author && (
+          <span class="author">
+            <Icon size={20} name="mdi:account" />
+            {post.frontmatter.author}
+          </span>
+        )}
+        {post.frontmatter.tags ? (
+          <p class="tags">
+            <Icon size={20} name="mdi:tag" />
+            {post.frontmatter.tags && post.frontmatter.tags.join(', ')}
+          </p>
+        ) : null}
+      </article>
+    ))
+  }
+
+  <Footer />
+
+  <style>
+    a:visited {
+      color: #cc8c93;
     }
 
-    <Footer />
-
-    <style>
-        a:visited {
-            color: #cc8c93;
-        }
-
-        [astro-icon] {
-            margin-bottom: -4px;
-        }
-    </style>
+    [astro-icon] {
+      margin-bottom: -4px;
+    }
+  </style>
 </Layout>

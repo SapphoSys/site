@@ -1,41 +1,41 @@
 {
-    "name": "site",
-    "version": "3.5.0",
-    "author": "Chloe Arciniega <solely@riseup.net>",
-    "license": "MIT",
-    "type": "module",
-    "private": true,
-    "scripts": {
-        "astro": "astro",
-        "astro:check": "astro check",
-        "build": "yarn build:check && yarn lint && astro build",
-        "build:check": "yarn astro:check && tsc --noEmit",
-        "dev": "yarn start:dev",
-        "lint": "prettier --write .",
-        "start": "yarn lint && astro preview",
-        "start:dev": "yarn lint && astro dev"
-    },
-    "dependencies": {
-        "@astrojs/mdx": "^0.13.0",
-        "@astrojs/prefetch": "^0.1.1",
-        "@astrojs/rss": "^2.0.0",
-        "@astrojs/sitemap": "^1.0.0",
-        "@fontsource/inter": "^4.5.14",
-        "astro": "^1.6.0",
-        "astro-compress": "^1.1.22",
-        "astro-icon": "^0.8.0",
-        "astro-seo": "^0.6.0",
-        "autoprefixer": "^10.4.13",
-        "cssnano": "^5.1.14",
-        "postcss": "^8.4.20",
-        "rehype-autolink-headings": "^6.1.1",
-        "rehype-external-links": "^2.0.1",
-        "rehype-slug": "^5.1.0"
-    },
-    "devDependencies": {
-        "@types/prettier": "^2.7.1",
-        "prettier-plugin-astro": "^0.7.2",
-        "sass": "^1.57.1",
-        "svgo": "2.8.0"
-    }
+  "name": "site",
+  "version": "3.5.0",
+  "type": "module",
+  "author": "Chloe Arciniega <solely@riseup.net>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "astro": "astro",
+    "astro:check": "astro check",
+    "build": "yarn build:check && yarn lint && astro build",
+    "build:check": "yarn astro:check && tsc --noEmit",
+    "dev": "yarn start:dev",
+    "lint": "prettier --write .",
+    "start": "yarn lint && astro preview",
+    "start:dev": "yarn lint && astro dev"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^0.14.0",
+    "@astrojs/prefetch": "^0.1.1",
+    "@astrojs/rss": "^2.0.0",
+    "@astrojs/sitemap": "^1.0.0",
+    "@fontsource/inter": "^4.5.14",
+    "astro": "^1.9.2",
+    "astro-compress": "^1.1.25",
+    "astro-icon": "^0.8.0",
+    "astro-seo": "^0.6.1",
+    "autoprefixer": "^10.4.13",
+    "cssnano": "^5.1.14",
+    "postcss": "^8.4.20",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-external-links": "^2.0.1",
+    "rehype-slug": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/prettier": "^2.7.1",
+    "prettier-plugin-astro": "^0.7.2",
+    "sass": "^1.57.1",
+    "svgo": "2.8.0"
+  }
 }

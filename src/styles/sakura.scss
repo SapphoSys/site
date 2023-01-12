@@ -10,40 +10,40 @@
 
 /* Body */
 html {
-    font-family: $font;
-    font-size: 63%;
+  font-family: $font;
+  font-size: 63%;
 }
 
 body {
-    background-color: $background;
-    color: $text;
-    font-size: $text-size;
-    line-height: 1.5;
-    margin: auto;
-    max-width: 42em;
-    padding: 15px;
+  background-color: $background;
+  color: $text;
+  font-size: $text-size;
+  line-height: 1.5;
+  margin: auto;
+  max-width: 42em;
+  padding: 15px;
 }
 
 // Compatibility with phones
 @media (max-width: 684px) {
-    body {
-        font-size: $text-size * 0.85;
-    }
+  body {
+    font-size: $text-size * 0.85;
+  }
 }
 
 // Compatibility with small phones
 @media (max-width: 382px) {
-    body {
-        font-size: $text-size * 0.75;
-    }
+  body {
+    font-size: $text-size * 0.75;
+  }
 }
 
 // Word wrapping
 @mixin word-wrap() {
-    overflow-wrap: break-word;
-    word-break: break-word;
-    word-wrap: break-word;
-    -ms-word-break: break-all;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
 }
 
 // Text
@@ -53,67 +53,67 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $font;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    margin-top: 3rem;
+  font-family: $font;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  margin-top: 3rem;
 
-    @include word-wrap;
+  @include word-wrap;
 }
 
 h1 {
-    font-size: 2.35em;
+  font-size: 2.35em;
 }
 h2 {
-    font-size: 2em;
+  font-size: 2em;
 }
 h3 {
-    font-size: 1.75em;
+  font-size: 1.75em;
 }
 h4 {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 h5 {
-    font-size: 1.25em;
+  font-size: 1.25em;
 }
 h6 {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 p {
-    margin-top: 0px;
+  margin-top: 0px;
 }
 
 small,
 sub,
 sup {
-    font-size: 75%;
+  font-size: 75%;
 }
 
 a {
-    color: $accent;
-    text-decoration: none;
+  color: $accent;
+  text-decoration: none;
 
-    &:hover {
-        border-bottom: 2px solid $text;
-        color: $hover;
-    }
+  &:hover {
+    border-bottom: 2px solid $text;
+    color: $hover;
+  }
 }
 
 // List layout
 ul {
-    margin-bottom: 2.5rem;
-    margin-top: 0px;
-    padding-left: 1.4em;
+  margin-bottom: 2.5rem;
+  margin-top: 0px;
+  padding-left: 1.4em;
 }
 
 li {
-    margin-bottom: 0.4em;
+  margin-bottom: 0.4em;
 }
 
 img {
-    height: auto;
-    margin-top: 0px;
-    max-width: 100%;
+  height: auto;
+  margin-top: 0px;
+  max-width: 100%;
 }

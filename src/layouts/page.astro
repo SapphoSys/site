@@ -5,29 +5,29 @@ import '@fontsource/inter';
 import '@styles/sakura.scss';
 
 interface Props {
-    description: string;
-    siteName?: string;
-    title: string;
+  description: string;
+  siteName?: string;
+  title: string;
 }
 
 const { content } = Astro.props;
 
 const {
-    description = content.description ?? '',
-    siteName = content.siteName ?? '',
-    title = content.title ?? '',
+  description = content.description ?? '',
+  siteName = content.siteName ?? '',
+  title = content.title ?? '',
 } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <Head description={description} siteName={siteName} title={title}>
-            <slot name="head" />
-        </Head>
-    </head>
+  <head>
+    <Head description={description} siteName={siteName} title={title}>
+      <slot name="head" />
+    </Head>
+  </head>
 
-    <body>
-        <slot />
-    </body>
+  <body>
+    <slot />
+  </body>
 </html>
