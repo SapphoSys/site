@@ -3,6 +3,7 @@ export interface PostFrontmatter {
     comments: Boolean;
     created: Date;
     description: string;
+    draft: Boolean;
     image?: {
         alt?: string;
         url?: string;
