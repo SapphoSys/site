@@ -1,7 +1,5 @@
 // Base configuration for this website.
 export const base = {
-  // The accent color for this website
-  color: '#e0802c',
   // The favicon for this website
   favicon: {
     // Alt text for the favicon
@@ -18,6 +16,8 @@ export const base = {
   },
   // SEO information
   seo: {
+    // The site's accent color that will appear in embeds
+    color: '#e0802c',
     // Keywords for search engines
     keywords: ['solelychloe', 'chloe arciniega', 'solely chloe', 'chloe solely'],
   },
@@ -26,7 +26,7 @@ export const base = {
 };
 
 // Social links that appear on the home page.
-// If you don't want to link anything here, leave this object empty. Don't uncomment or remove this, as you'll face errors!
+// If you don't want to link anything here, you can remove this object.
 export const socials = {
   // Your Discord tag and ID
   discord: {

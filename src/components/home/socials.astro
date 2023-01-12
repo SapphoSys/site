@@ -2,9 +2,9 @@
 import { socials } from '~/constants.cjs';
 ---
 
-<section class="links">
+{ socials && <section class="links">
   {
-    socials?.discord ? (
+    socials?.discord && (
       <a
         href={`https://discord.com/users/${socials.discord.id}`}
         title={`Discord: ${socials.discord.alt}`}
@@ -12,32 +12,32 @@ import { socials } from '~/constants.cjs';
       >
         Discord [{socials.discord.alt}]
       </a>
-    ) : null
+    )
   }
 
   {
-    socials?.mastodon ? (
+    socials?.mastodon && (
       <a href={socials.mastodon.link} title={`Mastodon: ${socials.mastodon.alt}`} target="_blank">
         Mastodon
       </a>
-    ) : null
+    )
   }
   {
-    socials?.github ? (
+    socials?.github && (
       <a href={`https://github.com/${socials.github}`} title={`GitHub: ${socials.github}`} target="_blank">
         {'GitHub'}
       </a>
-    ) : null
+    )
   }
   {
-    socials?.telegram ? (
+    socials?.telegram && (
       <a href={`https://t.me/${socials.telegram}`} title={`Telegram: ${socials.telegram}`} target="_blank">
         Telegram
       </a>
-    ) : null
+    )
   }
   {
-    socials?.mail ? (
+    socials?.mail && (
       <a
         href={`mailto:${socials.mail}`}
         aria-label={`Mail: ${socials.mail}`}
@@ -46,9 +46,9 @@ import { socials } from '~/constants.cjs';
       >
         Mail
       </a>
-    ) : null
+    )
   }
-</section>
+</section> }
 
 <style>
   .links {

@@ -1,6 +1,6 @@
 {
   "name": "site",
-  "version": "3.5.0",
+  "version": "3.5.2",
   "type": "module",
   "author": "Chloe Arciniega <solely@riseup.net>",
   "license": "MIT",
@@ -15,6 +15,7 @@
     "start": "yarn lint && astro preview",
     "start:dev": "yarn lint && astro dev"
   },
+  "packageManager": "yarn@3.3.1",
   "dependencies": {
     "@astrojs/mdx": "^0.14.0",
     "@astrojs/prefetch": "^0.1.1",
@@ -27,15 +28,16 @@
     "astro-seo": "^0.6.1",
     "autoprefixer": "^10.4.13",
     "cssnano": "^5.1.14",
-    "postcss": "^8.4.20",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.2",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-external-links": "^2.0.1",
     "rehype-slug": "^5.1.0"
   },
   "devDependencies": {
-    "@types/prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.7.2",
     "sass": "^1.57.1",
-    "svgo": "2.8.0"
+    "svgo": "2.8.0",
+    "typescript": "^4.9.4"
   }
 }

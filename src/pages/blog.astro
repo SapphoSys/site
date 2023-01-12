@@ -52,12 +52,15 @@ const posts = retrieved.filter((post) => !post.frontmatter.draft);
             {post.frontmatter.author}
           </span>
         )}
-        {post.frontmatter.tags ? (
-          <p class="tags">
+        {!!post.frontmatter.tags && (
+          <div class="tags">
             <Icon size={20} name="mdi:tag" />
-            {post.frontmatter.tags && post.frontmatter.tags.join(', ')}
-          </p>
-        ) : null}
+            {post.frontmatter.tags.map(( tag => (
+                <span class="tag">{tag}</span>
+            ))
+            )}
+          </div>
+        )}
       </article>
     ))
   }

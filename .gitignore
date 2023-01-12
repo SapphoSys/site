@@ -4,6 +4,7 @@ dist/
 
 # dependencies
 node_modules/
+.yarn/cache
 
 # logs
 logs
@@ -14,6 +15,7 @@ yarn-error.log*
 
 # yarn
 .yarn-integrity
+.yarn/install-state.gz
 
 # environment variables
 .env
