@@ -3,7 +3,7 @@
   "version": "3.5.2",
   "type": "module",
   "author": "Chloe Arciniega <solely@riseup.net>",
-  "license": "MIT",
+  "license": "zlib",
   "private": true,
   "scripts": {
     "astro": "astro",

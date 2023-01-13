@@ -44,12 +44,12 @@ You're now up and running!
 
 ## License
 
-This website is licensed under the [MIT][license] License.
+This website is licensed under the [zlib][license] License.
 
 © 2023 Chloe Arciniega.
 
 [astro]: https://astro.build 'Astro'
-[license]: https://github.com/solelychloe/arciniega.one/blob/main/LICENSE 'MIT License'
+[license]: https://github.com/solelychloe/arciniega.one/blob/main/LICENSE 'zlib License'
 [site]: https://www.arciniega.one 'arciniega.one'
 
 [heroku]: https://heroku.com/deploy?template=https://github.com/solelychloe/arciniega.one 'Deploy to Heroku'
