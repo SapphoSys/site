@@ -1,6 +1,6 @@
 import rss from '@astrojs/rss';
 
-import { feed } from '../constants.cjs';
+import { feed } from '@config';
 import type { PostFrontmatter } from '~/types';
 
 interface Post {

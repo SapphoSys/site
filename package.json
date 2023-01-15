@@ -8,12 +8,12 @@
   "scripts": {
     "astro": "astro",
     "astro:check": "astro check",
-    "build": "yarn build:check && yarn lint && astro build",
+    "build": "yarn build:check && astro build",
     "build:check": "yarn astro:check && tsc --noEmit",
     "dev": "yarn start:dev",
-    "lint": "prettier --write .",
-    "start": "yarn lint && astro preview",
-    "start:dev": "yarn lint && astro dev"
+    "lint": "prettier --w --plugin-search-dir=. .",
+    "start": "astro preview",
+    "start:dev": "astro dev"
   },
   "packageManager": "yarn@3.3.1",
   "dependencies": {
@@ -35,6 +35,7 @@
     "rehype-slug": "^5.1.0"
   },
   "devDependencies": {
+    "@types/prettier": "^2.7.2",
     "prettier-plugin-astro": "^0.7.2",
     "sass": "^1.57.1",
     "svgo": "2.8.0",

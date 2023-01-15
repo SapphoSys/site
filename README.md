@@ -19,7 +19,7 @@ _GitHub Pages is not recommended for deploying this site._
 
 To customize and tailor this website for yourself, you'll want to:
 
-- Edit the `src/constants.cjs` file. This acts as the website's configuration. 
+- Edit the `src/site.config.ts` file. This acts as the website's configuration. 
 - Edit the `me.astro` and `description.mdx` files found in the `src/components/home/` folder to your credentials.
 - Edit the footer in `src/components/footer.astro`.
 - Edit the `index.mdx` and `projects.mdx` files in `src/pages/`. This is the main content that will be displayed on the site.

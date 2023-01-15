@@ -5,7 +5,7 @@ import Comments from '@components/blog/comments.astro';
 import Footer from '@components/footer.astro';
 import Line from '@components/underline.astro';
 
-import { feed } from '~/constants.cjs';
+import { feed } from '@config';
 import { Icon } from 'astro-icon';
 import type { MarkdownLayoutProps } from 'astro';
 import type { PostFrontmatter } from '~/types';
@@ -13,11 +13,11 @@ import type { PostFrontmatter } from '~/types';
 type Props = MarkdownLayoutProps<PostFrontmatter>;
 
 const { frontmatter } = Astro.props as Props;
-const checkComments = (feed.comments && frontmatter.comments) ?? true;
+const checkComments = () => (feed.comments && frontmatter.comments) ?? true;
 ---
 
 <Layout description={frontmatter.description} siteName={Astro.site?.hostname} title={frontmatter.title}>
-  {checkComments && <meta slot="head" name="giscus:backlink" content={Astro.url.pathname} />}
+  {checkComments() && <meta slot="head" name="giscus:backlink" content={Astro.url.pathname} />}
   <Line>My blog</Line>
 
   <!-- Title -->
@@ -57,7 +57,7 @@ const checkComments = (feed.comments && frontmatter.comments) ?? true;
   <slot />
 
   <!-- Comments provided by Giscus -->
-  {checkComments && <Comments />}
+  {checkComments() && <Comments />}
 
   <!-- Footer -->
   <Footer />

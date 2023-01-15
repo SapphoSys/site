@@ -1,54 +1,48 @@
 ---
-import { socials } from '~/constants.cjs';
+import { socials } from '@config';
 ---
 
-{ socials && <section class="links">
-  {
-    socials?.discord && (
-      <a
-        href={`https://discord.com/users/${socials.discord.id}`}
-        title={`Discord: ${socials.discord.alt}`}
-        target="_blank"
-      >
-        Discord [{socials.discord.alt}]
-      </a>
-    )
-  }
+{
+  socials && (
+    <section class="links">
+      {socials?.discord && (
+        <a
+          href={`https://discord.com/users/${socials.discord.id}`}
+          title={`Discord: ${socials.discord.alt}`}
+          target="_blank"
+        >
+          Discord [{socials.discord.alt}]
+        </a>
+      )}
 
-  {
-    socials?.mastodon && (
-      <a href={socials.mastodon.link} title={`Mastodon: ${socials.mastodon.alt}`} target="_blank">
-        Mastodon
-      </a>
-    )
-  }
-  {
-    socials?.github && (
-      <a href={`https://github.com/${socials.github}`} title={`GitHub: ${socials.github}`} target="_blank">
-        {'GitHub'}
-      </a>
-    )
-  }
-  {
-    socials?.telegram && (
-      <a href={`https://t.me/${socials.telegram}`} title={`Telegram: ${socials.telegram}`} target="_blank">
-        Telegram
-      </a>
-    )
-  }
-  {
-    socials?.mail && (
-      <a
-        href={`mailto:${socials.mail}`}
-        aria-label={`Mail: ${socials.mail}`}
-        title={`Mail: ${socials.mail}`}
-        target="_blank"
-      >
-        Mail
-      </a>
-    )
-  }
-</section> }
+      {socials?.mastodon && (
+        <a href={socials.mastodon.link} title={`Mastodon: ${socials.mastodon.alt}`} target="_blank">
+          Mastodon
+        </a>
+      )}
+      {socials?.github && (
+        <a href={`https://github.com/${socials.github}`} title={`GitHub: ${socials.github}`} target="_blank">
+          {'GitHub'}
+        </a>
+      )}
+      {socials?.telegram && (
+        <a href={`https://t.me/${socials.telegram}`} title={`Telegram: ${socials.telegram}`} target="_blank">
+          Telegram
+        </a>
+      )}
+      {socials?.mail && (
+        <a
+          href={`mailto:${socials.mail}`}
+          aria-label={`Mail: ${socials.mail}`}
+          title={`Mail: ${socials.mail}`}
+          target="_blank"
+        >
+          Mail
+        </a>
+      )}
+    </section>
+  )
+}
 
 <style>
   .links {

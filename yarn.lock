@@ -912,6 +912,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prettier@npm:^2.7.2":
+  version: 2.7.2
+  resolution: "@types/prettier@npm:2.7.2"
+  checksum: b47d76a5252265f8d25dd2fe2a5a61dc43ba0e6a96ffdd00c594cb4fd74c1982c2e346497e3472805d97915407a09423804cc2110a0b8e1b22cffcab246479b7
+  languageName: node
+  linkType: hard
+
 "@types/resolve@npm:^1.17.0":
   version: 1.20.2
   resolution: "@types/resolve@npm:1.20.2"
@@ -6164,6 +6171,7 @@ __metadata:
     "@astrojs/rss": ^2.0.0
     "@astrojs/sitemap": ^1.0.0
     "@fontsource/inter": ^4.5.14
+    "@types/prettier": ^2.7.2
     astro: ^1.9.2
     astro-compress: ^1.1.25
     astro-icon: ^0.8.0

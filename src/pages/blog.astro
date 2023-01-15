@@ -1,6 +1,8 @@
 ---
 import { Icon } from 'astro-icon';
 
+import { base } from '@config';
+
 import Layout from '@layouts/page.astro';
 import type { MarkdownLayoutProps } from 'astro';
 import type { PostFrontmatter } from '~/types';
@@ -24,6 +26,13 @@ const posts = retrieved.filter((post) => !post.frontmatter.draft);
   title="Blog | Chloe Arciniega"
 >
   <Line>My blog</Line>
+
+  <p>A personal blog, comprising of whatever stuff I find interesting to post.</p>
+
+  <a class="subscribe" href={`https://${base.site}/rss.xml`}>
+    <Icon size={20} name="mdi:rss" />
+    Subscribe to RSS
+  </a>
 
   {
     posts.map((post) => (
@@ -52,15 +61,12 @@ const posts = retrieved.filter((post) => !post.frontmatter.draft);
             {post.frontmatter.author}
           </span>
         )}
-        {!!post.frontmatter.tags && (
+        {!!post.frontmatter.tags ? (
           <div class="tags">
             <Icon size={20} name="mdi:tag" />
-            {post.frontmatter.tags.map(( tag => (
-                <span class="tag">{tag}</span>
-            ))
-            )}
+            {post.frontmatter.tags && post.frontmatter.tags.join(', ')}
           </div>
-        )}
+        ) : null}
       </article>
     ))
   }
@@ -68,12 +74,8 @@ const posts = retrieved.filter((post) => !post.frontmatter.draft);
   <Footer />
 
   <style>
-    a:visited {
-      color: #cc8c93;
-    }
-
     [astro-icon] {
-      margin-bottom: -4px;
+      margin-bottom: -3px;
     }
   </style>
 </Layout>
