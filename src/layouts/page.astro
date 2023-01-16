@@ -1,14 +1,10 @@
 ---
 import Head from '@components/head.astro';
 
+import type { PageProps } from '~/types';
+
 import '@fontsource/inter';
 import '@styles/sakura.scss';
-
-interface Props {
-  description: string;
-  siteName?: string;
-  title: string;
-}
 
 const { content } = Astro.props;
 
@@ -16,7 +12,7 @@ const {
   description = content.description ?? '',
   siteName = content.siteName ?? '',
   title = content.title ?? '',
-} = Astro.props as Props;
+} = Astro.props as PageProps;
 ---
 
 <!DOCTYPE html>

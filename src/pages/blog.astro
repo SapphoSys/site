@@ -29,7 +29,7 @@ const posts = retrieved.filter((post) => !post.frontmatter.draft);
 
   <p>A personal blog, comprising of whatever stuff I find interesting to post.</p>
 
-  <a class="subscribe" href={`https://${base.site}/rss.xml`}>
+  <a class="subscribe" title="Subscribe to RSS feed" href={`https://${base.site}/rss.xml`}>
     <Icon size={20} name="mdi:rss" />
     Subscribe to RSS
   </a>
@@ -37,6 +37,7 @@ const posts = retrieved.filter((post) => !post.frontmatter.draft);
   {
     posts.map((post) => (
       <article>
+        <!-- Title -->
         {post.frontmatter.title && (
           <h2 class="title">
             <a href={post.url} title={post.frontmatter.title}>
@@ -44,6 +45,7 @@ const posts = retrieved.filter((post) => !post.frontmatter.draft);
             </a>
           </h2>
         )}
+        <!-- Date & author -->
         {post.frontmatter.created && (
           <time class="date">
             <Icon size={20} name="mdi:calendar" />
@@ -61,6 +63,7 @@ const posts = retrieved.filter((post) => !post.frontmatter.draft);
             {post.frontmatter.author}
           </span>
         )}
+        <!-- Tags -->
         {!!post.frontmatter.tags ? (
           <div class="tags">
             <Icon size={20} name="mdi:tag" />

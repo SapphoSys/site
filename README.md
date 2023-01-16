@@ -19,15 +19,14 @@ _GitHub Pages is not recommended for deploying this site._
 
 To customize and tailor this website for yourself, you'll want to:
 
-- Edit the `src/site.config.ts` file. This acts as the website's configuration. 
-- Edit the `me.astro` and `description.mdx` files found in the `src/components/home/` folder to your credentials.
-- Edit the footer in `src/components/footer.astro`.
-- Edit the `index.mdx` and `projects.mdx` files in `src/pages/`. This is the main content that will be displayed on the site.
+- Edit the [`site.config.ts`](src/site.config.ts) file. This acts as the website's configuration. 
+- Edit the [`footer.astro`](src/components/footer.astro) file.
+- Edit the [`index.mdx`](src/pages/index.mdx) file. This is the main content that will be displayed on the site.
 - Optional:
-    - Change the `site` variable in `astro.config.mjs` if you plan on making your site public.
-    - Edit the variables found in `src/styles/custom.scss` to stylize the website to your needs.
-    - Edit the `public/` folder's contents. 
-        - I would appreciate if you credited me in the `public/credits.txt` file if you do decide to edit that. ❤️
+    - Change the `site` variable in [`astro.config.ts`](astro.config.ts) if you plan on making your site public.
+    - Edit the variables found in [`custom.scss`](src/styles/custom.scss) to stylize the website to your needs.
+    - Edit the [`public`](public/) folder's contents. 
+        - I would appreciate if you credited me in the [`public/credits.txt`](public/credits.txt) file if you do decide to edit that. ❤️
 
 ## Hosting in a local environment
 
@@ -38,7 +37,7 @@ To customize and tailor this website for yourself, you'll want to:
 3. `yarn install`
 
 - To preview, run `yarn dev`. Pages will update automatically on file save.
-- To build your site, run `yarn build`. Afterwards, you can run `yarn start` to serve the site from the `dist/` folder.
+- To build, run `yarn build`. Afterwards, you can run `yarn start` to serve the site from the `dist/` folder.
 
 You're now up and running!
 

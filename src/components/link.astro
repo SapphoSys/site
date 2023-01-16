@@ -8,7 +8,8 @@ export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
 const { icon, href, class: className, ...props } = Astro.props;
 ---
 
+<!-- prettier-ignore -->
 <a href={href} class:list={[className]} {...props}>
   <slot />
-  {props.target ? <Icon size={10} name="mdi:external-link" /> : null}
+  {props.target && <Icon size={10} name="mdi:external-link" />}
 </a>

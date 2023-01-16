@@ -8,11 +8,12 @@ import Line from '@components/underline.astro';
 import { feed } from '@config';
 import { Icon } from 'astro-icon';
 import type { MarkdownLayoutProps } from 'astro';
-import type { PostFrontmatter } from '~/types';
 
+import type { PostFrontmatter } from '~/types';
 type Props = MarkdownLayoutProps<PostFrontmatter>;
 
 const { frontmatter } = Astro.props as Props;
+
 const checkComments = () => (feed.comments && frontmatter.comments) ?? true;
 ---
 

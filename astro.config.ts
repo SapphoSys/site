@@ -16,8 +16,6 @@ export default defineConfig({
   site: 'https://www.arciniega.one',
   integrations: [
     mdx({
-      extendPlugins: true,
-      drafts: true,
       rehypePlugins: [slug, autolinkHeadings, [externalLinks, { target: '_blank', rel: ['nofollow', 'noopener'] }]],
     }),
     prefetch(),
