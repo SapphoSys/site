@@ -1,11 +1,13 @@
 ---
 import { Icon } from 'astro-icon';
 
+/* eslint-disable */
 export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
   icon?: string;
 }
+/* eslint-enable */
 
-const { icon, href, class: className, ...props } = Astro.props;
+const { href, class: className, ...props } = Astro.props;
 ---
 
 <!-- prettier-ignore -->

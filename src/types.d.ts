@@ -9,15 +9,15 @@
  */
 export interface PostFrontmatter {
   author: string;
-  comments: Boolean;
-  created: Date;
+  comments: boolean;
+  created: string;
   description: string;
-  draft: Boolean;
+  draft: boolean;
   image?: {
     alt?: string;
     url?: string;
   };
-  tags?: Array<String>;
+  tags?: Array<string>;
   title: string;
 }
 

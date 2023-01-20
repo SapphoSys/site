@@ -25,6 +25,22 @@ export const base = {
   site: 'arciniega.one',
 };
 
+export const blog = {
+  // Whether to allow GitHub discussion comments provided via Giscus on your blog posts or not.
+  // See <https://giscus.app/> for more information and edit src/components/blog/comments.astro if set to true.
+  comments: true,
+  defaultAuthor: 'Chloe A.',
+};
+
+// prettier-ignore
+// RSS feed for my blog.
+export const feed = {
+  // Description for the RSS feed
+  description: 'A personal blog, comprising of whatever stuff I find interesting to post.',
+  // Title for the RSS feed
+  title: 'Chloe\'s Posts'
+};
+
 // Social links that appear on the home page.
 // If you don't want to link anything here, you can remove this object.
 export const socials = {
@@ -50,16 +66,4 @@ export const socials = {
   telegram: 'solelychloe',
   // Your Twitter username (will appear as https://twitter.com/yourusername)
   twitter: 'solelychloe',
-};
-
-// prettier-ignore
-// RSS feed for my blog.
-export const feed = {
-    // Whether to allow GitHub discussion comments provided via Giscus on your blog posts or not.
-    // See <https://giscus.app/> for more information and edit src/components/blog/comments.astro if set to true.
-    comments: true,
-    // Description for the RSS feed
-    description: 'A personal blog, comprising of whatever stuff I find interesting to post.',
-    // Title for the RSS feed
-    title: 'Chloe\'s Posts'
 };

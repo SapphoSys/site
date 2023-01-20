@@ -1,0 +1,24 @@
+---
+import { getCollection, CollectionEntry } from 'astro:content';
+import Line from '@components/underline.astro';
+
+export async function getStaticPaths() {
+  const docs = await getCollection('posts');
+  return docs.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  // eslint-disable-next-line no-undef
+  entry: CollectionEntry<'posts'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Line>My blog</Line>
+
+<Content />

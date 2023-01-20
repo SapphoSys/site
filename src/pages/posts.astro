@@ -1,0 +1,84 @@
+---
+import Layout from '@layouts/page.astro';
+
+import Footer from '@components/footer.astro';
+import Line from '@components/underline.astro';
+
+import { base } from '@config';
+
+import { format, parseISO } from 'date-fns';
+import { getCollection } from 'astro:content';
+import { Icon } from 'astro-icon';
+
+import type { PostFrontmatter } from '~/types';
+
+const fm = (d: Date) => format(d, 'MMM do, yyyy');
+
+// Obtain posts from the desired folder, hide drafts, sort it by date.
+const collection = await getCollection('posts', ({ data }) => !data.draft);
+const posts = collection.sort((a, b) => new Date(b.data.created).valueOf() - new Date(a.data.created).valueOf());
+
+const createdAt = (post: PostFrontmatter) => post.created && fm(parseISO(post.created));
+---
+
+<Layout
+  description="A personal blog, comprising of whatever stuff I find interesting to post."
+  siteName="arciniega.one"
+  title="Blog | Chloe Arciniega"
+>
+  <Line>My blog</Line>
+
+  <p class="description">A personal blog, comprising of whatever stuff I find interesting to post.</p>
+
+  <a class="subscribe" title="Subscribe to RSS feed" href={`https://${base.site}/rss.xml`}>
+    <Icon size={20} name="mdi:rss" />
+    Subscribe to RSS
+  </a>
+
+  {
+    posts.map(async (post) => (
+      <article>
+        {post.data.title && (
+          <h2 class="title">
+            <a href={`${post.collection}/${post.slug}`} title={post.data.title}>
+              {post.data.title}
+            </a>
+          </h2>
+        )}
+
+        {post.data.created && (
+          <time class="date">
+            <Icon size={20} name="mdi:calendar" />
+            {createdAt(post.data)}
+          </time>
+        )}
+
+        {post.data.author && (
+          <span class="author">
+            <Icon size={20} name="mdi:account" />
+            {post.data.author}
+          </span>
+        )}
+
+        {post.data.tags ? (
+          <div class="tags">
+            <Icon size={20} name="mdi:tag" />
+            {post.data.tags && post.data.tags.join(', ')}
+          </div>
+        ) : null}
+      </article>
+    ))
+  }
+
+  <Footer />
+
+  <style>
+    [astro-icon] {
+      margin-bottom: -3px;
+    }
+
+    p.description {
+      font-style: italic;
+    }
+  </style>
+</Layout>

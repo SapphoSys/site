@@ -3,23 +3,27 @@ import Layout from '@layouts/page.astro';
 
 import Comments from '@components/blog/comments.astro';
 import Footer from '@components/footer.astro';
-import Line from '@components/underline.astro';
 
-import { feed } from '@config';
+import { blog } from '@config';
+
 import { Icon } from 'astro-icon';
-import type { MarkdownLayoutProps } from 'astro';
+import { format, parseISO } from 'date-fns';
 
+import type { MarkdownLayoutProps } from 'astro';
 import type { PostFrontmatter } from '~/types';
+
 type Props = MarkdownLayoutProps<PostFrontmatter>;
 
 const { frontmatter } = Astro.props as Props;
+const checkComments = () => (blog.comments && frontmatter.comments) ?? true;
 
-const checkComments = () => (feed.comments && frontmatter.comments) ?? true;
+const fm = (d: Date) => format(d, 'MMM do, yyyy');
+
+const createdAt = frontmatter.created && fm(parseISO(frontmatter.created));
 ---
 
 <Layout description={frontmatter.description} siteName={Astro.site?.hostname} title={frontmatter.title}>
   {checkComments() && <meta slot="head" name="giscus:backlink" content={Astro.url.pathname} />}
-  <Line>My blog</Line>
 
   <!-- Title -->
   <h2 class="title">{frontmatter.title}</h2>
@@ -27,15 +31,9 @@ const checkComments = () => (feed.comments && frontmatter.comments) ?? true;
   <!-- Date and author -->
   <time class="date">
     <Icon size={20} name="mdi:calendar" />
-    {
-      new Date(frontmatter.created).toLocaleDateString('en-us', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-      })
-    }
+    {createdAt}
   </time>
-  |
+
   <span class="author">
     <Icon size={20} name="mdi:account" />
     {frontmatter.author}
