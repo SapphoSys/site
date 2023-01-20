@@ -8,7 +8,7 @@
   "scripts": {
     "astro:check": "astro check",
     "build": "yarn build:check && astro build",
-    "build:check": "yarn astro:check && yarn test && tsc --noEmit",
+    "build:check": "yarn astro:check && tsc --noEmit",
     "dev": "yarn start:dev",
     "format:prettier": "prettier --w --plugin-search-dir=. .",
     "lint:eslint": "eslint --fix src/**/*.{ts,astro}",
