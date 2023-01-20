@@ -10,7 +10,7 @@
 
 /* Body */
 html {
-  font-family: $font;
+  font-family: $body-font;
   font-size: 63%;
 }
 
@@ -20,7 +20,7 @@ body {
   font-size: $text-size;
   line-height: 1.5;
   margin: auto;
-  max-width: 42em;
+  max-width: 40em;
   padding: 15px;
 }
 
@@ -53,7 +53,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font;
+  font-family: $title-font;
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 1.5rem;

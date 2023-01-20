@@ -699,6 +699,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/atkinson-hyperlegible@npm:^4.5.11":
+  version: 4.5.11
+  resolution: "@fontsource/atkinson-hyperlegible@npm:4.5.11"
+  checksum: 52840fc59e9320580669cb01e37f9968d36916ea88cf0cdc83cd9c94c38761138a808217c4ebf25f9ea29f893439dd0941f299bb2dbfe1030f432b4b572eb2a4
+  languageName: node
+  linkType: hard
+
 "@fontsource/inter@npm:^4.5.15":
   version: 4.5.15
   resolution: "@fontsource/inter@npm:4.5.15"
@@ -7291,6 +7298,7 @@ __metadata:
     "@astrojs/prefetch": ^0.1.1
     "@astrojs/rss": ^2.0.0
     "@astrojs/sitemap": ^1.0.0
+    "@fontsource/atkinson-hyperlegible": ^4.5.11
     "@fontsource/inter": ^4.5.15
     "@types/eslint": ^8.4.10
     "@types/prettier": ^2.7.2

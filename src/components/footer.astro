@@ -1,4 +1,5 @@
 ---
+import Bar from '@components/bar.astro';
 import Link from '@components/link.astro';
 ---
 
@@ -7,15 +8,19 @@ import Link from '@components/link.astro';
   <hr />
 
   <span>
-    © {new Date().getFullYear()}
+    &copy; {new Date().getFullYear()}
     Chloe Arciniega.
   </span>
 
   <nav>
-    <Link href="/" title="Home" rel="prefetch">Home</Link> |
-    <Link href="/posts" title="Posts" rel="prefetch">Posts</Link> |
-    <Link href="/credits.txt" title="Credits" rel="prefetch">Credits</Link> |
-    <Link href="/domains.txt" title="Domains" rel="prefetch">Domains</Link> |
+    <Link href="/" title="Home" rel="prefetch">Home</Link>
+    <Bar />
+    <Link href="/posts" title="Posts" rel="prefetch">Posts</Link>
+    <Bar />
+    <Link href="/credits.txt" title="Credits" rel="prefetch">Credits</Link>
+    <Bar />
+    <Link href="/domains.txt" title="Domains" rel="prefetch">Domains</Link>
+    <Bar />
     <Link href="https://github.com/solelychloe/arciniega.one" title="Source code" target="_blank">Source</Link>
   </nav>
 </footer>

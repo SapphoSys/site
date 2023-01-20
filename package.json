@@ -1,6 +1,6 @@
 {
   "name": "site",
-  "version": "3.5.5",
+  "version": "3.5.6",
   "type": "module",
   "author": "Chloe Arciniega <solely@riseup.net>",
   "license": "zlib",
@@ -23,6 +23,7 @@
     "@astrojs/prefetch": "^0.1.1",
     "@astrojs/rss": "^2.0.0",
     "@astrojs/sitemap": "^1.0.0",
+    "@fontsource/atkinson-hyperlegible": "^4.5.11",
     "@fontsource/inter": "^4.5.15",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "astro": "beta",

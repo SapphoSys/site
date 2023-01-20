@@ -3,15 +3,22 @@
     Licensed under zlib.
 */
 
-$font: 'Inter', -apple-system, system-ui, 'Helvetica', 'Arial', sans-serif;
+// Fonts, sizes, etc
+$fallback-fonts: -apple-system, system-ui, 'Helvetica', 'Arial', sans-serif;
+
+$title-font: 'Atkinson Hyperlegible', $fallback-fonts;
+$body-font: 'Inter', $fallback-fonts;
+
 $text-size: 1.8rem;
 
+// Colors
 $accent: #eb99a1;
 $background: #120c0e;
 $hover: #da4453;
 $pre: #40363a;
 $text: #d9d8dc;
 
+// Custom CSS code
 hr {
   border-color: $accent;
 }
@@ -19,4 +26,8 @@ hr {
 summary {
   color: $accent;
   cursor: pointer;
+}
+
+.bar {
+  font-family: $fallback-fonts;
 }
