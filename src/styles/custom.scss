@@ -23,6 +23,16 @@ hr {
   border-color: $accent;
 }
 
+details.description {
+  &[open] summary::after {
+    content: attr(data-open);
+  }
+
+  &:not([open]) summary::after {
+    content: attr(data-close);
+  }
+}
+
 summary {
   color: $accent;
   cursor: pointer;
@@ -30,4 +40,17 @@ summary {
 
 .bar {
   font-family: $fallback-fonts;
+}
+
+section.links,
+nav.footer-links {
+  font-family: $title-font;
+
+  &.links {
+    font-size: 1.2em;
+  }
+
+  &.footer-links {
+    font-size: 1.05em;
+  }
 }
