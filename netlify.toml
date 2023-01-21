@@ -1,4 +1,4 @@
 [build]
-  command = "astro build"
+  command = "yarn build"
   functions = "netlify/functions"
   publish = "dist"
