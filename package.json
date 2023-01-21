@@ -4,7 +4,6 @@
   "type": "module",
   "author": "Chloe Arciniega <solely@riseup.net>",
   "license": "zlib",
-  "private": true,
   "scripts": {
     "astro:check": "astro check",
     "build": "yarn build:check && astro build",
@@ -16,6 +15,10 @@
     "start:dev": "astro dev",
     "sync": "astro sync",
     "test": "eslint src/**/*.{ts,astro} && prettier --c ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/solelychloe/arciniega.one.git"
   },
   "packageManager": "yarn@3.3.1",
   "dependencies": {
