@@ -1,6 +1,6 @@
 # [arciniega.one][site]
 
-My own personal website, powered by [Astro][astro].
+My own personal website, powered by [Astro][astro] and [Tailwind CSS][tailwind].
 
 ## How to Deploy
 
@@ -21,12 +21,12 @@ To customize and tailor this website for yourself, you'll want to:
 
 - Edit the [`site.config.ts`](src/site.config.ts) file. This acts as the website's configuration. 
 - Edit the [`footer.astro`](src/components/footer.astro) file.
-- Edit the [`index.mdx`](src/pages/index.mdx) file. This is the main content that will be displayed on the site.
+- Edit the [`index.astro`](src/pages/index.astro) file. This is the main content that will be displayed on the site.
 - Optional:
     - Change the `site` variable in [`astro.config.ts`](astro.config.ts) if you plan on making your site public.
-    - Edit the variables found in [`custom.scss`](src/styles/custom.scss) to stylize the website to your needs.
+    - Edit the variables found in [`tailwind.config.cjs`](tailwind.config.cjs) to stylize the website to your needs.
     - Edit the [`public`](public/) folder's contents. 
-        - I would appreciate if you credited me in the [`public/credits.txt`](public/credits.txt) file if you do decide to edit that. ❤️
+        - I would appreciate if you credited me in the [`public/credits.txt`](public/credits.txt) file. ❤️
 
 ## Hosting in a local environment
 
@@ -43,13 +43,14 @@ You're now up and running!
 
 ## License
 
-This website is licensed under the [zlib][license] License.
+This website is licensed under the [zlib][license] license.
 
 &copy; 2023 Chloe Arciniega.
 
 [astro]: https://astro.build 'Astro'
 [license]: https://github.com/solelychloe/arciniega.one/blob/main/LICENSE 'zlib License'
 [site]: https://www.arciniega.one 'arciniega.one'
+[tailwind]: https://tailwindcss.com/ 'Tailwind CSS'
 
 [heroku]: https://heroku.com/deploy?template=https://github.com/solelychloe/arciniega.one 'Deploy to Heroku'
 [netlify]: https://app.netlify.com/start/deploy?repository=https://github.com/solelychloe/arciniega.one 'Deploy to Netlify'

@@ -1,12 +1,11 @@
 import { defineConfig } from 'astro/config';
 
-// Astro modules
 import mdx from '@astrojs/mdx';
 import prefetch from '@astrojs/prefetch';
 import sitemap from '@astrojs/sitemap';
+import tailwind from '@astrojs/tailwind';
 import compress from 'astro-compress';
 
-// Rehype modules
 import autolinkHeadings from 'rehype-autolink-headings';
 import externalLinks from 'rehype-external-links';
 import slug from 'rehype-slug';
@@ -15,8 +14,19 @@ import slug from 'rehype-slug';
 export default defineConfig({
   site: 'https://www.arciniega.one',
   integrations: [
+    tailwind(),
     mdx({
-      rehypePlugins: [slug, autolinkHeadings, [externalLinks, { target: '_blank', rel: ['nofollow', 'noopener'] }]],
+      rehypePlugins: [
+        slug,
+        autolinkHeadings,
+        [
+          externalLinks,
+          {
+            target: '_blank',
+            rel: ['nofollow', 'noopener'],
+          },
+        ],
+      ],
     }),
     prefetch(),
     sitemap(),

@@ -1,38 +1,34 @@
 ---
+import Link from '@components/link.astro';
+
 import { socials } from '@config';
 ---
 
 {
   /* prettier-ignore */
   socials && (
-    <section class="links">
+    <section class="links mb-12 font-['Atkinson_Hyperlegible'] text-[1.2em]">
       {socials?.discord && (
-        <a href={`https://discord.com/users/${socials.discord.id}`} title={`Discord: ${socials.discord.alt}`} target="_blank">
-          Discord [{socials.discord.alt}]</a>
+        <Link href={`https://discord.com/users/${socials.discord.id}`} title={`Discord: ${socials.discord.alt}`} target="_blank">
+          Discord [{socials.discord.alt}]</Link>
       )}
 
       {socials?.mastodon && (
-        <a href={socials.mastodon.link} title={`Mastodon: ${socials.mastodon.alt}`} target="_blank">
-          Mastodon</a>
+        <Link href={socials.mastodon.link} title={`Mastodon: ${socials.mastodon.alt}`} target="_blank">
+          Mastodon</Link>
       )}
       {socials?.github && (
-        <a href={`https://github.com/${socials.github}`} title={`GitHub: ${socials.github}`} target="_blank">
-          GitHub</a>
+        <Link href={`https://github.com/${socials.github}`} title={`GitHub: ${socials.github}`} target="_blank">
+          GitHub</Link>
       )}
       {socials?.telegram && (
-        <a href={`https://t.me/${socials.telegram}`} title={`Telegram: ${socials.telegram}`} target="_blank">
-          Telegram</a>
+        <Link href={`https://t.me/${socials.telegram}`} title={`Telegram: ${socials.telegram}`} target="_blank">
+          Telegram</Link>
       )}
       {socials?.mail && (
-        <a href={`mailto:${socials.mail}`} aria-label={`Mail: ${socials.mail}`} title={`Mail: ${socials.mail}`} target="_blank">
-          Mail</a>
+        <Link href={`mailto:${socials.mail}`} aria-label={`Mail: ${socials.mail}`} title={`Mail: ${socials.mail}`} target="_blank">
+          Mail</Link>
       )}
     </section>
   )
 }
-
-<style>
-  .links {
-    margin-top: -0.6em;
-  }
-</style>

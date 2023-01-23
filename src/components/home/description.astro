@@ -1,0 +1,30 @@
+---
+import Summary from './summary.md';
+---
+
+<details class="description">
+  <summary
+    class="text-accent"
+    data-open="Click to collapse..."
+    data-close="Click to expand..."
+    title="Click to expand or collapse..."
+  >
+  </summary>
+  <Summary />
+</details>
+
+<style lang="scss">
+  details.description {
+    &[open] summary::after {
+      content: attr(data-open);
+    }
+
+    &:not([open]) summary::after {
+      content: attr(data-close);
+    }
+  }
+
+  summary {
+    cursor: pointer;
+  }
+</style>

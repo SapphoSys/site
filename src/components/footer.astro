@@ -3,31 +3,27 @@ import Bar from '@components/bar.astro';
 import Link from '@components/link.astro';
 ---
 
-<footer>
+<footer class="flex flex-grow flex-col text-center">
   <slot />
-  <hr />
 
-  <span>
+  <hr class="text-accent" />
+
+  <span class="flex-cel mt-4 flex flex-col">
     &copy; {new Date().getFullYear()}
     Chloe Arciniega.
   </span>
 
-  <nav class="footer-links">
-    <Link href="/" title="Home">Home</Link>
+  <nav class="footer-links text-1em">
+    <Link class="text-accent" href="/" title="Home">Home</Link>
     <Bar />
-    <Link href="/posts" title="Posts">Posts</Link>
+    <Link class="text-accent" href="/posts" title="Posts">Posts</Link>
     <Bar />
-    <Link href="/credits.txt" title="Credits">Credits</Link>
+    <Link class="text-accent" href="/credits.txt" title="Credits">Credits</Link>
     <Bar />
-    <Link href="/domains.txt" title="Domains">Domains</Link>
+    <Link class="text-accent" href="/domains.txt" title="Domains">Domains</Link>
     <Bar />
-    <Link href="https://github.com/solelychloe/arciniega.one" title="Source code" target="_blank">Source</Link>
+    <Link class="text-accent" href="https://github.com/solelychloe/arciniega.one" title="Source code" target="_blank">
+      Source
+    </Link>
   </nav>
 </footer>
-
-<style>
-  footer {
-    margin-top: 1em;
-    text-align: center;
-  }
-</style>

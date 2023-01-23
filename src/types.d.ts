@@ -12,7 +12,7 @@ export interface PostFrontmatter {
   comments: boolean;
   created: string;
   description: string;
-  draft: boolean;
+  draft?: boolean;
   image?: {
     alt?: string;
     url?: string;

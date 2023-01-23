@@ -1,0 +1,43 @@
+---
+import Layout from '@layouts/page.astro';
+
+import Footer from '@components/footer.astro';
+import Line from '@components/underline.astro';
+import Link from '@components/link.astro';
+
+import Description from '@components/home/description.astro';
+import Me from '@components/home/me.astro';
+import Socials from '@components/home/socials.astro';
+---
+
+<Layout
+  description="A personal blog, comprising of whatever stuff I find interesting to post."
+  siteName="arciniega.one"
+  title="Blog | Chloe Arciniega"
+>
+  <main class="content text-3xl">
+    <div class="about flex flex-col gap-3">
+      <Me />
+      <Socials />
+    </div>
+
+    <div class="more flex flex-col gap-6">
+      <Line>About me</Line>
+      <span>Hiya! I am Chloe. I also go by solely or solelychloe on the Internet.</span>
+
+      <p>
+        I'm a trans computer science student girl, who likes to build software and translate projects around the
+        Internet.
+      </p>
+
+      <p>
+        If you're interested in checking out what I've done, go visit my
+        <Link href="/projects" title="My contributions page">contributions page</Link>!
+      </p>
+
+      <Description />
+
+      <Footer />
+    </div>
+  </main>
+</Layout>

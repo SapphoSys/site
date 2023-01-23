@@ -1,6 +1,4 @@
 ---
-import { Icon } from 'astro-icon';
-
 /* eslint-disable */
 export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
   icon?: string;
@@ -11,7 +9,4 @@ const { href, class: className, ...props } = Astro.props;
 ---
 
 <!-- prettier-ignore -->
-<a href={href} class:list={[className]} {...props}>
-  <slot />
-  {props.target && <Icon size={10} name="mdi:external-link" />}
-</a>
+<a href={href} class:list={`${[className]} hover:underline text-accent`} {...props}><slot /></a>

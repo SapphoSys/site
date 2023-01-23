@@ -6,8 +6,6 @@ import type { PageProps } from '~/types';
 import '@fontsource/atkinson-hyperlegible';
 import '@fontsource/inter';
 
-import '@styles/sakura.scss';
-
 const { content } = Astro.props;
 
 const {
@@ -23,7 +21,24 @@ const {
     <slot name="head" />
   </Head>
 
-  <body>
+  <body
+    class="m-auto flex w-screen max-w-[43em] flex-grow flex-col self-center bg-sakura px-16 py-16 text-3xl text-white"
+  >
     <slot />
+
+    <style is:global>
+      :root {
+        font-size: 63%;
+      }
+
+      html {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content {
+        @apply flex flex-col gap-2;
+      }
+    </style>
   </body>
 </html>
