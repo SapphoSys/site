@@ -10,7 +10,6 @@
       "~/*": ["src/*"],
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@styles/*": ["src/styles/*"],
       "@config": ["src/site.config.ts"]
     }
   }
