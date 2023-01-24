@@ -2,8 +2,6 @@
   // Astro TSConfig base configuration
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    // @types/mdx seems to be broken without this. Weird.
-    "skipLibCheck": true,
     // Aliases
     "baseUrl": ".",
     "paths": {
