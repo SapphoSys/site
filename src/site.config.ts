@@ -63,7 +63,7 @@ export const socials = {
     link: 'https://tech.lgbt/@solely',
   },
   // Your Telegram username (will appear as https://t.me/yourusername)
-  telegram: 'solelychloe',
+  //   telegram: 'solelychloe',
   // Your Twitter username (will appear as https://twitter.com/yourusername)
   twitter: 'solelychloe',
 };
