@@ -6,7 +6,7 @@ defineCollection({
     title: z.string(),
     created: z.date(),
     description: z.string(),
-    author: z.string().default(blog.defaultAuthor),
+    author: z.string().default(blog.default_author),
     draft: z.boolean(),
     image: z.object({
       url: z.string(),

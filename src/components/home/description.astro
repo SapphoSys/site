@@ -4,7 +4,7 @@ import Summary from './summary.md';
 
 <details class="description">
   <summary
-    class="text-accent"
+    class="cursor-pointer text-accent"
     data-open="Click to collapse..."
     data-close="Click to expand..."
     title="Click to expand or collapse..."></summary>
@@ -20,9 +20,5 @@ import Summary from './summary.md';
     &:not([open]) summary::after {
       content: attr(data-close);
     }
-  }
-
-  summary {
-    cursor: pointer;
   }
 </style>

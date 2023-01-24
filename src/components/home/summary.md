@@ -5,7 +5,7 @@
 
 As someone who has impaired vision, I also try and strive for accessibility where possible! Subtitles & alt text for my content is where I want to start.  
 
-I like to experiment with Rust, TypeScript, Astro, C#, and Docker.  
+I like to experiment with Rust, TypeScript, Astro, C#, Tailwind, and Docker.  
 
 I also tinker around with vintage computer hardware! Also as an aspiring sysadmin, I transform hardware into NAS, run media & game servers, and utilize Virtual Machines for my specialized needs.  
 

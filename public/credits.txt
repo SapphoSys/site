@@ -2,5 +2,3 @@
 
 Erisa: https://erisa.uk
 Ovyerus: https://ovyerus.com
-
-sakura.css: https://github.com/oxalorg/sakura

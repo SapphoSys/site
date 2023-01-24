@@ -29,7 +29,7 @@ export const blog = {
   // Whether to allow GitHub discussion comments provided via Giscus on your blog posts or not.
   // See <https://giscus.app/> for more information and edit src/components/blog/comments.astro if set to true.
   comments: true,
-  defaultAuthor: 'Chloe A.',
+  default_author: 'Chloe A.',
 };
 
 // prettier-ignore

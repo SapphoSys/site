@@ -28,7 +28,7 @@ const createdAt = (post: PostFrontmatter) => post.created && fm(parseISO(post.cr
 >
   <Line>My blog</Line>
 
-  <p class="description">A personal blog, comprising of whatever stuff I find interesting to post.</p>
+  <p class="description italic">A personal blog, comprising of whatever stuff I find interesting to post.</p>
 
   <a class="subscribe" title="Subscribe to RSS feed" href={`https://${base.site}/rss.xml`}>
     <Icon size={20} name="mdi:rss" />
@@ -75,10 +75,6 @@ const createdAt = (post: PostFrontmatter) => post.created && fm(parseISO(post.cr
   <style>
     [astro-icon] {
       margin-bottom: -3px;
-    }
-
-    p.description {
-      font-style: italic;
     }
   </style>
 </Layout>
