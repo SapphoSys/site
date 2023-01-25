@@ -1,0 +1,21 @@
+---
+import Layout from '@layouts/page.astro';
+
+import Domains from '@components/domains.astro';
+import Footer from '@components/footer.astro';
+import Line from '@components/underline.astro';
+---
+
+<Layout
+  description="Translator, developer, hobbyist sysadmin."
+  siteName="arciniega.one"
+  title="Domain list | Chloe Arciniega"
+>
+  <main class="content text-3xl">
+    <Line>Domain list</Line>
+
+    <Domains />
+
+    <Footer />
+  </main>
+</Layout>
