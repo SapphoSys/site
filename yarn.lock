@@ -51,43 +51,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/markdown-remark@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "@astrojs/markdown-remark@npm:1.2.0"
+"@astrojs/markdown-remark@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@astrojs/markdown-remark@npm:2.0.0"
   dependencies:
-    "@astrojs/micromark-extension-mdx-jsx": ^1.0.3
-    "@astrojs/prism": ^1.0.0
-    acorn: ^8.7.1
-    acorn-jsx: ^5.3.2
-    github-slugger: ^1.4.0
-    hast-util-to-html: ^8.0.3
-    import-meta-resolve: ^2.1.0
-    mdast-util-from-markdown: ^1.2.0
-    mdast-util-mdx-expression: ^1.2.1
-    mdast-util-mdx-jsx: ^1.2.0
-    micromark-extension-mdx-expression: ^1.0.3
-    micromark-extension-mdx-md: ^1.0.0
-    micromark-util-combine-extensions: ^1.0.0
-    rehype-raw: ^6.1.1
-    rehype-stringify: ^9.0.3
-    remark-gfm: ^3.0.1
-    remark-parse: ^10.0.1
-    remark-rehype: ^10.1.0
-    remark-smartypants: ^2.0.0
-    shiki: ^0.11.1
-    unified: ^10.1.2
-    unist-util-map: ^3.1.1
-    unist-util-visit: ^4.1.0
-    vfile: ^5.3.2
-  checksum: 4d09375281c045510f4132ec3498474d0ff89bfdd975efc53060c5700ce05e6639fd8cf0fa3269d11269b0c1866ce70eed3e8cc84221489e44a04e44bf2808ed
-  languageName: node
-  linkType: hard
-
-"@astrojs/markdown-remark@npm:^2.0.0-beta.2":
-  version: 2.0.0-beta.2
-  resolution: "@astrojs/markdown-remark@npm:2.0.0-beta.2"
-  dependencies:
-    "@astrojs/prism": ^2.0.0-beta.0
+    "@astrojs/prism": ^2.0.0
     github-slugger: ^1.4.0
     import-meta-resolve: ^2.1.0
     rehype-raw: ^6.1.1
@@ -101,17 +69,17 @@ __metadata:
     unist-util-visit: ^4.1.0
     vfile: ^5.3.2
   peerDependencies:
-    astro: ^2.0.0-beta.2
-  checksum: 3d6ef3b4877e1fa95350a217cd437dd008aa2a2582b3e815f169401f61e67880d4a0ca0506cf1e8b300bcee7e218395b35d23c9f83cf129d1d47ecb477702f78
+    astro: ^2.0.0
+  checksum: ddc9737a6eb37f01a242484ca62ef0e0520f9ab122f9a1206a5aa942174aafe64a791761f422fd36664c1dff3ba0bb0f7936b11c85cf10df57f8d3415ff92b34
   languageName: node
   linkType: hard
 
-"@astrojs/mdx@npm:^0.14.0":
-  version: 0.14.0
-  resolution: "@astrojs/mdx@npm:0.14.0"
+"@astrojs/mdx@npm:^0.15.0":
+  version: 0.15.0
+  resolution: "@astrojs/mdx@npm:0.15.0"
   dependencies:
-    "@astrojs/markdown-remark": ^1.2.0
-    "@astrojs/prism": ^1.0.2
+    "@astrojs/markdown-remark": ^2.0.0
+    "@astrojs/prism": ^2.0.0
     "@mdx-js/mdx": ^2.1.2
     "@mdx-js/rollup": ^2.1.1
     acorn: ^8.8.0
@@ -127,24 +95,7 @@ __metadata:
     shiki: ^0.11.1
     unist-util-visit: ^4.1.0
     vfile: ^5.3.2
-  checksum: 71e53f58dd211b79d989a23976e264a21ab85eccbf459b89aad77c47bdb1b8c25d9abdc3a276f3b82ae42022ae8e4ba8a6543e61f31102cab42f4e237ead4d7c
-  languageName: node
-  linkType: hard
-
-"@astrojs/micromark-extension-mdx-jsx@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "@astrojs/micromark-extension-mdx-jsx@npm:1.0.3"
-  dependencies:
-    "@types/acorn": ^4.0.0
-    estree-util-is-identifier-name: ^2.0.0
-    micromark-factory-mdx-expression: ^1.0.0
-    micromark-factory-space: ^1.0.0
-    micromark-util-character: ^1.0.0
-    micromark-util-symbol: ^1.0.0
-    micromark-util-types: ^1.0.0
-    uvu: ^0.5.0
-    vfile-message: ^3.0.0
-  checksum: a020aa43e08f54b5aaf1ceee2609e2da6cecb088eed9abf7017f998cd84c6aecb9b1c0349bffd6bc11f245bfb6ba89fdbc2fe3e694f92e446fedde93e6d49fba
+  checksum: a1e7a0a395cc48e68cbe330484b4cfed2460b617f80adc4b9e8772ec5c685643779e124cb9fe3afec24edb6307729c1f4f71a110919ab022145a1036341413cb
   languageName: node
   linkType: hard
 
@@ -157,30 +108,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/prism@npm:^1.0.0, @astrojs/prism@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "@astrojs/prism@npm:1.0.2"
-  dependencies:
-    prismjs: ^1.28.0
-  checksum: ff6a222b402c156c157515ae08d71cebea7ab11807bb0ffcad3ac62e28a85beef93814f040d3706f3e178d825cbf444a315b5bdac3b5412c87df0f83b091d0e6
-  languageName: node
-  linkType: hard
-
-"@astrojs/prism@npm:^2.0.0-beta.0":
-  version: 2.0.0-beta.0
-  resolution: "@astrojs/prism@npm:2.0.0-beta.0"
-  dependencies:
-    prismjs: ^1.28.0
-  checksum: 0938cac391b9a58cfd93c1276cd6d0215c719921c0784e939a7a0459d113444895df25ffe319b449d963b80b31914556b867f9dce2697e2be032256f29eaa90b
-  languageName: node
-  linkType: hard
-
-"@astrojs/rss@npm:^2.0.0":
+"@astrojs/prism@npm:^2.0.0":
   version: 2.0.0
-  resolution: "@astrojs/rss@npm:2.0.0"
+  resolution: "@astrojs/prism@npm:2.0.0"
+  dependencies:
+    prismjs: ^1.28.0
+  checksum: 71080d863a3216c58a1b8936070d05a26bac5457c8b35dede8dc4bd87480defa9234c71415c1c52c36bfaf96dcfac7cb1c1786593b31279400d34dfd0b9d95e0
+  languageName: node
+  linkType: hard
+
+"@astrojs/rss@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "@astrojs/rss@npm:2.1.0"
   dependencies:
     fast-xml-parser: ^4.0.8
-  checksum: 82db559099b6e867c242a7cda891ad3cf8c43896ac98e8f932c33325dae328497e9ac035f34a41ca32eb1ca125d8f960c8e6f070d72aecf32fce52f1a04cb13b
+    kleur: ^4.1.5
+  checksum: 876584ece05b10bd9b44c4c4c11a42ae8424bf050beb10c094cc2191b3599aea1b353df023beaf4002a0d0bf8b6453dee3003b60a6671b1bcc9724e5d2afa306
   languageName: node
   linkType: hard
 
@@ -194,24 +137,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/tailwind@npm:3.0.0-beta.2":
-  version: 3.0.0-beta.2
-  resolution: "@astrojs/tailwind@npm:3.0.0-beta.2"
+"@astrojs/tailwind@npm:3.0.0":
+  version: 3.0.0
+  resolution: "@astrojs/tailwind@npm:3.0.0"
   dependencies:
     "@proload/core": ^0.3.2
     autoprefixer: ^10.4.7
     postcss: ^8.4.14
     postcss-load-config: ^4.0.1
   peerDependencies:
-    astro: ^2.0.0-beta.4
+    astro: ^2.0.0
     tailwindcss: ^3.0.24
-  checksum: 557fab69f28fb3680f32a600b89fb634fb1d7c91b1327c43883d920747fb989e0478dcd7c1073be070025d808aa204e09203e7b6cdb3451ad193cd47fbeb47a1
+  checksum: 706ea627afcdb717f5da1ca1d00263a4d08d5fef5f1c757fad04ad2c61d5a5f9fff94ce4519d22a5f46683fa01edb2ca5130f46182b1a8b038feb6f0b7adac92
   languageName: node
   linkType: hard
 
-"@astrojs/telemetry@npm:^2.0.0-beta.0":
-  version: 2.0.0-beta.0
-  resolution: "@astrojs/telemetry@npm:2.0.0-beta.0"
+"@astrojs/telemetry@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@astrojs/telemetry@npm:2.0.0"
   dependencies:
     ci-info: ^3.3.1
     debug: ^4.3.4
@@ -221,16 +164,16 @@ __metadata:
     is-wsl: ^2.2.0
     undici: ^5.14.0
     which-pm-runs: ^1.1.0
-  checksum: 33485f2346baaae39b5b32625dabb8b57f22735380b6b342a4fae3fa8a2bac57faf5d0732203e4214a339a041b2ea0d691f10076f890048a893d556318ff64c7
+  checksum: f4bee6ff6dd352f73997b6df13173b8f2d209bd5f904569d1de91dea6cb694dca73f515960acf9f2413e7f6147f157d5bb93d11636ff25d06ea8f61c807ed3b8
   languageName: node
   linkType: hard
 
-"@astrojs/webapi@npm:^2.0.0-beta.1":
-  version: 2.0.0-beta.1
-  resolution: "@astrojs/webapi@npm:2.0.0-beta.1"
+"@astrojs/webapi@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@astrojs/webapi@npm:2.0.0"
   dependencies:
     undici: ^5.14.0
-  checksum: 3c2d16292d3c05e6ae0bce47ea350cff7914d708bb6b1fa9226f1cdfa78b346b9507b371ccf4eca70957085f1052bdf28e3ce9cc8df1dbac218106f57d78df5a
+  checksum: 4336492bb211e3289ac438dab2eb9a06cfde47764ecfc8aa50ea3416636a0013d1192e5637bd112c00f3a88af5543ffc084e650348017a9b263b4fdd8a46deca
   languageName: node
   linkType: hard
 
@@ -1047,15 +990,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/estree-jsx@npm:^0.0.1":
-  version: 0.0.1
-  resolution: "@types/estree-jsx@npm:0.0.1"
-  dependencies:
-    "@types/estree": "*"
-  checksum: aed43dfcbcc9c881f571618847661cd69026680466657d1443c12f51d835c7a8ccf5109a800e56c8fc33ae093f096aa937e4656ce3eb71c4f914334c389cf7be
-  languageName: node
-  linkType: hard
-
 "@types/estree-jsx@npm:^1.0.0":
   version: 1.0.0
   resolution: "@types/estree-jsx@npm:1.0.0"
@@ -1391,7 +1325,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.0.0, acorn@npm:^8.5.0, acorn@npm:^8.7.1, acorn@npm:^8.8.0, acorn@npm:^8.8.1":
+"acorn@npm:^8.0.0, acorn@npm:^8.5.0, acorn@npm:^8.8.0, acorn@npm:^8.8.1":
   version: 8.8.2
   resolution: "acorn@npm:8.8.2"
   bin:
@@ -1654,15 +1588,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:^2.0.0-beta.4":
-  version: 2.0.0-beta.4
-  resolution: "astro@npm:2.0.0-beta.4"
+"astro@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "astro@npm:2.0.1"
   dependencies:
     "@astrojs/compiler": ^1.0.1
     "@astrojs/language-server": ^0.28.3
-    "@astrojs/markdown-remark": ^2.0.0-beta.2
-    "@astrojs/telemetry": ^2.0.0-beta.0
-    "@astrojs/webapi": ^2.0.0-beta.1
+    "@astrojs/markdown-remark": ^2.0.0
+    "@astrojs/telemetry": ^2.0.0
+    "@astrojs/webapi": ^2.0.0
     "@babel/core": ^7.18.2
     "@babel/generator": ^7.18.2
     "@babel/parser": ^7.18.4
@@ -1695,7 +1629,7 @@ __metadata:
     preferred-pm: ^3.0.3
     prompts: ^2.4.2
     rehype: ^12.0.1
-    semver: ^7.3.7
+    semver: ^7.3.8
     server-destroy: ^1.0.1
     shiki: ^0.11.1
     slash: ^4.0.0
@@ -1712,7 +1646,7 @@ __metadata:
     zod: ^3.17.3
   bin:
     astro: astro.js
-  checksum: f9b3cd2338915134fecbadcfd38e868fe46961aaf0cf82330ba6a9fcc2962618617a3353b8f5b81a3e4839f6026c0f4c7eb26cea0a6cadc808e856266328ef6f
+  checksum: 20f8fdc6c67848ab14e0551e7bf45b49452171db91e65f9d5a298efa0fbf6eb79d2b4f12b1f181668bdbf3db285c6a120a48fcadaf719485af4c6d5b36e9b73e
   languageName: node
   linkType: hard
 
@@ -3988,7 +3922,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hast-util-to-html@npm:^8.0.0, hast-util-to-html@npm:^8.0.3":
+"hast-util-to-html@npm:^8.0.0":
   version: 8.0.4
   resolution: "hast-util-to-html@npm:8.0.4"
   dependencies:
@@ -4710,7 +4644,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"kleur@npm:^4.0.3, kleur@npm:^4.1.4":
+"kleur@npm:^4.0.3, kleur@npm:^4.1.4, kleur@npm:^4.1.5":
   version: 4.1.5
   resolution: "kleur@npm:4.1.5"
   checksum: 1dc476e32741acf0b1b5b0627ffd0d722e342c1b0da14de3e8ae97821327ca08f9fb944542fb3c126d90ac5f27f9d804edbe7c585bf7d12ef495d115e0f22c12
@@ -4921,7 +4855,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mdast-util-from-markdown@npm:^1.0.0, mdast-util-from-markdown@npm:^1.2.0":
+"mdast-util-from-markdown@npm:^1.0.0":
   version: 1.2.0
   resolution: "mdast-util-from-markdown@npm:1.2.0"
   dependencies:
@@ -5020,7 +4954,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mdast-util-mdx-expression@npm:^1.0.0, mdast-util-mdx-expression@npm:^1.2.1":
+"mdast-util-mdx-expression@npm:^1.0.0":
   version: 1.3.1
   resolution: "mdast-util-mdx-expression@npm:1.3.1"
   dependencies:
@@ -5030,22 +4964,6 @@ __metadata:
     mdast-util-from-markdown: ^1.0.0
     mdast-util-to-markdown: ^1.0.0
   checksum: 456d59a616a274416f5b02bce64bf5245c4b7247927b4539f4db35bec5674352580fb91f51ed11f1a769d17330c44eec7ca481faf81ee839c2efe71309195225
-  languageName: node
-  linkType: hard
-
-"mdast-util-mdx-jsx@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "mdast-util-mdx-jsx@npm:1.2.0"
-  dependencies:
-    "@types/estree-jsx": ^0.0.1
-    "@types/mdast": ^3.0.0
-    mdast-util-to-markdown: ^1.0.0
-    parse-entities: ^4.0.0
-    stringify-entities: ^4.0.0
-    unist-util-remove-position: ^4.0.0
-    unist-util-stringify-position: ^3.0.0
-    vfile-message: ^3.0.0
-  checksum: 1aeb8c5ac3b2ab675e3e45a9ae89c7cd0d30526029b7bb8c797fff91fafc275c1cf7350fada863776f387b6cb7ea8991a7da5821cbee01f738a6fada11938f6a
   languageName: node
   linkType: hard
 
@@ -5305,7 +5223,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"micromark-extension-mdx-expression@npm:^1.0.0, micromark-extension-mdx-expression@npm:^1.0.3":
+"micromark-extension-mdx-expression@npm:^1.0.0":
   version: 1.0.4
   resolution: "micromark-extension-mdx-expression@npm:1.0.4"
   dependencies:
@@ -6786,12 +6704,55 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-tailwindcss@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "prettier-plugin-tailwindcss@npm:0.2.1"
+"prettier-plugin-tailwindcss@npm:^0.2.2":
+  version: 0.2.2
+  resolution: "prettier-plugin-tailwindcss@npm:0.2.2"
   peerDependencies:
+    "@prettier/plugin-php": "*"
+    "@prettier/plugin-pug": "*"
+    "@shopify/prettier-plugin-liquid": "*"
+    "@shufo/prettier-plugin-blade": "*"
+    "@trivago/prettier-plugin-sort-imports": "*"
     prettier: ">=2.2.0"
-  checksum: 5a04b26f50baea552aaff938b6413bf66d0050c3ca5a0d5bc432a7efc8f8e4ba194a23b1aabd4d39d36228afaf368ba2bce24ebb87f4972459a3679eff6942e8
+    prettier-plugin-astro: "*"
+    prettier-plugin-css-order: "*"
+    prettier-plugin-import-sort: "*"
+    prettier-plugin-jsdoc: "*"
+    prettier-plugin-organize-attributes: "*"
+    prettier-plugin-organize-imports: "*"
+    prettier-plugin-style-order: "*"
+    prettier-plugin-svelte: "*"
+    prettier-plugin-twig-melody: "*"
+  peerDependenciesMeta:
+    "@prettier/plugin-php":
+      optional: true
+    "@prettier/plugin-pug":
+      optional: true
+    "@shopify/prettier-plugin-liquid":
+      optional: true
+    "@shufo/prettier-plugin-blade":
+      optional: true
+    "@trivago/prettier-plugin-sort-imports":
+      optional: true
+    prettier-plugin-astro:
+      optional: true
+    prettier-plugin-css-order:
+      optional: true
+    prettier-plugin-import-sort:
+      optional: true
+    prettier-plugin-jsdoc:
+      optional: true
+    prettier-plugin-organize-attributes:
+      optional: true
+    prettier-plugin-organize-imports:
+      optional: true
+    prettier-plugin-style-order:
+      optional: true
+    prettier-plugin-svelte:
+      optional: true
+    prettier-plugin-twig-melody:
+      optional: true
+  checksum: dd4baa7b60d0cef36309a97bf884ec7beb61e29d7bf0c88036647985243535048968252f2f7159d88142695ae21fe305a6a1f96cceec36d41085cab63dbc4b25
   languageName: node
   linkType: hard
 
@@ -7477,18 +7438,18 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "site@workspace:."
   dependencies:
-    "@astrojs/mdx": ^0.14.0
+    "@astrojs/mdx": ^0.15.0
     "@astrojs/prefetch": ^0.1.1
-    "@astrojs/rss": ^2.0.0
+    "@astrojs/rss": ^2.1.0
     "@astrojs/sitemap": ^1.0.0
-    "@astrojs/tailwind": 3.0.0-beta.2
+    "@astrojs/tailwind": 3.0.0
     "@fontsource/atkinson-hyperlegible": ^4.5.11
     "@fontsource/inter": ^4.5.15
     "@types/eslint": ^8.4.10
     "@types/prettier": ^2.7.2
     "@typescript-eslint/eslint-plugin": ^5.49.0
     "@typescript-eslint/parser": ^5.49.0
-    astro: ^2.0.0-beta.4
+    astro: ^2.0.1
     astro-compress: ^1.1.28
     astro-eslint-parser: ^0.11.0
     astro-icon: ^0.8.0
@@ -7502,7 +7463,7 @@ __metadata:
     postcss: ^8.4.21
     prettier: ^2.8.3
     prettier-plugin-astro: ^0.7.2
-    prettier-plugin-tailwindcss: ^0.2.1
+    prettier-plugin-tailwindcss: ^0.2.2
     rehype-autolink-headings: ^6.1.1
     rehype-external-links: ^2.0.1
     rehype-slug: ^5.1.0
@@ -8216,15 +8177,6 @@ __metadata:
   version: 5.2.0
   resolution: "unist-util-is@npm:5.2.0"
   checksum: b80debe1ce5d40a8d685c510f597e5c8b8f7089540e9e268bda1b05bcce735c10bf36d5b0e4ecded50c63fa43b8a11b0e4b784beecf1559f153a2f2855e8526c
-  languageName: node
-  linkType: hard
-
-"unist-util-map@npm:^3.1.1":
-  version: 3.1.3
-  resolution: "unist-util-map@npm:3.1.3"
-  dependencies:
-    "@types/unist": ^2.0.0
-  checksum: 2647259c0b77cd29b3ed6699aa82484bbf4929a42343847d77ae65155a639b79b57a41f0227a89d07a336021494d9b1603a7751a1d29143e345d52aa09918d0e
   languageName: node
   linkType: hard
 

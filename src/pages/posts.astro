@@ -3,8 +3,7 @@ import Layout from '@layouts/page.astro';
 
 import Footer from '@components/footer.astro';
 import Line from '@components/underline.astro';
-
-import { base } from '@config';
+import Link from '@components/link.astro';
 
 import { format, parseISO } from 'date-fns';
 import { getCollection } from 'astro:content';
@@ -26,55 +25,49 @@ const createdAt = (post: PostFrontmatter) => post.created && fm(parseISO(post.cr
   siteName="arciniega.one"
   title="Blog | Chloe Arciniega"
 >
-  <Line>My blog</Line>
+  <main class="content flex flex-grow flex-col text-3xl">
+    <Line>My blog</Line>
 
-  <p class="description italic">A personal blog, comprising of whatever stuff I find interesting to post.</p>
+    <p class="description mt-5 italic">A personal blog, comprising of whatever stuff I find interesting to post.</p>
 
-  <a class="subscribe" title="Subscribe to RSS feed" href={`https://${base.site}/rss.xml`}>
-    <Icon size={20} name="mdi:rss" />
-    Subscribe to RSS
-  </a>
+    <!-- prettier-ignore -->
+    <Link class="subscribe" title="Subscribe to RSS feed" href="/rss.xml">
+        <Icon class="inline mb-2" size={20} name="mdi:rss" />
+        Subscribe to RSS
+    </Link>
 
-  {
-    posts.map(async (post) => (
-      <article>
-        {post.data.title && (
-          <h2 class="title">
-            <a href={`${post.collection}/${post.slug}`} title={post.data.title}>
-              {post.data.title}
-            </a>
-          </h2>
-        )}
+    {
+      posts.map(async (post) => (
+        <article>
+          {post.data.title && (
+            <span class="title text-4xl font-bold">
+              <Link href={`${post.collection}/${post.slug}`} title={post.data.title}>
+                {post.data.title}
+              </Link>
+            </span>
+          )}
 
-        {post.data.created && (
-          <time class="date">
-            <Icon size={20} name="mdi:calendar" />
-            {createdAt(post.data)}
-          </time>
-        )}
+          {post.data.created && (
+            <span class="date">
+              <Icon class="mb-1 inline" size={20} name="mdi:calendar" />
+              {createdAt(post.data)}
+            </span>
+          )}
 
-        {post.data.author && (
-          <span class="author">
-            <Icon size={20} name="mdi:account" />
-            {post.data.author}
-          </span>
-        )}
+          {post.data.tags ? (
+            <div class="tags flex gap-2">
+              <span class="border-accent mb-2 mt-2 rounded-lg border-[1px] py-1 px-3">
+                <Icon class="mb-1 inline" size={20} name="mdi:tag" />
+                {post.data.tags && post.data.tags.join(', ')}
+              </span>
+            </div>
+          ) : null}
 
-        {post.data.tags ? (
-          <div class="tags">
-            <Icon size={20} name="mdi:tag" />
-            {post.data.tags && post.data.tags.join(', ')}
-          </div>
-        ) : null}
-      </article>
-    ))
-  }
-
-  <Footer />
-
-  <style>
-    [astro-icon] {
-      margin-bottom: -3px;
+          {post.data.description && <span class="description mt-10 italic">{post.data.description}</span>}
+        </article>
+      ))
     }
-  </style>
+
+    <Footer />
+  </main>
 </Layout>

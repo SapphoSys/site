@@ -3,6 +3,7 @@ import Layout from '@layouts/page.astro';
 
 import Comments from '@components/blog/comments.astro';
 import Footer from '@components/footer.astro';
+import Line from '@components/underline.astro';
 
 import { blog } from '@config';
 
@@ -19,33 +20,31 @@ const checkComments = () => (blog.comments && frontmatter.comments) ?? true;
 
 const fm = (d: Date) => format(d, 'MMM do, yyyy');
 
-const createdAt = frontmatter.created && fm(parseISO(frontmatter.created));
+const createdAt = (post: PostFrontmatter) => post.created && fm(parseISO(post.created));
 ---
 
 <Layout description={frontmatter.description} siteName={Astro.site?.hostname} title={frontmatter.title}>
+  <Line>My blog</Line>
   {checkComments() && <meta slot="head" name="giscus:backlink" content={Astro.url.pathname} />}
 
   <!-- Title -->
-  <h2 class="title">{frontmatter.title}</h2>
+  {frontmatter.title && <span class="title mt-10 text-5xl font-bold">{frontmatter.title}</span>}
 
-  <!-- Date and author -->
-  <time class="date">
-    <Icon size={20} name="mdi:calendar" />
-    {createdAt}
-  </time>
-
-  <span class="author">
-    <Icon size={20} name="mdi:account" />
-    {frontmatter.author}
+  <!-- Date -->
+  <span class="date mt-3">
+    <Icon class="mb-1 inline" size={20} name="mdi:calendar" />
+    {createdAt(frontmatter)}
   </span>
 
   <!-- Tags -->
   {
     frontmatter.tags ? (
-      <p class="tags">
-        <Icon size={20} name="mdi:tag" />
-        {frontmatter.tags && frontmatter.tags.join(', ')}
-      </p>
+      <div class="tags mb-5 mt-3 flex gap-2">
+        <span class="border-accent mb-1 rounded-lg border-[1px] py-1 px-3">
+          <Icon class="mb-1 inline" size={20} name="mdi:tag" />
+          {frontmatter.tags && frontmatter.tags.join(', ')}
+        </span>
+      </div>
     ) : null
   }
 
@@ -60,10 +59,4 @@ const createdAt = frontmatter.created && fm(parseISO(frontmatter.created));
 
   <!-- Footer -->
   <Footer />
-
-  <style>
-    [astro-icon] {
-      margin-bottom: -4px;
-    }
-  </style>
 </Layout>

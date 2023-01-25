@@ -8,7 +8,6 @@
  * Properties for the Markdown Frontmatter
  */
 export interface PostFrontmatter {
-  author: string;
   comments: boolean;
   created: string;
   description: string;

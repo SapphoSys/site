@@ -1,6 +1,5 @@
 ---
 import { getCollection, CollectionEntry } from 'astro:content';
-import Line from '@components/underline.astro';
 
 export async function getStaticPaths() {
   const docs = await getCollection('posts');
@@ -18,7 +17,5 @@ interface Props {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
-
-<Line>My blog</Line>
 
 <Content />

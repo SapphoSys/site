@@ -1,12 +1,10 @@
 import { z, defineCollection } from 'astro:content';
-import { blog } from '../site.config';
 
 defineCollection({
   schema: z.object({
     title: z.string(),
     created: z.date(),
     description: z.string(),
-    author: z.string().default(blog.default_author),
     draft: z.boolean(),
     image: z.object({
       url: z.string(),
