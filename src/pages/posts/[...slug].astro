@@ -1,21 +1,23 @@
 ---
 import { getCollection, CollectionEntry } from 'astro:content';
+import ArticleLayout from '@layouts/article.astro';
 
 export async function getStaticPaths() {
-  const docs = await getCollection('posts');
-  return docs.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
   }));
 }
 
 interface Props {
-  // eslint-disable-next-line no-undef
-  entry: CollectionEntry<'posts'>;
+  post: CollectionEntry<'posts'>;
 }
 
-const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { post } = Astro.props;
+const { Content } = await post.render();
 ---
 
-<Content />
+<ArticleLayout {...post.data}>
+  <Content />
+</ArticleLayout>

@@ -5,7 +5,6 @@ defineCollection({
     title: z.string(),
     created: z.date(),
     description: z.string(),
-    draft: z.boolean(),
     image: z.object({
       url: z.string(),
       alt: z.string(),

@@ -9,20 +9,29 @@ import { format, parseISO } from 'date-fns';
 import { getCollection } from 'astro:content';
 import { Icon } from 'astro-icon';
 
-import type { PostFrontmatter } from '~/types';
+interface PostProps {
+  comments: boolean;
+  created: string;
+  description: string;
+  image?: {
+    alt?: string;
+    url?: string;
+  };
+  tags?: Array<string>;
+  title: string;
+}
 
 const fm = (d: Date) => format(d, 'MMM do, yyyy');
 
-// Obtain posts from the desired folder, hide drafts, sort it by date.
-const collection = await getCollection('posts', ({ data }) => !data.draft);
-const posts = collection.sort((a, b) => new Date(b.data.created).valueOf() - new Date(a.data.created).valueOf());
+// Obtain posts from the desired folder and sort it by date.
+const postCollection = await getCollection('posts');
+const posts = postCollection.sort((a, b) => new Date(b.data.created).valueOf() - new Date(a.data.created).valueOf());
 
-const createdAt = (post: PostFrontmatter) => post.created && fm(parseISO(post.created));
+const createdAt = (post: PostProps) => post.created && fm(parseISO(post.created));
 ---
 
 <Layout
   description="A personal blog, comprising of whatever stuff I find interesting to post."
-  siteName="arciniega.one"
   title="Blog | Chloe Arciniega"
 >
   <main class="content flex flex-grow flex-col text-3xl">
@@ -31,39 +40,39 @@ const createdAt = (post: PostFrontmatter) => post.created && fm(parseISO(post.cr
     <p class="description mt-5 italic">A personal blog, comprising of whatever stuff I find interesting to post.</p>
 
     <!-- prettier-ignore -->
-    <Link class="subscribe" title="Subscribe to RSS feed" href="/rss.xml">
+    <Link class="subscribe md:mb-5 mb-10" title="Subscribe to RSS feed" href="/rss.xml">
         <Icon class="mb-2" size={20} name="mdi:rss" />
         Subscribe to RSS
     </Link>
 
     {
-      posts.map(async (post) => (
+      posts.map(({ data, slug }) => (
         <article>
-          {post.data.title && (
+          {data.title && (
             <span class="title text-4xl font-bold">
-              <Link href={`${post.collection}/${post.slug}`} title={post.data.title}>
-                {post.data.title}
+              <Link href={`posts/${slug}`} title={data.title}>
+                {data.title}
               </Link>
             </span>
           )}
 
-          {post.data.created && (
+          {data.created && (
             <span class="date">
               <Icon class="mb-1" size={20} name="mdi:calendar" />
-              {createdAt(post.data)}
+              {createdAt(data)}
             </span>
           )}
 
-          {post.data.tags ? (
+          {data.tags ? (
             <div class="tags flex gap-2">
               <span class="border-accent mb-2 mt-2 rounded-lg border-[1px] py-1 px-3">
                 <Icon class="mb-1" size={20} name="mdi:tag" />
-                {post.data.tags && post.data.tags.join(', ')}
+                {data.tags && data.tags.join(', ')}
               </span>
             </div>
           ) : null}
 
-          {post.data.description && <span class="description mt-10 italic">{post.data.description}</span>}
+          {data.description && <span class="description mt-10 italic">{data.description}</span>}
         </article>
       ))
     }

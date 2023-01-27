@@ -1,29 +1,24 @@
 ---
 import Head from '@components/head.astro';
 
-import type { PageProps } from '~/types';
-
 import '@fontsource/atkinson-hyperlegible';
 import '@fontsource/inter';
 
-const { content } = Astro.props;
+interface Props {
+  description: string;
+  title: string;
+}
 
-const {
-  description = content.description ?? '',
-  siteName = content.siteName ?? '',
-  title = content.title ?? '',
-} = Astro.props as PageProps;
+const { description, title } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <Head description={description} siteName={siteName} title={title}>
+  <Head description={description} title={title}>
     <slot name="head" />
   </Head>
 
-  <body
-    class="m-auto flex w-screen max-w-[44em] flex-grow flex-col self-center bg-sakura px-[2.5em] py-[1.8em] text-3xl text-white"
-  >
+  <body class="flex flex-grow flex-col self-center bg-sakura text-3xl text-white">
     <slot />
 
     <style is:global>
@@ -31,16 +26,19 @@ const {
         font-size: 63%;
       }
 
+      body {
+        @apply max-w-[44em] px-[2.5em] py-[1.8em];
+      }
+      html {
+        display: flex;
+        flex-direction: column;
+      }
+
       nav,
       .line,
       .links,
       .name {
         @apply font-display;
-      }
-
-      html {
-        display: flex;
-        flex-direction: column;
       }
 
       .content {

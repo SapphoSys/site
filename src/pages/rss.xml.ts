@@ -3,7 +3,7 @@ import rss from '@astrojs/rss';
 import { feed } from '@config';
 import { getCollection } from 'astro:content';
 
-const posts = await getCollection('posts', ({ data }) => !data.draft);
+const posts = await getCollection('posts');
 
 export const get = () =>
   rss({

@@ -10,46 +10,53 @@ import { blog } from '@config';
 import { Icon } from 'astro-icon';
 import { format, parseISO } from 'date-fns';
 
-import type { MarkdownLayoutProps } from 'astro';
-import type { PostFrontmatter } from '~/types';
+interface Props {
+  comments: boolean;
+  created: string;
+  description: string;
+  image?: {
+    alt?: string;
+    url?: string;
+  };
+  tags?: Array<string>;
+  title: string;
+}
 
-type Props = MarkdownLayoutProps<PostFrontmatter>;
+const { comments, created, description, image, tags, title } = Astro.props;
 
-const { frontmatter } = Astro.props as Props;
-const checkComments = () => (blog.comments && frontmatter.comments) ?? true;
-
+const checkComments = () => blog.comments && comments;
 const fm = (d: Date) => format(d, 'MMM do, yyyy');
 
-const createdAt = (post: PostFrontmatter) => post.created && fm(parseISO(post.created));
+const createdAt = created ? fm(parseISO(created)) : null;
 ---
 
-<Layout description={frontmatter.description} siteName={Astro.site?.hostname} title={frontmatter.title}>
+<Layout description={description} title={title}>
   <Line>My blog</Line>
   {checkComments() && <meta slot="head" name="giscus:backlink" content={Astro.url.pathname} />}
 
   <!-- Title -->
-  {frontmatter.title && <span class="title mt-10 text-5xl font-bold">{frontmatter.title}</span>}
+  {title && <span class="title mt-10 text-5xl font-bold">{title}</span>}
 
   <!-- Date -->
   <span class="date mt-3">
     <Icon class="mb-1" size={20} name="mdi:calendar" />
-    {createdAt(frontmatter)}
+    {createdAt}
   </span>
 
   <!-- Tags -->
   {
-    frontmatter.tags ? (
+    tags ? (
       <div class="tags mb-5 mt-3 flex gap-2">
         <span class="border-accent mb-1 rounded-lg border-[1px] py-1 px-3">
           <Icon class="mb-1" size={20} name="mdi:tag" />
-          {frontmatter.tags && frontmatter.tags.join(', ')}
+          {tags && tags.join(', ')}
         </span>
       </div>
     ) : null
   }
 
   <!-- Checks if the post's image exists -->
-  {frontmatter.image?.url && <img src={frontmatter.image?.url} title={frontmatter.image?.alt} />}
+  {image?.url && <img src={image?.url} title={image?.alt} />}
 
   <!-- The blog's content itself -->
   <slot />
