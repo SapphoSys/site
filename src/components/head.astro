@@ -1,16 +1,14 @@
 ---
 import { SEO } from 'astro-seo';
-
 import { base, feed, socials } from '@config';
-import type { PageProps } from '~/types';
 
-// Favicon
-const image = new URL(Astro.site!);
-image.pathname = base.favicon?.fileName || '/favicon.png';
+const { description, title } = Astro.props;
+
+const siteName = Astro.site?.hostname;
+
+const image = new URL(base.favicon?.fileName || '/favicon.png', Astro.site).href;
 
 const IS_PRODUCTION = import.meta.env.MODE === 'production';
-
-const { description, siteName, title } = Astro.props as PageProps;
 ---
 
 <head>
@@ -19,22 +17,13 @@ const { description, siteName, title } = Astro.props as PageProps;
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- RSS -->
-  {
-    feed && (
-      <link rel="alternate" type="application/rss+xml" title={feed.title} href={`https://www.${base.site}/rss.xml`} />
-    )
-  }
+  {feed && <link rel="alternate" type="application/rss+xml" title={feed.title} href={`https://${base.site}/rss.xml`} />}
 
-  <!-- Metadata & analytics -->
-  <meta name="generator" content={Astro.generator} />
   {
     IS_PRODUCTION && !!base.plausible.analytics && !!base.site && (
       <script defer data-domain={base.site} data-api="/api/event" src="/js/script.js" />
     )
   }
-
-  <!-- Flavor -->
-  <meta name="theme-color" content={base.seo && base.seo.color} />
 
   <!-- SEO -->
   <SEO
@@ -44,7 +33,7 @@ const { description, siteName, title } = Astro.props as PageProps;
       basic: {
         title,
         type: 'website',
-        image: image.toString(),
+        image,
       },
       optional: {
         siteName,
@@ -60,12 +49,18 @@ const { description, siteName, title } = Astro.props as PageProps;
     }}
     extend={{
       meta: [
+        // Astro generator
+        { name: 'generator', content: Astro.generator },
+
+        // Theme color
+        { name: 'theme-color', content: base.seo && base.seo.color },
+
         // Keywords
         { name: 'keywords', content: `${base.seo && base.seo.keywords}` },
       ],
       link: [
         // Icon
-        { rel: 'icon', href: image?.pathname },
+        { rel: 'icon', href: image },
 
         // Mastodon verification
         { rel: 'me', href: socials && `${socials.mastodon.link}` },

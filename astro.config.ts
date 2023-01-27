@@ -12,7 +12,7 @@ import slug from 'rehype-slug';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.arciniega.one',
+  site: 'https://arciniega.one',
   integrations: [
     tailwind(),
     mdx({

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.arciniega.one/sitemap-index.xml
+Sitemap: https://arciniega.one/sitemap-index.xml

@@ -3,7 +3,7 @@
   "redirects": [
     {
       "source": "/parallel",
-      "destination": "https://www.parallel.report",
+      "destination": "https://parallel.report",
       "statusCode": 301
     }
   ],

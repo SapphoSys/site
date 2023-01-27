@@ -49,7 +49,7 @@ This website is licensed under the [zlib][license] license.
 
 [astro]: https://astro.build 'Astro'
 [license]: https://github.com/solelychloe/arciniega.one/blob/main/LICENSE 'zlib License'
-[site]: https://www.arciniega.one 'arciniega.one'
+[site]: https://arciniega.one 'arciniega.one'
 [tailwind]: https://tailwindcss.com/ 'Tailwind CSS'
 
 [heroku]: https://heroku.com/deploy?template=https://github.com/solelychloe/arciniega.one 'Deploy to Heroku'
