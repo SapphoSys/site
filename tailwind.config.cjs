@@ -3,7 +3,8 @@ module.exports = {
   content: ['./src/**/*.{astro,html,js,md,mdx,ts,tsx}'],
   theme: {
     fontFamily: {
-      sans: ['Inter', 'Atkinson Hyperlegible', 'sans-serif'],
+      body: ['Inter', 'sans-serif'],
+      display: ['Atkinson Hyperlegible', 'sans-serif'],
     },
     colors: {
       'accent': '#eb99a1',

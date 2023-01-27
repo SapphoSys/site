@@ -29,5 +29,4 @@ yarn.lock
 README.md
 
 # Prettier does not like MDX files for some reason.
-src/pages/projects.mdx
 src/components/home/summary.md

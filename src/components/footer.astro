@@ -1,29 +1,30 @@
 ---
-import Bar from '@components/bar.astro';
 import Link from '@components/link.astro';
 ---
 
-<footer class="mt-1 flex flex-grow flex-col text-center">
+<footer class="mt-1 flex flex-grow flex-col">
   <slot />
 
   <hr class="text-accent" />
 
-  <span class="flex-cel mt-4 flex flex-col">
+  <span class="flex-cel mt-4 mb-3 flex flex-col">
     &copy; {new Date().getFullYear()}
     Chloe Arciniega.
   </span>
 
-  <nav class="footer-links text-1em font-['Atkinson_Hyperlegible']">
+  <nav class="links">
     <Link class="text-accent" href="/" title="Home">Home</Link>
-    <Bar />
     <Link class="text-accent" href="/posts" title="Posts">Posts</Link>
-    <Bar />
     <Link class="text-accent" href="/credits.txt" title="Credits">Credits</Link>
-    <Bar />
     <Link class="text-accent" href="/domains" title="Domains">Domains</Link>
-    <Bar />
     <Link class="text-accent" href="https://github.com/solelychloe/arciniega.one" title="Source code" target="_blank">
       Source
     </Link>
   </nav>
 </footer>
+
+<style>
+  .links {
+    @apply flex flex-wrap gap-[15px] md:gap-[10px];
+  }
+</style>

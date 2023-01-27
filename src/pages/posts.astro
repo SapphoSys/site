@@ -32,7 +32,7 @@ const createdAt = (post: PostFrontmatter) => post.created && fm(parseISO(post.cr
 
     <!-- prettier-ignore -->
     <Link class="subscribe" title="Subscribe to RSS feed" href="/rss.xml">
-        <Icon class="inline mb-2" size={20} name="mdi:rss" />
+        <Icon class="mb-2" size={20} name="mdi:rss" />
         Subscribe to RSS
     </Link>
 
@@ -49,7 +49,7 @@ const createdAt = (post: PostFrontmatter) => post.created && fm(parseISO(post.cr
 
           {post.data.created && (
             <span class="date">
-              <Icon class="mb-1 inline" size={20} name="mdi:calendar" />
+              <Icon class="mb-1" size={20} name="mdi:calendar" />
               {createdAt(post.data)}
             </span>
           )}
@@ -57,7 +57,7 @@ const createdAt = (post: PostFrontmatter) => post.created && fm(parseISO(post.cr
           {post.data.tags ? (
             <div class="tags flex gap-2">
               <span class="border-accent mb-2 mt-2 rounded-lg border-[1px] py-1 px-3">
-                <Icon class="mb-1 inline" size={20} name="mdi:tag" />
+                <Icon class="mb-1" size={20} name="mdi:tag" />
                 {post.data.tags && post.data.tags.join(', ')}
               </span>
             </div>

@@ -32,7 +32,7 @@ const createdAt = (post: PostFrontmatter) => post.created && fm(parseISO(post.cr
 
   <!-- Date -->
   <span class="date mt-3">
-    <Icon class="mb-1 inline" size={20} name="mdi:calendar" />
+    <Icon class="mb-1" size={20} name="mdi:calendar" />
     {createdAt(frontmatter)}
   </span>
 
@@ -41,7 +41,7 @@ const createdAt = (post: PostFrontmatter) => post.created && fm(parseISO(post.cr
     frontmatter.tags ? (
       <div class="tags mb-5 mt-3 flex gap-2">
         <span class="border-accent mb-1 rounded-lg border-[1px] py-1 px-3">
-          <Icon class="mb-1 inline" size={20} name="mdi:tag" />
+          <Icon class="mb-1" size={20} name="mdi:tag" />
           {frontmatter.tags && frontmatter.tags.join(', ')}
         </span>
       </div>

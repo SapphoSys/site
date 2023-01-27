@@ -31,6 +31,13 @@ const {
         font-size: 63%;
       }
 
+      nav,
+      .line,
+      .links,
+      .name {
+        @apply font-display;
+      }
+
       html {
         display: flex;
         flex-direction: column;
@@ -38,6 +45,10 @@ const {
 
       .content {
         @apply flex flex-col gap-2;
+      }
+
+      [astro-icon] {
+        @apply inline;
       }
     </style>
   </body>
