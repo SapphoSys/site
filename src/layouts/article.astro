@@ -47,7 +47,7 @@ const createdAt = created ? fm(parseISO(created)) : null;
   {
     tags ? (
       <div class="tags mb-5 mt-3 flex gap-2">
-        <span class="border-accent mb-1 rounded-lg border-[1px] py-1 px-3">
+        <span class="border-ctp-pink mb-1 rounded-lg border-[1px] py-1 px-3">
           <Icon class="mb-1" size={20} name="mdi:tag" />
           {tags && tags.join(', ')}
         </span>
@@ -56,14 +56,33 @@ const createdAt = created ? fm(parseISO(created)) : null;
   }
 
   <!-- Checks if the post's image exists -->
-  {image?.url && <img src={image?.url} title={image?.alt} />}
+  {image?.url && <img src={image?.url} alt={image?.alt} title={image?.alt} />}
 
   <!-- The blog's content itself -->
-  <slot />
+  <main class="article-content">
+    <slot />
+  </main>
 
   <!-- Comments provided by Giscus -->
   {checkComments() && <Comments />}
 
   <!-- Footer -->
   <Footer />
+
+  <style is:global>
+    .article-content {
+      & :is(h1, h2, h3, h4, h5, h6) {
+        @apply font-bold;
+        @apply text-4xl;
+      }
+
+      & a {
+        @apply text-ctp-pink hover:underline;
+      }
+
+      @apply flex flex-grow flex-col flex-wrap;
+      @apply gap-[1rem];
+      @apply mb-5;
+    }
+  </style>
 </Layout>

@@ -1,29 +1,32 @@
 ---
 import Link from '@components/link.astro';
+import Separator from '@components/separator.astro';
 ---
 
 <footer class="mt-1 flex flex-grow flex-col">
   <slot />
 
-  <hr class="text-accent" />
+  <hr class="text-ctp-pink" />
 
-  <span class="flex-cel mt-4 mb-3 flex flex-col">
-    &copy; {new Date().getFullYear()}
-    Chloe Arciniega.
-  </span>
+  <span class="flex-cel mt-4 mb-1 flex flex-col"> </span>
 
   <nav class="links">
-    <Link class="text-accent" href="/" title="Home">Home</Link>
-    <Link class="text-accent" href="/posts" title="Posts">Posts</Link>
-    <Link class="text-accent" href="/credits.txt" title="Credits">Credits</Link>
-    <Link class="text-accent" href="/domains" title="Domains">Domains</Link>
-    <Link class="text-accent" href="https://github.com/solelychloe/arciniega.one" title="Source code" target="_blank">
-      Source
-    </Link>
+    <Link href="/" title="Home" rel="prefetch">Home</Link>
+    <Separator />
+    <Link href="/posts" title="Posts" rel="prefetch">Posts</Link>
+    <Separator />
+    <Link href="/credits.txt" title="Credits" rel="prefetch">Credits</Link>
+    <Separator />
+    <Link href="/domains" title="Domains" rel="prefetch">Domains</Link>
+    <Separator />
+    <Link href="https://github.com/solelychloe/arciniega.one" title="Source code" target="_blank">Source</Link>
   </nav>
 </footer>
 
 <style>
+  a {
+    @apply text-ctp-pink;
+  }
   .links {
     @apply flex flex-wrap gap-[15px] md:gap-[10px];
   }

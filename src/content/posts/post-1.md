@@ -8,9 +8,8 @@ comments: true
 
 ## Hello!!
 
-Welcome to my new blog! Powered by [Astro][astro] and [MDX][mdx].
+Welcome to my new blog! Powered by [Astro][astro].
 
 This blog is still a work in progress, so come here later for updates.
 
 [astro]: https://astro.build 'Astro'
-[mdx]: https://mdxjs.com 'MDX'

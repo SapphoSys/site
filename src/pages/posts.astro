@@ -65,7 +65,7 @@ const createdAt = (post: PostProps) => post.created && fm(parseISO(post.created)
 
           {data.tags ? (
             <div class="tags flex gap-2">
-              <span class="border-accent mb-2 mt-2 rounded-lg border-[1px] py-1 px-3">
+              <span class="tags border-ctp-pink">
                 <Icon class="mb-1" size={20} name="mdi:tag" />
                 {data.tags && data.tags.join(', ')}
               </span>
@@ -79,4 +79,10 @@ const createdAt = (post: PostProps) => post.created && fm(parseISO(post.created)
 
     <Footer />
   </main>
+
+  <style>
+    span.tags {
+      @apply mb-2 mt-2 rounded-lg border-[1px] py-1 px-3;
+    }
+  </style>
 </Layout>

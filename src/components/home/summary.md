@@ -1,5 +1,5 @@
 <summary class="flex flex-col gap-6 text-3xl">
-<hr class="text-accent mt-5" />
+<hr class="text-ctp-pink mt-5" />
 
 *If you're still here, thank you! That means a lot.*
 

@@ -51,9 +51,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/markdown-remark@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@astrojs/markdown-remark@npm:2.0.0"
+"@astrojs/markdown-remark@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@astrojs/markdown-remark@npm:2.0.1"
   dependencies:
     "@astrojs/prism": ^2.0.0
     github-slugger: ^1.4.0
@@ -69,16 +69,16 @@ __metadata:
     unist-util-visit: ^4.1.0
     vfile: ^5.3.2
   peerDependencies:
-    astro: ^2.0.0
-  checksum: ddc9737a6eb37f01a242484ca62ef0e0520f9ab122f9a1206a5aa942174aafe64a791761f422fd36664c1dff3ba0bb0f7936b11c85cf10df57f8d3415ff92b34
+    astro: ^2.0.2
+  checksum: fe603a00e91a3c383b84c90b44e0834bcd8dd1530c6c24a99f9a20125c5860f5127905feceffa13ec088963f0eddf36208f5f05f1983833dcf4d4ab9fe1fc899
   languageName: node
   linkType: hard
 
-"@astrojs/mdx@npm:^0.15.0":
-  version: 0.15.0
-  resolution: "@astrojs/mdx@npm:0.15.0"
+"@astrojs/mdx@npm:^0.15.1":
+  version: 0.15.1
+  resolution: "@astrojs/mdx@npm:0.15.1"
   dependencies:
-    "@astrojs/markdown-remark": ^2.0.0
+    "@astrojs/markdown-remark": ^2.0.1
     "@astrojs/prism": ^2.0.0
     "@mdx-js/mdx": ^2.1.2
     "@mdx-js/rollup": ^2.1.1
@@ -95,7 +95,7 @@ __metadata:
     shiki: ^0.11.1
     unist-util-visit: ^4.1.0
     vfile: ^5.3.2
-  checksum: a1e7a0a395cc48e68cbe330484b4cfed2460b617f80adc4b9e8772ec5c685643779e124cb9fe3afec24edb6307729c1f4f71a110919ab022145a1036341413cb
+  checksum: 4b667d1b3f1ce2d1937e0726bc9e2945df59213c92155cf523c791f7636675155f81ec0cd63a6d74bbece9503a29c0ed799d42340b7761a83808e2d5272f965c
   languageName: node
   linkType: hard
 
@@ -451,6 +451,23 @@ __metadata:
     "@babel/helper-validator-identifier": ^7.19.1
     to-fast-properties: ^2.0.0
   checksum: b39af241f0b72bba67fd6d0d23914f6faec8c0eba8015c181cbd5ea92e59fc91a52a1ab490d3520c7dbd19ddb9ebb76c476308f6388764f16d8201e37fae6811
+  languageName: node
+  linkType: hard
+
+"@catppuccin/palette@npm:0.1.5":
+  version: 0.1.5
+  resolution: "@catppuccin/palette@npm:0.1.5"
+  checksum: b6be48610e05f57019649baa7f9a69cdba6719e1867f51aebbe534ee28524a5f6141a888b82a6753a3afcb2a3ec3cbc79d66765908df04d8fa8aa4d60ababbcb
+  languageName: node
+  linkType: hard
+
+"@catppuccin/tailwindcss@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@catppuccin/tailwindcss@npm:0.1.1"
+  dependencies:
+    "@catppuccin/palette": 0.1.5
+    tailwindcss: ^3.0.24
+  checksum: 9f0b6cb8a70830d75548b778f538b4a804d1ff3dcd14aab9166308e87ff8037283fa52dd886fa9f11763b39a7e5de7723f8a10e2b67da2c275750ad303948e6c
   languageName: node
   linkType: hard
 
@@ -1445,18 +1462,19 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "arciniega.one@workspace:."
   dependencies:
-    "@astrojs/mdx": ^0.15.0
+    "@astrojs/mdx": ^0.15.1
     "@astrojs/prefetch": ^0.1.1
     "@astrojs/rss": ^2.1.0
     "@astrojs/sitemap": ^1.0.0
     "@astrojs/tailwind": 3.0.0
+    "@catppuccin/tailwindcss": ^0.1.1
     "@fontsource/atkinson-hyperlegible": ^4.5.11
     "@fontsource/inter": ^4.5.15
     "@types/eslint": ^8.4.10
     "@types/prettier": ^2.7.2
     "@typescript-eslint/eslint-plugin": ^5.49.0
     "@typescript-eslint/parser": ^5.49.0
-    astro: ^2.0.1
+    astro: ^2.0.2
     astro-compress: ^1.1.28
     astro-eslint-parser: ^0.11.0
     astro-icon: ^0.8.0
@@ -1626,13 +1644,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "astro@npm:2.0.1"
+"astro@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "astro@npm:2.0.2"
   dependencies:
     "@astrojs/compiler": ^1.0.1
     "@astrojs/language-server": ^0.28.3
-    "@astrojs/markdown-remark": ^2.0.0
+    "@astrojs/markdown-remark": ^2.0.1
     "@astrojs/telemetry": ^2.0.0
     "@astrojs/webapi": ^2.0.0
     "@babel/core": ^7.18.2
@@ -1684,7 +1702,7 @@ __metadata:
     zod: ^3.17.3
   bin:
     astro: astro.js
-  checksum: 20f8fdc6c67848ab14e0551e7bf45b49452171db91e65f9d5a298efa0fbf6eb79d2b4f12b1f181668bdbf3db285c6a120a48fcadaf719485af4c6d5b36e9b73e
+  checksum: be4ab7e64ab9ba6343837decfa8c22f2e05f0d661aaedf042106fa619640c0c0f7e5b63a50c45e6855a6d9be4db3f11754a5e63d5109814edac5b2bbf080cafb
   languageName: node
   linkType: hard
 
@@ -7407,7 +7425,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.2.4":
+"tailwindcss@npm:^3.0.24, tailwindcss@npm:^3.2.4":
   version: 3.2.4
   resolution: "tailwindcss@npm:3.2.4"
   dependencies:
