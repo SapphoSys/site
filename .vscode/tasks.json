@@ -1,0 +1,50 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "site: build",
+      "type": "shell",
+      "group": "build",
+      "command": "yarn build",
+      "detail": "Builds the site."
+    },
+    {
+      "label": "site: check",
+      "type": "shell",
+      "group": "test",
+      "command": "yarn astro:check",
+      "detail": "Checks the site's source code for any build compilation errors."
+    },
+    {
+      "label": "site: dev",
+      "type": "shell",
+      "command": "yarn start:dev",
+      "detail": "Runs a dev instance of the site."
+    },
+    {
+      "label": "site: format:prettier",
+      "type": "shell",
+      "command": "yarn format:prettier",
+      "detail": "Formats the site's source code through Prettier."
+    },
+    {
+      "label": "site: lint:eslint",
+      "type": "shell",
+      "command": "yarn format:prettier",
+      "detail": "Adheres to the site's styling guidelines through ESLint."
+    },
+    {
+      "label": "site: start",
+      "type": "shell",
+      "command": "yarn start",
+      "detail": "Serves the website from the dist/ folder."
+    },
+    {
+      "label": "site: test",
+      "type": "shell",
+      "group": "test",
+      "command": "yarn test",
+      "detail": "Analyzes the site's source code to quickly find styling problems through ESLint and Prettier."
+    }
+  ]
+}

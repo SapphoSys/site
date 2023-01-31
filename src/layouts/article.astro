@@ -47,7 +47,7 @@ const createdAt = created ? fm(parseISO(created)) : null;
   {
     tags ? (
       <div class="tags mb-5 mt-3 flex gap-2">
-        <span class="border-ctp-pink mb-1 rounded-lg border-[1px] py-1 px-3">
+        <span class="mb-1 rounded-lg border-[1px] border-ctp-pink py-1 px-3">
           <Icon class="mb-1" size={20} name="mdi:tag" />
           {tags && tags.join(', ')}
         </span>

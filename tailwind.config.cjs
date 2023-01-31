@@ -16,9 +16,9 @@ module.exports = {
       'braytech': '#E33D5E',
       'dim': '#F37321',
       'destinyrecipes': '#C8455E',
-      'dbots': '#7885ad',
+      'dbots': '#a8bdff',
       'littlelight': '#9e88ffcc',
-      'novecore': '#5b7ef0',
+      'novecore': '#809eff',
       'parallel': '#CA2917',
     },
     extend: {
