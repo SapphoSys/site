@@ -3,13 +3,7 @@
   "redirects": [
     {
       "source": "/parallel",
-      "destination": "https://parallel.report",
-      "statusCode": 301
-    },
-    {
-      "source": "/keys.txt",
-      "destination": "/keys",
-      "statusCode": 301
+      "destination": "https://parallel.report"
     }
   ],
   "rewrites": [
@@ -20,6 +14,10 @@
     {
       "source": "/api/event",
       "destination": "https://stats.ovy.sh/api/event"
+    },
+    {
+      "source": "/keys",
+      "destination": "/keys.txt"
     }
   ]
 }
