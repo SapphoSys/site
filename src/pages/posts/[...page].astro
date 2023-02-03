@@ -21,18 +21,23 @@ interface PostProps {
   title: string;
 }
 
+const { page } = Astro.props;
+
 const fm = (d: Date) => format(d, 'MMM do, yyyy');
-
-// Obtain posts from the desired folder and sort it by date.
-const postCollection = await getCollection('posts');
-const posts = postCollection.sort((a, b) => new Date(b.data.created).valueOf() - new Date(a.data.created).valueOf());
-
 const createdAt = (post: PostProps) => post.created && fm(parseISO(post.created));
+
+export async function getStaticPaths({ paginate }) {
+  const postCollection = await getCollection('posts');
+  const posts = postCollection.sort((a, b) => new Date(b.data.created).valueOf() - new Date(a.data.created).valueOf());
+
+  return paginate(posts, { pageSize: 10 });
+}
 ---
 
 <Layout
   description="A personal blog, comprising of whatever stuff I find interesting to post."
-  title="Blog | Chloe Arciniega"
+  pageTitle="Posts"
+  title="Posts | Chloe Arciniega"
 >
   <main class="content flex flex-grow flex-col text-3xl">
     <Line>My blog</Line>
@@ -46,7 +51,7 @@ const createdAt = (post: PostProps) => post.created && fm(parseISO(post.created)
     </Link>
 
     {
-      posts.map(({ data, slug }) => (
+      page.data.map(({ data, slug }) => (
         <article>
           {data.title && (
             <span class="title text-4xl font-bold">
@@ -75,6 +80,28 @@ const createdAt = (post: PostProps) => post.created && fm(parseISO(post.created)
           {data.description && <span class="description mt-10 italic">{data.description}</span>}
         </article>
       ))
+    }
+
+    {
+      page.url.prev ? (
+        <Link href={page.url.prev}>
+          <Icon class="mb-1" size={20} name="mdi:arrow-left-thick" />
+          Recent posts
+        </Link>
+      ) : (
+        <div />
+      )
+    }
+
+    {
+      page.url.next ? (
+        <Link href={page.url.next}>
+          <Icon class="mb-1" size={20} name="mdi:arrow-right-thick" />
+          Older Posts
+        </Link>
+      ) : (
+        <div />
+      )
     }
 
     <Footer />

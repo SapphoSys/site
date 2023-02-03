@@ -6,15 +6,16 @@ import '@fontsource/inter';
 
 interface Props {
   description: string;
+  pageTitle: string;
   title: string;
 }
 
-const { description, title } = Astro.props;
+const { description, pageTitle, title } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <Head description={description} title={title}>
+  <Head description={description} pageTitle={pageTitle} title={title}>
     <slot name="head" />
   </Head>
 

@@ -2,7 +2,7 @@
 import { SEO } from 'astro-seo';
 import { base, feed, socials } from '@config';
 
-const { description, title } = Astro.props;
+const { description, pageTitle, title } = Astro.props;
 
 const siteName = Astro.site?.hostname;
 const image = new URL(base.favicon?.fileName || '/favicon.png', Astro.site).href;
@@ -27,7 +27,7 @@ const IS_PRODUCTION = import.meta.env.MODE === 'production';
     description={description}
     openGraph={{
       basic: {
-        title,
+        title: pageTitle,
         type: 'website',
         image,
       },
@@ -65,7 +65,12 @@ const IS_PRODUCTION = import.meta.env.MODE === 'production';
         { rel: 'me', href: socials && `${socials.mastodon.link}` },
 
         // RSS
-        { rel: 'alternate', href: feed && `https://${base.site}/rss.xml`, type: 'appliccation/rss+xml' },
+        {
+          rel: 'alternate',
+          title: "Chloe's Posts",
+          href: feed && `https://${base.site}/rss.xml`,
+          type: 'appliccation/rss+xml',
+        },
       ],
     }}
   />

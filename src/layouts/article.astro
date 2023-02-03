@@ -30,7 +30,7 @@ const fm = (d: Date) => format(d, 'MMM do, yyyy');
 const createdAt = created ? fm(parseISO(created)) : null;
 ---
 
-<Layout description={description} title={title}>
+<Layout description={description} pageTitle={title} title={`${title} | Chloe Arciniega`}>
   <Line>My blog</Line>
   {checkComments() && <meta slot="head" name="giscus:backlink" content={Astro.url.pathname} />}
 
@@ -47,7 +47,7 @@ const createdAt = created ? fm(parseISO(created)) : null;
   {
     tags ? (
       <div class="tags mb-5 mt-3 flex gap-2">
-        <span class="mb-1 rounded-lg border-[1px] border-ctp-pink py-1 px-3">
+        <span class="border-ctp-pink mb-1 rounded-lg border-[1px] py-1 px-3">
           <Icon class="mb-1" size={20} name="mdi:tag" />
           {tags && tags.join(', ')}
         </span>
@@ -59,7 +59,7 @@ const createdAt = created ? fm(parseISO(created)) : null;
   {image?.url && <img src={image?.url} alt={image?.alt} title={image?.alt} />}
 
   <!-- The blog's content itself -->
-  <main class="article-content">
+  <main class="article-content prose prose-invert">
     <slot />
   </main>
 
@@ -71,13 +71,11 @@ const createdAt = created ? fm(parseISO(created)) : null;
 
   <style is:global>
     .article-content {
-      & :is(h1, h2, h3, h4, h5, h6) {
-        @apply font-bold;
-        @apply text-4xl;
-      }
+      @apply prose-headings:relative;
+      @apply text-3xl;
 
       & a {
-        @apply text-ctp-pink hover:underline;
+        @apply text-ctp-pink;
       }
 
       @apply flex flex-grow flex-col flex-wrap;
