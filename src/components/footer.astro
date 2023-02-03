@@ -3,14 +3,12 @@ import Link from '@components/link.astro';
 import Separator from '@components/separator.astro';
 ---
 
-<footer class="mt-1 flex flex-grow flex-col">
+<footer class="flex flex-grow flex-col pt-1">
   <slot />
 
-  <hr class="text-ctp-pink" />
+  <hr />
 
-  <span class="flex-cel mt-4 mb-1 flex flex-col"> </span>
-
-  <nav class="links">
+  <nav class="flex-cel links flex">
     <Link href="/" title="Home" rel="prefetch">Home</Link>
     <Separator />
     <Link href="/posts" title="Posts" rel="prefetch">Posts</Link>
@@ -24,10 +22,13 @@ import Separator from '@components/separator.astro';
 </footer>
 
 <style>
-  a {
+  a,
+  hr {
     @apply text-ctp-pink;
   }
+
   .links {
     @apply flex flex-wrap gap-[15px] md:gap-[10px];
+    @apply pt-4 pb-1;
   }
 </style>

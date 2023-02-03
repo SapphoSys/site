@@ -35,20 +35,24 @@ const createdAt = created ? fm(parseISO(created)) : null;
   {checkComments() && <meta slot="head" name="giscus:backlink" content={Astro.url.pathname} />}
 
   <!-- Title -->
-  {title && <span class="title mt-10 text-5xl font-bold">{title}</span>}
+  {title && <span class="title pt-10 text-5xl font-bold">{title}</span>}
 
   <!-- Date -->
-  <span class="date mt-3">
-    <Icon class="mb-1" size={20} name="mdi:calendar" />
-    {createdAt}
-  </span>
+  {
+    createdAt && (
+      <span class="date pt-3">
+        <Icon class="pb-1" size={20} name="mdi:calendar" />
+        {createdAt}
+      </span>
+    )
+  }
 
   <!-- Tags -->
   {
     tags ? (
-      <div class="tags mb-5 mt-3 flex gap-2">
-        <span class="border-ctp-pink mb-1 rounded-lg border-[1px] py-1 px-3">
-          <Icon class="mb-1" size={20} name="mdi:tag" />
+      <div class="tags flex gap-2 pt-3 pb-5">
+        <span class="border-ctp-pink rounded-lg border-[1px] py-1 px-3 pb-1">
+          <Icon class="pb-1" size={20} name="mdi:tag" />
           {tags && tags.join(', ')}
         </span>
       </div>
@@ -71,16 +75,13 @@ const createdAt = created ? fm(parseISO(created)) : null;
 
   <style is:global>
     .article-content {
-      @apply prose-headings:relative;
       @apply text-3xl;
+      @apply flex flex-grow flex-col flex-wrap;
+      @apply pb-5;
 
       & a {
         @apply text-ctp-pink;
       }
-
-      @apply flex flex-grow flex-col flex-wrap;
-      @apply gap-[1rem];
-      @apply mb-5;
     }
   </style>
 </Layout>

@@ -42,10 +42,10 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
   <main class="content flex flex-grow flex-col text-3xl">
     <Line>My blog</Line>
 
-    <p class="description mt-5 italic">A personal blog, comprising of whatever stuff I find interesting to post.</p>
+    <p class="description pt-5 italic">A personal blog, comprising of whatever stuff I find interesting to post.</p>
 
     <!-- prettier-ignore -->
-    <Link class="subscribe md:mb-5 mb-10" title="Subscribe to RSS feed" href="/rss.xml">
+    <Link class="subscribe md:pb-5 pb-10" title="Subscribe to RSS feed" href="/rss.xml">
         <Icon class="mb-2" size={20} name="mdi:rss" />
         Subscribe to RSS
     </Link>
@@ -63,7 +63,7 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
 
           {data.created && (
             <span class="date">
-              <Icon class="mb-1" size={20} name="mdi:calendar" />
+              <Icon class="pb-1" size={20} name="mdi:calendar" />
               {createdAt(data)}
             </span>
           )}
@@ -71,13 +71,13 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
           {data.tags ? (
             <div class="tags flex gap-2">
               <span class="tags border-ctp-pink">
-                <Icon class="mb-1" size={20} name="mdi:tag" />
+                <Icon class="pb-1" size={20} name="mdi:tag" />
                 {data.tags && data.tags.join(', ')}
               </span>
             </div>
           ) : null}
 
-          {data.description && <span class="description mt-10 italic">{data.description}</span>}
+          {data.description && <span class="description pt-10 italic">{data.description}</span>}
         </article>
       ))
     }
@@ -85,7 +85,7 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
     {
       page.url.prev ? (
         <Link href={page.url.prev}>
-          <Icon class="mb-1" size={20} name="mdi:arrow-left-thick" />
+          <Icon class="pb-1" size={20} name="mdi:arrow-left-thick" />
           Recent posts
         </Link>
       ) : (
@@ -96,7 +96,7 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
     {
       page.url.next ? (
         <Link href={page.url.next}>
-          <Icon class="mb-1" size={20} name="mdi:arrow-right-thick" />
+          <Icon class="pb-1" size={20} name="mdi:arrow-right-thick" />
           Older Posts
         </Link>
       ) : (
