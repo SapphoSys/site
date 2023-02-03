@@ -1,0 +1,28 @@
+---
+import Link from '@components/link.astro';
+
+const {
+  link,
+  name,
+  description,
+  tag,
+  date,
+  borderColor = 'border-ctp-pink',
+  textColor = 'border-ctp-pink',
+} = Astro.props;
+---
+
+<li>
+  <Link href={link} class={textColor} target="_blank" title={name}>{name}</Link>
+  <div class="flex gap-2">
+    <span class={`tag ${borderColor}`}>{tag}</span>
+    <span class={`tag ${borderColor}`}>{date}</span>
+  </div>
+  <span>{description}</span>
+</li>
+
+<style>
+  .tag {
+    @apply rounded-lg border-[1px] py-1 px-3;
+  }
+</style>

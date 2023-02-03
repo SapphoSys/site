@@ -1,9 +1,9 @@
 ---
 import Layout from '@layouts/page.astro';
 
+import Contribution from '@components/contribution.astro';
 import Footer from '@components/footer.astro';
 import Line from '@components/underline.astro';
-import Link from '@components/link.astro';
 ---
 
 <Layout
@@ -16,149 +16,122 @@ import Link from '@components/link.astro';
 
     <div class="more flex flex-grow flex-col">
       <ul class="flex flex-grow list-inside list-disc flex-col gap-5 pt-2">
-        <li class="arciniega">
-          <Link href="https://arciniega.one" title="arciniega.one">arciniega.one</Link>
-          <div class="flex gap-2">
-            <span class="tag border-ctp-pink">Developer</span>
-            <span class="tag border-ctp-pink">2022 — present</span>
-          </div>
-          <span class="description">The site you're viewing right now!</span>
-        </li>
+        <Contribution
+          link="https://arciniega.one"
+          name="arciniega.one"
+          description="The site you're viewing right now!"
+          tag="Developer"
+          date="2022 — present"
+        />
 
-        <li class="braytech">
-          <Link href="https://bray.tech" class="text-braytech" target="_blank" title="Braytech">Braytech</Link>
-          <div class="flex gap-2">
-            <span class="tag border-braytech">Translator</span>
-            <span class="tag border-braytech">2022 — present</span>
-          </div>
-          <span class="description">
-            View & map checklists, track & view triumphs, inspect collectibles, and much more!
-          </span>
-        </li>
+        <Contribution
+          link="https://bray.tech"
+          name="Braytech"
+          description="View & map checklists, track & view triumphs, inspect collectibles, and much more!"
+          tag="Translator"
+          date="2022 — present"
+          borderColor="border-braytech"
+          textColor="text-braytech"
+        />
 
-        <li class="dim">
-          <Link href="https://destinyitemmanager.com" class="text-dim" target="_blank" title="Destiny Item Manager">
-            Destiny Item Manager
-          </Link>
-          <div class="flex gap-2">
-            <span class="tag border-dim">Translator</span>
-            <span class="tag border-dim">2021 — present</span>
-          </div>
-          <span class="description">Your Destiny items anywhere, anytime.</span>
-        </li>
+        <Contribution
+          link="https://destinyitemmanager.com"
+          name="Destiny Item Manager"
+          description="Your Destiny items anywhere, anytime."
+          tag="Translator"
+          date="2021 — present"
+          borderColor="border-dim"
+          textColor="text-dim"
+        />
 
-        <li class="destinyrecipes">
-          <Link href="https://destinyrecipes.com" class="text-destinyrecipes" target="_blank" title="Destiny Recipes">
-            Destiny Recipes
-          </Link>
-          <div class="flex gap-2">
-            <span class="tag border-destinyrecipes">Translator</span>
-            <span class="tag border-destinyrecipes">2022 — present</span>
-          </div>
-          <span class="description">A collection of tools to help you at Destiny 2.</span>
-        </li>
+        <Contribution
+          link="https://destinyrecipes.com"
+          name="Destiny Recipes"
+          description="A collection of tools to help you at Destiny 2."
+          tag="Translator"
+          date="2022 — present"
+          borderColor="border-destinyrecipes"
+          textColor="text-destinyrecipes"
+        />
 
-        <li class="dijit">
-          <Link href="https://dijit.studio" target="_blank" title="Dijit">Dijit</Link>
-          <div class="flex gap-2">
-            <span class="tag border-ctp-pink">???</span>
-            <span class="tag border-ctp-pink">2021 — present</span>
-          </div>
-          <span class="description">Coming Soon.</span>
-        </li>
+        <Contribution
+          link="https://dijit.studio"
+          name="Dijit"
+          description="Coming Soon."
+          tag="???"
+          date="2021 — present"
+        />
 
-        <li class="dbots">
-          <Link href="https://discord.bots.gg" class="text-dbots" target="_blank" title="Discord Bots">
-            Discord Bots
-          </Link>
-          <div class="flex gap-2">
-            <span class="tag border-dbots">Approval Helper</span>
-            <span class="tag border-dbots">2020 — present</span>
-          </div>
-          <span class="description">The original Discord bot list. Find the right bot for your server today.</span>
-        </li>
+        <Contribution
+          link="https://discord.bots.gg"
+          name="Discord Bots"
+          description="The original Discord bot list. Find the right bot for your server today."
+          tag="Approval Helper"
+          date="2020 — present"
+          borderColor="border-dbots"
+          textColor="text-dbots"
+        />
 
-        <li class="littlelight">
-          <Link href="https://littlelight.club" class="text-littlelight" target="_blank" title="Little Light">
-            Little Light
-          </Link>
-          <div class="flex gap-2">
-            <span class="tag border-littlelight">Translator</span>
-            <span class="tag border-littlelight">2022 — present</span>
-          </div>
-          <span class="description">
-            An item manager for Destiny 2 that will make your Guardian's life a lot easier.
-          </span>
-        </li>
+        <Contribution
+          link="https://littlelight.club"
+          name="Little Light"
+          description="An item manager for Destiny 2 that will make your Guardian's life a lot easier."
+          tag="Translator"
+          date="2022 — present"
+          borderColor="border-littlelight"
+          textColor="text-littlelight"
+        />
 
-        <li class="novecore">
-          <Link href="https://novecore.com" class="text-novecore" target="_blank" title="Novecore">Novecore</Link>
-          <div class="flex gap-2">
-            <span class="tag border-novecore">Translator</span>
-            <span class="tag border-novecore">2021 — present</span>
-          </div>
-          <span class="description">The next generation of music distribution.</span>
-        </li>
+        <Contribution
+          link="https://novecore.com"
+          name="Novecore"
+          description="The next generation of music distribution."
+          tag="Translator"
+          date="2021 — present"
+          borderColor="border-novecore"
+          textColor="text-novecore"
+        />
 
-        <li class="parallel">
-          <Link href="https://parallel.report" class="text-parallel" target="_blank" title="Parallel Program Report">
-            Parallel Program Report
-          </Link>
-          <div class="flex gap-2">
-            <span class="tag border-parallel">Developer</span>
-            <span class="tag border-parallel">2022 — present</span>
-          </div>
-          <span class="description">
-            Covers Guardians who contributed to Destiny 2 and/or its API in a meaningful way, and have received the
-            Parallel Program emblem.
-          </span>
-        </li>
+        <Contribution
+          link="https://parallel.report"
+          name="Parallel Program Report"
+          description="Covers Guardians who contributed to Destiny 2 and/or its API in a meaningful way, and have received the Parallel Program emblem."
+          tag="Developer"
+          date="2022 — present"
+          borderColor="border-parallel"
+          textColor="text-parallel"
+        />
       </ul>
     </div>
 
     <Line>Previous works</Line>
     <div class="more flex flex-grow flex-col">
       <ul class="flex flex-grow list-inside list-disc flex-col gap-5 pt-2">
-        <li class="hibiki">
-          <Link href="https://hibiki.app" target="_blank" title="Hibiki">Hibiki</Link>
-          <div class="flex gap-2">
-            <span class="tag">Developer</span>
-            <span class="tag">Translator</span>
-          </div>
-          <span class="description">The best all-in-one Discord bot! Automod, fun, music, utilities, and more.</span>
-        </li>
+        <Contribution
+          link="https://hibiki.app"
+          name="Hibiki"
+          description="The best all-in-one Discord bot! Automod, fun, music, utilities, and more."
+          tag="Developer"
+          date="Sep 2018 — Mar 2020"
+        />
 
-        <li class="enlive">
-          <Link href="https://github.com/solely-archive/enlive" target="_blank" title="ENLiVE">ENLiVE</Link>
-          <div class="flex gap-2">
-            <span class="tag">Developer</span>
-          </div>
-          <span class="description">ENLiVE is a English and Japanese VTuber group.</span>
-        </li>
+        <Contribution
+          link="https://github.com/solely-archive/enlive"
+          name="ENLiVE"
+          description="ENLiVE is a English and Japanese VTuber group."
+          tag="Developer"
+          date="Mar 2020 - Jun 2020"
+        />
 
-        <li class="terminal">
-          <Link href="https://github.com/terminal" target="_blank" title="terminal">terminal</Link>
-          <div class="flex gap-2">
-            <span class="tag">Contributor</span>
-          </div>
-          <span class="description">A group for Discord bot developers.</span>
-        </li>
-
-        <li class="jiktim">
-          <Link href="https://github.com/jiktim" target="_blank" title="jiktim">jiktim</Link>
-          <div class="flex gap-2">
-            <span class="tag">Contributor</span>
-          </div>
-          <span class="description">Stupid people making stupid software.</span>
-        </li>
+        <Contribution
+          link="https://github.com/terminal"
+          name="terminal"
+          description="A group for Discord bot developers."
+          tag="Contributor"
+          date="Apr 2017 - Apr 2019"
+        />
       </ul>
       <Footer />
     </div>
   </main>
 </Layout>
-
-<style>
-  .tag {
-    @apply rounded-lg border-[1px] py-1 px-3;
-  }
-</style>
