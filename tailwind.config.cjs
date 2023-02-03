@@ -1,11 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{astro,html,js,md,mdx,ts,tsx}'],
+  content: ['./src/**/*.{astro,html,js,md,mdx,ts}'],
   plugins: [
     require('@catppuccin/tailwindcss')({
       prefix: 'ctp',
       defaultFlavour: 'mocha',
     }),
+    require('@tailwindcss/typography'),
   ],
   theme: {
     fontFamily: {

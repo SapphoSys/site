@@ -21,9 +21,6 @@
     "type": "git",
     "url": "git+https://github.com/solelychloe/arciniega.one.git"
   },
-  "engines": {
-    "node": ">=18"
-  },
   "packageManager": "yarn@3.3.1",
   "dependencies": {
     "@astrojs/mdx": "^0.15.2",
@@ -52,6 +49,7 @@
   },
   "devDependencies": {
     "@catppuccin/tailwindcss": "^0.1.1",
+    "@tailwindcss/typography": "^0.5.9",
     "@types/eslint": "^8.4.10",
     "@types/prettier": "^2.7.2",
     "@typescript-eslint/parser": "^5.50.0",

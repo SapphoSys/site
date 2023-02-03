@@ -5,6 +5,11 @@
       "source": "/parallel",
       "destination": "https://parallel.report",
       "statusCode": 301
+    },
+    {
+      "source": "/keys.txt",
+      "destination": "/keys",
+      "statusCode": 301
     }
   ],
   "rewrites": [
