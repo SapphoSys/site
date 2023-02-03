@@ -26,7 +26,7 @@ const { page } = Astro.props;
 const fm = (d: Date) => format(d, 'MMM do, yyyy');
 const createdAt = (post: PostProps) => post.created && fm(parseISO(post.created));
 
-export async function getStaticPaths({ paginate }) {
+export async function getStaticPaths({ paginate }: { paginate: Function }) {
   const postCollection = await getCollection('posts');
   const posts = postCollection.sort((a, b) => new Date(b.data.created).valueOf() - new Date(a.data.created).valueOf());
 
@@ -51,7 +51,7 @@ export async function getStaticPaths({ paginate }) {
     </Link>
 
     {
-      page.data.map(({ data, slug }) => (
+      page.data.map(({ data, slug }: { data: PostProps; slug: Object }) => (
         <article>
           {data.title && (
             <span class="title text-4xl font-bold">
