@@ -1,0 +1,84 @@
+---
+import Layout from '@layouts/page.astro';
+
+import Footer from '@components/footer.astro';
+import Link from '@components/link.astro';
+
+import { Icon } from 'astro-icon';
+
+const response = await fetch(
+  `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=solelychloe&api_key=${
+    import.meta.env.LAST_FM_KEY
+  }&format=json`
+);
+
+const data = await response.json();
+const track = data && data.recenttracks.track[0];
+
+const trackPlaying = track['@attr'];
+const trackURL = track && track.url;
+const trackImage = track && track.image[3]['#text'];
+const trackName = track && track.name;
+const trackArtist = track && track.artist['#text'];
+const trackAlbum = track && track.album['#text'];
+---
+
+<Layout description="Translator, developer, hobbyist sysadmin." pageTitle="Playing" title="Playing | Chloe Arciniega">
+  <main class="content flex flex-grow flex-col text-3xl">
+    <span class="text-5xl font-bold text-ctp-pink">{trackPlaying ? 'Now listening to:' : 'Previously played:'}</span>
+
+    {trackPlaying ? '' : <span class="italic">I'm not currently listening to anything.</span>}
+
+    <span class="cover">
+      <Link href={trackURL} target="_blank">
+        <img
+          src={trackImage}
+          title={`Cover art of ${trackName} by ${trackArtist}`}
+          alt={`Cover art of ${trackName} by ${trackArtist}`}
+          width="250"
+          height="250"
+        />
+      </Link>
+    </span>
+
+    <span class="song">
+      <Icon class="pb-1" size={20} title="Song name" name="mdi:music-note-eighth" />
+      <Link href={trackURL} target="_blank" title={`${trackName} by ${trackArtist} on ${trackAlbum}`}>
+        {trackName}
+      </Link>
+    </span>
+
+    <span class="artist">
+      <Icon class="pb-1" size={20} title="Artist" name="mdi:artist" />
+      <Link href={`https://last.fm/music/${trackArtist}`} title={trackArtist} target="_blank">
+        {trackArtist}
+      </Link>
+    </span>
+
+    <span class="album">
+      <Icon class="pb-1" size={20} title="Album" name="mdi:album" />
+      <Link
+        href={`https://last.fm/music/${trackArtist}/${trackAlbum}`}
+        title={`${trackAlbum} by ${trackArtist}`}
+        target="_blank"
+      >
+        {trackAlbum}
+      </Link>
+    </span>
+
+    <span class="profile">
+      <Icon class="pb-1" size={20} title="My Last.fm profile" name="simple-icons:lastfm" />
+      <Link class="text-ctp-red" href="https://last.fm/user/solelychloe" title="My Last.fm profile" target="_blank">
+        My Last.fm profile
+      </Link>
+    </span>
+    <Footer />
+  </main>
+
+  <style>
+    .cover,
+    .profile {
+      @apply pt-5 pb-5;
+    }
+  </style>
+</Layout>
