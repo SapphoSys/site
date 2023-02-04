@@ -11,15 +11,15 @@ import { Icon } from 'astro-icon';
 import { format, parseISO } from 'date-fns';
 
 interface Props {
-  comments: boolean;
-  created: string;
-  description: string;
+  title: string;
+  description?: string;
+  created?: string | undefined;
+  tags?: string[];
   image?: {
     alt?: string;
     url?: string;
   };
-  tags?: Array<string>;
-  title: string;
+  comments?: boolean;
 }
 
 const { comments, created, description, image, tags, title } = Astro.props;
@@ -80,7 +80,7 @@ const createdAt = created ? fm(parseISO(created)) : null;
       @apply pb-5;
 
       & a {
-        @apply text-ctp-pink;
+        text-decoration: none;
       }
     }
   </style>

@@ -1,6 +1,10 @@
 ---
 import Link from '@components/link.astro';
 import Separator from '@components/separator.astro';
+
+const IS_PRODUCTION = import.meta.env.MODE === 'production';
+
+const credits = IS_PRODUCTION ? '/credits' : '/credits.txt';
 ---
 
 <footer class="flex flex-grow flex-col pt-1">
@@ -13,7 +17,9 @@ import Separator from '@components/separator.astro';
     <Separator />
     <Link href="/posts" title="Posts" rel="prefetch">Posts</Link>
     <Separator />
-    <Link href="/credits.txt" title="Credits" rel="prefetch">Credits</Link>
+    <Link href="/fm" title="Playing" rel="prefetch">Playing</Link>
+    <Separator />
+    <Link href={credits} title="Credits" rel="prefetch">Credits</Link>
     <Separator />
     <Link href="/domains" title="Domains" rel="prefetch">Domains</Link>
     <Separator />

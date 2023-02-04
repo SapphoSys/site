@@ -5,7 +5,7 @@ import '@fontsource/atkinson-hyperlegible';
 import '@fontsource/inter';
 
 interface Props {
-  description: string;
+  description?: string | unknown;
   pageTitle: string;
   title: string;
 }
@@ -30,6 +30,7 @@ const { description, pageTitle, title } = Astro.props;
       body {
         @apply max-w-[44em] px-[2.5em] py-[1.8em];
       }
+
       html {
         display: flex;
         flex-direction: column;
