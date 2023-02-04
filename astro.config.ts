@@ -10,6 +10,8 @@ import autolinkHeadings from 'rehype-autolink-headings';
 import externalLinks from 'rehype-external-links';
 import slug from 'rehype-slug';
 
+import vercel from '@astrojs/vercel/serverless';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://arciniega.one',
@@ -32,4 +34,6 @@ export default defineConfig({
     sitemap(),
     compress(),
   ],
+  output: 'server',
+  adapter: vercel(),
 });
