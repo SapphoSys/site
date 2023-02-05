@@ -1,0 +1,9 @@
+---
+import Link from '@components/link.astro';
+
+const { image, link, name } = Astro.props;
+---
+
+<Link href={link} title={`Webring of ${name}`}>
+  <img src={`webrings/${image}`} alt={`Webring of ${name}`} width="88" height="31" />
+</Link>
