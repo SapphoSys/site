@@ -13,6 +13,8 @@ const domains = await readFile(
   join(path, `${IS_PRODUCTION ? '../../domains.txt' : '../../public/domains.txt'}`),
   'utf-8'
 );
+
+console.log(domains);
 ---
 
 <div class="domains">
