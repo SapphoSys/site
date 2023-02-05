@@ -74,9 +74,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/mdx@npm:^0.15.2":
-  version: 0.15.2
-  resolution: "@astrojs/mdx@npm:0.15.2"
+"@astrojs/mdx@npm:^0.16.0":
+  version: 0.16.0
+  resolution: "@astrojs/mdx@npm:0.16.0"
   dependencies:
     "@astrojs/markdown-remark": ^2.0.1
     "@astrojs/prism": ^2.0.0
@@ -95,7 +95,7 @@ __metadata:
     shiki: ^0.11.1
     unist-util-visit: ^4.1.0
     vfile: ^5.3.2
-  checksum: d941eea8046d6b2d67cfc878e296c72465c0bb0c7ef3ba7cf36ccee7ebf3af44f82ddef88a41ca43185af5c8513a697e3a605c5292e4293d7bb31d17756c4849
+  checksum: 3ad8945213835f94b2ab5d674fe7fc8723b26a0f0998f1bc02336d5ac57e1ecedea4fa87db1dcb8beea84047a329eee43c97caefa65896a25cd28a17c70eaee8
   languageName: node
   linkType: hard
 
@@ -1054,13 +1054,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:^8.4.10":
-  version: 8.4.10
-  resolution: "@types/eslint@npm:8.4.10"
+"@types/eslint@npm:^8.21.0":
+  version: 8.21.0
+  resolution: "@types/eslint@npm:8.21.0"
   dependencies:
     "@types/estree": "*"
     "@types/json-schema": "*"
-  checksum: 21e009ed9ed9bc8920fdafc6e11ff321c4538b4cc18a56fdd59dc5184ea7bbf363c71638c9bdb59fc1254dddcdd567485136ed68b0ee4750948d4e32cb79c689
+  checksum: 48823b13e1ffbc6fe22c96d99f691a17507ef5a498c4aed95e3a9076ec6d44ff48ce8a632928b6f82bea92701ac8967bba0d78a5c9de4dfa3f2e12d26dae7da4
   languageName: node
   linkType: hard
 
@@ -1568,7 +1568,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "arciniega.one@workspace:."
   dependencies:
-    "@astrojs/mdx": ^0.15.2
+    "@astrojs/mdx": ^0.16.0
     "@astrojs/prefetch": ^0.1.2
     "@astrojs/rss": ^2.1.0
     "@astrojs/sitemap": ^1.0.1
@@ -1578,12 +1578,12 @@ __metadata:
     "@fontsource/atkinson-hyperlegible": ^4.5.11
     "@fontsource/inter": ^4.5.15
     "@tailwindcss/typography": ^0.5.9
-    "@types/eslint": ^8.4.10
+    "@types/eslint": ^8.21.0
     "@types/prettier": ^2.7.2
     "@typescript-eslint/eslint-plugin": ^5.50.0
     "@typescript-eslint/parser": ^5.50.0
     astro: ^2.0.6
-    astro-compress: ^1.1.28
+    astro-compress: ^1.1.29
     astro-eslint-parser: ^0.11.0
     astro-icon: ^0.8.0
     astro-seo: ^0.7.0
@@ -1712,20 +1712,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro-compress@npm:^1.1.28":
-  version: 1.1.28
-  resolution: "astro-compress@npm:1.1.28"
+"astro-compress@npm:^1.1.29":
+  version: 1.1.29
+  resolution: "astro-compress@npm:1.1.29"
   dependencies:
     "@types/csso": 5.0.0
     "@types/html-minifier-terser": 7.0.0
     "@types/sharp": 0.31.1
     csso: 5.0.5
-    files-pipeline: 0.0.2
+    files-pipeline: 0.0.3
     html-minifier-terser: 7.1.0
     sharp: 0.31.3
     svgo: 3.0.2
-    terser: 5.16.1
-  checksum: 2836e32fefac7a1c0079ec6ba18606eb696aa667d82d0406e00189ed88351c784e60c524b939729e6f04a2b56f3a4d025ab4dae5767d9e04a7b6af91ea73b933
+    terser: 5.16.2
+  checksum: add15459fda3a991060afb67c47199327f010f1c289fb0e010ff76c9201895726571fe896931dce06b8c94963312d91c1020f76f7762b50a186fb3115ff4003d
   languageName: node
   linkType: hard
 
@@ -3489,13 +3489,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"files-pipeline@npm:0.0.2":
-  version: 0.0.2
-  resolution: "files-pipeline@npm:0.0.2"
+"files-pipeline@npm:0.0.3":
+  version: 0.0.3
+  resolution: "files-pipeline@npm:0.0.3"
   dependencies:
     deepmerge-ts: 4.2.2
     fast-glob: 3.2.12
-  checksum: 4ae84e4d567d2375dcd1e63b0c2abdb3edcde06fe175279721f7db043d7d90c2398f55929d1cb045f3e6a01e6b30849947fc1d7ebc1d5453e2cf23cff4a8a10a
+  checksum: a3c90c8e3d90aa3b16965bce6c1cec12fef5269ea304e642ab34a4bda1580c519490589167e5210c4a3976f582d338cd45216229dd9f2f8bc874ccb9caf340e4
   languageName: node
   linkType: hard
 
@@ -7753,7 +7753,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"terser@npm:5.16.1, terser@npm:^5.15.1":
+"terser@npm:5.16.2":
+  version: 5.16.2
+  resolution: "terser@npm:5.16.2"
+  dependencies:
+    "@jridgewell/source-map": ^0.3.2
+    acorn: ^8.5.0
+    commander: ^2.20.0
+    source-map-support: ~0.5.20
+  bin:
+    terser: bin/terser
+  checksum: 58f3ea10ebc931ecd8143a8d9749b4567df891352f1bac992e8ee0e5645327150a16a0d7e0263d947fd648075fea4e42653cbec7ba7a4f2f3e1ff7272889a221
+  languageName: node
+  linkType: hard
+
+"terser@npm:^5.15.1":
   version: 5.16.1
   resolution: "terser@npm:5.16.1"
   dependencies:
