@@ -16,6 +16,10 @@
       "destination": "https://stats.ovy.sh/api/event"
     },
     {
+      "source": "/domains",
+      "destination": "/domains.txt"
+    },
+    {
       "source": "/credits",
       "destination": "/credits.txt"
     },

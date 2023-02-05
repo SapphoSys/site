@@ -36,7 +36,4 @@ export default defineConfig({
   ],
   output: 'server',
   adapter: vercel(),
-  build: {
-    format: 'file',
-  },
 });
