@@ -29,7 +29,7 @@ const trackAlbum = track && track.album['#text'];
 
     {trackPlaying ? '' : <span class="italic">I'm not currently listening to anything.</span>}
 
-    <span class="cover">
+    <div class="cover flex flex-auto">
       <Link href={trackURL} target="_blank">
         <img
           src={trackImage}
@@ -39,7 +39,7 @@ const trackAlbum = track && track.album['#text'];
           height="250"
         />
       </Link>
-    </span>
+    </div>
 
     <span class="song">
       <Icon class="pb-1" size={20} title="Song name" name="mdi:music-note-eighth" />
