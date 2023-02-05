@@ -42,21 +42,21 @@ const trackAlbum = track && track.album['#text'];
     </div>
 
     <span class="song">
-      <Icon class="pb-1" size={20} title="Song name" name="mdi:music-note-eighth" />
+      <Icon size={20} title="Song name" name="mdi:music-note-eighth" />
       <Link href={trackURL} target="_blank" title={`${trackName} by ${trackArtist} on ${trackAlbum}`}>
         {trackName}
       </Link>
     </span>
 
     <span class="artist">
-      <Icon class="pb-1" size={20} title="Artist" name="mdi:artist" />
+      <Icon size={20} title="Artist" name="mdi:artist" />
       <Link href={`https://last.fm/music/${trackArtist}`} title={trackArtist} target="_blank">
         {trackArtist}
       </Link>
     </span>
 
     <span class="album">
-      <Icon class="pb-1" size={20} title="Album" name="mdi:album" />
+      <Icon size={20} title="Album" name="mdi:album" />
       <Link
         href={`https://last.fm/music/${trackArtist}/${trackAlbum}`}
         title={`${trackAlbum} by ${trackArtist}`}
@@ -67,7 +67,7 @@ const trackAlbum = track && track.album['#text'];
     </span>
 
     <span class="profile">
-      <Icon class="pb-1" size={20} title="My Last.fm profile" name="simple-icons:lastfm" />
+      <Icon size={20} title="My Last.fm profile" name="simple-icons:lastfm" />
       <Link class="text-ctp-red" href="https://last.fm/user/solelychloe" title="My Last.fm profile" target="_blank">
         My Last.fm profile
       </Link>

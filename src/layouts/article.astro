@@ -41,7 +41,7 @@ const createdAt = created ? fm(parseISO(created)) : null;
   {
     createdAt && (
       <span class="date pt-3">
-        <Icon class="pb-1" size={20} name="mdi:calendar" />
+        <Icon size={20} name="mdi:calendar" />
         {createdAt}
       </span>
     )
@@ -52,7 +52,7 @@ const createdAt = created ? fm(parseISO(created)) : null;
     tags ? (
       <div class="tags flex gap-2 pt-3 pb-5">
         <span class="border-ctp-pink rounded-lg border-[1px] py-1 px-3 pb-1">
-          <Icon class="pb-1" size={20} name="mdi:tag" />
+          <Icon size={20} name="mdi:tag" />
           {tags && tags.join(', ')}
         </span>
       </div>

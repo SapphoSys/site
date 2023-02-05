@@ -48,7 +48,7 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
 
     <!-- prettier-ignore -->
     <Link class="subscribe md:pb-5 pb-10" title="Subscribe to RSS feed" href="/rss.xml">
-        <Icon class="mb-2" size={20} name="mdi:rss" />
+        <Icon size={20} name="mdi:rss" />
         Subscribe to RSS
     </Link>
 
@@ -65,7 +65,7 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
 
           {data.created && (
             <span class="date">
-              <Icon class="pb-1" size={20} name="mdi:calendar" />
+              <Icon size={20} name="mdi:calendar" />
               {createdAt(data)}
             </span>
           )}
@@ -73,7 +73,7 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
           {data.tags ? (
             <div class="tags flex gap-2">
               <span class="tags border-ctp-pink">
-                <Icon class="pb-1" size={20} name="mdi:tag" />
+                <Icon size={20} name="mdi:tag" />
                 {data.tags && data.tags.join(', ')}
               </span>
             </div>
@@ -87,7 +87,7 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
     {
       page.url.prev ? (
         <Link href={page.url.prev}>
-          <Icon class="pb-1" size={20} name="mdi:arrow-left-thick" />
+          <Icon size={20} name="mdi:arrow-left-thick" />
           Recent posts
         </Link>
       ) : (
@@ -98,7 +98,7 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
     {
       page.url.next ? (
         <Link href={page.url.next}>
-          <Icon class="pb-1" size={20} name="mdi:arrow-right-thick" />
+          <Icon size={20} name="mdi:arrow-right-thick" />
           Older Posts
         </Link>
       ) : (
@@ -112,6 +112,10 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
   <style>
     span.tags {
       @apply mb-2 mt-2 rounded-lg border-[1px] py-1 px-3;
+    }
+
+    [astro-icon='mdi:rss'] {
+      @apply mb-1;
     }
   </style>
 </Layout>
