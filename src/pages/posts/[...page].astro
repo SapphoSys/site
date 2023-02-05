@@ -19,7 +19,7 @@ interface PostProps {
     alt?: string;
     url?: string;
   };
-  tags?: Array<string>;
+  tags?: string[];
   title: string;
 }
 
@@ -85,24 +85,20 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
     }
 
     {
-      page.url.prev ? (
+      page.url.prev && (
         <Link href={page.url.prev}>
           <Icon size={20} name="mdi:arrow-left-thick" />
           Recent posts
         </Link>
-      ) : (
-        <div />
       )
     }
 
     {
-      page.url.next ? (
+      page.url.next && (
         <Link href={page.url.next}>
           <Icon size={20} name="mdi:arrow-right-thick" />
           Older Posts
         </Link>
-      ) : (
-        <div />
       )
     }
 

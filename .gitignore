@@ -16,7 +16,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # yarn
-.yarn-integrity
 .yarn/install-state.gz
 
 # environment variables
