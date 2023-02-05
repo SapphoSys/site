@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import { readFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -7,7 +9,10 @@ const IS_PRODUCTION = import.meta.env.MODE === 'production';
 
 const path = dirname(fileURLToPath(import.meta.url));
 
-const domains = await readFile(join(path, `${IS_PRODUCTION ? '../domains.txt' : '../../public/domains.txt'}`), 'utf-8');
+const domains = await readFile(
+  join(path, `${IS_PRODUCTION ? '../../domains.txt' : '../../public/domains.txt'}`),
+  'utf-8'
+);
 ---
 
 <div class="domains">
