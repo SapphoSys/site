@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 const IS_PRODUCTION = import.meta.env.MODE === 'production';
 
 const path = dirname(fileURLToPath(import.meta.url));
-const vercelPath = '../../../../../static/domains.txt';
+const vercelPath = '../../../../static/domains.txt';
 
 const domains = await readFile(join(path, `${IS_PRODUCTION ? vercelPath : '../../public/domains.txt'}`), 'utf-8');
 ---
