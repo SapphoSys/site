@@ -23,7 +23,7 @@ const trackArtist = track && track.artist['#text'];
 const trackAlbum = track && track.album['#text'];
 ---
 
-<Layout description="What I may currently be listening to." pageTitle="Playing" title="Playing | Chloe Arciniega">
+<Layout description="What I may currently be listening to." pageTitle="Last.fm" title="Last.fm | Chloe Arciniega">
   <main class="content flex flex-grow flex-col text-3xl">
     <span class="text-5xl font-bold text-ctp-pink">{trackPlaying ? 'Now listening to:' : 'Previously played:'}</span>
 
@@ -33,10 +33,10 @@ const trackAlbum = track && track.album['#text'];
       <Link href={trackURL} target="_blank">
         <img
           src={trackImage}
-          title={`Cover art of ${trackName} by ${trackArtist}`}
-          alt={`Cover art of ${trackName} by ${trackArtist}`}
-          width="250"
-          height="250"
+          title={`Cover art of ${trackName} by ${trackArtist} on ${trackAlbum}`}
+          alt={`Cover art of ${trackName} by ${trackArtist} on ${trackAlbum}`}
+          width="300"
+          height="300"
         />
       </Link>
     </div>
