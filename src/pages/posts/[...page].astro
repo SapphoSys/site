@@ -7,6 +7,8 @@ import Footer from '@components/footer.astro';
 import Line from '@components/underline.astro';
 import Link from '@components/link.astro';
 
+import Navigation from '@components/blog/navigation.astro';
+
 import { format, parseISO } from 'date-fns';
 import { getCollection } from 'astro:content';
 import { Icon } from 'astro-icon';
@@ -15,10 +17,6 @@ interface PostProps {
   comments: boolean;
   created: string;
   description: string;
-  image?: {
-    alt?: string;
-    url?: string;
-  };
   tags?: string[];
   title: string;
 }
@@ -44,20 +42,24 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
   <main class="content flex flex-grow flex-col text-3xl">
     <Line>My blog</Line>
 
-    <p class="description pt-5 italic">A personal blog, comprising of whatever stuff I find interesting to post.</p>
+    <span class="description pt-5 italic">
+      A personal blog, comprising of whatever stuff I find interesting to post.
+    </span>
+
+    <span class="serving">Currently serving {page.total} post{page.total == 1 ? '' : 's'}.</span>
 
     <!-- prettier-ignore -->
-    <Link class="subscribe md:pb-5 pb-10" title="Subscribe to RSS feed" href="/rss.xml">
+    <Link class="subscribe pt-1 pb-5" title="Subscribe to RSS feed" href="/rss.xml">
         <Icon size={20} name="mdi:rss" />
         Subscribe to RSS
     </Link>
 
     {
       page.data.map(({ data, slug }: { data: PostProps; slug: Object }) => (
-        <article>
+        <article class="flex flex-col">
           {data.title && (
-            <span class="title text-4xl font-bold">
-              <Link href={`posts/${slug}`} title={data.title}>
+            <span class="title text-5xl font-bold">
+              <Link href={`/posts/${slug}`} title={data.title}>
                 {data.title}
               </Link>
             </span>
@@ -79,28 +81,12 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
             </div>
           ) : null}
 
-          {data.description && <span class="description pt-10 italic">{data.description}</span>}
+          {data.description && <span class="description pb-3 italic">{data.description}</span>}
         </article>
       ))
     }
 
-    {
-      page.url.prev && (
-        <Link href={page.url.prev}>
-          <Icon size={20} name="mdi:arrow-left-thick" />
-          Recent posts
-        </Link>
-      )
-    }
-
-    {
-      page.url.next && (
-        <Link href={page.url.next}>
-          <Icon size={20} name="mdi:arrow-right-thick" />
-          Older Posts
-        </Link>
-      )
-    }
+    <Navigation page={page} />
 
     <Footer />
   </main>

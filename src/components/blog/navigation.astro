@@ -1,0 +1,29 @@
+---
+import Link from '@components/link.astro';
+
+import { Icon } from 'astro-icon';
+
+const { page } = Astro.props;
+---
+
+{
+  page.url.next && (
+    <div class="next pt-2 pb-2">
+      <Link href={page.url.next} class="float-right">
+        <Icon size={20} name="mdi:arrow-right-thick" />
+        See older posts
+      </Link>
+    </div>
+  )
+}
+
+{
+  page.url.prev && (
+    <div class="previous pt-2 pb-2">
+      <Link href={page.url.prev}>
+        <Icon size={20} name="mdi:arrow-left-thick" />
+        See recent posts
+      </Link>
+    </div>
+  )
+}
