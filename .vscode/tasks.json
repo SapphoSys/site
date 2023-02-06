@@ -30,7 +30,7 @@
     {
       "label": "site: lint:eslint",
       "type": "shell",
-      "command": "yarn format:prettier",
+      "command": "yarn lint:eslint",
       "detail": "Adheres to the site's styling guidelines through ESLint."
     },
     {
