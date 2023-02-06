@@ -4,6 +4,7 @@
   "compilerOptions": {
     // Will be removed when TS5 releases officially.
     "ignoreDeprecations": "5.0",
+
     // Aliases
     "baseUrl": ".",
     "paths": {

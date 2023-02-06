@@ -17,14 +17,17 @@ import { socials } from '@config';
         <Link href={socials.mastodon.link} title={`Mastodon: ${socials.mastodon.alt}`} target="_blank">
           Mastodon</Link>
       )}
+
       {socials?.github && (
         <Link href={`https://github.com/${socials.github}`} title={`GitHub: ${socials.github}`} target="_blank">
           GitHub</Link>
       )}
+
       {socials?.telegram && (
         <Link href={`https://t.me/${socials.telegram}`} title={`Telegram: ${socials.telegram}`} target="_blank">
           Telegram</Link>
       )}
+
       {socials?.mail && (
         <Link href={`mailto:${socials.mail}`} aria-label={`Mail: ${socials.mail}`} title={`Mail: ${socials.mail}`} target="_blank">
           Mail</Link>

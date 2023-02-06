@@ -9,7 +9,6 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  rules: {},
   overrides: [
     {
       files: ['*.astro'],
@@ -18,7 +17,6 @@ module.exports = {
         parser: '@typescript-eslint/parser',
         extraFileExtensions: ['.astro'],
       },
-      rules: {},
     },
     {
       files: ['*.ts'],

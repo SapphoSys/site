@@ -33,12 +33,7 @@ module.exports = {
         },
       }),
       fontSize: {
-        '3xl': [
-          '1.8rem',
-          {
-            lineHeight: '1.5',
-          },
-        ],
+        '3xl': ['1.8rem', { lineHeight: '1.5' }],
       },
     },
   },
