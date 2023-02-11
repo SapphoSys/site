@@ -5,36 +5,27 @@ import Footer from '@components/footer.astro';
 import Link from '@components/link.astro';
 
 import { Icon } from 'astro-icon';
+import simpleFM from '@solely/simple-fm';
 
-const response = await fetch(
-  `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=solelychloe&api_key=${
-    import.meta.env.LAST_FM_KEY
-  }&format=json`
-);
+const client = new simpleFM(import.meta.env.LAST_FM_KEY);
 
-const data = await response.json();
-const track = data && data.recenttracks.track[0];
-
-const trackPlaying = track['@attr'];
-const trackURL = track && track.url;
-const trackImage = track && track.image[3]['#text'];
-const trackName = track && track.name;
-const trackArtist = track && track.artist['#text'];
-const trackAlbum = track && track.album['#text'];
+const track = await client.user.fetchRecentTrack('solelychloe');
 ---
 
 <Layout description="What I may currently be listening to." pageTitle="Last.fm" title="Last.fm | Chloe Arciniega">
   <main class="content flex flex-grow flex-col text-3xl">
-    <span class="text-5xl font-bold text-ctp-pink">{trackPlaying ? 'Now listening to:' : 'Previously played:'}</span>
+    <span class="text-5xl font-bold text-ctp-pink"
+      >{track.currentlyPlaying ? 'Now listening to:' : 'Previously played:'}</span
+    >
 
-    {trackPlaying ? '' : <span class="italic">I'm not currently listening to anything.</span>}
+    {track.currentlyPlaying ? '' : <span class="italic">I'm not currently listening to anything.</span>}
 
     <div class="cover flex flex-auto">
-      <Link href={trackURL} target="_blank">
+      <Link href={track.url} target="_blank">
         <img
-          src={trackImage}
-          title={`Cover art of ${trackName} by ${trackArtist} on ${trackAlbum}`}
-          alt={`Cover art of ${trackName} by ${trackArtist} on ${trackAlbum}`}
+          src={track.image}
+          title={`Cover art of ${track.name} by ${track.artist} on ${track.album}`}
+          alt={`Cover art of ${track.name} by ${track.artist} on ${track.album}`}
           width="300"
           height="300"
         />
@@ -43,26 +34,26 @@ const trackAlbum = track && track.album['#text'];
 
     <span class="song">
       <Icon size={20} title="Song name" name="mdi:music-note-eighth" />
-      <Link href={trackURL} target="_blank" title={`${trackName} by ${trackArtist} on ${trackAlbum}`}>
-        {trackName}
+      <Link href={track.url} target="_blank" title={`${track.name} by ${track.artist} on ${track.album}`}>
+        {track.name}
       </Link>
     </span>
 
     <span class="artist">
       <Icon size={20} title="Artist" name="mdi:artist" />
-      <Link href={`https://last.fm/music/${trackArtist}`} title={trackArtist} target="_blank">
-        {trackArtist}
+      <Link href={`https://last.fm/music/${track.artist}`} title={track.artist} target="_blank">
+        {track.artist}
       </Link>
     </span>
 
     <span class="album">
       <Icon size={20} title="Album" name="mdi:album" />
       <Link
-        href={`https://last.fm/music/${trackArtist}/${trackAlbum}`}
-        title={`${trackAlbum} by ${trackArtist}`}
+        href={`https://last.fm/music/${track.artist}/${track.album}`}
+        title={`${track.album} by ${track.artist}`}
         target="_blank"
       >
-        {trackAlbum}
+        {track.album}
       </Link>
     </span>
 
