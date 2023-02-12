@@ -14,7 +14,7 @@ const track = await client.user.fetchRecentTrack('solelychloe');
 
 <Layout description="What I may currently be listening to." pageTitle="Last.fm" title="Last.fm | Chloe Arciniega">
   <main class="content flex flex-grow flex-col text-3xl">
-    <span class="text-5xl font-bold text-ctp-pink"
+    <span class="text-light-accent text-5xl font-bold dark:text-ctp-pink"
       >{track.currentlyPlaying ? 'Now listening to:' : 'Previously played:'}</span
     >
 

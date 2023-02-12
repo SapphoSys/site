@@ -74,7 +74,7 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
 
           {data.tags ? (
             <div class="tags flex gap-2">
-              <span class="tags border-ctp-pink">
+              <span class="tags border-light-accent dark:border-ctp-pink">
                 <Icon size={20} name="mdi:tag" />
                 {data.tags && data.tags.join(', ')}
               </span>

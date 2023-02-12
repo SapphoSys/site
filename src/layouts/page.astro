@@ -19,7 +19,9 @@ const { description, pageTitle, title } = Astro.props;
     <slot name="head" />
   </Head>
 
-  <body class="flex flex-grow flex-col self-center bg-ctp-base text-3xl text-ctp-text">
+  <body
+    class="flex flex-grow flex-col self-center bg-light-bg text-3xl text-light-text dark:bg-ctp-base dark:text-ctp-text"
+  >
     <slot />
 
     <style is:global>
