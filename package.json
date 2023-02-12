@@ -34,9 +34,7 @@
     "astro-compress": "^1.1.32",
     "astro-icon": "^0.8.0",
     "astro-seo": "^0.7.0",
-    "autoprefixer": "^10.4.13",
     "date-fns": "^2.29.3",
-    "postcss": "^8.4.21",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-external-links": "^2.0.1",
     "rehype-slug": "^5.1.0",
@@ -50,12 +48,18 @@
     "@types/prettier": "^2.7.2",
     "@typescript-eslint/parser": "^5.51.0",
     "astro-eslint-parser": "^0.11.0",
+    "autoprefixer": "^10.4.13",
     "eslint": "^8.34.0",
     "eslint-plugin-astro": "^0.23.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
+    "postcss": "^8.4.21",
+    "postcss-html": "^1.5.0",
     "prettier": "^2.8.4",
     "prettier-plugin-astro": "^0.8.0",
     "prettier-plugin-tailwindcss": "^0.2.2",
+    "stylelint": "^15.1.0",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-standard": "^30.0.1",
     "typescript": "^4.9.5"
   }
 }

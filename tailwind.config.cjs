@@ -14,6 +14,9 @@ module.exports = {
       'littlelight': '#9e88ffcc',
       'novecore': '#809eff',
       'parallel': '#CA2917',
+      'light-bg': '#e6e9ef',
+      'light-accent': '#ea76cb',
+      'light-text': '#4c4f69',
     },
     extend: {
       typography: () => ({
