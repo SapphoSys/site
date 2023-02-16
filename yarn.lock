@@ -1023,6 +1023,52 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@solely/site@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@solely/site@workspace:."
+  dependencies:
+    "@astrojs/mdx": ^0.16.2
+    "@astrojs/prefetch": ^0.1.2
+    "@astrojs/rss": ^2.1.0
+    "@astrojs/sitemap": ^1.0.1
+    "@astrojs/tailwind": 3.0.1
+    "@astrojs/vercel": ^3.1.1
+    "@catppuccin/tailwindcss": ^0.1.1
+    "@fontsource/atkinson-hyperlegible": ^4.5.11
+    "@fontsource/inter": ^4.5.15
+    "@solely/simple-fm": ^0.5.0
+    "@tailwindcss/typography": ^0.5.9
+    "@types/eslint": ^8.21.1
+    "@types/prettier": ^2.7.2
+    "@typescript-eslint/eslint-plugin": ^5.52.0
+    "@typescript-eslint/parser": ^5.52.0
+    astro: ^2.0.12
+    astro-compress: ^1.1.33
+    astro-eslint-parser: ^0.11.0
+    astro-icon: ^0.8.0
+    astro-seo: ^0.7.0
+    autoprefixer: ^10.4.13
+    date-fns: ^2.29.3
+    eslint: ^8.34.0
+    eslint-plugin-astro: ^0.23.0
+    eslint-plugin-jsx-a11y: ^6.7.1
+    postcss: ^8.4.21
+    postcss-html: ^1.5.0
+    prettier: ^2.8.4
+    prettier-plugin-astro: ^0.8.0
+    prettier-plugin-tailwindcss: ^0.2.3
+    rehype-autolink-headings: ^6.1.1
+    rehype-external-links: ^2.0.1
+    rehype-slug: ^5.1.0
+    stylelint: ^15.1.0
+    stylelint-config-html: ^1.1.0
+    stylelint-config-standard: ^30.0.1
+    svgo: ~2.8.0
+    tailwindcss: ^3.2.6
+    typescript: ^4.9.5
+  languageName: unknown
+  linkType: soft
+
 "@tailwindcss/typography@npm:^0.5.9":
   version: 0.5.9
   resolution: "@tailwindcss/typography@npm:0.5.9"
@@ -1670,52 +1716,6 @@ __metadata:
   checksum: 5615cadcfb45289eea63f8afd064ab656006361020e1735112e346593856f87435e02d8dcc7ff0d11928bc7d425f27bc7c2a84f6c0b35ab0ff659c814c138a24
   languageName: node
   linkType: hard
-
-"arciniega.one@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "arciniega.one@workspace:."
-  dependencies:
-    "@astrojs/mdx": ^0.16.2
-    "@astrojs/prefetch": ^0.1.2
-    "@astrojs/rss": ^2.1.0
-    "@astrojs/sitemap": ^1.0.1
-    "@astrojs/tailwind": 3.0.1
-    "@astrojs/vercel": ^3.1.1
-    "@catppuccin/tailwindcss": ^0.1.1
-    "@fontsource/atkinson-hyperlegible": ^4.5.11
-    "@fontsource/inter": ^4.5.15
-    "@solely/simple-fm": ^0.5.0
-    "@tailwindcss/typography": ^0.5.9
-    "@types/eslint": ^8.21.1
-    "@types/prettier": ^2.7.2
-    "@typescript-eslint/eslint-plugin": ^5.52.0
-    "@typescript-eslint/parser": ^5.52.0
-    astro: ^2.0.12
-    astro-compress: ^1.1.33
-    astro-eslint-parser: ^0.11.0
-    astro-icon: ^0.8.0
-    astro-seo: ^0.7.0
-    autoprefixer: ^10.4.13
-    date-fns: ^2.29.3
-    eslint: ^8.34.0
-    eslint-plugin-astro: ^0.23.0
-    eslint-plugin-jsx-a11y: ^6.7.1
-    postcss: ^8.4.21
-    postcss-html: ^1.5.0
-    prettier: ^2.8.4
-    prettier-plugin-astro: ^0.8.0
-    prettier-plugin-tailwindcss: ^0.2.3
-    rehype-autolink-headings: ^6.1.1
-    rehype-external-links: ^2.0.1
-    rehype-slug: ^5.1.0
-    stylelint: ^15.1.0
-    stylelint-config-html: ^1.1.0
-    stylelint-config-standard: ^30.0.1
-    svgo: ~2.8.0
-    tailwindcss: ^3.2.6
-    typescript: ^4.9.5
-  languageName: unknown
-  linkType: soft
 
 "are-we-there-yet@npm:^2.0.0":
   version: 2.0.0
