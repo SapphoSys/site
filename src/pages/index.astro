@@ -2,13 +2,11 @@
 import Layout from '@layouts/page.astro';
 
 import Footer from '@components/footer.astro';
-import Line from '@components/underline.astro';
-import Link from '@components/link.astro';
 
 import Friends from '@components/home/friends.astro';
-import Me from '@components/home/me.astro';
+import Header from '@components/home/header.astro';
+import Intro from '@components/home/intro.astro';
 import Socials from '@components/home/socials.astro';
-import Summary from '@components/home/summary.astro';
 ---
 
 <Layout
@@ -18,29 +16,13 @@ import Summary from '@components/home/summary.astro';
 >
   <main class="content text-3xl">
     <div class="about flex flex-col gap-3">
-      <Me />
+      <Header />
       <Socials />
     </div>
 
-    <div class="more flex flex-col gap-8">
-      <Line>About me</Line>
-      <span>Hiya! I am Chloe. I also go by solely or solelychloe on the Internet.</span>
-
-      <span>
-        I'm a trans computer science student girl, who likes to build software and translate random stuff around the
-        Internet.
-      </span>
-
-      <span>
-        If you're interested in checking out what I've done, visit my
-        <Link href="/contributions" title="My contributions page">contributions page</Link>!
-      </span>
-
-      <Summary />
-
+    <Intro>
       <Footer />
-
       <Friends />
-    </div>
+    </Intro>
   </main>
 </Layout>

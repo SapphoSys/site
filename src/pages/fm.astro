@@ -14,11 +14,11 @@ const track = await client.user.fetchRecentTrack('solelychloe');
 
 <Layout description="What I may currently be listening to." pageTitle="Last.fm" title="Last.fm | Chloe Arciniega">
   <main class="content flex flex-grow flex-col text-3xl">
-    <span class="text-5xl font-bold text-light-accent dark:text-ctp-pink"
-      >{track.currentlyPlaying ? 'Now listening to:' : 'Previously played:'}</span
-    >
+    <span class="text-5xl font-bold text-light-accent dark:text-ctp-pink">
+      {track.currentlyPlaying ? 'Now listening to' : 'Previously played'}:
+    </span>
 
-    {track.currentlyPlaying ? '' : <span class="italic">I'm not currently listening to anything.</span>}
+    {track.currentlyPlaying ? '' : <span class="italic">I'm not currently listening to anything!</span>}
 
     <div class="cover flex flex-auto">
       <Link href={track.url} target="_blank">
@@ -59,10 +59,9 @@ const track = await client.user.fetchRecentTrack('solelychloe');
 
     <span class="profile">
       <Icon size={20} title="My Last.fm profile" name="simple-icons:lastfm" />
-      <Link class="text-ctp-red" href="https://last.fm/user/solelychloe" title="My Last.fm profile" target="_blank">
-        My Last.fm profile
-      </Link>
+      <Link href="https://last.fm/user/solelychloe" title="My Last.fm profile" target="_blank">My Last.fm profile</Link>
     </span>
+
     <Footer />
   </main>
 
