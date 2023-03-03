@@ -22,10 +22,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/compiler@npm:^1.0.0, @astrojs/compiler@npm:^1.0.1, @astrojs/compiler@npm:^1.1.0":
+"@astrojs/compiler@npm:^1.0.0, @astrojs/compiler@npm:^1.0.1":
   version: 1.1.0
   resolution: "@astrojs/compiler@npm:1.1.0"
   checksum: f31ea14ff1ab9dc9021c6a37529caa9cb1bc34ce7c9904817db09afafc17c03910313f4c80692552a62c05c75845c01a1d0060a2c4e803e42e0253f3b3ac7b4a
+  languageName: node
+  linkType: hard
+
+"@astrojs/compiler@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@astrojs/compiler@npm:1.2.0"
+  checksum: 1aa546450fd46f9478f5eb69c47614b9a398a46af17318cc7c77e37d4df058574b49d3eae6ae4cc30fc31072bbb1f77d87ea72c30855124514542efb33ae1995
   languageName: node
   linkType: hard
 
@@ -168,28 +175,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/vercel@npm:^3.1.3":
-  version: 3.1.3
-  resolution: "@astrojs/vercel@npm:3.1.3"
+"@astrojs/vercel@npm:^3.1.4":
+  version: 3.1.4
+  resolution: "@astrojs/vercel@npm:3.1.4"
   dependencies:
-    "@astrojs/webapi": ^2.0.1
+    "@astrojs/webapi": ^2.0.2
     "@vercel/analytics": ^0.1.8
     "@vercel/nft": ^0.22.1
     fast-glob: ^3.2.11
     set-cookie-parser: ^2.5.1
     web-vitals: ^3.1.1
   peerDependencies:
-    astro: ^2.0.15
-  checksum: 8f12a3a9d3ec3da671d0bd5381d48415b08d99dd96e738320e66921553738c506840146f7f88a80460e42fd8f8339a4fc74442838d6a8d60601950ceda73db6b
-  languageName: node
-  linkType: hard
-
-"@astrojs/webapi@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@astrojs/webapi@npm:2.0.1"
-  dependencies:
-    undici: 5.18.0
-  checksum: 7e0db7f0540f6b71cdb70478737eb2acbb2eb6ece1069b677201ccce23292fd6f96181ee0876d18647d3d8a548cdbbdfc6cc8d42bc02785252e8abe8dcce6108
+    astro: ^2.0.17
+  checksum: d339d21813720c6c93e2ea5590f213bf7ae048d124b37b27704bd2f919badd26929803761c9f573ff81c0f732f373057639f0bdf3c7c52245d6369a8fddbcb81
   languageName: node
   linkType: hard
 
@@ -1030,12 +1028,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@solely/simple-fm@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "@solely/simple-fm@npm:1.1.1"
+"@solely/simple-fm@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "@solely/simple-fm@npm:1.3.0"
   dependencies:
     ofetch: ^1.0.1
-  checksum: 58df06ab3268465481bca61a2e9e674998aac505c3125846467daa0cb88e61671b5a21bf6552bf3410d4fe300a16b807be6002ee107c0b485cc330433cdbcb50
+  checksum: bcd6387e193246c37e4d5e926e19b46e719bcd09c7dbf9d960ef6d4c7507299eb5676c91bec77eee4083d3380a18d4bb50cd78909ac1b987c4a0842318bd0f45
   languageName: node
   linkType: hard
 
@@ -1048,17 +1046,17 @@ __metadata:
     "@astrojs/rss": ^2.1.1
     "@astrojs/sitemap": ^1.1.0
     "@astrojs/tailwind": 3.0.1
-    "@astrojs/vercel": ^3.1.3
+    "@astrojs/vercel": ^3.1.4
     "@catppuccin/tailwindcss": ^0.1.1
     "@fontsource/atkinson-hyperlegible": ^4.5.11
     "@fontsource/inter": ^4.5.15
-    "@solely/simple-fm": ^1.1.1
+    "@solely/simple-fm": ^1.3.0
     "@tailwindcss/typography": ^0.5.9
     "@types/eslint": ^8.21.1
     "@types/prettier": ^2.7.2
     "@typescript-eslint/eslint-plugin": ^5.54.0
     "@typescript-eslint/parser": ^5.54.0
-    astro: ^2.0.16
+    astro: ^2.0.17
     astro-compress: ^1.1.35
     astro-eslint-parser: ^0.11.0
     astro-icon: ^0.8.0
@@ -1904,11 +1902,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:^2.0.16":
-  version: 2.0.16
-  resolution: "astro@npm:2.0.16"
+"astro@npm:^2.0.17":
+  version: 2.0.17
+  resolution: "astro@npm:2.0.17"
   dependencies:
-    "@astrojs/compiler": ^1.1.0
+    "@astrojs/compiler": ^1.2.0
     "@astrojs/language-server": ^0.28.3
     "@astrojs/markdown-remark": ^2.0.1
     "@astrojs/telemetry": ^2.0.1
@@ -1962,7 +1960,7 @@ __metadata:
     zod: ^3.17.3
   bin:
     astro: astro.js
-  checksum: b6acbddd9cee96d678e98e119140de2d04876ab811ad5889296881502a3722e23b455f2ac5ca97adca8cdb9cd03e37bc70281cbbe1fa5342b64577ef54900e2d
+  checksum: 21007d7cc9b6d98c7efbe550d18182024b039eedacc90211c8b6d4e2cb61199027c418e802cf8096d71017bae8a52c13663cbff4a256abf15185ad61a690aa5b
   languageName: node
   linkType: hard
 
@@ -8790,15 +8788,6 @@ __metadata:
     has-symbols: ^1.0.3
     which-boxed-primitive: ^1.0.2
   checksum: b7a1cf5862b5e4b5deb091672ffa579aa274f648410009c81cca63fed3b62b610c4f3b773f912ce545bb4e31edc3138975b5bc777fc6e4817dca51affb6380e9
-  languageName: node
-  linkType: hard
-
-"undici@npm:5.18.0":
-  version: 5.18.0
-  resolution: "undici@npm:5.18.0"
-  dependencies:
-    busboy: ^1.6.0
-  checksum: 74e0f357c376c745fcca612481a5742866ae36086ad387e626255f4c4a15fc5357d9d0fa4355271b6a633d50f5556c3e85720844680c44861c66e23afca7245f
   languageName: node
   linkType: hard
 
