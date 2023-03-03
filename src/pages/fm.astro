@@ -9,23 +9,23 @@ import simpleFM from '@solely/simple-fm';
 
 const client = new simpleFM(import.meta.env.LAST_FM_KEY);
 
-const track = await client.user.fetchRecentTrack('solelychloe');
+const { currentlyPlaying, tracks } = await client.user.fetchRecentTracks('solelychloe');
 ---
 
 <Layout description="What I may currently be listening to." pageTitle="Last.fm" title="Last.fm | Chloe Arciniega">
   <main class="content flex flex-grow flex-col text-3xl">
     <span class="text-5xl font-bold text-light-accent dark:text-ctp-pink">
-      {track.currentlyPlaying ? 'Now listening to' : 'Previously played'}:
+      {currentlyPlaying ? 'Now listening to' : 'Previously played'}:
     </span>
 
-    {track.currentlyPlaying ? '' : <span class="italic">I'm not currently listening to anything!</span>}
+    {currentlyPlaying ? '' : <span class="italic">I'm not currently listening to anything!</span>}
 
     <div class="cover flex flex-auto">
-      <Link href={track.url} target="_blank">
+      <Link href={tracks[0].url} target="_blank">
         <img
-          src={track.image}
-          title={`Cover art of ${track.name} by ${track.artist} on ${track.album}`}
-          alt={`Cover art of ${track.name} by ${track.artist} on ${track.album}`}
+          src={tracks[0].image}
+          title={`Cover art of ${tracks[0].name} by ${tracks[0].artist.name} on ${tracks[0].album}`}
+          alt={`Cover art of ${tracks[0].name} by ${tracks[0].artist.name} on ${tracks[0].album}`}
           width="300"
           height="300"
         />
@@ -34,26 +34,30 @@ const track = await client.user.fetchRecentTrack('solelychloe');
 
     <span class="song">
       <Icon size={20} title="Song name" name="mdi:music-note-eighth" />
-      <Link href={track.url} target="_blank" title={`${track.name} by ${track.artist} on ${track.album}`}>
-        {track.name}
+      <Link
+        href={tracks[0].url}
+        target="_blank"
+        title={`${tracks[0].name} by ${tracks[0].artist.name} on ${tracks[0].album}`}
+      >
+        {tracks[0].name}
       </Link>
     </span>
 
     <span class="artist">
       <Icon size={20} title="Artist" name="mdi:artist" />
-      <Link href={`https://last.fm/music/${track.artist}`} title={track.artist} target="_blank">
-        {track.artist}
+      <Link href={`https://last.fm/music/${tracks[0].artist.name}`} title={tracks[0].artist.name} target="_blank">
+        {tracks[0].artist.name}
       </Link>
     </span>
 
     <span class="album">
       <Icon size={20} title="Album" name="mdi:album" />
       <Link
-        href={`https://last.fm/music/${track.artist}/${track.album}`}
-        title={`${track.album} by ${track.artist}`}
+        href={`https://last.fm/music/${tracks[0].artist.name}/${tracks[0].album}`}
+        title={`${tracks[0].album} by ${tracks[0].artist.name}`}
         target="_blank"
       >
-        {track.album}
+        {tracks[0].album}
       </Link>
     </span>
 
