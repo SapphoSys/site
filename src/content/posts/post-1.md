@@ -2,7 +2,7 @@
 title: My first blog post
 created: 2023-01-12Z
 description: This is the first post of my new blog.
-tags: [meta]
+tags: [astro, meta]
 comments: true
 ---
 
