@@ -4,6 +4,6 @@ import Link from '@components/Link.astro';
 const { image, link, name } = Astro.props;
 ---
 
-<Link href={link} title={`Webring of ${name}`} target="_blank">
-  <img src={`webrings/${image}`} alt={`Webring of ${name}`} width="88" height="31" />
+<Link href={link} title={`${name}'s site`} target="_blank">
+  <img src={`webring/${image}`} alt={`Webring of ${name}`} width="88" height="31" />
 </Link>
