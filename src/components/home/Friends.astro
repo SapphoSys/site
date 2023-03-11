@@ -1,15 +1,25 @@
 ---
+import Link from '@components/Link.astro';
 import Webring from '@components/Webring.astro';
 ---
 
+<span class="pt-3 pb-3 text-base italic">
+  Below is a webring of people I find cool. <Link
+    href="https://en.wikipedia.org/wiki/Webring"
+    title="A redirect link to Wikipedia's definition of a webring."
+  >
+    (what is a webring?)
+  </Link>
+</span>
+
 <div class="flex flex-wrap gap-[5.51px] md:gap-[13.45px]">
   <Webring image="ovyerus.png" link="https://ovyerus.com" name="Ovyerus" />
-  <Webring image="espi.png" link="https://espi.me" name="Espi" />
+  <Webring image="espi.png" link="https://espi.me" name="espi" />
   <Webring image="adryd.png" link="https://adryd.com" name="Adryd" />
-  <Webring image="erin.png" link="https://e2.pm" name="Erin" />
+  <Webring image="erin.png" link="https://e2.pm" name="erin" />
   <Webring image="lewi.png" link="https://lewisakura.moe" name="lewisakura" />
   <Webring image="utsuho.png" link="https://utsuho.rocks" name="Utsuho" />
-  <Webring image="c7-badge.png" link="https://c7.pm" name="Cynthia" />
+  <Webring image="cynthia.png" link="https://c7.pm" name="Cynthia" />
   <Webring image="vin.png" link="https://vin.pet" name="Vin" />
   <Webring image="spotlight.gif" link="https://joscomputing.space" name="Spotlight" />
   <Webring image="megu.png" link="https://megu.dev" name="Megumin" />
