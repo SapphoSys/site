@@ -1,0 +1,80 @@
+---
+import Layout from '@layouts/Page.astro';
+
+import Comments from '@components/blog/Comments.astro';
+import Footer from '@components/Footer.astro';
+import Line from '@components/Underline.astro';
+import Link from '@components/Link.astro';
+import Tag from '@components/blog/Tag.astro';
+
+import { blog } from '@config';
+import { format, parseISO } from 'date-fns';
+
+interface Props {
+  title: string;
+  description?: string;
+  created?: string;
+  tags?: string[];
+  comments?: boolean;
+  timeEstimate?: string;
+}
+
+const { comments, created, description, tags, timeEstimate, title } = Astro.props;
+
+const checkComments = () => blog.comments && comments;
+const formatDate = (d: Date) => format(d, 'MMM do, yyyy');
+
+const createdAt = created ? formatDate(parseISO(created)) : null;
+---
+
+<Layout description={description} pageTitle={title} title={`${title} | Chloe Arciniega`}>
+  <Line>My blog</Line>
+  {checkComments() && <meta slot="head" name="giscus:backlink" content={Astro.url.pathname} />}
+
+  <section class="flex flex-col">
+    {title && <span class="title pt-5 pb-3 text-4xl font-bold">{title}</span>}
+    {description && <span class="italic">{description}</span>}
+
+    <span class="flex flex-row items-center pt-2">
+      <img
+        src={blog.author.image}
+        class="inline rounded-full"
+        title={`Avatar of ${blog.author.name}`}
+        alt={`Avatar of ${blog.author.name}`}
+        width="24"
+        height="24"
+      />
+
+      <span class="pl-2">
+        <Link href={blog.author.link} title={blog.author.name}>{blog.author.name}</Link>
+
+        {createdAt && <span class="date">• published on {createdAt}</span>}
+
+        • {timeEstimate}
+      </span>
+    </span>
+
+    <span class="tags flex gap-3 pt-3 pb-5">
+      {tags ? tags.map((tag) => <Tag tag={tag} />) : null}
+    </span>
+  </section>
+
+  <main class="article-content prose dark:prose-invert">
+    <slot />
+  </main>
+
+  {checkComments() && <Comments />}
+</Layout>
+<Footer />
+
+<style is:global>
+  .article-content {
+    @apply text-xl;
+    @apply flex flex-grow flex-col flex-wrap;
+    @apply pb-5;
+
+    & a {
+      text-decoration: none;
+    }
+  }
+</style>

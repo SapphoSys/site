@@ -10,6 +10,7 @@ export const collections = {
       description: z.string(),
       tags: z.array(z.string()),
       comments: z.boolean(),
+      timeEstimate: z.string().optional(),
     }),
   }),
 };

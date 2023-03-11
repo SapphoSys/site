@@ -2,13 +2,22 @@
 export const prerender = true;
 
 import { getCollection, CollectionEntry } from 'astro:content';
-import ArticleLayout from '@layouts/article.astro';
+import ArticleLayout from '@layouts/Article.astro';
+import getPostData from '~/utils/getPostData';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
   return posts.map((post) => ({
     params: { slug: post.slug },
-    props: { post },
+    props: {
+      post: {
+        ...post,
+        data: {
+          ...post.data,
+          timeEstimate: getPostData(post).readingTime,
+        },
+      },
+    },
   }));
 }
 

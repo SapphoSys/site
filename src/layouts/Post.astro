@@ -1,0 +1,104 @@
+---
+export const prerender = true;
+
+import Layout from '@layouts/Page.astro';
+
+import Footer from '@components/Footer.astro';
+import Line from '@components/Underline.astro';
+import Link from '@components/Link.astro';
+import Tag from '@components/blog/Tag.astro';
+
+import { blog } from '@config';
+import { format, parseISO } from 'date-fns';
+import { Icon } from 'astro-iconify';
+
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+  type: 'posts' | 'tags';
+  title: string;
+  posts: CollectionEntry<'posts'>[];
+  description: string;
+}
+
+const { type, posts, title, description } = Astro.props;
+
+const formatDate = (date: Date) => format(date, 'MMM do, yyyy');
+---
+
+<Layout description={description} pageTitle="Posts" title="Posts | Chloe Arciniega">
+  <main class="content flex flex-grow flex-col">
+    <Line>My blog</Line>
+
+    <span class="header pt-3 pb-2">
+      <span class="flex flex-col gap-3">
+        {
+          type === 'posts' ? (
+            //prettier-ignore
+            <>
+                <span class="italic">{description}</span>
+                {`Currently serving ${posts.length} post${posts.length == 1 ? '' : 's'}${posts.length == 10 ? ' on this page' : ''}.`}
+            </>
+          ) : (
+            <>
+              <span class="title text-4xl font-bold">{title}</span>
+              {`Fetched ${posts.length} post${posts.length == 1 ? '' : 's'} with the queried tag.`}
+            </>
+          )
+        }
+      </span>
+    </span>
+  </main>
+
+  <section class="rss pt-1 pb-5">
+    <Icon class="mb-1 text-ctp-pink" size={25} name="mdi:rss" />
+    <Link class="subscribe pt-1 pb-5" title="Subscribe to my RSS feed" href="/rss.xml">Subscribe to RSS</Link>
+  </section>
+
+  <hr class="pb-4 text-ctp-red" />
+
+  {
+    posts
+      .sort((a, b) => new Date(b.data.created).valueOf() - new Date(a.data.created).valueOf())
+      .map(({ data, slug }) => (
+        <article class="flex flex-col pb-3">
+          {data.title && (
+            <span class="title text-3xl  font-bold">
+              <Link href={`/posts/${slug}`} title={data.title}>
+                {data.title}
+              </Link>
+            </span>
+          )}
+
+          {data.description && <span class="description pt-1 italic">{data.description}</span>}
+
+          <span class="flex flex-row items-center pt-2">
+            <img
+              src={blog.author.image}
+              class="inline rounded-full"
+              title={`Avatar of ${blog.author.name}`}
+              alt={`Avatar of ${blog.author.name}`}
+              width="24"
+              height="24"
+            />
+
+            <span class="pl-2">
+              <Link href={blog.author.link} title={blog.author.name}>
+                {blog.author.name}
+              </Link>
+
+              {data.created && <span class="date">• published on {formatDate(parseISO(data.created))}</span>}
+
+              {type === 'posts' && `• ${data.timeEstimate}`}
+            </span>
+          </span>
+
+          <span class="tags flex gap-3 pt-2 pb-2">{data.tags ? data.tags.map((tag) => <Tag tag={tag} />) : null}</span>
+        </article>
+      ))
+  }
+
+  <slot />
+
+  <Footer />
+</Layout>
