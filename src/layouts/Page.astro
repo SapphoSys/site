@@ -1,0 +1,53 @@
+---
+import Head from '@components/Head.astro';
+
+import '@fontsource/atkinson-hyperlegible';
+import '@fontsource/inter';
+
+interface Props {
+  description?: string;
+  pageTitle: string;
+  title: string;
+}
+
+const { description, pageTitle, title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <Head description={description} pageTitle={pageTitle} title={title}>
+    <slot name="head" />
+  </Head>
+
+  <body class="flex flex-grow flex-col self-center text-xl">
+    <slot />
+
+    <style is:global>
+      body {
+        @apply bg-light-bg text-light-text dark:bg-ctp-base dark:text-ctp-text;
+        @apply max-w-[45em] px-[2.5em] py-[2em];
+      }
+
+      html {
+        display: flex;
+        flex-direction: column;
+      }
+
+      nav,
+      .line,
+      .links,
+      .name {
+        @apply font-display;
+      }
+
+      .content {
+        @apply flex flex-col gap-2;
+      }
+
+      [astro-icon] {
+        @apply inline;
+        @apply pb-1;
+      }
+    </style>
+  </body>
+</html>
