@@ -1,0 +1,29 @@
+---
+import Link from '@components/Link.astro';
+
+import { Icon } from 'astro-iconify';
+
+const { page } = Astro.props;
+---
+
+{
+  page.url.next && (
+    <div class="flex flex-row-reverse pt-2 pb-2">
+      <Icon size={30} class="text-ctp-pink" name="mdi:arrow-right-thin" />
+      <Link title="See older blog posts" href={page.url.next}>
+        See older posts
+      </Link>
+    </div>
+  )
+}
+
+{
+  page.url.prev && (
+    <div class="flex pt-2 pb-2">
+      <Icon size={30} class="text-ctp-pink" name="mdi:arrow-left-thin" />
+      <Link title="See newer blog posts" href={page.url.prev}>
+        See recent posts
+      </Link>
+    </div>
+  )
+}

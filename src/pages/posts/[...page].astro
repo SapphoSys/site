@@ -1,20 +1,12 @@
 ---
 export const prerender = true;
 
-import Layout from '@layouts/page.astro';
+import Posts from '@layouts/Post.astro';
+import Pagination from '@components/blog/Pagination.astro';
+import getPostData from '~/utils/getPostData';
 
-import Footer from '@components/footer.astro';
-import Line from '@components/underline.astro';
-import Link from '@components/link.astro';
-
-import Navigation from '@components/blog/navigation.astro';
-
-import { format, parseISO } from 'date-fns';
 import { getCollection } from 'astro:content';
-import { Icon } from 'astro-icon';
-
-interface PostProps {
-  comments: boolean;
+interface Props {
   created: string;
   description: string;
   tags?: string[];
@@ -23,81 +15,35 @@ interface PostProps {
 
 const { page } = Astro.props;
 
-const fm = (d: Date) => format(d, 'MMM do, yyyy');
-const createdAt = (post: PostProps) => post.created && fm(parseISO(post.created));
-
 export async function getStaticPaths({ paginate }: { paginate: Function }) {
   const postCollection = await getCollection('posts');
-  const posts = postCollection.sort((a, b) => new Date(b.data.created).valueOf() - new Date(a.data.created).valueOf());
+  const sorted = postCollection.sort((a, b) => new Date(b.data.created).valueOf() - new Date(a.data.created).valueOf());
 
-  return paginate(posts, { pageSize: 10 });
+  const posts = sorted.map((post) => ({
+    params: { slug: post.slug },
+    props: {
+      post: {
+        ...post,
+        data: {
+          ...post.data,
+          timeEstimate: getPostData(post).readingTime,
+        },
+      },
+    },
+  }));
+
+  return paginate(
+    posts.map((data) => data.props.post),
+    { pageSize: 10 }
+  );
 }
 ---
 
-<Layout
+<Posts
+  type="posts"
+  title={`Blog Posts`}
+  posts={page.data}
   description="A personal blog, comprising of whatever stuff I find interesting to post."
-  pageTitle="Posts"
-  title="Posts | Chloe Arciniega"
 >
-  <main class="content flex flex-grow flex-col text-3xl">
-    <Line>My blog</Line>
-
-    <span class="description pt-5 italic">
-      A personal blog, comprising of whatever stuff I find interesting to post.
-    </span>
-
-    <span class="serving">Currently serving {page.total} post{page.total == 1 ? '' : 's'}.</span>
-
-    <!-- prettier-ignore -->
-    <Link class="subscribe pt-1 pb-5" title="Subscribe to RSS feed" href="/rss.xml">
-        <Icon size={20} name="mdi:rss" />
-        Subscribe to RSS
-    </Link>
-
-    {
-      page.data.map(({ data, slug }: { data: PostProps; slug: Object }) => (
-        <article class="flex flex-col">
-          {data.title && (
-            <span class="title text-5xl font-bold">
-              <Link href={`/posts/${slug}`} title={data.title}>
-                {data.title}
-              </Link>
-            </span>
-          )}
-
-          {data.created && (
-            <span class="date">
-              <Icon size={20} name="mdi:calendar" />
-              {createdAt(data)}
-            </span>
-          )}
-
-          {data.tags ? (
-            <div class="tags flex gap-2">
-              <span class="tags border-light-accent dark:border-ctp-pink">
-                <Icon size={20} name="mdi:tag" />
-                {data.tags && data.tags.join(', ')}
-              </span>
-            </div>
-          ) : null}
-
-          {data.description && <span class="description pb-3 italic">{data.description}</span>}
-        </article>
-      ))
-    }
-
-    <Navigation page={page} />
-
-    <Footer />
-  </main>
-
-  <style>
-    span.tags {
-      @apply mb-2 mt-2 rounded-lg border-[1px] py-1 px-3;
-    }
-
-    [astro-icon='mdi:rss'] {
-      @apply mb-1;
-    }
-  </style>
-</Layout>
+  <Pagination page={page} />
+</Posts>
