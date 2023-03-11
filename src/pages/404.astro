@@ -1,8 +1,8 @@
 ---
-import Layout from '@layouts/page.astro';
+import Layout from '@layouts/Page.astro';
 
-import Line from '@components/underline.astro';
-import Link from '@components/link.astro';
+import Line from '@components/Underline.astro';
+import Footer from '@components/Footer.astro';
 ---
 
 <Layout
@@ -10,12 +10,11 @@ import Link from '@components/link.astro';
   pageTitle="404 Page not found"
   title="404 | Chloe Arciniega"
 >
-  <main class="content text-3xl">
+  <main class="content">
     <Line>404</Line>
 
-    <span class="pt-5 pb-3">The page you were looking for does not reside here, unfortunately.</span>
+    <span class="pt-3 pb-1">The page you were looking for does not reside here, unfortunately.</span>
 
-    <hr class="border-light-accent dark:text-ctp-pink" />
-    <Link href="/" class="pb-3" title="Go Home">Go Home</Link>
+    <Footer />
   </main>
 </Layout>

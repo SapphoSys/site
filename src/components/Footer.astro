@@ -10,9 +10,9 @@ const [credits, domains] = IS_PRODUCTION ? ['/credits', '/domains'] : ['/credits
 <footer class="flex flex-grow flex-col pt-1">
   <slot />
 
-  <hr />
+  <hr class="text-ctp-pink" />
 
-  <nav class="flex-cel links flex">
+  <nav class="flex-cel flex flex-wrap gap-[15px] pb-1 pt-4 md:gap-[10px]">
     <Link href="/" title="Home" rel="prefetch">Home</Link>
     <Separator />
     <Link href="/posts" title="Posts" rel="prefetch">Posts</Link>
@@ -26,15 +26,3 @@ const [credits, domains] = IS_PRODUCTION ? ['/credits', '/domains'] : ['/credits
     <Link href="https://github.com/solelychloe/arciniega.one" title="Source code" target="_blank">Source</Link>
   </nav>
 </footer>
-
-<style>
-  a,
-  hr {
-    @apply text-light-accent dark:text-ctp-pink;
-  }
-
-  .links {
-    @apply flex flex-wrap gap-[15px] md:gap-[10px];
-    @apply pt-4 pb-1;
-  }
-</style>
