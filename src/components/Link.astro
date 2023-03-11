@@ -1,0 +1,9 @@
+---
+/* eslint-disable */
+export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
+/* eslint-enable */
+
+const { href, class: className, color = 'text-ctp-pink', ...props } = Astro.props;
+---
+
+<a href={href} class:list={`${[className]} hover:underline dark:${color}`} {...props}><slot /></a>

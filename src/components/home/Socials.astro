@@ -1,5 +1,5 @@
 ---
-import Link from '@components/link.astro';
+import Link from '@components/Link.astro';
 
 import { socials } from '@config';
 ---
@@ -7,14 +7,14 @@ import { socials } from '@config';
 {
   /* prettier-ignore */
   socials && (
-    <section class="links pb-12 text-[1.2em]">
+    <section class="links pb-5 text-2xl">
       {socials?.discord && (
-        <Link href={`https://discord.com/users/${socials.discord.id}`} title={`Discord: ${socials.discord.alt}`} target="_blank">
-          Discord [{socials.discord.alt}]</Link>
+        <Link href={`https://discord.com/users/${socials.discord.id}`} title={`Discord: ${socials.discord.tag}`} target="_blank">
+          Discord <small>[{socials.discord.tag}]</small></Link>
       )}
 
       {socials?.mastodon && (
-        <Link href={socials.mastodon.link} title={`Mastodon: ${socials.mastodon.alt}`} target="_blank">
+        <Link href={socials.mastodon.link} title={`Mastodon: ${socials.mastodon.tag}`} target="_blank">
           Mastodon</Link>
       )}
 
