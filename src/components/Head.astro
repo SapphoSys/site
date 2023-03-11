@@ -1,0 +1,78 @@
+---
+import { SEO } from 'astro-seo';
+import { base, blog, misc, socials } from '@config';
+
+const { description, pageTitle, title } = Astro.props;
+
+const siteName = Astro.site?.hostname;
+const image = new URL(base.favicon?.fileName || '/favicon.png', Astro.site).href;
+
+const IS_PRODUCTION = import.meta.env.MODE === 'production';
+---
+
+<head>
+  {
+    IS_PRODUCTION && !!misc.analytics && !!base.siteName && (
+      <script defer data-domain={base.siteName} data-api="/api/event" src="/js/script.js" />
+    )
+  }
+
+  <SEO
+    title={title}
+    description={description}
+    charset={'UTF-8'}
+    openGraph={{
+      basic: {
+        title: pageTitle,
+        type: 'website',
+        image,
+      },
+      optional: {
+        siteName,
+        description,
+      },
+      image: {
+        alt: base.favicon && base.favicon.altText,
+      },
+    }}
+    twitter={{
+      card: 'summary',
+      creator: socials && socials.twitter,
+
+      image,
+      imageAlt: base.favicon && base.favicon.altText,
+    }}
+    extend={{
+      meta: [
+        // Compatibility
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+
+        // Astro generator
+        { name: 'generator', content: Astro.generator },
+
+        // Theme color
+        { name: 'theme-color', content: base.seo && base.seo.themeColor },
+
+        // Keywords
+        { name: 'keywords', content: `${base.seo && base.seo.keywords}` },
+      ],
+      link: [
+        // Icon
+        { rel: 'icon', href: image },
+
+        // Mastodon verification
+        { rel: 'me', href: socials && `${socials.mastodon.link}` },
+
+        // RSS
+        {
+          rel: 'alternate',
+          title: "Chloe's Posts",
+          href: blog.rss && `https://${base.siteName}/rss.xml`,
+          type: 'appliccation/rss+xml',
+        },
+      ],
+    }}
+  />
+
+  <slot />
+</head>
