@@ -1,12 +1,10 @@
 ---
-import Layout from '@layouts/page.astro';
+import Layout from '@layouts/Page.astro';
 
-import Footer from '@components/footer.astro';
+import Footer from '@components/Footer.astro';
 
-import Friends from '@components/home/friends.astro';
-import Header from '@components/home/header.astro';
-import Intro from '@components/home/intro.astro';
-import Socials from '@components/home/socials.astro';
+import Friends from '@components/home/Friends.astro';
+import Header from '@components/home/Header.astro';
 ---
 
 <Layout
@@ -14,15 +12,12 @@ import Socials from '@components/home/socials.astro';
   pageTitle="Chloe Arciniega"
   title="Home | Chloe Arciniega"
 >
-  <main class="content text-3xl">
-    <div class="about flex flex-col gap-3">
+  <main class="content">
+    <section class="about flex flex-col gap-3">
       <Header />
-      <Socials />
-    </div>
+    </section>
 
-    <Intro>
-      <Footer />
-      <Friends />
-    </Intro>
+    <Footer />
+    <Friends />
   </main>
 </Layout>
