@@ -2,7 +2,7 @@
 # Domains that redirect to domains not in this list may not be in complete control.
 # Content outside of these domains cannot be guarenteed to be owned or managed by Chloe.
 
-# Last updated: December 16, 2022, 6:01:20 PM (UTC+5)
+# Last updated: 2023-03-10T12:07:10.942Z
 
 # You are here
 arciniega.one
@@ -11,4 +11,4 @@ arciniega.one
 parallel.report
 
 # Unused
-solely.gay
+solelychloe.dev
