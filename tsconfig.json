@@ -2,7 +2,7 @@
   // Astro TSConfig base configuration
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    // Will be removed when TS5 releases officially.
+    // TEMP: Will be removed when TS5 releases officially.
     "ignoreDeprecations": "5.0",
 
     // Aliases
