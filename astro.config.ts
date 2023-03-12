@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import type { AstroIntegration } from 'astro';
 
 import mdx from '@astrojs/mdx';
+import markdoc from '@astrojs/markdoc';
 import prefetch from '@astrojs/prefetch';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
@@ -34,6 +35,7 @@ export default defineConfig({
     compress(),
 
     // TEMP: The recent Astro update broke integration logic, so "AstroIntegration" has been supplied here for now.
+    markdoc() as AstroIntegration,
     mdx() as AstroIntegration,
   ],
   output: 'server',
