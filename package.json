@@ -18,7 +18,7 @@
     "test": "eslint src/**/*.{ts,astro} && prettier --c ."
   },
   "repository": "https://github.com/solelychloe/arciniega.one",
-  "packageManager": "yarn@3.3.1",
+  "packageManager": "yarn@3.4.1",
   "dependencies": {
     "@astrojs/markdoc": "^0.0.2",
     "@astrojs/mdx": "^0.18.1",
