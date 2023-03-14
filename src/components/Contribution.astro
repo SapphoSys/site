@@ -1,26 +1,45 @@
 ---
+import { Icon } from 'astro-iconify';
+import Link from '@components/Link.astro';
+
 const {
   link,
-  name,
+  title,
   description,
-  tag,
+  image,
   date,
+  tag,
+  more,
   borderColor = 'border-ctp-pink',
   textColor = 'text-ctp-pink',
 } = Astro.props;
 ---
 
-<li>
-  <a href={link} class={`${textColor} hover:underline`} target="_blank" title={name}>{name}</a>
-  <span class="flex gap-2">
-    <span class={`tag ${borderColor}`}>{tag}</span>
-    <span class={`tag ${borderColor}`}>{date}</span>
+<span class={`${borderColor} flex flex-col max-w-xl rounded-2xl border p-5`}>
+  <img class="w-16 rounded-full" src={image} title={`Logo of ${title}`} alt={`Logo of ${title}`} />
+  <span class="flex flex-col pb-2">
+    <span class={`${textColor} text-3xl font-semibold pt-2`}>
+      {title}
+    </span>
+    <span class="text-sm">({date})</span>
+    <span class="text-base font-semibold">{tag}</span>
   </span>
-  <span>{description}</span>
-</li>
 
-<style>
-  .tag {
-    @apply rounded-lg border-[1px] py-1 px-3;
+  <span class="pt-1 pb-3">
+    {description}
+  </span>
+
+  {
+    more && (
+      <details class="pb-3">
+        <summary class={`${textColor} cursor-pointer`}>Read More</summary>
+        {more}
+      </details>
+    )
   }
-</style>
+
+  <span>
+    <Link color={textColor} href={link}>Visit</Link>
+    <Icon class={textColor} title={`Visit the website of ${title}`} size={20} name="mdi:open-in-new" />
+  </span>
+</span>

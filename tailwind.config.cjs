@@ -7,12 +7,13 @@ module.exports = {
       display: ['Atkinson Hyperlegible', 'sans-serif'],
     },
     colors: {
-      'braytech': '#E33D5E',
+      'braytech': '#E33D5B',
       'dim': '#F37321',
       'destinyrecipes': '#C8455E',
       'dbots': '#a8bdff',
-      'littlelight': '#9e88ffcc',
-      'novecore': '#809eff',
+      'enlive': '#01C412',
+      'littlelight': '#9a86f0',
+      'novecore': '#708aff',
       'parallel': '#CA2917',
       'light-bg': '#e6e9ef',
       'light-accent': '#ea76cb',
@@ -35,9 +36,6 @@ module.exports = {
           },
         },
       }),
-      fontSize: {
-        '3xl': ['1.8rem', { lineHeight: '1.5' }],
-      },
     },
   },
   plugins: [
