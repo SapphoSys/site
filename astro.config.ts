@@ -2,25 +2,36 @@ import { defineConfig } from 'astro/config';
 import type { AstroIntegration } from 'astro';
 
 import mdx from '@astrojs/mdx';
-import markdoc from '@astrojs/markdoc';
 import prefetch from '@astrojs/prefetch';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import vercel from '@astrojs/vercel/serverless';
 import compress from 'astro-compress';
-import autolinkHeadings from 'rehype-autolink-headings';
-import externalLinks from 'rehype-external-links';
-import slug from 'rehype-slug';
+import robotsTxt from 'astro-robots-txt';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeExternalLinks from 'rehype-external-links';
+import rehypeSlug from 'rehype-slug';
+import remarka11yEmoji from '@fec/remark-a11y-emoji';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://arciniega.one',
   markdown: {
+    remarkPlugins: [remarka11yEmoji],
     rehypePlugins: [
-      slug,
-      autolinkHeadings,
+      rehypeSlug,
       [
-        externalLinks,
+        rehypeAutolinkHeadings,
+        {
+          behavior: 'append',
+          content: {
+            type: 'text',
+            value: '🔗',
+          },
+        },
+      ],
+      [
+        rehypeExternalLinks,
         {
           target: '_blank',
           rel: ['nofollow', 'noopener'],
@@ -33,9 +44,9 @@ export default defineConfig({
     prefetch(),
     sitemap(),
     compress(),
+    robotsTxt(),
 
     // TEMP: The recent Astro update broke integration logic, so "AstroIntegration" has been supplied here for now.
-    markdoc() as AstroIntegration,
     mdx() as AstroIntegration,
   ],
   output: 'server',

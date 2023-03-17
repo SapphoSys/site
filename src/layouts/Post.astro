@@ -27,16 +27,16 @@ const formatDate = (date: Date) => format(date, 'MMM do, yyyy');
 ---
 
 <Layout description={description} pageTitle="Posts" title="Posts | Chloe Arciniega">
-  <main class="content flex flex-grow flex-col">
+  <main class="content flex flex-col">
     <Line>My blog</Line>
 
     <span class="header pt-3 pb-2">
       <span class="flex flex-col gap-3">
         {
           type === 'posts' ? (
-            //prettier-ignore
+            // prettier-ignore
             <>
-                <span class="italic">{description}</span>
+                <span class="font-semibold italic">{description}</span>
                 {`Currently serving ${posts.length} post${posts.length == 1 ? '' : 's'}${posts.length == 10 ? ' on this page' : ''}.`}
             </>
           ) : (

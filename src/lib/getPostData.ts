@@ -4,8 +4,10 @@ type Post = {
   body: string;
 };
 
-export default function getPostData(post: Post) {
+const getPostData = (post: Post) => {
   return {
     readingTime: readingTime(post.body).text,
   };
-}
+};
+
+export default getPostData;

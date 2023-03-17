@@ -1,6 +1,8 @@
 ---
 import Link from '@components/Link.astro';
-import Webring from '@components/Webring.astro';
+import Webring from '@components/home/Webring.astro';
+
+import Friends from '@lib/Friends';
 ---
 
 <span class="pt-3 pb-3 text-base italic">
@@ -13,16 +15,9 @@ import Webring from '@components/Webring.astro';
 </span>
 
 <div class="flex flex-wrap gap-[5.51px] md:gap-[13.45px]">
-  <Webring image="ovyerus.png" link="https://ovyerus.com" name="Ovyerus" />
-  <Webring image="espi.png" link="https://espi.me" name="espi" />
-  <Webring image="adryd.png" link="https://adryd.com" name="Adryd" />
-  <Webring image="erin.png" link="https://e2.pm" name="erin" />
-  <Webring image="lewi.png" link="https://lewisakura.moe" name="lewisakura" />
-  <Webring image="utsuho.png" link="https://utsuho.rocks" name="Utsuho" />
-  <Webring image="cynthia.png" link="https://c7.pm" name="Cynthia" />
-  <Webring image="vin.png" link="https://vin.pet" name="Vin" />
-  <Webring image="spotlight.gif" link="https://joscomputing.space" name="Spotlight" />
-  <Webring image="megu.png" link="https://megu.dev" name="Megumin" />
-  <Webring image="kot.png" link="https://yukata.tech" name="Kot" />
-  <Webring image="sakuradancer.png" link="https://sakuradancer.zone" name="Sakuradancer" />
+  {
+    Friends.map((friend) => {
+      return <Webring name={friend.name} link={friend.link} image={friend.image} />;
+    })
+  }
 </div>

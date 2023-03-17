@@ -16,7 +16,6 @@ interface Props {
   created?: string;
   tags?: string[];
   comments?: boolean;
-  timeEstimate?: string;
 }
 
 const { comments, created, description, tags, timeEstimate, title } = Astro.props;
@@ -29,11 +28,10 @@ const createdAt = created ? formatDate(parseISO(created)) : null;
 
 <Layout description={description} pageTitle={title} title={`${title} | Chloe Arciniega`}>
   <Line>My blog</Line>
-  {checkComments() && <meta slot="head" name="giscus:backlink" content={Astro.url.pathname} />}
+  {checkComments() && <meta slot="head" name="giscus:backlink" content={Astro.url.href} />}
 
   <section class="flex flex-col">
-    {title && <span class="title pt-5 pb-3 text-4xl font-bold">{title}</span>}
-    {description && <span class="italic">{description}</span>}
+    {title && <span class="title pt-5 text-4xl font-bold">{title}</span>}
 
     <span class="flex flex-row items-center pt-2">
       <img
@@ -54,7 +52,7 @@ const createdAt = created ? formatDate(parseISO(created)) : null;
       </span>
     </span>
 
-    <span class="tags flex gap-3 pt-3 pb-5">
+    <span class="tags flex gap-3 pt-3">
       {tags ? tags.map((tag) => <Tag tag={tag} />) : null}
     </span>
   </section>
@@ -70,11 +68,26 @@ const createdAt = created ? formatDate(parseISO(created)) : null;
 <style is:global>
   .article-content {
     @apply text-xl;
-    @apply flex flex-grow flex-col flex-wrap;
-    @apply pb-5;
+    @apply flex flex-col flex-wrap;
+    @apply pt-5 pb-5;
 
-    & a {
-      text-decoration: none;
+    & :is(h1, h2, h3, h4, h5, h6) {
+      @apply gap-1;
+      @apply flex;
+
+      & a {
+        @apply transition delay-[1ms] ease-in;
+        @apply opacity-0;
+        @apply pt-1 text-2xl;
+
+        &:hover {
+          @apply font-bold;
+        }
+      }
+
+      &:hover a {
+        @apply opacity-100;
+      }
     }
   }
 </style>
