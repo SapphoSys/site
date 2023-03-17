@@ -7,6 +7,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import vercel from '@astrojs/vercel/serverless';
 import compress from 'astro-compress';
+import robotsTxt from 'astro-robots-txt';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypeSlug from 'rehype-slug';
@@ -43,7 +44,7 @@ export default defineConfig({
     prefetch(),
     sitemap(),
     compress(),
-
+    robotsTxt(),
 
     // TEMP: The recent Astro update broke integration logic, so "AstroIntegration" has been supplied here for now.
     mdx() as AstroIntegration,
