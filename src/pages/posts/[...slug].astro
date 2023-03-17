@@ -3,7 +3,7 @@ export const prerender = true;
 
 import { getCollection, CollectionEntry } from 'astro:content';
 import ArticleLayout from '@layouts/Article.astro';
-import getPostData from '@lib/getPostData';
+import getPostData from '~/utils/getPostData';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
