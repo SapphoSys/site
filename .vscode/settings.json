@@ -5,8 +5,7 @@
     "source.fixAll.eslint": true
   },
   "files.associations": {
-    "*.mdx": "markdown",
-    "*.mdoc": "markdown"
+    "*.mdx": "markdown"
   },
   "eslint.validate": ["javascript", "astro", "typescript"],
   "prettier.documentSelectors": ["**/*.astro"],

@@ -14,7 +14,7 @@ import { Icon } from 'astro-iconify';
 
 import type { CollectionEntry } from 'astro:content';
 
-interface Props {
+export interface Props {
   type: 'posts' | 'tags';
   title: string;
   posts: CollectionEntry<'posts'>[];

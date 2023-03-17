@@ -3,7 +3,7 @@ export const prerender = true;
 
 import Posts from '@layouts/Post.astro';
 import Pagination from '@components/blog/Pagination.astro';
-import getPostData from '~/utils/getPostData';
+import getPostData from '@lib/getPostData';
 
 import { getCollection } from 'astro:content';
 interface Props {
