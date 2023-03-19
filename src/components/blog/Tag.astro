@@ -9,7 +9,7 @@ export interface Props {
 const { tag } = Astro.props;
 ---
 
-<span class="tag rounded-lg border-[1px] border-ctp-pink px-3 py-1">
-  <Icon class="text-ctp-pink" size={20} name="mdi:tag" />
+<span class="tag rounded-lg border-[1px] border-ctp-mauve px-3 py-1 dark:border-ctp-pink">
+  <Icon class="text-ctp-mauve dark:text-ctp-pink" size={20} name="mdi:tag" />
   <Link href={`/posts/tag/${tag}`} title={`Post tagged with ${tag}`}>{tag}</Link>
 </span>

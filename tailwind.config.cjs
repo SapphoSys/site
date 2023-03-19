@@ -35,13 +35,26 @@ module.exports = {
             },
           },
         },
+        DEFAULT: {
+          css: {
+            a: {
+              background: '#8839ef',
+              backgroundClip: 'text',
+              color: 'transparent',
+            },
+            'a:hover': {
+              background: '#6027ab',
+              backgroundClip: 'text',
+              color: 'transparent',
+            },
+          },
+        },
       }),
     },
   },
   plugins: [
     require('@catppuccin/tailwindcss')({
       prefix: 'ctp',
-      defaultFlavour: 'mocha',
     }),
     require('@tailwindcss/typography'),
   ],
