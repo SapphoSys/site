@@ -61,6 +61,11 @@ const Friends: Webring = [
     image: 'kot.png',
   },
   {
+    name: 'ziad87',
+    link: 'https://ziad87.net',
+    image: 'ziad87.gif',
+  },
+  {
     name: 'Sakuradancer',
     link: 'https://sakuradancer.zone',
     image: 'sakuradancer.png',
