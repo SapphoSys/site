@@ -80,6 +80,10 @@ const createdAt = created ? formatDate(parseISO(created)) : null;
       content: '';
     }
 
+    & code {
+      @apply whitespace-pre-wrap;
+    }
+
     & code > .line {
       @apply font-mono;
     }
