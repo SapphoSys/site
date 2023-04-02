@@ -29,6 +29,5 @@
   },
   "css.validate": false,
   "less.validate": false,
-  "scss.validate": false,
-  "stylelint.validate": ["astro"]
+  "scss.validate": false
 }
