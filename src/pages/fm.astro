@@ -1,21 +1,93 @@
 ---
 import Layout from '@layouts/Page.astro';
+import Link from '@components/Link.astro';
 
 import Footer from '@components/Footer.astro';
-import Music from '@components/Music.astro';
 
 import simpleFM from '@solely/simple-fm';
 
+import { Icon } from 'astro-iconify';
 import { misc } from '@config';
 
 const client = new simpleFM(import.meta.env.LAST_FM_KEY);
 
-const { currentlyPlaying, tracks } = await client.user.fetchRecentTracks(misc.lastFM.username);
+const { currentlyPlaying, tracks: track } = await client.user.fetchRecentTracks(misc.lastFM.username);
 ---
 
 <Layout description="What I may currently be listening to." pageTitle="Last.fm" title="Last.fm | Chloe Arciniega">
   <main class="content">
-    <Music currentlyPlaying={currentlyPlaying} track={tracks[0]} username={misc.lastFM.username} />
+    <section class="flex flex-col">
+      <span class="text-4xl font-bold text-ctp-mauve dark:text-ctp-pink">
+        {currentlyPlaying ? 'Now listening to' : 'Previously played'}:
+      </span>
+
+      <span class="pt-2 italic">
+        {
+          currentlyPlaying ? (
+            <span>
+              I'm currently listening to <span class="font-semibold">{track[0].name}</span> by{' '}
+              <span class="font-semibold">{track[0].artist.name}</span>.
+            </span>
+          ) : (
+            "I'm not listening to anything at the moment!"
+          )
+        }
+      </span>
+
+      <span class="flex flex-auto pt-7 pb-5">
+        <Link href={track[0].url} target="_blank">
+          <img
+            src={track[0].image}
+            class="rounded-xl"
+            title={`Cover art of the track ${track[0].name} by ${track[0].artist.name} on ${track[0].album}.`}
+            alt={`Cover art of the track ${track[0].name} by ${track[0].artist.name} on ${track[0].album}.`}
+            width="300"
+            height="300"
+          />
+        </Link>
+      </span>
+
+      <span class="flex flex-col gap-3 pt-1">
+        <span class="song">
+          <Icon size={25} title="Song name" name="mdi:music-note-eighth" />
+          <Link
+            href={track[0].url}
+            target="_blank"
+            title={`${track[0].name} by ${track[0].artist.name} on ${track[0].album}`}
+          >
+            {track[0].name}
+          </Link>
+        </span>
+
+        <span class="artist">
+          <Icon size={25} title="Artist" name="mdi:artist" />
+          by
+          <Link href={`https://last.fm/music/${track[0].artist.name}`} title={track[0].artist.name} target="_blank">
+            {track[0].artist.name}
+          </Link>
+        </span>
+
+        <span class="album">
+          <Icon size={25} title="Album" name="mdi:album" />
+          on
+          <Link
+            href={`https://last.fm/music/${track[0].artist.name}/${track[0].album}`}
+            title={`${track[0].album} by ${track[0].artist.name}`}
+            target="_blank"
+          >
+            {track[0].album}
+          </Link>
+        </span>
+      </span>
+
+      <span class="pt-8 pb-3">
+        <Icon class="text-ctp-red" size={25} title="My Last.fm profile" name="simple-icons:lastfm" />
+
+        <Link color="text-ctp-red" href="https://last.fm/user/solelychloe" title="Last.fm: solelychloe" target="_blank">
+          My Last.fm profile
+        </Link>
+      </span>
+    </section>
 
     <Footer />
   </main>
