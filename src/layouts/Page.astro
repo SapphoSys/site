@@ -23,14 +23,13 @@ const { description, pageTitle, title } = Astro.props;
     <slot />
 
     <style is:global>
-      body {
-        @apply ctp-latte bg-light-bg text-light-text dark:ctp-mocha dark:bg-ctp-base dark:text-ctp-text;
-        @apply max-w-[45em] px-[2.5em] py-[2em];
+      html {
+        @apply flex flex-col;
       }
 
-      html {
-        display: flex;
-        flex-direction: column;
+      body {
+        @apply ctp-latte bg-light-bg text-light-text dark:ctp-mocha dark:bg-ctp-base dark:text-ctp-text;
+        @apply max-w-[45em] px-[1em] py-[2em] md:px-[2.5em];
       }
 
       nav,
