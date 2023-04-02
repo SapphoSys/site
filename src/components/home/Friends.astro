@@ -9,12 +9,13 @@ import Friends from '@lib/Friends';
   Below is a webring of people I find cool. <Link
     href="https://en.wikipedia.org/wiki/Webring"
     title="A redirect link to Wikipedia's definition of a webring."
+    target="_blank"
   >
     (what is a webring?)
   </Link>
 </span>
 
-<div class="flex flex-wrap gap-[5.51px] md:gap-[13.45px]">
+<div class="flex flex-wrap gap-5 md:gap-3">
   {
     Friends.map((friend) => {
       return <Webring name={friend.name} link={friend.link} image={friend.image} />;
