@@ -1,6 +1,8 @@
 ---
 import Layout from '@layouts/Page.astro';
 
+import '@fontsource/iosevka';
+
 import Comments from '@components/blog/Comments.astro';
 import Footer from '@components/Footer.astro';
 import Line from '@components/Underline.astro';
@@ -68,17 +70,17 @@ const createdAt = created ? formatDate(parseISO(created)) : null;
 <style is:global>
   .article-content {
     @apply text-xl;
-    @apply flex flex-col flex-wrap;
-    @apply pt-5 pb-5;
+    @apply pb-5 pt-5;
 
     & :is(h1, h2, h3, h4, h5, h6) {
+      @apply font-display;
       @apply gap-1;
       @apply flex;
 
       & a {
         @apply transition delay-[1ms] ease-in;
         @apply opacity-0;
-        @apply pt-1 text-2xl;
+        @apply pl-1 pt-3 text-2xl;
 
         &:hover {
           @apply font-bold;

@@ -1,10 +1,14 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: ['./src/**/*.{astro,html,js,md,mdx,ts}'],
   theme: {
     fontFamily: {
       body: ['Inter', 'sans-serif'],
       display: ['Atkinson Hyperlegible', 'sans-serif'],
+      mono: ['Iosevka', 'monospace'],
     },
     colors: {
       'braytech': '#E33D5B',
