@@ -25,10 +25,11 @@ module.exports = {
       typography: () => ({
         invert: {
           css: {
+            '--tw-prose-invert-bullets': '#f5c2e7',
             hr: {
               background: '#f5c2e7',
               height: '1px',
-              borderTopWidth: "0",
+              borderTopWidth: '0',
             },
             a: {
               background: '#f5c2e7',
@@ -44,10 +45,11 @@ module.exports = {
         },
         DEFAULT: {
           css: {
+            '--tw-prose-bullets': '#8839ef',
             hr: {
               background: '#8839ef',
               height: '1px',
-              borderTopWidth: "0",
+              borderTopWidth: '0',
             },
             a: {
               background: '#8839ef',
