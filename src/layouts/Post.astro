@@ -28,9 +28,9 @@ const formatDate = (date: Date) => format(date, 'MMM do, yyyy');
 
 <Layout description={description} pageTitle="Posts" title="Posts | Chloe Arciniega">
   <main class="content flex flex-col">
-    <Line>My blog</Line>
+    <Line>Article posts</Line>
 
-    <span class="header pt-3 pb-2">
+    <span class="header pb-2 pt-3">
       <span class="flex flex-col gap-3">
         {
           type === 'posts' ? (
@@ -50,9 +50,9 @@ const formatDate = (date: Date) => format(date, 'MMM do, yyyy');
     </span>
   </main>
 
-  <section class="rss pt-1 pb-5">
+  <section class="rss pb-5 pt-1">
     <Icon class="text-ctp-mauve dark:text-ctp-pink" size={25} name="mdi:rss" />
-    <Link class="subscribe pt-1 pb-5" title="Subscribe to my RSS feed" href="/rss.xml">Subscribe to RSS</Link>
+    <Link class="subscribe pb-5 pt-1" title="Subscribe to my RSS feed" href="/rss.xml">Subscribe to RSS</Link>
   </section>
 
   <hr class="pb-4 text-ctp-mauve dark:text-ctp-red" />
@@ -93,7 +93,7 @@ const formatDate = (date: Date) => format(date, 'MMM do, yyyy');
             </span>
           </span>
 
-          <span class="tags flex gap-3 pt-2 pb-2">{data.tags ? data.tags.map((tag) => <Tag tag={tag} />) : null}</span>
+          <span class="tags flex gap-3 pb-2 pt-2">{data.tags ? data.tags.map((tag) => <Tag tag={tag} />) : null}</span>
         </article>
       ))
   }

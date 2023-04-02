@@ -29,7 +29,7 @@ const createdAt = created ? formatDate(parseISO(created)) : null;
 ---
 
 <Layout description={description} pageTitle={title} title={`${title} | Chloe Arciniega`}>
-  <Line>My blog</Line>
+  <Line>Article</Line>
   {checkComments() && <meta slot="head" name="giscus:backlink" content={Astro.url.href} />}
 
   <section class="flex flex-col">
@@ -54,10 +54,12 @@ const createdAt = created ? formatDate(parseISO(created)) : null;
       </span>
     </span>
 
-    <span class="tags flex gap-3 pt-3">
+    <span class="tags flex gap-3 pb-5 pt-3">
       {tags ? tags.map((tag) => <Tag tag={tag} />) : null}
     </span>
   </section>
+
+  <hr class="dark:text-ctp-pink" />
 
   <main class="article-content prose dark:prose-invert">
     <slot />
@@ -69,8 +71,18 @@ const createdAt = created ? formatDate(parseISO(created)) : null;
 
 <style is:global>
   .article-content {
+    @apply max-w-none;
     @apply text-xl;
     @apply pb-5 pt-5;
+
+    & code:before,
+    & code:after {
+      content: '';
+    }
+
+    & code > .line {
+      @apply font-mono;
+    }
 
     & :is(h1, h2, h3, h4, h5, h6) {
       @apply font-display;
@@ -80,7 +92,7 @@ const createdAt = created ? formatDate(parseISO(created)) : null;
       & a {
         @apply transition delay-[1ms] ease-in;
         @apply opacity-0;
-        @apply pl-1 pt-3 text-2xl;
+        @apply pl-1 pt-1 text-2xl;
 
         &:hover {
           @apply font-bold;
