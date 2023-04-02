@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-const defaultTheme = require('tailwindcss/defaultTheme');
-
 module.exports = {
   content: ['./src/**/*.{astro,html,js,md,mdx,ts}'],
   theme: {
@@ -27,6 +25,11 @@ module.exports = {
       typography: () => ({
         invert: {
           css: {
+            hr: {
+              background: '#f5c2e7',
+              height: '1px',
+              borderTopWidth: "0",
+            },
             a: {
               background: '#f5c2e7',
               backgroundClip: 'text',
@@ -41,6 +44,11 @@ module.exports = {
         },
         DEFAULT: {
           css: {
+            hr: {
+              background: '#8839ef',
+              height: '1px',
+              borderTopWidth: "0",
+            },
             a: {
               background: '#8839ef',
               backgroundClip: 'text',
