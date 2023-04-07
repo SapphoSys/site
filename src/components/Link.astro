@@ -6,4 +6,8 @@ export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
 const { href, class: className, color = 'text-ctp-mauve dark:text-ctp-pink', ...props } = Astro.props;
 ---
 
-<a href={href} class:list={`${[className]} hover:underline font-medium ${color}`} {...props}><slot /></a>
+<a
+  href={href}
+  class:list={`${[className]} hover:underline hover:text-mauve-hover dark:hover:text-pink-hover font-medium ${color}`}
+  {...props}><slot /></a
+>

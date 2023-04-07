@@ -17,6 +17,9 @@ module.exports = {
       'littlelight': '#9a86f0',
       'novecore': '#708aff',
       'parallel': '#CA2917',
+
+      'mauve-hover': '#7f6a99',
+      'pink-hover': '#d6abca',
       'light-bg': '#e6e9ef',
       'light-accent': '#ea76cb',
       'light-text': '#4c4f69',
