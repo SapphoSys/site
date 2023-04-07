@@ -2,8 +2,7 @@
 title: Using Cloudflare R2 as your primary storage on Owncloud
 created: 2023-04-02Z
 description: A guide on how to set up Cloudflare R2 on Owncloud.
-tags: [owncloud, r2]
-comments: true
+tags: [owncloud, cloudflare]
 ---
 
 import Warning from '@components/blog/Warning.astro';
@@ -17,14 +16,16 @@ Then I had an idea... what if I could hook up [Cloudflare's R2][r2] service to O
 
 _**NOTE**: This guide assumes you're running an instance of Owncloud on a Docker container using **docker-compose**._
 
-You'll need to install Docker first. The official Docker Docs page provides [a guide][docker-install] on how to install
-Docker on just about every system.
+If you don't have an instance of Owncloud running on Docker, follow these steps:
 
-Then, head over to Owncloud's [documentation page][owncloud-install] and install Owncloud on a Docker container.
+- You'll need to install Docker first. The official Docker Docs page provides [a guide][docker-install] on how to
+  install Docker on just about every system.
+
+- Then, head over to Owncloud's [documentation page][owncloud-install] and install Owncloud on a Docker container.
 
 ## Creating an R2 bucket
 
-Head over to your [Cloudflare dashboard][cloudflare-dash] and navigate to the R2 page.  
+Go to your [Cloudflare dashboard][cloudflare-dash] and navigate to the R2 page.  
 ![R2 page](https://elixi.re/i/k3psp.png 'R2 page on your Cloudflare dashboard.')
 
 You'll want to create a bucket. Make sure you give this bucket a unique name, because you won't be able to change it
@@ -48,7 +49,7 @@ Let's go through each of the options on the page:
 
 - **Token name**: This is not that important, but if you want to be able to easily identify the R2 token on this page in
   the future, you can set a unique name here.  
-  ![Token name option](https://elixi.re/i/lqn7h.png 'Token name option')
+  ![Token name option](https://elixi.re/i/x02n8.png 'Token name option')
 
 - **Permissions**: Make sure you set this to **Edit**! Otherwise you may run into permission issues when uploading
   files.  
@@ -64,7 +65,7 @@ You'll be able to see your **Access Key ID** and **Secret Access Key** values he
 will not be able to see them again!  
 ![API keys](https://elixi.re/i/3rlfx.png 'API keys')
 
-## The S3 extension for Owncloud
+## Installing the S3 extension for Owncloud
 
 Once you're done creating an R2 bucket, head over to your Owncloud admin dashboard.
 
@@ -72,9 +73,9 @@ Click on the menu bar located in the upper left corner, and select the **Market*
 ![Market tab](https://elixi.re/i/7zakj.png 'Market tab')
 
 Scroll down until you find the **S3 Primary Object Storage** extension, and install it.
-![S3 extension](https://elixi.re/i/8xj9r.png 'S3 extension')
+![S3 extension](https://elixi.re/i/rnmm8.png 'S3 extension')
 
-_**NOTE**: You'll want this extension, and not the extension called **External Storage: S3**!_
+_**Note**: You'll want this extension, and not the extension called **External Storage: S3**!_
 
 ## Setting up R2 for your Owncloud instance
 
@@ -91,7 +92,8 @@ Head over to the **config** folder by running `cd config`.
 The **config** folder should have the following files:
 
 ```bash
-root@owncloud:/var/www/owncloud/config# ls
+> ls
+
 config.php  objectstore.config.php  overwrite.config.php
 ```
 
@@ -120,11 +122,11 @@ Add the following to the **config.php** file:
 
 Replace the following:
 
-- **bucket**: This is your unique R2 bucket name that you created earlier.
+- **bucket**: This is your unique R2 bucket name that you created earlier. (I used `owncloud-instance` for this guide)
 - **key**: This is the Access Key ID that you obtained when creating the R2 bucket.
 - **secret**: This is the Secret Access Key that you obtained when creating the R2 bucket.
-- **hostname**: You can find the bucket hostname on the bucket page itself.
-  ![R2 bucket hostname](https://elixi.re/i/y8e7l.png 'R2 bucket hostname')
+- **hostname**: You can find the bucket hostname on the bucket page itself. Make sure to only include the URL name! (the
+  `/owncloud-instance` bit can be removed) ![R2 bucket hostname](https://elixi.re/i/y8e7l.png 'R2 bucket hostname')
 
 Then, run `docker restart owncloud_server` to apply the changes.
 
