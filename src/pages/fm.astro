@@ -25,7 +25,7 @@ const { currentlyPlaying, tracks: track } = await client.user.fetchRecentTracks(
         {
           currentlyPlaying ? (
             <span>
-              I'm currently listening to <span class="font-semibold">{track[0].name}</span> by{' '}
+              I'm currently listening to <span class="font-semibold">{track[0].name}</span> by
               <span class="font-semibold">{track[0].artist.name}</span>.
             </span>
           ) : (
@@ -34,7 +34,7 @@ const { currentlyPlaying, tracks: track } = await client.user.fetchRecentTracks(
         }
       </span>
 
-      <span class="flex flex-auto pt-7 pb-5">
+      <span class="flex flex-auto pb-5 pt-7">
         <Link href={track[0].url} target="_blank">
           <img
             src={track[0].image}
@@ -80,7 +80,7 @@ const { currentlyPlaying, tracks: track } = await client.user.fetchRecentTracks(
         </span>
       </span>
 
-      <span class="pt-8 pb-3">
+      <span class="pb-3 pt-8">
         <Icon class="text-ctp-red" size={25} title="My Last.fm profile" name="simple-icons:lastfm" />
 
         <Link color="text-ctp-red" href="https://last.fm/user/solelychloe" title="Last.fm: solelychloe" target="_blank">
