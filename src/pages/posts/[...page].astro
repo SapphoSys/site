@@ -44,6 +44,7 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
   title={`Blog Posts`}
   posts={page.data}
   description="A personal blog, comprising of whatever stuff I find interesting to post."
+  total={page.total}
 >
   <Pagination page={page} />
 </Posts>
