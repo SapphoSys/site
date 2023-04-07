@@ -1,6 +1,5 @@
 ---
 import Link from '@components/Link.astro';
-import { Icon } from 'astro-iconify';
 
 export interface Props {
   tag: string;
@@ -10,6 +9,5 @@ const { tag } = Astro.props;
 ---
 
 <span class="tag rounded-lg border border-ctp-mauve px-3 py-1 dark:border-ctp-pink">
-  <Icon class="text-ctp-mauve dark:text-ctp-pink" size={20} name="mdi:tag" />
-  <Link href={`/posts/tag/${tag}`} title={`Post tagged with ${tag}`}>{tag}</Link>
+  <Link href={`/posts/tag/${tag}`} title={`Post tagged with ${tag}`}>#{tag}</Link>
 </span>
