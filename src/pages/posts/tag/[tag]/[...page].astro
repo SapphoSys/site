@@ -4,12 +4,13 @@ export const prerender = true;
 import Posts from '@layouts/Post.astro';
 import Pagination from '@components/blog/Pagination.astro';
 
+import type { PaginateFunction } from 'astro';
 import { getCollection } from 'astro:content';
 
 const { tag } = Astro.params;
 const { page } = Astro.props;
 
-export async function getStaticPaths({ paginate }: { paginate: Function }) {
+export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
   const posts = await getCollection('posts');
 
   const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags)));
