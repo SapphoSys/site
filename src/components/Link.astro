@@ -8,6 +8,6 @@ const { href, class: className, color = 'text-ctp-mauve dark:text-ctp-pink', ...
 
 <a
   href={href}
-  class:list={`${[className]} hover:underline hover:text-mauve-hover dark:hover:text-pink-hover font-medium ${color}`}
+  class:list={`${[className]} hover:underline hover:opacity-60 transition ease-out font-medium ${color}`}
   {...props}><slot /></a
 >
