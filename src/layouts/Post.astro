@@ -6,7 +6,6 @@ import Layout from '@layouts/Page.astro';
 import Footer from '@components/Footer.astro';
 import Line from '@components/Underline.astro';
 import Link from '@components/Link.astro';
-import Tag from '@components/blog/Tag.astro';
 
 import { format, parseISO } from 'date-fns';
 import { Icon } from 'astro-iconify';
@@ -30,7 +29,7 @@ const { type, posts, title, description } = Astro.props;
   <main class="content flex flex-col">
     <Line>Articles</Line>
 
-    <span class="header pb-2 pt-3">
+    <span class="header pb-1">
       <span class="flex flex-col gap-3">
         {
           // prettier-ignore
@@ -60,21 +59,30 @@ const { type, posts, title, description } = Astro.props;
       posts
         .sort((a, b) => new Date(b.data.created).valueOf() - new Date(a.data.created).valueOf())
         .map(({ data, slug }) => (
-          <span class="rounded-1xl flex flex-col pb-1 pt-1">
-            <article class="border-ctp-mauve dark:border-ctp-pink flex flex-col gap-1 border-[2px] p-5">
-              <span class="title text-3xl font-bold">
+          <span class="rounded-1xl flex flex-col pb-2 pt-1">
+            <article class="flex flex-col gap-1 border-[2px] border-ctp-mauve p-5 dark:border-ctp-pink">
+              {data.tag && (
+                <Link color="text-ctp-red" href={`/posts/tag/${data.tag}`} title={`Post tagged with ${data.tag}`}>
+                  {data.tag.toUpperCase()}
+                </Link>
+              )}
+
+              <span class="text-3xl font-bold">
                 <Link href={`/posts/${slug}`} title={data.title}>
                   {data.title}
                 </Link>
               </span>
+
               <span>
                 <Icon size={20} name="mdi:calendar" /> {formatDate(parseISO(data.created))}
-                <Icon size={20} name="mdi:clock-outline" /> {data.timeEstimate}
+                {data.timeEstimate && (
+                  <>
+                    <Icon size={20} name="mdi:clock-outline" /> {data.timeEstimate}
+                  </>
+                )}
               </span>
+
               {data.description && <span class="description italic">{data.description}</span>}
-              <span class="tags flex gap-3 pb-2 pt-2">
-                {data.tags ? data.tags.map((tag) => <Tag tag={tag} />) : null}
-              </span>
             </article>
           </span>
         ))

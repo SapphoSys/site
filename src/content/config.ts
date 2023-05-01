@@ -8,7 +8,7 @@ export const collections = {
       title: z.string(),
       created: z.string().regex(dateRegex),
       description: z.string(),
-      tags: z.array(z.string()),
+      tag: z.string(),
       comments: z.boolean().optional().default(true),
       timeEstimate: z.string().optional(),
     }),

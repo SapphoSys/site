@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import type { AstroIntegration } from 'astro';
 
 import mdx from '@astrojs/mdx';
 import prefetch from '@astrojs/prefetch';
@@ -8,16 +7,18 @@ import tailwind from '@astrojs/tailwind';
 import vercel from '@astrojs/vercel/serverless';
 import compress from 'astro-compress';
 import robotsTxt from 'astro-robots-txt';
+import workerLinks from 'astro-worker-links';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypeSlug from 'rehype-slug';
 import remarka11yEmoji from '@fec/remark-a11y-emoji';
+import remarkToc from 'remark-toc';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://arciniega.one',
   markdown: {
-    remarkPlugins: [remarka11yEmoji],
+    remarkPlugins: [remarka11yEmoji, [remarkToc, { tight: true }]],
     rehypePlugins: [
       rehypeSlug,
       [
@@ -41,13 +42,25 @@ export default defineConfig({
   },
   integrations: [
     tailwind(),
+    mdx(),
     prefetch(),
     sitemap(),
+    workerLinks({
+      domain: 'https://solstice.tf',
+      secret: import.meta.env.WORKER_SECRET,
+      getPageMapping(pages) {
+        return pages
+          .filter((url) => url.pathname !== '/posts/' && url.pathname.includes('/posts'))
+          .map((url) => {
+            return {
+              page: url.href,
+              shortlink: url.pathname.replace('/posts', ''),
+            };
+          });
+      },
+    }),
     compress(),
     robotsTxt(),
-
-    // TEMP: The recent Astro update broke integration logic, so "AstroIntegration" has been supplied here for now.
-    mdx() as AstroIntegration,
   ],
   output: 'server',
   adapter: vercel(),

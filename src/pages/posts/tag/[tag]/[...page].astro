@@ -13,11 +13,11 @@ const { page } = Astro.props;
 export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
   const posts = await getCollection('posts');
 
-  const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags)));
+  const tags = Array.from(new Set(posts.flatMap((post) => post.data.tag)));
 
   return tags.map((tag) => {
     return paginate(
-      posts.filter((post) => tag && post.data.tags?.includes(tag)),
+      posts.filter((post) => tag && post.data.tag?.includes(tag)),
       {
         params: { tag },
         pageSize: 10,

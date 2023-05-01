@@ -8,13 +8,6 @@ import getPostData from '@lib/PostData';
 import type { PaginateFunction } from 'astro';
 import { getCollection } from 'astro:content';
 
-interface Props {
-  created: string;
-  description: string;
-  tags?: string[];
-  title: string;
-}
-
 const { page } = Astro.props;
 
 export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {

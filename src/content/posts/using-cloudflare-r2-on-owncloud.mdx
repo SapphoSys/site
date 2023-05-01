@@ -2,7 +2,7 @@
 title: Using Cloudflare R2 as your primary storage on Owncloud
 created: 2023-04-02Z
 description: A guide on how to set up Cloudflare R2 on Owncloud.
-tags: [owncloud, cloudflare]
+tag: cloudflare
 ---
 
 import Warning from '@components/blog/Warning.astro';
@@ -11,6 +11,8 @@ I have a compute instance that is running [Owncloud][owncloud], which I use to b
 is, my instance has very little storage to actually host anything.
 
 Then I had an idea... what if I could hook up [Cloudflare's R2][r2] service to Owncloud?
+
+## Table of contents
 
 ## Preamble
 
@@ -43,7 +45,7 @@ At the time of writing this guide, the link should be in the upper right corner.
 
 Then, click on the **Create API token** button.
 
-## Bucket creation options
+### Bucket creation options
 
 Let's go through each of the options on the page:
 
@@ -118,7 +120,7 @@ Add the following to the **config.php** file:
 ]
 ```
 
-## S3 configuration options
+### S3 configuration options
 
 Replace the following:
 
