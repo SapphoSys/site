@@ -1,37 +1,22 @@
 ---
 import Link from '@components/Link.astro';
-
-import { socials } from '@config';
 ---
 
 {
-  /* prettier-ignore */
-  socials && (
-    <section class="links pb-5 text-2xl">
-      {socials?.discord && (
-        <Link href={`https://discord.com/users/${socials.discord.id}`} title={`Discord: ${socials.discord.tag}`} target="_blank">
-          Discord <small>[{socials.discord.tag}]</small></Link>
-      )}
+  /* prettier-ignore */ <section class="links pb-5 pt-1 text-2xl">
+    <Link href="https://solstice.tf/discord" title="Discord" target="_blank">
+      Discord</Link>
 
-      {socials?.mastodon && (
-        <Link href={socials.mastodon.link} title={`Mastodon: ${socials.mastodon.tag}`} target="_blank">
-          Mastodon</Link>
-      )}
+    <Link href="https://solstice.tf/twitter" title="Twitter" target="_blank">
+      Twitter</Link>
 
-      {socials?.github && (
-        <Link href={`https://github.com/${socials.github}`} title={`GitHub: ${socials.github}`} target="_blank">
-          GitHub</Link>
-      )}
+    <Link href="https://solstice.tf/fediverse" title="Fediverse" target="_blank">
+      Fediverse</Link>
 
-      {socials?.telegram && (
-        <Link href={`https://t.me/${socials.telegram}`} title={`Telegram: ${socials.telegram}`} target="_blank">
-          Telegram</Link>
-      )}
+    <Link href="https://solstice.tf/github" title="GitHub" target="_blank">
+      GitHub</Link>
 
-      {socials?.mail && (
-        <Link href={`mailto:${socials.mail}`} aria-label={`Mail: ${socials.mail}`} title={`Mail: ${socials.mail}`} target="_blank">
-          Mail</Link>
-      )}
-    </section>
-  )
+    <Link href="https://solstice.tf/email" title="Mail" target="_blank">
+      Mail</Link>
+  </section>
 }

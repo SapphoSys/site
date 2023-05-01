@@ -52,9 +52,6 @@ const IS_PRODUCTION = import.meta.env.MODE === 'production';
 
         // Theme color
         { name: 'theme-color', content: base.seo && base.seo.themeColor },
-
-        // Keywords
-        { name: 'keywords', content: `${base.seo && base.seo.keywords}` },
       ],
       link: [
         // Icon
@@ -66,7 +63,7 @@ const IS_PRODUCTION = import.meta.env.MODE === 'production';
         // RSS
         {
           rel: 'alternate',
-          title: "Chloe's Posts",
+          title: `${blog.rss.title}`,
           href: blog.rss && `https://${base.siteName}/rss.xml`,
           type: 'appliccation/rss+xml',
         },
