@@ -1,0 +1,21 @@
+---
+import Layout from '@layouts/Page.astro';
+
+import Footer from '@components/Footer.astro';
+import Friends from '@components/home/Friends.astro';
+import Line from '@components/Underline.astro';
+---
+
+<Layout
+  description="Translator, developer, hobbyist sysadmin."
+  pageTitle="Chloe Arciniega"
+  title="Home | Chloe Arciniega"
+>
+  <main class="content">
+    <Line>My friends</Line>
+
+    <Friends />
+
+    <Footer />
+  </main>
+</Layout>

@@ -16,7 +16,7 @@ const Friends: Webring = [
     image: 'espi.png',
   },
   {
-    name: 'Adryd',
+    name: 'adryd',
     link: 'https://adryd.com',
     image: 'adryd.png',
   },
