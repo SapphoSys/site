@@ -17,7 +17,6 @@ yarn-error.log*
 
 # environment variables
 .env
-.env.production
 
 # OS-specific files
 .DS_Store
