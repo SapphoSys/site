@@ -28,7 +28,7 @@ module.exports = {
       typography: () => ({
         invert: {
           css: {
-            '--tw-prose-invert-bullets': '#f5c2e7',
+            '--tw-prose-invert-bullets': '#f38ba8',
             hr: {
               background: '#f5c2e7',
               height: '1px',
