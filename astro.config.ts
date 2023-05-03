@@ -47,10 +47,13 @@ export default defineConfig({
     sitemap(),
     workerLinks({
       domain: 'https://solstice.tf',
-      secret: import.meta.env.WORKER_SECRET,
+      secret: process.env.WORKER_SECRET!,
       getPageMapping(pages) {
         return pages
-          .filter((url) => url.pathname !== '/posts/' && url.pathname.includes('/posts'))
+          .filter(
+            (url) =>
+              url.pathname !== '/posts/' && url.pathname.includes('/posts') && !url.pathname.includes('/posts/tag')
+          )
           .map((url) => {
             return {
               page: url.href,
