@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import Layout from '@layouts/Page.astro';
 
 import Contribution from '@components/Contribution.astro';
@@ -125,7 +127,7 @@ import Line from '@components/Underline.astro';
     <Line>Past works</Line>
 
     <section class="flex flex-col">
-      <ul class="flex list-inside list-disc flex-col gap-3 pt-2 pb-2">
+      <ul class="flex list-inside list-disc flex-col gap-3 pb-2 pt-2">
         <Contribution
           link="https://hibiki.app"
           title="Hibiki"
