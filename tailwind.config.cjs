@@ -44,6 +44,21 @@ module.exports = {
               backgroundClip: 'text',
               color: 'transparent',
             },
+            figure: {
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            },
+            figcaption: {
+              fontStyle: 'italic',
+              color: 'white',
+              opacity: '0.75',
+            },
+            'figure img': {
+              maxHeight: '500px',
+              width: 'auto',
+              height: '100%',
+            },
           },
         },
         DEFAULT: {

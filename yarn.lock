@@ -1181,6 +1181,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@microflash/remark-figure-caption@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@microflash/remark-figure-caption@npm:1.0.0"
+  dependencies:
+    hast-util-whitespace: ^2.0.0
+    remark-parse: ^10.0.1
+    unified: ^10.1.2
+    unist-util-remove: ^3.1.0
+    unist-util-visit: ^4.1.0
+  checksum: c48c130f971c7972b148ebc50770ea0348d2039a1921fea0af75d9c743d2e9cc0f4dc1a3877d856aca356b2bfcdfb9f26f4a2575141c7caffa93da8c76a39fd9
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -1302,6 +1315,7 @@ __metadata:
     "@fontsource/atkinson-hyperlegible": ^4.5.11
     "@fontsource/inter": ^4.5.15
     "@fontsource/iosevka": ^4.5.4
+    "@microflash/remark-figure-caption": ^1.0.0
     "@solely/simple-fm": ^1.4.1
     "@tailwindcss/typography": ^0.5.9
     "@types/eslint": ^8.37.0
@@ -9093,6 +9107,17 @@ __metadata:
     "@types/unist": ^2.0.0
     unist-util-visit: ^4.0.0
   checksum: 989831da913d09a82a99ed9b47b78471b6409bde95942cde47e09da54b7736516f17e3c7e026af468684c1efcec5fb52df363381b2f9dc7fd96ce791c5a2fa4a
+  languageName: node
+  linkType: hard
+
+"unist-util-remove@npm:^3.1.0":
+  version: 3.1.1
+  resolution: "unist-util-remove@npm:3.1.1"
+  dependencies:
+    "@types/unist": ^2.0.0
+    unist-util-is: ^5.0.0
+    unist-util-visit-parents: ^5.0.0
+  checksum: ed7c762941e6a9b6db230e9417697c8eb7d36093240b6f6d4ec265c4237d33e332a96a18307c8fb322a1842e3feb2a7564b032b5535fa0634eb1e075a6e344cb
   languageName: node
   linkType: hard
 
