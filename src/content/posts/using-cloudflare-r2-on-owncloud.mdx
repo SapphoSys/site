@@ -28,20 +28,20 @@ If you don't have an instance of Owncloud running on Docker, follow these steps:
 ## Creating an R2 bucket
 
 Go to your [Cloudflare dashboard][cloudflare-dash] and navigate to the R2 page.  
-![R2 page](https://elixi.re/i/k3psp.png 'R2 page on your Cloudflare dashboard.')
+![The R2 page on your Cloudflare dashboard, highlighted in red.](https://elixi.re/i/k3psp.png 'R2 page on your Cloudflare dashboard.')
 
 You'll want to create a bucket. Make sure you give this bucket a unique name, because you won't be able to change it
 afterwards!
 
-For the purposes of this guide, I'll stick with the bucket name `owncloud-instance`.
+_For the purposes of this guide, I'll stick with the bucket name `owncloud-instance`._
 
-![Bucket name](https://elixi.re/i/eq5h5.png 'Bucket name')
+![The name for your R2 bucket.](https://elixi.re/i/eq5h5.png 'Bucket name section')
 
 Once you're done with that, head back to the R2 page, and click on the **Manage R2 API Tokens** link.
 
 At the time of writing this guide, the link should be in the upper right corner.
 
-![R2 API tokens link](https://elixi.re/i/4281o.png 'R2 API tokens link')
+![The "R2 API tokens" link.](https://elixi.re/i/4281o.png 'The "R2 API tokens" link.')
 
 Then, click on the **Create API token** button.
 
@@ -51,31 +51,31 @@ Let's go through each of the options on the page:
 
 - **Token name**: This is not that important, but if you want to be able to easily identify the R2 token on this page in
   the future, you can set a unique name here.  
-  ![Token name option](https://elixi.re/i/x02n8.png 'Token name option')
+  ![The name option for your R2 API token.](https://elixi.re/i/x02n8.png 'Token name option')
 
 - **Permissions**: Make sure you set this to **Edit**! Otherwise you may run into permission issues when uploading
   files.  
-  ![Permissions option](https://elixi.re/i/c205k.png 'Permissions option')
+  ![The permissions option for your R2 API token.](https://elixi.re/i/c205k.png 'Permissions option')
 
 - **TTL**: If you just want to create this token and forget about it, set this to **Infinity**. Otherwise, this option
   is up to you.  
-  ![TTL option](https://elixi.re/i/pkcx0.png 'TTL option')
+  ![The TTL option for your R2 API token.](https://elixi.re/i/pkcx0.png 'TTL option')
 
 When you're done, click on the **Create API Token** button.
 
 You'll be able to see your **Access Key ID** and **Secret Access Key** values here. Keep them somewhere safe, as you
 will not be able to see them again!  
-![API keys](https://elixi.re/i/3rlfx.png 'API keys')
+![The R2 API token being successfully created with the "Access Key ID" and "Secret Access Key" values provided.](https://elixi.re/i/3rlfx.png 'The R2 API token being successfully created with the "Access Key ID" and "Secret Access Key" values provided.')
 
 ## Installing the S3 extension for Owncloud
 
 Once you're done creating an R2 bucket, head over to your Owncloud admin dashboard.
 
 Click on the menu bar located in the upper left corner, and select the **Market** tab.
-![Market tab](https://elixi.re/i/7zakj.png 'Market tab')
+![The Market tab on your Owncloud instance.](https://elixi.re/i/7zakj.png 'The Market tab on your Owncloud instance.')
 
 Scroll down until you find the **S3 Primary Object Storage** extension, and install it.
-![S3 extension](https://elixi.re/i/rnmm8.png 'S3 extension')
+![The S3 Primary Object Storage extension on the Owncloud Marketplace.](https://elixi.re/i/rnmm8.png 'S3 extension')
 
 _**Note**: You'll want this extension, and not the extension called **External Storage: S3**!_
 
@@ -110,8 +110,8 @@ Add the following to the **config.php** file:
   'arguments' => [
     'bucket' => 'BUCKET',
     'autocreate' => true,
-    'key'    => 'KEY',
-    'secret' => 'SECRET',
+    'key'    => 'ACCESS_KEY_ID',
+    'secret' => 'SECRET_ACCESS_KEY',
     'hostname' => 'ACCOUNT_ID.r2.cloudflarestorage.com',
     'port' => 443,
     'use_ssl' => true,
