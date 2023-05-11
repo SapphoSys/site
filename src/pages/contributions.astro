@@ -4,8 +4,8 @@ export const prerender = true;
 import Layout from '@layouts/Page.astro';
 
 import Contribution from '@components/Contribution.astro';
-import Footer from '@components/Footer.astro';
-import Line from '@components/Underline.astro';
+import Footer from '@components/base/Footer.astro';
+import Line from '@components/base/Underline.astro';
 ---
 
 <Layout
@@ -34,7 +34,7 @@ import Line from '@components/Underline.astro';
           date="2022 - present"
           borderColor="border-rosewater"
           textColor="text-rosewater"
-          image="/contributions/Braytech.jpg"
+          image="/contributions/Braytech.png"
         />
 
         <Contribution
@@ -99,7 +99,7 @@ import Line from '@components/Underline.astro';
           date="2021 - present"
           borderColor="border-novecore"
           textColor="text-novecore"
-          image="/contributions/Novecore.jpg"
+          image="/contributions/Novecore.png"
         />
 
         <Contribution
@@ -145,7 +145,7 @@ import Line from '@components/Underline.astro';
           date="Mar 2020 - Jun 2020"
           borderColor="border-enlive"
           textColor="text-enlive"
-          image="/contributions/ENLiVE.jpg"
+          image="/contributions/ENLiVE.png"
         />
       </ul>
 
