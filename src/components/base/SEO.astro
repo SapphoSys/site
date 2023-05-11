@@ -1,0 +1,63 @@
+---
+import { SEO } from 'astro-seo';
+import { base, blog } from '@config';
+
+const { description, pageTitle, title } = Astro.props;
+
+const siteName = Astro.site?.hostname;
+const image = new URL(base.favicon?.fileName || '/favicon.png', Astro.site).href;
+---
+
+<SEO
+  title={title}
+  description={description}
+  charset={'UTF-8'}
+  openGraph={{
+    basic: {
+      title: pageTitle,
+      type: 'website',
+      image,
+    },
+    optional: {
+      siteName,
+      description,
+    },
+    image: {
+      alt: base.favicon && base.favicon.altText,
+    },
+  }}
+  twitter={{
+    card: 'summary',
+    creator: 'solelychloe',
+
+    image,
+    imageAlt: base.favicon && base.favicon.altText,
+  }}
+  extend={{
+    meta: [
+      // Compatibility
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+
+      // Astro generator
+      { name: 'generator', content: Astro.generator },
+
+      // Theme color
+      { name: 'theme-color', content: base.seo && base.seo.themeColor },
+    ],
+    link: [
+      // Icon
+      { rel: 'icon', href: image },
+
+      // Mastodon verification
+      { rel: 'me', href: 'https://tech.lgbt/@solely' },
+
+      // RSS
+      {
+        rel: 'alternate',
+        title: `${blog.rss.title}`,
+        href: blog.rss && `https://${base.siteName}/rss.xml`,
+        type: 'appliccation/rss+xml',
+      },
+    ],
+  }}
+/>
