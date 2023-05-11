@@ -3,9 +3,9 @@ export const prerender = true;
 
 import Layout from '@layouts/Page.astro';
 
-import Footer from '@components/Footer.astro';
-import Line from '@components/Underline.astro';
-import Link from '@components/Link.astro';
+import Footer from '@components/base/Footer.astro';
+import Line from '@components/base/Underline.astro';
+import Link from '@components/base/Link.astro';
 
 import { format, parseISO } from 'date-fns';
 import { Icon } from 'astro-iconify';
@@ -60,7 +60,7 @@ const { type, posts, title, description } = Astro.props;
         .sort((a, b) => new Date(b.data.created).valueOf() - new Date(a.data.created).valueOf())
         .map(({ data, slug }) => (
           <span class="rounded-1xl flex flex-col pb-2 pt-1">
-            <article class="flex flex-col gap-1 border-[2px] border-ctp-mauve p-5 dark:border-ctp-pink">
+            <article class="border-ctp-mauve dark:border-ctp-pink flex flex-col gap-1 border-[2px] p-5">
               {data.tag && (
                 <Link color="text-ctp-red" href={`/posts/tag/${data.tag}`} title={`Post tagged with ${data.tag}`}>
                   {data.tag.toUpperCase()}
