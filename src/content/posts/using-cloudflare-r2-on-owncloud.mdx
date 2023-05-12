@@ -28,20 +28,20 @@ If you don't have an instance of Owncloud running on Docker, follow these steps:
 ## Creating an R2 bucket
 
 Go to your [Cloudflare dashboard][cloudflare-dash] and navigate to the R2 page.  
-![The R2 page on your Cloudflare dashboard, highlighted in red.](https://elixi.re/i/k3psp.png 'R2 page on your Cloudflare dashboard.')
+![The R2 page on your Cloudflare dashboard, highlighted in red.](https://elixi.re/i/k3psp.png 'The R2 page on your Cloudflare dashboard, highlighted in red.')
 
 You'll want to create a bucket. Make sure you give this bucket a unique name, because you won't be able to change it
 afterwards!
 
 _For the purposes of this guide, I'll stick with the bucket name `owncloud-instance`._
 
-![The name for your R2 bucket.](https://elixi.re/i/eq5h5.png 'Bucket name section')
+![The name for your R2 bucket.](https://elixi.re/i/eq5h5.png 'The name for your R2 bucket.')
 
 Once you're done with that, head back to the R2 page, and click on the **Manage R2 API Tokens** link.
 
 At the time of writing this guide, the link should be in the upper right corner.
 
-![The "R2 API tokens" link.](https://elixi.re/i/4281o.png 'The "R2 API tokens" link.')
+![The "Manage R2 API tokens" link.](https://elixi.re/i/4281o.png 'The "Manage R2 API tokens" link.')
 
 Then, click on the **Create API token** button.
 
@@ -51,15 +51,15 @@ Let's go through each of the options on the page:
 
 - **Token name**: This is not that important, but if you want to be able to easily identify the R2 token on this page in
   the future, you can set a unique name here.  
-  ![The name option for your R2 API token.](https://elixi.re/i/x02n8.png 'Token name option')
+  ![The name option for your R2 API token.](https://elixi.re/i/x02n8.png 'The name option for your R2 API token.')
 
 - **Permissions**: Make sure you set this to **Edit**! Otherwise you may run into permission issues when uploading
   files.  
-  ![The permissions option for your R2 API token.](https://elixi.re/i/c205k.png 'Permissions option')
+  ![The permissions option for your R2 API token.](https://elixi.re/i/c205k.png 'The permissions option for your R2 API token.')
 
 - **TTL**: If you just want to create this token and forget about it, set this to **Infinity**. Otherwise, this option
   is up to you.  
-  ![The TTL option for your R2 API token.](https://elixi.re/i/pkcx0.png 'TTL option')
+  ![The TTL option for your R2 API token.](https://elixi.re/i/pkcx0.png 'The TTL option for your R2 API token.')
 
 When you're done, click on the **Create API Token** button.
 
@@ -75,7 +75,7 @@ Click on the menu bar located in the upper left corner, and select the **Market*
 ![The Market tab on your Owncloud instance.](https://elixi.re/i/7zakj.png 'The Market tab on your Owncloud instance.')
 
 Scroll down until you find the **S3 Primary Object Storage** extension, and install it.
-![The S3 Primary Object Storage extension on the Owncloud Marketplace.](https://elixi.re/i/rnmm8.png 'S3 extension')
+![The S3 Primary Object Storage extension on the Owncloud Marketplace.](https://elixi.re/i/rnmm8.png 'The S3 Primary Object Storage extension on the Owncloud Marketplace.')
 
 _**Note**: You'll want this extension, and not the extension called **External Storage: S3**!_
 
@@ -128,7 +128,9 @@ Replace the following:
 - **key**: This is the Access Key ID that you obtained when creating the R2 bucket.
 - **secret**: This is the Secret Access Key that you obtained when creating the R2 bucket.
 - **hostname**: You can find the bucket hostname on the bucket page itself. Make sure to only include the URL name! (the
-  `/owncloud-instance` bit can be removed) ![R2 bucket hostname](https://elixi.re/i/y8e7l.png 'R2 bucket hostname')
+  `/owncloud-instance` bit can be removed)
+
+![The R2 bucket hostname.](https://elixi.re/i/y8e7l.png 'The R2 bucket hostname.')
 
 Then, run `docker restart owncloud_server` to apply the changes.
 
@@ -141,7 +143,7 @@ Overall, it's pretty painless for your Owncloud instance to utilize Cloudflare's
 
 I will warn you though, Cloudflare's base plan for R2 only includes 10 GB of storage per month.
 
-![R2 pricing](https://elixi.re/i/kwujy.png 'R2 pricing')
+![Pricing for Cloudflare's R2 service.](https://elixi.re/i/kwujy.png "Pricing for Cloudflare's R2 service.")
 
 But it all depends if you're fine with that. :)
 
