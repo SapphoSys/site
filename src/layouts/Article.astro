@@ -26,10 +26,10 @@ const { comments, created, description, tag, timeEstimate, title } = Astro.props
 
 const checkComments = () => blog.comments && comments;
 
-const formatDate = (date: Date) => format(date, 'MMM do, yyyy');
+const formatDate = (date: Date) => format(date, 'MMM d, yyyy');
 const createdAt = created ? formatDate(parseISO(created)) : null;
 
-const backlinkPath = Astro.url.pathname.replace('/posts', '');
+const backlinkPath = Astro.url.pathname.replace('/article', '');
 const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
 ---
 
@@ -37,7 +37,7 @@ const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
   <Line>Article</Line>
   {checkComments() && <meta slot="head" name="giscus:backlink" content={backlink} />}
 
-  <section class="flex flex-col pt-2">
+<section class="flex flex-col pt-2">
     <span>
       {
         tag && (

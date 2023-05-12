@@ -57,12 +57,14 @@ export default defineConfig({
         return pages
           .filter(
             (url) =>
-              url.pathname !== '/posts/' && url.pathname.includes('/posts') && !url.pathname.includes('/posts/tag')
+              url.pathname !== '/articles/' &&
+              url.pathname.includes('/articles') &&
+              !url.pathname.includes('/articles/tag')
           )
           .map((url) => {
             return {
               page: url.href,
-              shortlink: url.pathname.replace('/posts', ''),
+              shortlink: url.pathname.replace('/articles', ''),
             };
           });
       },
