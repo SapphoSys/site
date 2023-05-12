@@ -32,7 +32,7 @@
     "@fontsource/iosevka": "^4.5.4",
     "@microflash/remark-figure-caption": "^1.0.0",
     "@solely/simple-fm": "^1.4.1",
-    "astro": "^2.4.4",
+    "astro": "^2.4.5",
     "astro-compress": "^1.1.42",
     "astro-iconify": "^1.2.0",
     "astro-robots-txt": "^0.5.0",
@@ -61,7 +61,7 @@
     "postcss": "^8.4.23",
     "postcss-html": "^1.5.0",
     "prettier": "^2.8.8",
-    "prettier-plugin-astro": "^0.8.0",
+    "prettier-plugin-astro": "^0.8.1",
     "prettier-plugin-tailwindcss": "^0.2.8",
     "typescript": "^5.0.4"
   }

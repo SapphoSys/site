@@ -1322,7 +1322,7 @@ __metadata:
     "@types/prettier": ^2.7.2
     "@typescript-eslint/eslint-plugin": ^5.59.5
     "@typescript-eslint/parser": ^5.59.5
-    astro: ^2.4.4
+    astro: ^2.4.5
     astro-compress: ^1.1.42
     astro-eslint-parser: ^0.14.0
     astro-iconify: ^1.2.0
@@ -1337,7 +1337,7 @@ __metadata:
     postcss: ^8.4.23
     postcss-html: ^1.5.0
     prettier: ^2.8.8
-    prettier-plugin-astro: ^0.8.0
+    prettier-plugin-astro: ^0.8.1
     prettier-plugin-tailwindcss: ^0.2.8
     reading-time: ^1.5.0
     rehype-autolink-headings: ^6.1.1
@@ -2222,9 +2222,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:^2.4.4":
-  version: 2.4.4
-  resolution: "astro@npm:2.4.4"
+"astro@npm:^2.4.5":
+  version: 2.4.5
+  resolution: "astro@npm:2.4.5"
   dependencies:
     "@astrojs/compiler": ^1.4.0
     "@astrojs/language-server": ^1.0.0
@@ -2286,7 +2286,7 @@ __metadata:
       optional: true
   bin:
     astro: astro.js
-  checksum: a106957b7bff5b335234656320a00d547454ae5ffc1162cfcd38553d4e3377bb592891bf098c8ce7009509a502a3d5599b9300af352da7b26f0eeaa5ff9ce18e
+  checksum: 135547037a2d706eacc6a344b292256334ebf125d9665fd2c40ae5d98cf33e0bb6818a110e7487943ee32ceb09ddd3ebbc933c9d42d0bcd9ac9ad1d38231a872
   languageName: node
   linkType: hard
 
@@ -7495,6 +7495,18 @@ __metadata:
     sass-formatter: ^0.7.5
     synckit: ^0.8.4
   checksum: 95551c59457cad020d74ea15830a06fb7ae51f7577f897127daae31e3d9b3f99081595ba1571925970f3d7a10d479b2ef37f2eef1c706c2569c590e64487c46e
+  languageName: node
+  linkType: hard
+
+"prettier-plugin-astro@npm:^0.8.1":
+  version: 0.8.1
+  resolution: "prettier-plugin-astro@npm:0.8.1"
+  dependencies:
+    "@astrojs/compiler": ^1.0.1
+    prettier: ^2.8.3
+    sass-formatter: ^0.7.5
+    synckit: ^0.8.4
+  checksum: 9aee16a3d60172ef2d654a12b064f747b8b4d73eb3eb6fd3c532a238f2c98f515258d3151c1754554f704b95bf299f52f725dde7d64fc65f17838371ae115027
   languageName: node
   linkType: hard
 
