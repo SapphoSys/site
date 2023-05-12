@@ -6,6 +6,7 @@ import Layout from '@layouts/Page.astro';
 import Footer from '@components/base/Footer.astro';
 import Line from '@components/base/Underline.astro';
 import Link from '@components/base/Link.astro';
+import Separator from '@components/base/Separator.astro';
 import Comments from '@components/blog/Comments.astro';
 
 import { blog } from '@config';
@@ -37,36 +38,20 @@ const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
   <Line>Article</Line>
   {checkComments() && <meta slot="head" name="giscus:backlink" content={backlink} />}
 
-<section class="flex flex-col pt-2">
-    <span>
-      {
-        tag && (
-          <Link color="text-ctp-red" href={`/posts/tag/${tag}`} title={`Post tagged with ${tag}`}>
-            {tag.toUpperCase()}
-          </Link>
-        )
-      }
-    </span>
-
+  <section class="flex flex-col pt-2">
     <span class="title pt-1 text-4xl font-bold">{title}</span>
+    <span class="pt-2 italic">{description}</span>
 
-    <span class="flex flex-row items-center pb-5 pt-2">
-      <img
-        src={blog.author.image}
-        class="inline rounded-full"
-        title={`Avatar of ${blog.author.name}`}
-        alt={`Avatar of ${blog.author.name}`}
-        width="24"
-        height="24"
-      />
+    <span class="flex flex-row items-center gap-1 pb-5 pt-2">
+      {createdAt}
 
-      <span class="pl-2">
-        <span class="font-semibold">{blog.author.name}</span>
+      <Separator />
+      <Link href={`/articles/tag/${tag}`} title={`Post tagged with ${tag}`}>
+        {tag}
+      </Link>
 
-        {createdAt && <span class="date">• published on {createdAt}</span>}
-
-        • {timeEstimate}
-      </span>
+      <Separator />
+      {timeEstimate}
     </span>
   </section>
 
