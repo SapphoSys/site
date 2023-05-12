@@ -1,7 +1,7 @@
 ---
 export const prerender = true;
 
-import Posts from '@layouts/Post.astro';
+import Articles from '@layouts/Articles.astro';
 import Pagination from '@components/blog/Pagination.astro';
 
 import type { PaginateFunction } from 'astro';
@@ -11,13 +11,13 @@ const { tag } = Astro.params;
 const { page } = Astro.props;
 
 export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
-  const posts = await getCollection('posts');
+  const articles = await getCollection('posts');
 
-  const tags = Array.from(new Set(posts.flatMap((post) => post.data.tag)));
+  const tags = Array.from(new Set(articles.flatMap((post) => post.data.tag)));
 
   return tags.map((tag) => {
     return paginate(
-      posts.filter((post) => tag && post.data.tag?.includes(tag)),
+      articles.filter((article) => tag && article.data.tag?.includes(tag)),
       {
         params: { tag },
         pageSize: 10,
@@ -27,12 +27,12 @@ export async function getStaticPaths({ paginate }: { paginate: PaginateFunction 
 }
 ---
 
-<Posts
+<Articles
   type="tags"
-  title={`Posts with the tag ${tag}`}
-  posts={page.data}
+  title={`Articles with the tag ${tag}`}
+  articles={page.data}
   description="A personal blog, comprising of whatever stuff I find interesting to post."
   total={page.total}
 >
   <Pagination page={page} />
-</Posts>
+</Articles>

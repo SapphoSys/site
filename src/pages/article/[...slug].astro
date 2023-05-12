@@ -6,8 +6,8 @@ import ArticleLayout from '@layouts/Article.astro';
 import getPostData from '@lib/PostData';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('posts');
-  return posts.map((post) => ({
+  const articles = await getCollection('posts');
+  return articles.map((post) => ({
     params: { slug: post.slug },
     props: {
       post: {
@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  post: CollectionEntry<'posts'>;
+  post: CollectionEntry<'articles'>;
 }
 
 const { post } = Astro.props;
