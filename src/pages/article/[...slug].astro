@@ -6,15 +6,16 @@ import ArticleLayout from '@layouts/Article.astro';
 import getPostData from '@lib/PostData';
 
 export async function getStaticPaths() {
-  const articles = await getCollection('posts');
-  return articles.map((post) => ({
-    params: { slug: post.slug },
+  const articles = await getCollection('articles');
+
+  return articles.map((article) => ({
+    params: { slug: article.slug },
     props: {
       post: {
-        ...post,
+        ...article,
         data: {
-          ...post.data,
-          timeEstimate: getPostData(post).readingTime,
+          ...article.data,
+          timeEstimate: getPostData(article).readingTime,
         },
       },
     },

@@ -11,7 +11,8 @@ import { getCollection } from 'astro:content';
 const { page } = Astro.props;
 
 export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
-  const articleCollection = await getCollection('posts');
+  const articleCollection = await getCollection('articles');
+
   const sortedArticles = articleCollection.sort(
     (a, b) => new Date(b.data.created).valueOf() - new Date(a.data.created).valueOf()
   );
@@ -38,6 +39,7 @@ export async function getStaticPaths({ paginate }: { paginate: PaginateFunction 
 
 <Articles
   type="articles"
+  title="Articles"
   articles={page.data}
   description="A personal blog, comprising of whatever stuff I find interesting to post."
   total={page.total}

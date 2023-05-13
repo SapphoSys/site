@@ -4,17 +4,17 @@ import { blog } from '@config';
 import { getCollection } from 'astro:content';
 import { parseISO } from 'date-fns';
 
-const articles = await getCollection('posts');
+const articles = await getCollection('articles');
 
 export const get = () =>
   rss({
     title: blog.rss.title,
     description: blog.rss.description,
     site: import.meta.env.SITE,
-    items: articles.map((post) => ({
-      description: post.data.description,
-      link: `article/${post.slug}`,
-      pubDate: parseISO(post.data.created),
-      title: post.data.title,
+    items: articles.map((article) => ({
+      description: article.data.description,
+      link: `article/${article.slug}`,
+      pubDate: parseISO(article.data.created),
+      title: article.data.title,
     })),
   });

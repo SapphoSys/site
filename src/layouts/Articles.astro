@@ -61,7 +61,7 @@ const { type, articles, title, description } = Astro.props;
         .sort((a, b) => new Date(b.data.created).valueOf() - new Date(a.data.created).valueOf())
         .map(({ data, slug }) => (
           <span class="rounded-1xl flex flex-col pb-2 pt-1">
-            <article class="border-ctp-mauve dark:border-ctp-pink flex flex-col gap-1 border-[2px] p-5">
+            <article class="flex flex-col gap-1 border-[2px] border-ctp-mauve p-5 dark:border-ctp-pink">
               <span class="text-3xl">
                 <Link class="font-semibold" href={`/article/${slug}`} title={data.title}>
                   {data.title}
@@ -74,7 +74,11 @@ const { type, articles, title, description } = Astro.props;
                 <Separator />
 
                 {data.tag && (
-                  <Link class="font-normal" href={`/articles/tag/${data.tag}`} title={`Post tagged with ${data.tag}`}>
+                  <Link
+                    class="font-normal"
+                    href={`/articles/tag/${data.tag}`}
+                    title={`Article tagged with ${data.tag}`}
+                  >
                     {data.tag}
                   </Link>
                 )}

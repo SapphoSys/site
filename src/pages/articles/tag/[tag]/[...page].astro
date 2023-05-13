@@ -11,9 +11,9 @@ const { tag } = Astro.params;
 const { page } = Astro.props;
 
 export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
-  const articles = await getCollection('posts');
+  const articles = await getCollection('articles');
 
-  const tags = Array.from(new Set(articles.flatMap((post) => post.data.tag)));
+  const tags = Array.from(new Set(articles.flatMap((article) => article.data.tag)));
 
   return tags.map((tag) => {
     return paginate(
