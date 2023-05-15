@@ -1,14 +1,13 @@
 ---
 import Layout from '@layouts/Page.astro';
-import Link from '@components/base/Link.astro';
-
-import Footer from '@components/base/Footer.astro';
-import Line from '@components/base/Underline.astro';
-
-import simpleFM from '@solely/simple-fm';
 
 import { Icon } from 'astro-iconify';
 import { misc } from '@config';
+
+import Link from '@components/base/Link.astro';
+import Line from '@components/base/Underline.astro';
+
+import simpleFM from '@solely/simple-fm';
 
 const client = new simpleFM(import.meta.env.LAST_FM_KEY);
 
@@ -19,77 +18,73 @@ const {
 ---
 
 <Layout description="What I may currently be listening to." pageTitle="Last.fm" title="Last.fm | Chloe Arciniega">
-  <main class="content">
-    <section class="flex flex-col">
-      <Line>Last.fm</Line>
+  <section class="flex flex-col">
+    <Line>Last.fm</Line>
 
-      {nowPlaying ? null : <span class="italic">I'm not listening to anything at the moment!</span>}
+    {nowPlaying ? null : <span class="pt-3 italic">I'm not listening to anything at the moment!</span>}
 
-      <span class="flex flex-col pt-5 md:flex-row">
-        <Link class="pb-5" href={track[0].url} target="_blank">
-          <img
-            class="rounded-2xl"
-            src={track[0].image[3].url}
-            title={`Cover art of the track ${track[0].name} by ${track[0].artist.name} on ${track[0].album}.`}
-            alt={`Cover art of the track ${track[0].name} by ${track[0].artist.name} on ${track[0].album}.`}
-          />
-        </Link>
+    <span class="flex flex-col pb-3 pt-5 md:flex-row">
+      <Link href={track[0].url} target="_blank">
+        <img
+          class="rounded-2xl"
+          src={track[0].image[3].url}
+          title={`Cover art of the track ${track[0].name} by ${track[0].artist.name} on ${track[0].album}.`}
+          alt={`Cover art of the track ${track[0].name} by ${track[0].artist.name} on ${track[0].album}.`}
+        />
+      </Link>
 
-        <span class="flex flex-col justify-center gap-4 md:gap-2 md:pl-5">
-          <span>
-            <Icon size={25} title="Song name" name="mdi:music-note-eighth" />
+      <span class="flex flex-col justify-center gap-4 pt-5 md:gap-2 md:pl-5 md:pt-0">
+        <span>
+          <Icon size={25} title="Song name" name="mdi:music-note-eighth" />
 
-            <Link
-              href={track[0].url}
-              title={`${track[0].name} by ${track[0].artist.name} on ${track[0].album}`}
-              target="_blank"
-            >
-              {track[0].name}
-            </Link>
-          </span>
+          <Link
+            href={track[0].url}
+            title={`${track[0].name} by ${track[0].artist.name} on ${track[0].album}`}
+            target="_blank"
+          >
+            {track[0].name}
+          </Link>
+        </span>
 
-          <span>
-            <Icon size={25} title="Artist" name="mdi:artist" />
+        <span>
+          <Icon size={25} title="Artist" name="mdi:artist" />
 
-            by
-            <Link href={`https://last.fm/music/${track[0].artist.name}`} title={track[0].artist.name} target="_blank">
-              {track[0].artist.name}
-            </Link>
-          </span>
+          by
+          <Link href={`https://last.fm/music/${track[0].artist.name}`} title={track[0].artist.name} target="_blank">
+            {track[0].artist.name}
+          </Link>
+        </span>
 
-          <span>
-            <Icon size={25} title="Album" name="mdi:album" />
+        <span>
+          <Icon size={25} title="Album" name="mdi:album" />
 
-            on
-            <Link
-              href={`https://last.fm/music/${track[0].artist.name}/${track[0].album}`}
-              title={`${track[0].album} by ${track[0].artist.name}`}
-              target="_blank"
-            >
-              {track[0].album}
-            </Link>
-          </span>
+          on
+          <Link
+            href={`https://last.fm/music/${track[0].artist.name}/${track[0].album}`}
+            title={`${track[0].album} by ${track[0].artist.name}`}
+            target="_blank"
+          >
+            {track[0].album}
+          </Link>
+        </span>
 
-          <span class="pt-5">
-            <Icon class="text-ctp-red" size={25} title="My Last.fm profile" name="simple-icons:lastfm" />
-            <Link color="text-ctp-red" href={track[0].url}>Listen on Last.fm</Link>
-          </span>
+        <span class="pt-5">
+          <Icon class="text-ctp-red" size={25} title="My Last.fm profile" name="simple-icons:lastfm" />
+          <Link color="text-ctp-red" href={track[0].url}>Listen on Last.fm</Link>
+        </span>
 
-          <span>
-            <Icon class="text-ctp-red" size={25} title="My Last.fm profile" name="mdi:account" />
-            <Link
-              color="text-ctp-red"
-              href={`https://last.fm/user/${misc.lastFM.username}`}
-              title={`Last.fm: ${misc.lastFM.username}`}
-              target="_blank"
-            >
-              My Last.fm profile
-            </Link>
-          </span>
+        <span>
+          <Icon class="text-ctp-red" size={25} title="My Last.fm profile" name="mdi:account" />
+          <Link
+            color="text-ctp-red"
+            href={`https://last.fm/user/${misc.lastFM.username}`}
+            title={`Last.fm: ${misc.lastFM.username}`}
+            target="_blank"
+          >
+            My Last.fm profile
+          </Link>
         </span>
       </span>
-    </section>
-
-    <Footer />
-  </main>
+    </span>
+  </section>
 </Layout>

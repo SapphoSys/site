@@ -4,7 +4,6 @@ export const prerender = true;
 import Layout from '@layouts/Page.astro';
 
 import Line from '@components/base/Underline.astro';
-import Footer from '@components/base/Footer.astro';
 ---
 
 <Layout
@@ -12,12 +11,8 @@ import Footer from '@components/base/Footer.astro';
   pageTitle="404 | Page Not Found"
   title="Chloe Arciniega"
 >
-  <main class="content flex flex-col">
-    <Line>Page Not Found</Line>
-    <span class="italic">Nothing but dust and ghosts...</span>
+  <Line>404</Line>
+  <span class="italic">Nothing but dust and ghosts...</span>
 
-    <span>The page you were looking for does not reside here, unfortunately.</span>
-
-    <Footer />
-  </main>
+  <span>The page you were looking for does not reside here, unfortunately.</span>
 </Layout>

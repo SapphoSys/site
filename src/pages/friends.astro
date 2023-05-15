@@ -3,17 +3,12 @@ export const prerender = true;
 
 import Layout from '@layouts/Page.astro';
 
-import Footer from '@components/base/Footer.astro';
-import Friends from '@components/home/Friends.astro';
+import Friends from '@components/Friends.astro';
 import Line from '@components/base/Underline.astro';
 ---
 
 <Layout description="Translator, developer, hobbyist sysadmin." pageTitle="Friends" title="Friends | Chloe Arciniega">
-  <main class="content">
-    <Line>My friends</Line>
+  <Line>My friends</Line>
 
-    <Friends />
-
-    <Footer />
-  </main>
+  <Friends />
 </Layout>

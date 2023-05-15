@@ -3,14 +3,13 @@ export const prerender = true;
 
 import Layout from '@layouts/Page.astro';
 
-import Footer from '@components/base/Footer.astro';
+import { blog } from '@config';
+import { format, parseISO } from 'date-fns';
+
+import Comments from '@components/blog/Comments.astro';
 import Line from '@components/base/Underline.astro';
 import Link from '@components/base/Link.astro';
 import Separator from '@components/base/Separator.astro';
-import Comments from '@components/blog/Comments.astro';
-
-import { blog } from '@config';
-import { format, parseISO } from 'date-fns';
 
 import '@fontsource/iosevka';
 
@@ -38,11 +37,11 @@ const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
   <Line>Article</Line>
   {checkComments() && <meta slot="head" name="giscus:backlink" content={backlink} />}
 
-  <section class="flex flex-col pt-2">
+  <header class="flex flex-col">
     <span class="title pt-1 text-4xl font-bold">{title}</span>
     <span class="pt-2 italic">{description}</span>
 
-    <span class="flex flex-row items-center gap-1 pb-5 pt-2">
+    <span class="flex flex-row items-center gap-1 pb-3 pt-4">
       {createdAt}
 
       <Separator />
@@ -53,17 +52,16 @@ const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
       <Separator />
       {timeEstimate}
     </span>
-  </section>
+  </header>
 
   <hr class="dark:text-ctp-pink" />
 
-  <main class="article-content prose dark:prose-invert">
+  <span class="article-content prose dark:prose-invert">
     <slot />
-  </main>
+  </span>
 
   {checkComments() && <Comments />}
 </Layout>
-<Footer />
 
 <style is:global>
   .article-content {
