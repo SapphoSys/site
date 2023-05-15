@@ -1,7 +1,8 @@
 ---
+import Collapsible from '@components/Collapsible.astro';
+import Description from '@components/home/Description.mdx';
 import Line from '@components/base/Underline.astro';
 import Link from '@components/base/Link.astro';
-import Summary from '@components/home/Summary.astro';
 import Socials from '@components/home/Socials.astro';
 ---
 
@@ -34,7 +35,11 @@ import Socials from '@components/home/Socials.astro';
     <Link href="/contributions" title="My contributions page">contributions page</Link>!
   </span>
 
-  <Summary />
+  <Collapsible name="More about me?">
+    <span class="flex flex-col gap-6 pt-5">
+      <Description />
+    </span>
+  </Collapsible>
 
   <slot />
 </section>
