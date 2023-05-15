@@ -18,7 +18,7 @@
     "test": "eslint . --ext .ts,.js,.astro && prettier --c ."
   },
   "repository": "https://github.com/solelychloe/arciniega.one",
-  "packageManager": "yarn@3.4.1",
+  "packageManager": "yarn@3.5.1",
   "dependencies": {
     "@astrojs/mdx": "^0.19.1",
     "@astrojs/prefetch": "^0.2.1",
