@@ -8,7 +8,7 @@
       "~/*": ["src/*"],
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@lib/*": ["src/lib/*"],
+      "@utils/*": ["src/utils/*"],
       "@config": ["src/site.config.ts"]
     }
   }

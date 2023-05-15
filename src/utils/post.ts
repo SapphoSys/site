@@ -10,4 +10,4 @@ const getPostData = (post: Post) => {
   };
 };
 
-export default getPostData;
+export { getPostData };

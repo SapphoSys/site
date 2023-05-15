@@ -4,7 +4,7 @@ type Webring = {
   image: string;
 }[];
 
-const Friends: Webring = [
+const friends: Webring = [
   {
     name: 'Ovyerus',
     link: 'https://ovyerus.com',
@@ -72,4 +72,4 @@ const Friends: Webring = [
   },
 ];
 
-export default Friends;
+export { friends };
