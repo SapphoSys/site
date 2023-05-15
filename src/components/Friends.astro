@@ -1,0 +1,12 @@
+---
+import { friends } from '@utils/index';
+import Webring from '@components/Webring.astro';
+---
+
+<div class="flex flex-wrap gap-5 pt-1 md:gap-3">
+  {
+    friends.map((friend) => {
+      return <Webring name={friend.name} link={friend.link} image={friend.image} />;
+    })
+  }
+</div>
