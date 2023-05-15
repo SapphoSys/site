@@ -11,18 +11,13 @@
         My own personal website, powered by <a href="https://astro.build" title="Astro">Astro</a> 
         and <a href="https://tailwindcss.com" title="Tailwind CSS">Tailwind CSS</a>.
     </p>
-    <br />
+
+  <a href="https://astro.build">
+    <img src="https://astro.badg.es/v1/built-with-astro.svg" alt="Built with Astro" width="150" height="27.5">
+  </a>
+  
+  <br />
 </div>
-
-## How to Deploy
-
-You can deploy my website using the _Deploy to Vercel_ button below:
-
-[![Deploy to Vercel](https://vercel.com/button)][vercel]
-
-You're now up and running!
-
-_Note: Other solution services like Netlify *might* work for you, but I cannot guarantee anything._
 
 ## License
 
@@ -31,4 +26,3 @@ This website is licensed under the [zlib][license] license.
 &copy; 2023 Chloe Arciniega.
 
 [license]: https://github.com/solelychloe/arciniega.one/blob/main/LICENSE 'zlib License'
-[vercel]: https://vercel.com/new/clone?repository-url=https://github.com/solelychloe/arciniega.one 'Deploy to Vercel'
