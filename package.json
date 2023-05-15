@@ -10,12 +10,12 @@
     "build": "yarn build:check && astro build",
     "build:check": "yarn astro:check && tsc --noEmit",
     "dev": "astro dev",
-    "format:prettier": "prettier --w --plugin-search-dir=. .",
+    "format:prettier": "prettier --w --plugin-search-dir=. --cache .",
     "lint:eslint": "eslint --fix src/**/*.{ts,astro}",
     "start": "astro preview",
     "start:dev": "astro dev",
     "sync": "astro sync",
-    "test": "eslint src/**/*.{ts,astro} && prettier --c ."
+    "test": "eslint . --ext .ts,.js,.astro && prettier --c ."
   },
   "repository": "https://github.com/solelychloe/arciniega.one",
   "packageManager": "yarn@3.4.1",
