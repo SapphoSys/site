@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-iconify';
+import Collapsible from '@components/Collapsible.astro';
 import Link from '@components/base/Link.astro';
 
 const {
@@ -10,6 +11,7 @@ const {
   image,
   tag,
   more,
+  bgColor = 'bg-ctp-mauve dark:bg-ctp-pink',
   borderColor = 'border-ctp-mauve dark:border-ctp-pink',
   textColor = 'text-ctp-mauve dark:text-ctp-pink',
 } = Astro.props;
@@ -21,8 +23,8 @@ const {
     <span class={`${textColor} text-3xl font-semibold pt-2`}>
       {title}
     </span>
-    <span class="text-sm">({date})</span>
     <span class="text-base font-semibold">{tag}</span>
+    <span class="text-sm">({date})</span>
   </span>
 
   <span class="pb-3 pt-1">
@@ -31,15 +33,24 @@ const {
 
   {
     more && (
-      <details class="pb-3">
-        <summary class={`${textColor} cursor-pointer`}>Read More</summary>
+      <Collapsible class={textColor} name="Read More">
         {more}
-      </details>
+      </Collapsible>
     )
   }
 
-  <span>
-    <Link color={textColor} href={link} title={`Visit the website of ${title}`}>Visit</Link>
-    <Icon class={textColor} size={20} name="mdi:open-in-new" />
+  <span class="flex">
+    <Link
+      color="text-ctp-base"
+      class="hover:no-underline"
+      href={link}
+      title={`Visit the website of ${title}`}
+      target="_blank"
+    >
+      <span class={`rounded-xl border-2 px-2 font-medium ${borderColor} ${bgColor}`}>
+        Visit
+        <Icon class="text-ctp-base" size={20} name="mdi:open-in-new" />
+      </span>
+    </Link>
   </span>
 </span>

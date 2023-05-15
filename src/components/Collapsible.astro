@@ -1,0 +1,11 @@
+---
+const { name } = Astro.props;
+---
+
+<details class="pb-3">
+  <summary class="cursor-pointer text-ctp-mauve transition ease-out hover:opacity-70 dark:text-ctp-pink" title={name}>
+    {name}
+  </summary>
+
+  <slot />
+</details>
