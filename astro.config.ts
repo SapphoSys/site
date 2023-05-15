@@ -23,6 +23,10 @@ import remarkToc from 'remark-toc';
 export default defineConfig({
   site: 'https://arciniega.one',
   markdown: {
+    shikiConfig: {
+      theme: 'material-theme-ocean',
+      wrap: false,
+    },
     remarkPlugins: [remarka11yEmoji, [remarkToc, { tight: true }], remarkFigureCaption],
     rehypePlugins: [
       rehypeSlug,
