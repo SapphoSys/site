@@ -1,11 +1,12 @@
 ---
 export const prerender = true;
 
-import Articles from '@layouts/Articles.astro';
-import Pagination from '@components/blog/Pagination.astro';
-
 import type { PaginateFunction } from 'astro';
 import { getCollection } from 'astro:content';
+
+import Articles from '@layouts/Articles.astro';
+
+import Pagination from '@components/blog/Pagination.astro';
 
 const { tag } = Astro.params;
 const { page } = Astro.props;
