@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
-import vercel from '@astrojs/vercel/serverless';
+import cloudflare from '@astrojs/cloudflare';
 
 import mdx from '@astrojs/mdx';
 import prefetch from '@astrojs/prefetch';
@@ -27,7 +27,16 @@ export default defineConfig({
       theme: 'material-theme-ocean',
       wrap: false,
     },
-    remarkPlugins: [remarka11yEmoji, [remarkToc, { tight: true }], remarkFigureCaption],
+    remarkPlugins: [
+      remarka11yEmoji,
+      [
+        remarkToc,
+        {
+          tight: true,
+        },
+      ],
+      remarkFigureCaption,
+    ],
     rehypePlugins: [
       rehypeSlug,
       [
@@ -77,5 +86,5 @@ export default defineConfig({
     robotsTxt(),
   ],
   output: 'server',
-  adapter: vercel(),
+  adapter: cloudflare(),
 });

@@ -10,7 +10,12 @@ const IS_PRODUCTION = import.meta.env.MODE === 'production';
 <head>
   {
     IS_PRODUCTION && !!misc.analytics && !!base.siteName && (
-      <script defer data-domain={base.siteName} data-api="/api/event" src="/js/script.js" />
+      <script
+        defer
+        data-domain={base.siteName}
+        data-api="https://stats.ovy.sh/api/event"
+        src="https://stats.ovy.sh/js/script.js"
+      />
     )
   }
 
