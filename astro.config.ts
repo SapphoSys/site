@@ -87,4 +87,11 @@ export default defineConfig({
   ],
   output: 'server',
   adapter: cloudflare(),
+
+  // TEMP: Workaround for Cloudflare Pages
+  vite: {
+    ssr: {
+      external: ['svgo'],
+    },
+  },
 });
