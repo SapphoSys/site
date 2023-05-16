@@ -64,5 +64,8 @@
     "prettier-plugin-astro": "^0.8.1",
     "prettier-plugin-tailwindcss": "^0.2.8",
     "typescript": "^5.0.4"
+  },
+  "resolutions": {
+    "astro-iconify@^1.2.0": "patch:astro-iconify@npm%3A1.2.0#./.yarn/patches/astro-iconify-npm-1.2.0-d9473cfc5f.patch"
   }
 }
