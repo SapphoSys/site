@@ -25,7 +25,7 @@
     },
     {
       "source": "/keys",
-      "destination": "/ssh.txt"
+      "destination": "/keys.txt"
     }
   ]
 }

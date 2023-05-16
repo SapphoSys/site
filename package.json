@@ -20,12 +20,12 @@
   "repository": "https://github.com/solelychloe/arciniega.one",
   "packageManager": "yarn@3.5.1",
   "dependencies": {
-    "@astrojs/cloudflare": "^6.2.4",
     "@astrojs/mdx": "^0.19.1",
     "@astrojs/prefetch": "^0.2.1",
     "@astrojs/rss": "^2.4.1",
     "@astrojs/sitemap": "^1.3.1",
     "@astrojs/tailwind": "^3.1.2",
+    "@astrojs/vercel": "^3.3.0",
     "@fec/remark-a11y-emoji": "^3.1.0",
     "@fontsource/atkinson-hyperlegible": "^4.5.11",
     "@fontsource/inter": "^4.5.15",
@@ -64,8 +64,5 @@
     "prettier-plugin-astro": "^0.8.1",
     "prettier-plugin-tailwindcss": "^0.2.8",
     "typescript": "^5.0.4"
-  },
-  "resolutions": {
-    "astro-iconify@^1.2.0": "patch:astro-iconify@npm%3A1.2.0#./.yarn/patches/astro-iconify-npm-1.2.0-d9473cfc5f.patch"
   }
 }

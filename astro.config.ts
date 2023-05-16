@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
-import cloudflare from '@astrojs/cloudflare';
+import vercel from '@astrojs/vercel/serverless';
 
 import mdx from '@astrojs/mdx';
 import prefetch from '@astrojs/prefetch';
@@ -86,12 +86,5 @@ export default defineConfig({
     robotsTxt(),
   ],
   output: 'server',
-  adapter: cloudflare(),
-
-  // TEMP: Workaround for Cloudflare Pages
-  vite: {
-    ssr: {
-      external: ['svgo'],
-    },
-  },
+  adapter: vercel(),
 });
