@@ -70,6 +70,11 @@ const friends: Webring = [
     link: 'https://sakuradancer.zone',
     image: 'sakuradancer.png',
   },
+  {
+    name: 'cin',
+    link: 'https://moon.rip',
+    image: 'cin.png',
+  },
 ];
 
 export { friends };
