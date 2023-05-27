@@ -1,11 +1,5 @@
 {
   "cleanUrls": true,
-  "redirects": [
-    {
-      "source": "/parallel",
-      "destination": "https://parallel.report"
-    }
-  ],
   "rewrites": [
     {
       "source": "/js/script.js",
@@ -18,10 +12,6 @@
     {
       "source": "/domains",
       "destination": "/domains.txt"
-    },
-    {
-      "source": "/credits",
-      "destination": "/credits.txt"
     },
     {
       "source": "/keys",
