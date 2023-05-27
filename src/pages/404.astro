@@ -1,9 +1,5 @@
 ---
-export const prerender = true;
-
 import Layout from '@layouts/Page.astro';
-
-import Line from '@components/base/Underline.astro';
 ---
 
 <Layout
@@ -11,8 +7,10 @@ import Line from '@components/base/Underline.astro';
   pageTitle="404 | Page Not Found"
   title="Chloe Arciniega"
 >
-  <Line>404</Line>
+  <span class="title">404</span>
   <span class="italic">Nothing but dust and ghosts...</span>
 
-  <span>The page you were looking for does not reside here, unfortunately.</span>
+  <hr class="text-ctp-mauve dark:text-ctp-pink" />
+
+  The page you were looking for does not reside here, unfortunately.
 </Layout>

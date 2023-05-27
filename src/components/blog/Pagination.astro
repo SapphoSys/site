@@ -1,5 +1,4 @@
 ---
-import Link from '@components/base/Link.astro';
 import { Icon } from 'astro-iconify';
 
 const { page } = Astro.props;
@@ -7,22 +6,22 @@ const { page } = Astro.props;
 
 {
   page.url.next && (
-    <div class="flex flex-row-reverse pb-2 pt-2">
-      <Icon size={35} class="text-ctp-mauve dark:text-ctp-pink" name="mdi:arrow-right-thin" />
-      <Link title="See older articles" href={page.url.next}>
+    <span class="flex flex-row-reverse pb-2 pt-2">
+      <Icon size={35} name="mdi:arrow-right-thin" />
+      <a href={page.url.next} title="See older articles">
         See older articles
-      </Link>
-    </div>
+      </a>
+    </span>
   )
 }
 
 {
   page.url.prev && (
-    <div class="flex pb-2 pt-2">
-      <Icon size={35} class="text-ctp-mauve dark:text-ctp-pink" name="mdi:arrow-left-thin" />
-      <Link title="See newer articles" href={page.url.prev}>
+    <span class="flex pb-2 pt-2">
+      <Icon size={35} name="mdi:arrow-left-thin" />
+      <a href={page.url.prev} title="See newer articles">
         See newer articles
-      </Link>
-    </div>
+      </a>
+    </span>
   )
 }

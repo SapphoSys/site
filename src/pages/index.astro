@@ -1,9 +1,7 @@
 ---
-export const prerender = true;
-
 import Layout from '@layouts/Page.astro';
 
-import Header from '@components/home/Header.astro';
+import Friends from '@components/home/Friends.astro';
 ---
 
 <Layout
@@ -11,5 +9,42 @@ import Header from '@components/home/Header.astro';
   pageTitle="Chloe Arciniega"
   title="Home | Chloe Arciniega"
 >
-  <Header />
+  <header class="sm:flex sm:items-center sm:justify-between">
+    <a
+      href="https://solstice.tf/avatar"
+      title="A link to my avatar. The character displayed here is Marisa from the Touhou series."
+      target="_blank"
+    >
+      <img
+        class="inline-flex aspect-square w-20 overflow-hidden rounded-full"
+        src="/avatar.png"
+        width="200"
+        height="200"
+        alt="A link to my avatar. The character displayed here is Marisa from the Touhou series."
+      />
+    </a>
+
+    <span class="order-first flex flex-col pb-3 pt-3">
+      <span class="pb-1">
+        <span class="font-display text-4xl font-bold text-ctp-red md:text-5xl">Chloe Arciniega</span>
+        <span class="text-ctp-subtext1">(she/her, they/them)</span>
+      </span>
+
+      <span class="text-2xl">Software engineer, aspiring sysadmin, computer witch.</span>
+    </span>
+  </header>
+
+  <section class="flex flex-col gap-5 pt-3">
+    <span class="title">Hiya!</span>
+
+    Welcome to my slice of the web! I'm a software engineer with a fascination for system administration and messing
+    about with pieces of technology.
+
+    <span> Feel free to look around to get to know me better!</span>
+  </section>
+
+  <span class="pt-5 motion-reduce:hidden">
+    <span class="title">My friends</span>
+    <Friends />
+  </span>
 </Layout>

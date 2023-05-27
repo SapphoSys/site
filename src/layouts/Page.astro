@@ -1,6 +1,7 @@
 ---
-import Footer from '@components/base/Footer.astro';
 import Head from '@components/base/Head.astro';
+import NavLink from '@components/base/NavLink.astro';
+import Separator from '@components/Separator.astro';
 
 import '@fontsource/atkinson-hyperlegible';
 import '@fontsource/inter';
@@ -15,40 +16,38 @@ const { description, pageTitle, title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html class="flex flex-col" lang="en">
   <Head description={description} pageTitle={pageTitle} title={title}>
     <slot name="head" />
   </Head>
 
   <body class="flex flex-col text-xl md:self-center">
-    <main class="content">
+    <nav class="flex flex-row flex-wrap justify-center gap-2 pb-6 font-display md:gap-3">
+      <NavLink href="/" text="Home" />
+      <Separator />
+      <NavLink href="/articles" text="Articles" />
+      <Separator />
+      <NavLink href="/about" text="About me" />
+      <Separator />
+      <NavLink href="/now" text="Now" />
+    </nav>
+
+    <main class="flex flex-col gap-2">
       <slot />
     </main>
 
-    <Footer />
-
     <style is:global>
-      html {
-        @apply flex flex-col;
+      a {
+        @apply font-medium text-ctp-mauve transition ease-out hover:underline hover:opacity-60 dark:text-ctp-pink;
       }
 
       body {
-        @apply ctp-latte bg-light-bg text-light-text dark:ctp-mocha dark:bg-ctp-base dark:text-ctp-text;
+        @apply ctp-latte bg-ctp-base text-ctp-text dark:ctp-mocha selection:bg-ctp-mauve selection:text-ctp-crust dark:selection:bg-ctp-pink;
         @apply max-w-[45em] px-[1em] py-[2em] md:px-[2.5em];
       }
 
-      nav,
-      .line,
-      .links,
-      .name {
-        @apply font-display;
-      }
-
-      .content {
-        @apply flex flex-col gap-2;
-      }
-
       [astro-icon] {
+        @apply text-ctp-mauve dark:text-ctp-pink;
         @apply inline;
         @apply pb-1;
       }

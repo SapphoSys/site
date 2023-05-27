@@ -35,26 +35,16 @@ const image = new URL(base.favicon?.fileName || '/favicon.png', Astro.site).href
   }}
   extend={{
     meta: [
-      // Compatibility
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-
-      // Astro generator
       { name: 'generator', content: Astro.generator },
-
-      // Theme color
-      { name: 'theme-color', content: base.seo && base.seo.themeColor },
+      { name: 'theme-color', content: base.themeColor },
     ],
     link: [
-      // Icon
       { rel: 'icon', href: image },
-
-      // Mastodon verification
       { rel: 'me', href: 'https://tech.lgbt/@solely' },
-
-      // RSS
       {
         rel: 'alternate',
-        title: `${blog.rss.title}`,
+        title: blog.rss && blog.rss.title,
         href: blog.rss && `https://${base.siteName}/rss.xml`,
         type: 'appliccation/rss+xml',
       },
