@@ -2,7 +2,6 @@
 /dist
 /.output
 /.astro
-/.vercel
 
 # dependencies
 node_modules
