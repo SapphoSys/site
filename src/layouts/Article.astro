@@ -1,85 +1,119 @@
 ---
-export const prerender = true;
-
 import Layout from '@layouts/Page.astro';
 
 import { blog } from '@config';
 import { format, parseISO } from 'date-fns';
 
 import Comments from '@components/blog/Comments.astro';
-import Line from '@components/base/Underline.astro';
-import Link from '@components/base/Link.astro';
-import Separator from '@components/base/Separator.astro';
+import Separator from '@components/Separator.astro';
 
 import '@fontsource/iosevka';
 
 interface Props {
   title: string;
   description?: string;
-  created?: string;
+  created?: string | undefined;
+  modified?: string | undefined;
   tag?: string;
   timeEstimate?: string;
   comments?: boolean;
 }
 
-const { comments, created, description, tag, timeEstimate, title } = Astro.props;
+const { comments, created, modified, description, tag, timeEstimate, title } = Astro.props;
 
 const checkComments = () => blog.comments && comments;
 
 const formatDate = (date: Date) => format(date, 'MMM d, yyyy');
 const createdAt = created ? formatDate(parseISO(created)) : null;
+const modifiedAt = modified ? formatDate(parseISO(modified)) : null;
 
 const backlinkPath = Astro.url.pathname.replace('/article', '');
 const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
 ---
 
 <Layout description={description} pageTitle={title} title={`${title} | Chloe Arciniega`}>
-  <Line>Article</Line>
   {checkComments() && <meta slot="head" name="giscus:backlink" content={backlink} />}
 
-  <header class="flex flex-col">
-    <span class="title pt-1 text-4xl font-bold">{title}</span>
-    <span class="pt-2 italic">{description}</span>
+  <header class="flex flex-col items-center text-center">
+    {
+      (createdAt || modifiedAt) && (
+        <span class="flex flex-col gap-1 pb-3 italic text-ctp-subtext1">
+          {createdAt && <span>{createdAt}</span>}
+          {modifiedAt && <span>Last modified {modifiedAt}</span>}
+        </span>
+      )
+    }
 
-    <span class="flex flex-row items-center gap-1 pb-3 pt-4">
-      {createdAt}
+    <span class="title pt-1">{title}</span>
+    <span class="pb-3 pt-2 italic">{description}</span>
 
-      <Separator />
-      <Link href={`/articles/tag/${tag}`} title={`Article tagged with ${tag}`}>
-        {tag}
-      </Link>
+    {
+      tag && timeEstimate && (
+        <span class="flex flex-row gap-1 pb-3">
+          <a href={`/articles/tag/${tag}`} title={`Article tagged with ${tag}`}>
+            {tag}
+          </a>
 
-      <Separator />
-      {timeEstimate}
-    </span>
+          <Separator />
+
+          {timeEstimate}
+        </span>
+      )
+    }
   </header>
 
-  <hr class="dark:text-ctp-pink" />
+  <hr class="text-ctp-mauve dark:text-ctp-pink" />
 
   <span class="article-content prose dark:prose-invert">
     <slot />
   </span>
 
-  {checkComments() && <Comments />}
+  {
+    checkComments() && (
+      <>
+        <span class="flex flex-col gap-1 pb-2 text-center">
+          <span class="title">Comments</span>
+          <span class="pt-1 italic">Discuss this article with others here!</span>
+        </span>
+        <Comments />
+      </>
+    )
+  }
 </Layout>
 
 <style is:global>
   .article-content {
     @apply max-w-none;
     @apply text-xl;
-    @apply pb-5 pt-5;
+    @apply pb-5 pt-3;
 
     & code:before,
     & code:after {
       content: '';
     }
 
-    & code {
-      @apply whitespace-pre-wrap;
+    & :is(h1, h2, h3, h4, h5, h6, p, strong, li) {
+      @apply text-ctp-text;
     }
 
-    & code > .line {
-      @apply font-mono;
+    & code {
+      @apply whitespace-pre-wrap;
+
+      & > .line {
+        @apply font-mono;
+      }
+    }
+
+    & pre {
+      @apply border border-ctp-mantle;
+    }
+
+    [data-remark-code-title] {
+      @apply rounded-t-lg border border-ctp-crust bg-ctp-mantle px-5 py-2 font-mono text-sm;
+
+      & + pre {
+        @apply m-0 rounded-t-none border-t-0;
+      }
     }
 
     & :is(h1, h2, h3, h4, h5, h6) {
@@ -89,10 +123,11 @@ const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
       & a {
         @apply transition delay-[1ms] ease-in;
         @apply opacity-0;
-        @apply pl-1 pt-1 text-2xl;
+        @apply pl-1;
 
         &:hover {
           @apply font-bold;
+          @apply transition ease-out hover:opacity-60;
         }
       }
 
