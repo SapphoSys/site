@@ -9,7 +9,6 @@ import type { CollectionEntry } from 'astro:content';
 import Separator from '@components/Separator.astro';
 
 interface Props {
-  type: 'articles' | 'tags';
   title?: string;
   articles: CollectionEntry<'articles'>[];
   description: string;
@@ -18,12 +17,12 @@ interface Props {
 
 const formatDate = (date: Date) => format(date, 'MMM d, yyyy');
 
-const { articles, description } = Astro.props;
+const { articles, description, title } = Astro.props;
 ---
 
 <Layout description={description} pageTitle="Articles" title="Articles | Chloe Arciniega">
   <span class="flex flex-col gap-1 pb-3 text-center">
-    <span class="title">Articles</span>
+    <span class="title">{title}</span>
     <span class="pt-1 italic">{description}</span>
 
     <section class="rss pt-3">

@@ -28,10 +28,11 @@ export async function getStaticPaths({ paginate }: { paginate: PaginateFunction 
 ---
 
 <Articles
-  type="tags"
   title={`Articles with the tag ${tag}`}
   articles={page.data}
-  description="A personal blog, comprising of whatever stuff I find interesting to post."
+  description={`Fetched ${page.data.length} article${page.data.length === 1 ? '' : 's'}${
+    page.data.length >= 10 ? ` (${page.total} total)` : ''
+  } with the queried tag on this page.`}
   total={page.total}
 >
   <Pagination page={page} />
