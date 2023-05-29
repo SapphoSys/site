@@ -18,6 +18,9 @@ import remarkToc from 'remark-toc';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://arciniega.one',
+  experimental: {
+    assets: true,
+  },
   markdown: {
     shikiConfig: {
       theme: 'material-theme-ocean',

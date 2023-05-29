@@ -1,5 +1,6 @@
 ---
 import { friends } from '@utils/index';
+import { Image } from 'astro:assets';
 ---
 
 <span class="flex flex-wrap gap-1.5 pt-5 md:gap-3">
@@ -7,7 +8,7 @@ import { friends } from '@utils/index';
     friends.map((friend) => {
       return (
         <a href={friend.link} title={`${friend.name}'s site`} target="_blank">
-          <img src={`friends/${friend.image}`} alt={`Webring of ${friend.name}`} width="88" height="31" />
+          <Image src={`friends/${friend.image}`} alt={`Webring of ${friend.name}`} width="88" height="31" />
         </a>
       );
     })
