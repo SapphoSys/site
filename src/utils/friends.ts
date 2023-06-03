@@ -66,9 +66,9 @@ const friends: Webring = [
     image: 'ziad87.gif',
   },
   {
-    name: 'Sakuradancer',
-    link: 'https://sakuradancer.zone',
-    image: 'sakuradancer.png',
+    name: 'pihnea',
+    link: 'https://botoaca.github.io',
+    image: 'pihnea.png',
   },
   {
     name: 'cin',
