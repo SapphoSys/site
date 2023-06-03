@@ -3,13 +3,13 @@ import { friends } from '@utils/index';
 import { Image } from 'astro:assets';
 ---
 
-<span class="flex flex-wrap gap-1.5 pt-5 md:gap-2.5 lg:gap-3">
+<span class="flex flex-wrap justify-center gap-3 pt-5 md:justify-normal md:gap-2.5 lg:gap-3">
   {
     friends.map((friend) => {
       return (
         <a href={friend.link} title={`${friend.name}'s site`} target="_blank">
           <Image
-            class="w-24"
+            class="w-[88px]"
             src={`friends/${friend.image}`}
             alt={`Webring of ${friend.name}`}
             width={88}
