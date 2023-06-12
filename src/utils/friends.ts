@@ -71,6 +71,11 @@ const friends: Webring = [
     image: 'pihnea.png',
   },
   {
+    name: 'resolv',
+    link: 'https://resolv.moe',
+    image: 'resolv.png',
+  },
+  {
     name: 'cin',
     link: 'https://moon.rip',
     image: 'cin.png',
