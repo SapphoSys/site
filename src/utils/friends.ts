@@ -66,6 +66,11 @@ const friends: Webring = [
     image: 'ziad87.gif',
   },
   {
+    name: 'auravoid',
+    link: 'https://auravoid.dev',
+    image: 'auravoid.png',
+  },
+  {
     name: 'pihnea',
     link: 'https://botoaca.github.io',
     image: 'pihnea.png',
