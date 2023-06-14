@@ -1,0 +1,44 @@
+---
+import { format, parseISO } from 'date-fns';
+
+import Separator from '@components/Separator.astro';
+
+const formatDate = (date: Date) => format(date, 'MMM d, yyyy');
+
+const { data, slug } = Astro.props;
+---
+
+<span class="flex flex-col pb-5 pt-2">
+  <article class="flex flex-col gap-2 md:gap-1">
+    <span class="text-3xl">
+      <a class="font-semibold" href={`/article/${slug}`} title={data.title}>
+        {data.title}
+      </a>
+    </span>
+
+    <span class="flex flex-wrap gap-1.5">
+      <span class="text-ctp-subtext0">{formatDate(parseISO(data.created))}</span>
+
+      <Separator />
+
+      {
+        data.tag && (
+          <a class="font-normal" href={`/articles/tag/${data.tag}`} title={`Article tagged with ${data.tag}`}>
+            {data.tag}
+          </a>
+        )
+      }
+
+      {
+        data.timeEstimate && (
+          <>
+            <Separator />
+            <span class="text-ctp-subtext0">{data.timeEstimate}</span>
+          </>
+        )
+      }
+    </span>
+
+    {data.description && <span class="description italic">{data.description}</span>}
+  </article>
+</span>
