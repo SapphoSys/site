@@ -35,17 +35,19 @@ const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
   {checkComments() && <meta slot="head" name="giscus:backlink" content={backlink} />}
 
   <header class="flex flex-col items-center text-center">
+    <span class="title pt-1">{title}</span>
+
     {
       (createdAt || modifiedAt) && (
-        <span class="flex flex-col gap-1 pb-3 italic text-ctp-subtext1">
+        <span class="pt-3 italic text-ctp-subtext0">
           {createdAt && <span>{createdAt}</span>}
+          <Separator />
           {modifiedAt && <span>Last modified {modifiedAt}</span>}
         </span>
       )
     }
 
-    <span class="title pt-1">{title}</span>
-    <span class="pb-3 pt-2 italic">{description}</span>
+    <span class="pb-3 pt-2">{description}</span>
 
     {
       tag && timeEstimate && (
