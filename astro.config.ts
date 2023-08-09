@@ -1,11 +1,9 @@
 import { defineConfig } from 'astro/config';
 
 import mdx from '@astrojs/mdx';
-import prefetch from '@astrojs/prefetch';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import compress from 'astro-compress';
-import robotsTxt from 'astro-robots-txt';
 import workerLinks from 'astro-worker-links';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
@@ -61,7 +59,6 @@ export default defineConfig({
   integrations: [
     tailwind(),
     mdx(),
-    prefetch(),
     sitemap(),
     workerLinks({
       domain: 'https://solstice.tf',
@@ -83,6 +80,5 @@ export default defineConfig({
       },
     }),
     compress(),
-    robotsTxt(),
   ],
 });
