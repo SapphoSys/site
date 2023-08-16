@@ -6,9 +6,9 @@ type Webring = {
 
 const friends: Webring = [
   {
-    name: 'Ovyerus',
-    link: 'https://ovyerus.com',
-    image: 'ovyerus.png',
+    name: 'solely',
+    link: 'https://arciniega.one',
+    image: 'solely.png',
   },
   {
     name: 'espi',
@@ -21,9 +21,19 @@ const friends: Webring = [
     image: 'adryd.png',
   },
   {
-    name: 'erin',
-    link: 'https://e2.pm',
-    image: 'erin.png',
+    name: 'Ven',
+    link: 'https://vendicated.dev',
+    image: 'ven.png',
+  },
+  {
+    name: 'Ovyerus',
+    link: 'https://ovyerus.com',
+    image: 'ovyerus.png',
+  },
+  {
+    name: 'Megumin',
+    link: 'https://megu.dev',
+    image: 'megu.png',
   },
   {
     name: 'lewisakura',
@@ -31,14 +41,9 @@ const friends: Webring = [
     image: 'lewi.png',
   },
   {
-    name: 'UtsuhoRocks',
-    link: 'https://utsuho.rocks',
-    image: 'utsuho.png',
-  },
-  {
-    name: 'Cynthia',
-    link: 'https://c7.pm',
-    image: 'cynthia.png',
+    name: 'erin',
+    link: 'https://e2.pm',
+    image: 'erin.png',
   },
   {
     name: 'Vin',
@@ -46,14 +51,24 @@ const friends: Webring = [
     image: 'vin.png',
   },
   {
+    name: 'Cynthia',
+    link: 'https://c7.pm',
+    image: 'cynthia.png',
+  },
+  {
+    name: 'UtsuhoRocks',
+    link: 'https://utsuho.rocks',
+    image: 'utsuho.png',
+  },
+  {
+    name: 'cin',
+    link: 'https://moon.rip',
+    image: 'cin.png',
+  },
+  {
     name: 'Spotlight',
     link: 'https://joscomputing.space',
     image: 'spotlight.gif',
-  },
-  {
-    name: 'Megumin',
-    link: 'https://megu.dev',
-    image: 'megu.png',
   },
   {
     name: 'Kot',
@@ -79,11 +94,6 @@ const friends: Webring = [
     name: 'resolv',
     link: 'https://resolv.moe',
     image: 'resolv.png',
-  },
-  {
-    name: 'cin',
-    link: 'https://moon.rip',
-    image: 'cin.png',
   },
 ];
 
