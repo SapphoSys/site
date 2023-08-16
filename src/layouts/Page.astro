@@ -32,7 +32,7 @@ const { description, pageTitle, title } = Astro.props;
       <NavLink href="/now" text="Now" />
     </nav>
 
-    <main class="flex flex-col gap-2">
+    <main class="flex flex-col gap-2" transition:animate="slide">
       <slot />
     </main>
 

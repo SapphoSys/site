@@ -1,5 +1,6 @@
 ---
 import { base, misc } from '@config';
+import { ViewTransitions } from 'astro:transitions';
 import SEO from '@components/base/SEO.astro';
 
 const { description, pageTitle, title } = Astro.props;
@@ -15,6 +16,7 @@ const IS_PRODUCTION = import.meta.env.MODE === 'production';
   }
 
   <SEO description={description} pageTitle={pageTitle} title={title} />
+  <ViewTransitions />
 
   <slot />
 </head>

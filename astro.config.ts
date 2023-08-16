@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
@@ -18,6 +17,7 @@ export default defineConfig({
   site: 'https://arciniega.one',
   experimental: {
     assets: true,
+    viewTransitions: true,
   },
   markdown: {
     shikiConfig: {
@@ -65,12 +65,7 @@ export default defineConfig({
       secret: process.env.WORKER_SECRET!,
       getPageMapping(pages) {
         return pages
-          .filter(
-            (url) =>
-              url.pathname !== '/articles/' &&
-              url.pathname.includes('/articles') &&
-              !url.pathname.includes('/articles/tag')
-          )
+          .filter((url) => url.pathname !== '/articles/' && url.pathname.includes('/articles') && !url.pathname.includes('/articles/tag'))
           .map((url) => {
             return {
               page: url.href,
