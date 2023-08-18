@@ -1,8 +1,8 @@
 import readingTime from 'reading-time';
 
-type Post = {
+interface Post {
   body: string;
-};
+}
 
 const getPostData = (post: Post) => {
   return {

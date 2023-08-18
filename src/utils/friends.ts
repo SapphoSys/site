@@ -97,4 +97,4 @@ const friends: Webring = [
   },
 ];
 
-export { friends };
+export default friends;

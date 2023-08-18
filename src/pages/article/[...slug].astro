@@ -2,7 +2,7 @@
 import ArticleLayout from '@layouts/Article.astro';
 
 import { getCollection, CollectionEntry } from 'astro:content';
-import { getPostData } from '@utils/index';
+import { getPostData } from '@utils/post';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles');
