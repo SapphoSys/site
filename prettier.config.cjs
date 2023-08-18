@@ -1,6 +1,6 @@
 /** @type {import('@types/prettier').Options} */
 module.exports = {
-  plugins: [require.resolve('prettier-plugin-astro'), require.resolve('prettier-plugin-tailwindcss')],
+  plugins: ['prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
   pluginSearchDirs: false,
   overrides: [
     {
