@@ -1,15 +1,7 @@
 ---
 import Layout from '@layouts/Page.astro';
-
-import { Icon } from 'astro-iconify';
 import { Image } from 'astro:assets';
-
-import ArticleItems from '@components/blog/ArticleItems.astro';
 import Friends from '@components/home/Friends.astro';
-
-import { getCollection } from 'astro:content';
-
-const articles = await getCollection('articles');
 ---
 
 <Layout
@@ -43,7 +35,7 @@ const articles = await getCollection('articles');
   </header>
 
   <section class="flex flex-col gap-5 pt-3">
-    <span class="title">Hiya!</span>
+    <span class="title">Hello!</span>
 
      Welcome to my slice of the web! I'm a software engineer with a fascination for system administration and messing about
     with pieces of technology.
@@ -51,24 +43,8 @@ const articles = await getCollection('articles');
     <span> Feel free to look around to get to know me better!</span>
   </section>
 
-  <section class="flex flex-col pt-5">
-    <span class="title pb-3">Recent posts</span>
-
-    {
-      articles
-        .slice(0, 3)
-        .sort((a, b) => new Date(b.data.created).valueOf() - new Date(a.data.created).valueOf())
-        .map(({ data, slug }) => <ArticleItems data={data} slug={slug} />)
-    }
-
-    <span class="flex flex-row-reverse pb-2">
-      <Icon size={35} name="mdi:arrow-right-thin" />
-      <a href="/articles" title="See more articles">See more articles</a>
-    </span>
-  </section>
-
   <span class="pt-5 motion-reduce:hidden">
-    <span class="title">My friends</span>
+    <span class="title">Friends</span>
     <Friends />
   </span>
 </Layout>
