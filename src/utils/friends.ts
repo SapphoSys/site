@@ -26,6 +26,16 @@ const friends: Webring = [
     image: 'ven.png',
   },
   {
+    name: 'Fleepy',
+    link: 'https://fleepy.tv',
+    image: 'fleepy.png',
+  },
+  {
+    name: 'Alula',
+    link: 'https://alula.me',
+    image: 'alula.png',
+  },
+  {
     name: 'Ovyerus',
     link: 'https://ovyerus.com',
     image: 'ovyerus.png',
