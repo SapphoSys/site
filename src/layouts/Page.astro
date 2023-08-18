@@ -1,7 +1,6 @@
 ---
 import Head from '@components/base/Head.astro';
-import NavLink from '@components/base/NavLink.astro';
-import Separator from '@components/Separator.astro';
+import NavBar from '@components/base/NavBar.astro';
 
 import '@fontsource/atkinson-hyperlegible';
 import '@fontsource/inter';
@@ -22,15 +21,7 @@ const { description, pageTitle, title } = Astro.props;
   </Head>
 
   <body class="flex flex-col text-xl md:self-center">
-    <nav class="flex flex-row flex-wrap justify-center gap-2 pb-6 font-display md:gap-3">
-      <NavLink href="/" text="Home" />
-      <Separator />
-      <NavLink href="/articles" text="Articles" />
-      <Separator />
-      <NavLink href="/about" text="About me" />
-      <Separator />
-      <NavLink href="/now" text="Now" />
-    </nav>
+    <NavBar />
 
     <main class="flex flex-col gap-2" transition:animate="slide">
       <slot />

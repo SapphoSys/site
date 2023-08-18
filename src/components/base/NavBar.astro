@@ -1,0 +1,29 @@
+---
+import NavLink from '@components/base/NavLink.astro';
+import Separator from '@components/Separator.astro';
+
+interface Link {
+  href: string;
+  text: string;
+}
+
+const links = [
+  { href: '/', text: 'Home' },
+  { href: '/about', text: 'About' },
+  { href: '/articles', text: 'Articles' },
+  { href: '/contact', text: 'Contact' },
+] satisfies Link[];
+---
+
+<nav class="flex flex-row flex-wrap justify-center gap-2 pb-6 md:gap-2.5">
+  {
+    links.map((link, index) => {
+      return (
+        <>
+          <NavLink href={link.href} text={link.text} />
+          {index < links.length - 1 && <Separator />}
+        </>
+      );
+    })
+  }
+</nav>
