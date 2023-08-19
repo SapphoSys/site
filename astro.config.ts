@@ -1,4 +1,6 @@
 import { defineConfig } from 'astro/config';
+import { base } from './src/site.config';
+
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
@@ -15,7 +17,7 @@ import tableOfContents from 'remark-toc';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://arciniega.one',
+  site: `https://${base.siteName}`,
   experimental: {
     assets: true,
     viewTransitions: true,
