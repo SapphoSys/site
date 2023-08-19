@@ -79,11 +79,6 @@ const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
     @apply text-xl;
     @apply pb-5 pt-3;
 
-    & code:before,
-    & code:after {
-      content: '';
-    }
-
     & :is(h1, h2, h3, h4, h5, h6, p, strong, li) {
       @apply text-ctp-text;
     }
