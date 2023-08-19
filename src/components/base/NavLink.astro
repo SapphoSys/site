@@ -13,6 +13,8 @@ if (!href) {
   isActive = false;
 } else if (href === '/') {
   isActive = href === Astro.url.pathname;
+} else if (Astro.url.pathname.includes('/article')) {
+  isActive = href === '/articles';
 } else {
   isActive = Astro.url.pathname.includes(typeof href === 'string' ? href : href.href);
 }
