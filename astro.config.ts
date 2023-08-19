@@ -4,13 +4,14 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import compress from 'astro-compress';
 import workerLinks from 'astro-worker-links';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeExternalLinks from 'rehype-external-links';
-import rehypeSlug from 'rehype-slug';
-import remarka11yEmoji from '@fec/remark-a11y-emoji';
-import remarkCodeTitle from 'remark-code-title';
-import remarkFigureCaption from '@microflash/remark-figure-caption';
-import remarkToc from 'remark-toc';
+
+import a11yEmoji from '@fec/remark-a11y-emoji';
+import autolinkHeadings from 'rehype-autolink-headings';
+import codeTitle from 'remark-code-title';
+import externalLinks from 'rehype-external-links';
+import figureCaption from '@microflash/remark-figure-caption';
+import slug from 'rehype-slug';
+import tableOfContents from 'remark-toc';
 
 // https://astro.build/config
 export default defineConfig({
@@ -22,23 +23,22 @@ export default defineConfig({
   markdown: {
     shikiConfig: {
       theme: 'material-theme-ocean',
-      wrap: false,
     },
     remarkPlugins: [
-      remarka11yEmoji,
-      remarkCodeTitle,
-      remarkFigureCaption,
+      a11yEmoji,
+      codeTitle,
+      figureCaption,
       [
-        remarkToc,
+        tableOfContents,
         {
           tight: true,
         },
       ],
     ],
     rehypePlugins: [
-      rehypeSlug,
+      slug,
       [
-        rehypeAutolinkHeadings,
+        autolinkHeadings,
         {
           behavior: 'append',
           content: {
@@ -48,7 +48,7 @@ export default defineConfig({
         },
       ],
       [
-        rehypeExternalLinks,
+        externalLinks,
         {
           target: '_blank',
           rel: ['nofollow', 'noopener'],
@@ -65,7 +65,12 @@ export default defineConfig({
       secret: process.env.WORKER_SECRET!,
       getPageMapping(pages) {
         return pages
-          .filter((url) => url.pathname !== '/articles/' && url.pathname.includes('/articles') && !url.pathname.includes('/articles/tag'))
+          .filter(
+            (url) =>
+              url.pathname !== '/articles/' &&
+              url.pathname.includes('/articles') &&
+              !url.pathname.includes('/articles/tag')
+          )
           .map((url) => {
             return {
               page: url.href,
