@@ -34,7 +34,7 @@ const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
 <Layout description={description} pageTitle={title} title={`${title} | Chloe Arciniega`}>
   {checkComments() && <meta slot="head" name="giscus:backlink" content={backlink} />}
 
-  <header class="flex flex-col items-center text-center">
+  <header class="flex flex-col">
     <span class="title pt-1">{title}</span>
 
     {
@@ -63,8 +63,6 @@ const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
       )
     }
   </header>
-
-  <hr class="text-ctp-mauve dark:text-ctp-pink" />
 
   <span class="article-content prose dark:prose-invert">
     <slot />
