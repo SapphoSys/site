@@ -12,8 +12,8 @@ import '@fontsource/iosevka';
 interface Props {
   title: string;
   description?: string;
-  created?: string | undefined;
-  modified?: string | undefined;
+  created?: string;
+  modified?: string;
   tag?: string;
   timeEstimate?: string;
   comments?: boolean;
@@ -24,8 +24,8 @@ const { comments, created, modified, description, tag, timeEstimate, title } = A
 const checkComments = () => blog.comments && comments;
 
 const formatDate = (date: Date) => format(date, 'MMM d, yyyy');
-const createdAt = created ? formatDate(parseISO(created)) : null;
-const modifiedAt = modified ? formatDate(parseISO(modified)) : null;
+const createdAt = created ? formatDate(parseISO(created)) : undefined;
+const modifiedAt = modified ? formatDate(parseISO(modified)) : undefined;
 
 const backlinkPath = Astro.url.pathname.replace('/article', '');
 const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
