@@ -79,7 +79,7 @@ Click on the menu bar located in the upper left corner, and select the **Market*
 Scroll down until you find the **S3 Primary Object Storage** extension, and install it.
 ![The S3 Primary Object Storage extension on the Owncloud Marketplace.](https://elixi.re/i/rnmm8.png 'The S3 Primary Object Storage extension on the Owncloud Marketplace.')
 
-_**Note**: You'll want this extension, and not the extension called **External Storage: S3**!_
+**💡 Note, you'll want this extension and not the extension called "External Storage: S3"!**
 
 ## Setting up R2 for your Owncloud instance
 
