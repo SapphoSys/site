@@ -23,7 +23,7 @@ const { comments, created, modified, description, tag, timeEstimate, title } = A
 
 const checkComments = () => blog.comments && comments;
 
-const formatDate = (date: Date) => format(date, 'MMM d, yyyy');
+const formatDate = (date: Date) => format(date, 'MMMM d, yyyy');
 const createdAt = created ? formatDate(parseISO(created)) : undefined;
 const modifiedAt = modified ? formatDate(parseISO(modified)) : undefined;
 
