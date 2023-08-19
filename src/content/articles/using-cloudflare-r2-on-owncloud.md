@@ -6,10 +6,15 @@ description: A guide on how to set up Cloudflare R2 on Owncloud.
 tag: cloudflare
 ---
 
-I have a compute instance that is running [Owncloud][owncloud], which I use to backup my files and whatnot. The problem
-is, my instance has very little storage to actually host anything.
+## Introduction
 
-Then I had an idea... what if I could hook up [Cloudflare's R2][r2] service to Owncloud?
+I have a compute instance that is running [Owncloud][owncloud], which I use to backup my files and whatnot.  
+While I was configuring the instance and uploading my files, I quickly realized that my instance's storage is very
+limited and did not have enough space to actually house all of my potential future backups.
+
+But then I had an idea: what if I could hook up [Cloudflare's R2 service][r2] to Owncloud?
+
+Stick with me as I show you how to do exactly that in this article.
 
 [owncloud]: https://owncloud.com 'Owncloud'
 [r2]: https://www.cloudflare.com/products/r2/ 'R2 home page'
@@ -18,7 +23,7 @@ Then I had an idea... what if I could hook up [Cloudflare's R2][r2] service to O
 
 ## Preamble
 
-_This guide assumes you're running an instance of Owncloud on a Docker container using **docker-compose**._
+**💡 This guide assumes you're running an instance of Owncloud on a Docker container using `docker-compose`**.
 
 If you don't have an instance of Owncloud running on Docker, follow these steps:
 
@@ -30,25 +35,20 @@ If you don't have an instance of Owncloud running on Docker, follow these steps:
 [docker-install]: https://docs.docker.com/engine/install/#server 'Docker Installation page'
 [owncloud-install]: https://doc.owncloud.com/server/10.12/admin_manual/installation/docker 'Owncloud Installation page'
 
-## Creating an R2 bucket
+## Creating a bucket
 
-Go to your [Cloudflare dashboard][cloudflare-dash] and navigate to the R2 page.  
-![The R2 page on your Cloudflare dashboard, highlighted in red.](https://elixi.re/i/k3psp.png 'The R2 page on your Cloudflare dashboard, highlighted in red.')
+Go to your [Cloudflare dashboard][cloudflare-dash] and navigate to the R2 page. Then click on the **Create bucket**
+button.
 
-You'll want to create a bucket. Make sure you give this bucket a unique name, because you won't be able to change it
-afterwards!
+**💡 When creating a bucket, make sure you give this bucket a unique name because you won't be able to change it
+afterwards!**
 
 For the purposes of this guide, I'll stick with the bucket name `owncloud-instance`.
 
-![The name for your R2 bucket.](https://elixi.re/i/eq5h5.png 'The name for your R2 bucket.')
+![The unique name for your R2 bucket.](https://elixi.re/i/eq5h5.png 'The unique name for your R2 bucket.')
 
-Once you're done with that, head back to the R2 page, and click on the **Manage R2 API Tokens** link.
-
-At the time of writing this guide, the link should be in the upper right corner.
-
-![The "Manage R2 API tokens" link.](https://elixi.re/i/4281o.png 'The "Manage R2 API tokens" link.')
-
-Then, click on the **Create API token** button.
+Once you're done with that, head back to the R2 page, click on the **Manage R2 API Tokens** link and click on the
+**Create API token** button.
 
 [cloudflare-dash]: https://dash.cloudflare.com 'Cloudflare dashboard page'
 
@@ -57,16 +57,11 @@ Then, click on the **Create API token** button.
 Let's go through each of the options on the page:
 
 - **Token name**: This is not that important, but if you want to be able to easily identify the R2 token on this page in
-  the future, you can set a unique name here.  
-  ![The name option for your R2 API token.](https://elixi.re/i/x02n8.png 'The name option for your R2 API token.')
-
+  the future, you can set a unique name here.
 - **Permissions**: Make sure you set this to **Edit**! Otherwise you may run into permission issues when uploading
-  files.  
-  ![The permissions option for your R2 API token.](https://elixi.re/i/c205k.png 'The permissions option for your R2 API token.')
-
+  files.
 - **TTL**: If you just want to create this token and forget about it, set this to **Infinity**. Otherwise, this option
-  is up to you.  
-  ![The TTL option for your R2 API token.](https://elixi.re/i/pkcx0.png 'The TTL option for your R2 API token.')
+  is up to you.
 
 When you're done, click on the **Create API Token** button.
 
@@ -88,8 +83,8 @@ _**Note**: You'll want this extension, and not the extension called **External S
 
 ## Setting up R2 for your Owncloud instance
 
-**_Before proceeding any further, make sure you back up all your data. Proceeding with the steps below will wipe any
-data you had on your Owncloud instance._**
+**⚠️ Before proceeding any further, make sure you back up all your data! Proceeding with the steps below will wipe any
+data you had on your Owncloud instance.**
 
 You're done with all that? Great. It's time to configure R2 to work on your Owncloud instance.
 
@@ -126,7 +121,7 @@ We're looking to edit the **config.php** file. Add the following to the configur
 
 ### S3 configuration options
 
-Replace the following:
+You'll want to replace the following options:
 
 - **bucket**: This is your unique R2 bucket name that you created earlier.  
   _(I used `owncloud-instance` for this guide)_
@@ -142,17 +137,19 @@ Then, run `docker restart owncloud_server` to apply the changes.
 And that's it! Log back in to your Owncloud admin dashboard, and your instance should utilize your Cloudflare R2 bucket
 as its primary storage.
 
----
+## Conclusion
 
 Overall, it's pretty painless for your Owncloud instance to utilize Cloudflare's R2 service.
 
 I will warn you though, Cloudflare's base plan for R2 only includes 10 GB of storage per month.
 
-![Pricing for Cloudflare's R2 service.](https://elixi.re/i/kwujy.png "Pricing for Cloudflare's R2 service.")
+![The pricing plans for Cloudflare's R2 service.](https://elixi.re/i/kwujy.png "The pricing plans for Cloudflare's R2 service.")
 
 But it all depends if you're fine with that. :)
+
+---
 
 _Hey! If you're still here..._
 
 _This is the first time I'm writing a blog post of this sort. Let me know if I did well, or if there's anything I can
-improve with future blog posts. Thank you!_ ❤️
+improve with future blog posts. Thank you! ❤️_
