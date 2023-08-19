@@ -1,10 +1,13 @@
 ---
 import Layout from '@layouts/Page.astro';
+import Separator from '@components/Separator.astro';
 
+import { format, parseISO } from 'date-fns';
 import { Icon } from 'astro-iconify';
 
-import ArticleItems from '@components/blog/ArticleItems.astro';
 import type { CollectionEntry } from 'astro:content';
+
+const formatDate = (date: Date) => format(date, 'MMMM d, yyyy');
 
 interface Props {
   title?: string;
@@ -32,7 +35,53 @@ const { articles, description, title } = Astro.props;
   {
     articles
       .sort((a, b) => new Date(b.data.created).valueOf() - new Date(a.data.created).valueOf())
-      .map(({ data, slug }) => <ArticleItems data={data} slug={slug} />)
+      .map(({ data, slug }) => {
+        return (
+          <span class="flex flex-col pb-5 pt-2">
+            <article class="flex flex-col gap-2 md:gap-1">
+              <span class="text-3xl">
+                <a transition:name={`title-${slug}`} class="font-semibold" href={`/article/${slug}`} title={data.title}>
+                  {data.title}
+                </a>
+              </span>
+
+              <span class="flex flex-wrap gap-1.5">
+                <span transition:name={`date-${slug}`} class="text-ctp-subtext0">
+                  {formatDate(parseISO(data.created))}
+                </span>
+
+                <Separator transitionName={`sep-1-${slug}`} />
+
+                {data.tag && (
+                  <a
+                    transition:name={`tag-${slug}`}
+                    class="font-normal"
+                    href={`/articles/tag/${data.tag}`}
+                    title={`Article tagged with ${data.tag}`}
+                  >
+                    {data.tag}
+                  </a>
+                )}
+
+                {data.timeEstimate && (
+                  <>
+                    <Separator transitionName={`sep-2-${slug}`} />
+                    <span transition:name={`time-${slug}`} class="text-ctp-subtext0">
+                      {data.timeEstimate}
+                    </span>
+                  </>
+                )}
+              </span>
+
+              {data.description && (
+                <span transition:name={`description-${slug}`} class="description pt-2 italic">
+                  {data.description}
+                </span>
+              )}
+            </article>
+          </span>
+        );
+      })
   }
 
   <slot />
