@@ -14,12 +14,13 @@ interface Props {
   description?: string;
   created?: string;
   modified?: string;
+  slug?: string;
   tag?: string;
   timeEstimate?: string;
   comments?: boolean;
 }
 
-const { comments, created, modified, description, tag, timeEstimate, title } = Astro.props;
+const { comments, created, modified, description, slug, tag, timeEstimate, title } = Astro.props;
 
 const checkComments = () => blog.comments && comments;
 
@@ -35,30 +36,29 @@ const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
   {checkComments() && <meta slot="head" name="giscus:backlink" content={backlink} />}
 
   <header class="flex flex-col">
-    <span class="title pt-1">{title}</span>
+    <span transition:name={`title-${slug}`} class="title pt-1">{title}</span>
+    <span transition:name={`description-${slug}`} class="pb-3 pt-2">{description}</span>
 
     {
-      (createdAt || modifiedAt) && (
-        <span class="pt-3 italic text-ctp-subtext0">
-          {createdAt && <span>{createdAt}</span>}
-          <Separator />
-          {modifiedAt && <span>Last modified {modifiedAt}</span>}
-        </span>
-      )
-    }
+      createdAt && tag && timeEstimate && (
+        <span class="flex flex-row flex-wrap gap-1 pb-3 text-ctp-subtext0">
+          <span
+            transition:name={`date-${slug}`}
+            class="text-ctp-subtext0"
+            title={`Published on ${createdAt}${modifiedAt ? `, edited on ${modifiedAt}` : ''}`}
+          >
+            {createdAt}
+          </span>
 
-    <span class="pb-3 pt-2">{description}</span>
+          <Separator transitionName={`sep-1-${slug}`} />
 
-    {
-      tag && timeEstimate && (
-        <span class="flex flex-row gap-1 pb-3">
-          <a href={`/articles/tag/${tag}`} title={`Article tagged with ${tag}`}>
+          <a transition:name={`tag-${slug}`} href={`/articles/tag/${tag}`} title={`Article tagged with ${tag}`}>
             {tag}
           </a>
 
-          <Separator />
+          <Separator transitionName={`sep-2-${slug}`} />
 
-          {timeEstimate}
+          <span transition:name={`time-${slug}`}>{timeEstimate}</span>
         </span>
       )
     }

@@ -25,10 +25,14 @@ interface Props {
   post: CollectionEntry<'articles'>;
 }
 
-const { post } = Astro.props;
+const {
+  post,
+  post: { slug },
+} = Astro.props;
+
 const { Content } = await post.render();
 ---
 
-<ArticleLayout {...post.data}>
+<ArticleLayout {...post.data} {slug}>
   <Content />
 </ArticleLayout>
