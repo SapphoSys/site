@@ -3,7 +3,6 @@ import Head from '@components/base/Head.astro';
 import NavBar from '@components/base/NavBar.astro';
 
 import '@fontsource/atkinson-hyperlegible';
-import '@fontsource/inter';
 
 interface Props {
   description?: string;
@@ -33,6 +32,7 @@ const { description, pageTitle, title } = Astro.props;
       }
 
       body {
+        @apply font-body;
         @apply ctp-latte bg-ctp-base text-ctp-text dark:ctp-mocha selection:bg-ctp-mauve selection:text-ctp-crust dark:selection:bg-ctp-pink;
         @apply max-w-[45em] px-[1em] py-[2em] md:px-[2.5em];
       }

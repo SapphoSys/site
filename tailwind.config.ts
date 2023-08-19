@@ -8,8 +8,7 @@ export default {
   content: ['./src/**/*.{astro,html,js,md,mdx,ts,tsx}'],
   theme: {
     fontFamily: {
-      body: ['Inter', 'sans-serif'],
-      display: ['Atkinson Hyperlegible', 'sans-serif'],
+      body: ['Atkinson Hyperlegible', 'sans-serif'],
       mono: ['Iosevka', 'monospace'],
     },
     colors: {},
@@ -49,14 +48,6 @@ export default {
               color: 'white',
               opacity: '0.75',
             },
-            'p, li': {
-              code: {
-                border: '0.1px solid',
-                padding: '0.1rem 0.65rem',
-                borderRadius: '0.5rem',
-                fontWeight: '400',
-              },
-            },
           },
         },
         DEFAULT: {
@@ -76,6 +67,22 @@ export default {
                 color: '#6027ab',
                 textDecorationLine: 'underline',
               },
+            },
+            figure: {
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+
+              '& img': {
+                maxHeight: '500px',
+                width: 'auto',
+                height: '100%',
+              },
+            },
+            figcaption: {
+              fontStyle: 'italic',
+              color: 'white',
+              opacity: '0.75',
             },
           },
         },

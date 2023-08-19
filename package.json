@@ -30,7 +30,6 @@
     "@catppuccin/tailwindcss": "^0.1.6",
     "@fec/remark-a11y-emoji": "^3.1.0",
     "@fontsource/atkinson-hyperlegible": "^5.0.9",
-    "@fontsource/inter": "^5.0.3",
     "@fontsource/iosevka": "^5.0.7",
     "@microflash/remark-figure-caption": "^2.0.0",
     "@tailwindcss/typography": "^0.5.9",
