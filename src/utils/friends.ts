@@ -1,10 +1,10 @@
-type Webring = {
+interface Webring {
   name: string;
   link: string;
   image: string;
-}[];
+}
 
-const friends: Webring = [
+const friends = [
   {
     name: 'solely',
     link: 'https://arciniega.one',
@@ -40,6 +40,7 @@ const friends: Webring = [
     link: 'https://ovyerus.com',
     image: 'ovyerus.png',
   },
+
   {
     name: 'Megumin',
     link: 'https://megu.dev',
@@ -105,6 +106,6 @@ const friends: Webring = [
     link: 'https://resolv.moe',
     image: 'resolv.png',
   },
-];
+] satisfies Webring[];
 
 export default friends;
