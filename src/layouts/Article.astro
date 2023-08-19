@@ -70,17 +70,7 @@ const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
     <slot />
   </span>
 
-  {
-    checkComments() && (
-      <>
-        <span class="flex flex-col gap-1 pb-2 text-center">
-          <span class="title">Comments</span>
-          <span class="pt-1 italic">Discuss this article with others here!</span>
-        </span>
-        <Comments />
-      </>
-    )
-  }
+  {checkComments() && <Comments />}
 </Layout>
 
 <style is:global>
