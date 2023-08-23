@@ -51,7 +51,7 @@ const friends = [
     image: 'lewi.png',
   },
   {
-    name: 'zptr',
+    name: 'zeroptr',
     link: 'https://zptr.cc',
     image: 'zptr.gif',
   },
