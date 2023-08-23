@@ -40,7 +40,6 @@ const friends = [
     link: 'https://ovyerus.com',
     image: 'ovyerus.png',
   },
-
   {
     name: 'Megumin',
     link: 'https://megu.dev',
@@ -50,6 +49,11 @@ const friends = [
     name: 'lewisakura',
     link: 'https://lewisakura.moe',
     image: 'lewi.png',
+  },
+  {
+    name: 'zptr',
+    link: 'https://zptr.cc',
+    image: 'zptr.gif',
   },
   {
     name: 'erin',
