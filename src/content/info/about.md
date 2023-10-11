@@ -3,11 +3,9 @@ title: About me
 description: A little more info about me.
 ---
 
-import Chloe from '@components/home/Chloe.astro';
-
 ## Who am I?
 
-Hi there! I'm <Chloe />. I used to go by a lot of names before, but I currently use **solely** and **solelychloe** as my
+Hi there! I'm **Chloe**. I used to go by a lot of names before, but I currently use **solely** and **solelychloe** as my
 aliases on the Internet.
 
 I'm a software engineer who has a fascination for anything related to System Administration. And as a hobbyist sysadmin,
