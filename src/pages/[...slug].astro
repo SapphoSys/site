@@ -1,7 +1,7 @@
 ---
 import ArticleLayout from '@layouts/Article.astro';
 
-import { getCollection, CollectionEntry } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
   const entries = await getCollection('info');
@@ -20,6 +20,6 @@ const { info } = Astro.props;
 const { Content } = await info.render();
 ---
 
-<ArticleLayout {...info.data}>
+<ArticleLayout {...info.data} info>
   <Content />
 </ArticleLayout>
