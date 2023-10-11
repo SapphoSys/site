@@ -17,6 +17,9 @@ yarn-error.log*
 # environment variables
 .env
 
+# IntelliJ IDEA / WebStorm
+.idea
+
 # OS-specific files
 .DS_Store
 desktop.ini
