@@ -1,7 +1,8 @@
 ---
 import Layout from '@layouts/Page.astro';
-import { Image } from 'astro:assets';
 import Friends from '@components/home/Friends.astro';
+
+import { Image } from 'astro:assets';
 ---
 
 <Layout
@@ -24,25 +25,27 @@ import Friends from '@components/home/Friends.astro';
       />
     </a>
 
-    <span class="order-first flex flex-col pb-3 pt-3">
-      <span class="flex flex-col flex-wrap md:block">
-        <span class="text-4xl font-bold text-ctp-red md:text-5xl">Chloe Arciniega</span>
-        <span class="pb-1 text-ctp-subtext0 md:pt-4">(she/her, they/them)</span>
-      </span>
+    <div class="order-first flex flex-col py-3">
+      <div class="flex flex-col">
+        <h1 class="text-4xl font-bold text-ctp-red md:text-5xl">Chloe Arciniega</h1>
+        <p class="text-ctp-subtext0">(she/her, they/them)</p>
+      </div>
 
-      <span class="text-2xl">Software engineer, sysadmin, community manager.</span>
-    </span>
+      <h3 class="text-2xl">Software engineer, sysadmin, community manager.</h3>
+    </div>
   </header>
 
   <section class="flex flex-col gap-5 pt-3">
-    <span class="title">Hello!</span>
+    <h1 class="title">Hello!</h1>
 
-     I'm a software engineer with a fascination for system administration and messing about with pieces of technology. Feel
-    free to look around to get to know me better!
+    <p>
+      I'm a software engineer with a fascination for system administration and messing about with pieces of technology.
+      Feel free to look around to get to know me better!
+    </p>
   </section>
 
-  <span class="pt-5 motion-reduce:hidden">
-    <span class="title">Friends</span>
+  <section class="pt-5 motion-reduce:hidden">
+    <h1 class="title">Friends</h1>
     <Friends />
-  </span>
+  </section>
 </Layout>

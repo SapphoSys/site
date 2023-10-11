@@ -23,12 +23,12 @@ const {
 } = Astro.props;
 ---
 
-<div class="flex flex-col gap-2 md:gap-1">
+<article class="flex flex-col gap-2 md:gap-1">
   <a transition:name={`title-${slug}`} class="text-3xl font-semibold" href={`/article/${slug}`} title={title}>
     {title}
   </a>
 
-  <div class="flex flex-wrap gap-1.5">
+  <header class="flex flex-wrap gap-1.5">
     <p transition:name={`date-${slug}`} class="text-ctp-subtext1 dark:text-ctp-subtext0">
       {formatDate(parseISO(created))}
     </p>
@@ -48,9 +48,9 @@ const {
     <p transition:name={`time-${slug}`} class="text-ctp-subtext1 dark:text-ctp-subtext0">
       {minutesRead}
     </p>
-  </div>
+  </header>
 
   <p transition:name={`description-${slug}`} class="description italic">
     {description}
   </p>
-</div>
+</article>

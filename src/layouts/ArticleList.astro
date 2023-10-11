@@ -18,15 +18,15 @@ const { articles } = Astro.props;
   pageTitle="Articles"
   title="Articles | Chloe Arciniega"
 >
-  <span class="flex flex-col gap-3 pb-3">
-    <span class="title">Articles</span>
-    <span>A personal blog, comprising of whatever stuff I find interesting to post.</span>
+  <header class="flex flex-col gap-3 pb-3">
+    <h1 class="title">Articles</h1>
+    <p>A personal blog, comprising of whatever stuff I find interesting to post.</p>
 
     <section>
       <Icon size={20} name="mdi:rss" />
       <a title="Subscribe to my RSS feed" href="/rss.xml"> Subscribe to RSS</a>
     </section>
-  </span>
+  </header>
 
   <hr class="text-ctp-mauve dark:text-ctp-pink" />
 

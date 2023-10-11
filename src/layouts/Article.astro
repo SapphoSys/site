@@ -39,19 +39,19 @@ const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
   {checkComments() && <meta slot="head" name="giscus:backlink" content={backlink} />}
 
   <header class="flex flex-col">
-    <span transition:name={`title-${slug}`} class="title pt-1">{title}</span>
-    <span transition:name={`description-${slug}`} class="pb-3 pt-2">{description}</span>
+    <h1 transition:name={`title-${slug}`} class="title pt-1">{title}</h1>
+    <p transition:name={`description-${slug}`} class="pb-3 pt-2">{description}</p>
 
     {
       !info && (
-        <span class="flex flex-row flex-wrap gap-1 pb-3 text-ctp-subtext0">
-          <span
+        <div class="flex flex-row flex-wrap gap-1 pb-3 text-ctp-subtext0">
+          <p
             transition:name={`date-${slug}`}
             class="text-ctp-subtext0"
             title={`Published on ${createdAt}${modifiedAt ? `, edited on ${modifiedAt}` : ''}`}
           >
             {createdAt}
-          </span>
+          </p>
 
           <Separator transition:name={`sep-1-${slug}`} />
 
@@ -61,15 +61,15 @@ const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
 
           <Separator transition:name={`sep-2-${slug}`} />
 
-          <span transition:name={`time-${slug}`}>{minutesRead}</span>
-        </span>
+          <p transition:name={`time-${slug}`}>{minutesRead}</p>
+        </div>
       )
     }
   </header>
 
-  <span class="article-content prose dark:prose-invert">
+  <section class="article-content prose dark:prose-invert">
     <slot />
-  </span>
+  </section>
 
   {checkComments() && <Comments />}
 </Layout>

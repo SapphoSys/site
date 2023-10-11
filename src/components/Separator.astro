@@ -1,5 +1,7 @@
 ---
-const { transitionName } = Astro.props;
+import type { HTMLAttributes } from 'astro/types';
+// eslint-disable-next-line no-unused-vars
+interface Props extends HTMLAttributes<'p'> {}
 ---
 
-<span class="separator" transition:name={transitionName}>·</span>
+<p class="separator">·</p>

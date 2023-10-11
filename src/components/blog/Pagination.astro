@@ -6,22 +6,22 @@ const { page } = Astro.props;
 
 {
   page.url.next && (
-    <span class="flex flex-row-reverse pb-2 pt-2">
+    <div class="flex flex-row-reverse pb-2 pt-2">
       <Icon size={35} name="mdi:arrow-right-thin" />
       <a href={page.url.next} title="See older articles">
         See older articles
       </a>
-    </span>
+    </div>
   )
 }
 
 {
   page.url.prev && (
-    <span class="flex pb-2 pt-2">
+    <div class="flex pb-2 pt-2">
       <Icon size={35} name="mdi:arrow-left-thin" />
       <a href={page.url.prev} title="See newer articles">
         See newer articles
       </a>
-    </span>
+    </div>
   )
 }
