@@ -14,6 +14,8 @@ import figureCaption from '@microflash/remark-figure-caption';
 import slug from 'rehype-slug';
 import tableOfContents from 'remark-toc';
 
+import readingTime from './src/utils/post';
+
 // https://astro.build/config
 export default defineConfig({
   site: `https://arciniega.one`,
@@ -31,6 +33,7 @@ export default defineConfig({
           tight: true,
         },
       ],
+      readingTime,
     ],
     rehypePlugins: [
       slug,

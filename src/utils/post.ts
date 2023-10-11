@@ -1,13 +1,24 @@
-import readingTime from 'reading-time';
+import getReadingTime from 'reading-time';
+import { toString } from 'mdast-util-to-string';
 
-interface Post {
-  body: string;
+interface Data {
+  data: {
+    astro: {
+      frontmatter: {
+        minutesRead?: string;
+      };
+    };
+  };
 }
 
-const getPostData = (post: Post) => {
-  return {
-    readingTime: readingTime(post.body).text,
+const remarkReadingTime = () => {
+  return (tree: Node, { data }: Data) => {
+    const textOnPage = toString(tree);
+    const readingTime = getReadingTime(textOnPage);
+    // readingTime.text will give us minutes read as a friendly string,
+    // i.e. "3 min read"
+    data.astro.frontmatter.minutesRead = readingTime.text;
   };
 };
 
-export { getPostData };
+export default remarkReadingTime;

@@ -1,28 +1,26 @@
 ---
 import Layout from '@layouts/Page.astro';
-import Separator from '@components/Separator.astro';
 
-import { format, parseISO } from 'date-fns';
+import BlogCard from '@components/blog/BlogCard.astro';
+
 import { Icon } from 'astro-iconify';
-
 import type { CollectionEntry } from 'astro:content';
 
-const formatDate = (date: Date) => format(date, 'MMMM d, yyyy');
-
 interface Props {
-  title?: string;
   articles: CollectionEntry<'articles'>[];
-  description: string;
-  total?: number;
 }
 
-const { articles, description, title } = Astro.props;
+const { articles } = Astro.props;
 ---
 
-<Layout description={description} pageTitle="Articles" title="Articles | Chloe Arciniega">
+<Layout
+  description="A personal blog, comprising of whatever stuff I find interesting to post."
+  pageTitle="Articles"
+  title="Articles | Chloe Arciniega"
+>
   <span class="flex flex-col gap-3 pb-3">
-    <span class="title">{title}</span>
-    <span>{description}</span>
+    <span class="title">Articles</span>
+    <span>A personal blog, comprising of whatever stuff I find interesting to post.</span>
 
     <section>
       <Icon size={20} name="mdi:rss" />
@@ -35,51 +33,15 @@ const { articles, description, title } = Astro.props;
   {
     articles
       .sort((a, b) => new Date(b.data.created).valueOf() - new Date(a.data.created).valueOf())
-      .map(({ data, slug }) => {
+      .map(async (article) => {
+        const { remarkPluginFrontmatter } = await article.render();
         return (
-          <span class="flex flex-col pb-5 pt-2">
-            <article class="flex flex-col gap-2 md:gap-1">
-              <span class="text-3xl">
-                <a transition:name={`title-${slug}`} class="font-semibold" href={`/article/${slug}`} title={data.title}>
-                  {data.title}
-                </a>
-              </span>
-
-              <span class="flex flex-wrap gap-1.5">
-                <span transition:name={`date-${slug}`} class="text-ctp-subtext0">
-                  {formatDate(parseISO(data.created))}
-                </span>
-
-                <Separator transitionName={`sep-1-${slug}`} />
-
-                {data.tag && (
-                  <a
-                    transition:name={`tag-${slug}`}
-                    class="font-normal"
-                    href={`/articles/tag/${data.tag}`}
-                    title={`Article tagged with ${data.tag}`}
-                  >
-                    {data.tag}
-                  </a>
-                )}
-
-                {data.timeEstimate && (
-                  <>
-                    <Separator transitionName={`sep-2-${slug}`} />
-                    <span transition:name={`time-${slug}`} class="text-ctp-subtext0">
-                      {data.timeEstimate}
-                    </span>
-                  </>
-                )}
-              </span>
-
-              {data.description && (
-                <span transition:name={`description-${slug}`} class="description pt-2 italic">
-                  {data.description}
-                </span>
-              )}
-            </article>
-          </span>
+          <BlogCard
+            class="flex flex-col gap-5 rounded-lg border-4 border-ctp-surface1 bg-ctp-surface1 p-4 py-5 dark:border-ctp-mantle dark:bg-ctp-mantle"
+            data={article.data}
+            slug={article.slug}
+            minutesRead={remarkPluginFrontmatter.minutesRead}
+          />
         );
       })
   }

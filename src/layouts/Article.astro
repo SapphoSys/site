@@ -10,17 +10,20 @@ import Separator from '@components/Separator.astro';
 import '@fontsource/iosevka';
 
 interface Props {
+  slug?: string;
+
   title: string;
   description?: string;
   created?: string;
   modified?: string;
-  slug?: string;
   tag?: string;
-  timeEstimate?: string;
+  minutesRead?: string;
+
   comments?: boolean;
+  info?: boolean;
 }
 
-const { comments, created, modified, description, slug, tag, timeEstimate, title } = Astro.props;
+const { info, title, description, created, modified, slug, tag, minutesRead, comments } = Astro.props;
 
 const checkComments = () => blog.comments && comments;
 
@@ -40,7 +43,7 @@ const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
     <span transition:name={`description-${slug}`} class="pb-3 pt-2">{description}</span>
 
     {
-      createdAt && tag && timeEstimate && (
+      !info && (
         <span class="flex flex-row flex-wrap gap-1 pb-3 text-ctp-subtext0">
           <span
             transition:name={`date-${slug}`}
@@ -50,15 +53,15 @@ const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
             {createdAt}
           </span>
 
-          <Separator transitionName={`sep-1-${slug}`} />
+          <Separator transition:name={`sep-1-${slug}`} />
 
           <a transition:name={`tag-${slug}`} href={`/articles/tag/${tag}`} title={`Article tagged with ${tag}`}>
             {tag}
           </a>
 
-          <Separator transitionName={`sep-2-${slug}`} />
+          <Separator transition:name={`sep-2-${slug}`} />
 
-          <span transition:name={`time-${slug}`}>{timeEstimate}</span>
+          <span transition:name={`time-${slug}`}>{minutesRead}</span>
         </span>
       )
     }

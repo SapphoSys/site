@@ -1,23 +1,42 @@
 ---
-import Articles from '@layouts/ArticleList.astro';
-
-import type { PaginateFunction } from 'astro';
-
-import { getCollection } from 'astro:content';
-
+import ArticleList from '@layouts/ArticleList.astro';
 import Pagination from '@components/blog/Pagination.astro';
 
-const { tag } = Astro.params;
+import { getCollection, type CollectionEntry } from 'astro:content';
+import type { GetStaticPathsOptions } from 'astro';
+
+interface Props {
+  page: {
+    data: Array<{
+      params: {
+        slug: string;
+      };
+      props: CollectionEntry<'articles'>;
+    }>;
+  };
+}
+
 const { page } = Astro.props;
 
-export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
-  const articles = await getCollection('articles');
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const articleCollection = await getCollection('articles');
 
-  const tags = Array.from(new Set(articles.flatMap((article) => article.data.tag)));
+  const sortedArticles = articleCollection.sort(
+    (a, b) => new Date(b.data.created).valueOf() - new Date(a.data.created).valueOf()
+  );
 
-  return tags.map((tag) => {
+  const articles = sortedArticles.map((article) => ({
+    params: { slug: article.slug },
+    props: {
+      ...article,
+    },
+  }));
+
+  const tags = Array.from(new Set(sortedArticles.flatMap((article) => article.data.tag)));
+
+  return tags.flatMap((tag) => {
     return paginate(
-      articles.filter((article) => tag && article.data.tag?.includes(tag)),
+      articles.filter((article) => tag && article.props.data.tag?.includes(tag)),
       {
         params: { tag },
         pageSize: 10,
@@ -27,13 +46,6 @@ export async function getStaticPaths({ paginate }: { paginate: PaginateFunction 
 }
 ---
 
-<Articles
-  title={`Articles with the tag ${tag}`}
-  articles={page.data}
-  description={`Fetched ${page.data.length} article${page.data.length === 1 ? '' : 's'}${
-    page.data.length >= 10 ? ` (${page.total} total)` : ''
-  } with the queried tag on this page.`}
-  total={page.total}
->
+<ArticleList articles={page.data.map((p) => p.props)}>
   <Pagination page={page} />
-</Articles>
+</ArticleList>

@@ -9,7 +9,6 @@ const articlesCollection = defineCollection({
     created: z.string().regex(dateRegex),
     modified: z.string().regex(dateRegex).optional(),
     tag: z.string(),
-    timeEstimate: z.string().optional(),
     comments: z.boolean().optional().default(true),
   }),
 });

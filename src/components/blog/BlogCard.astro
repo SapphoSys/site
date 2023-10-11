@@ -1,0 +1,56 @@
+---
+import { format, parseISO } from 'date-fns';
+import Separator from '@components/Separator.astro';
+import type { HTMLAttributes } from 'astro/types';
+
+const formatDate = (date: Date) => format(date, 'MMMM d, yyyy');
+
+interface Props extends HTMLAttributes<'a'> {
+  data: {
+    title: string;
+    description: string;
+    created: string;
+    tag: string;
+  };
+  slug: string;
+  minutesRead: string;
+}
+
+const {
+  data: { title, description, created, tag },
+  slug,
+  minutesRead,
+} = Astro.props;
+---
+
+<div class="flex flex-col gap-2 md:gap-1">
+  <a transition:name={`title-${slug}`} class="text-3xl font-semibold" href={`/article/${slug}`} title={title}>
+    {title}
+  </a>
+
+  <div class="flex flex-wrap gap-1.5">
+    <p transition:name={`date-${slug}`} class="text-ctp-subtext1 dark:text-ctp-subtext0">
+      {formatDate(parseISO(created))}
+    </p>
+
+    <Separator transition:name={`sep-1-${slug}`} />
+
+    <a
+      transition:name={`tag-${slug}`}
+      class="font-normal"
+      href={`/articles/tag/${tag}`}
+      title={`Article tagged with ${tag}`}
+    >
+      {tag}
+    </a>
+
+    <Separator transition:name={`sep-2-${slug}`} />
+    <p transition:name={`time-${slug}`} class="text-ctp-subtext1 dark:text-ctp-subtext0">
+      {minutesRead}
+    </p>
+  </div>
+
+  <p transition:name={`description-${slug}`} class="description italic">
+    {description}
+  </p>
+</div>

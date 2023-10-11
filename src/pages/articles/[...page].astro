@@ -1,16 +1,19 @@
 ---
-import Articles from '@layouts/ArticleList.astro';
-
-import type { PaginateFunction } from 'astro';
-
-import { getCollection } from 'astro:content';
-import { getPostData } from '@utils/post';
-
+import ArticleList from '@layouts/ArticleList.astro';
 import Pagination from '@components/blog/Pagination.astro';
+
+import { getCollection, type CollectionEntry } from 'astro:content';
+import type { GetStaticPathsOptions } from 'astro';
+
+interface Props {
+  page: {
+    data: CollectionEntry<'articles'>[];
+  };
+}
 
 const { page } = Astro.props;
 
-export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const articleCollection = await getCollection('articles');
 
   const sortedArticles = articleCollection.sort(
@@ -20,28 +23,17 @@ export async function getStaticPaths({ paginate }: { paginate: PaginateFunction 
   const articles = sortedArticles.map((article) => ({
     params: { slug: article.slug },
     props: {
-      post: {
-        ...article,
-        data: {
-          ...article.data,
-          timeEstimate: getPostData(article).readingTime,
-        },
-      },
+      ...article,
     },
   }));
 
   return paginate(
-    articles.map((data) => data.props.post),
+    articles.map((data) => data.props),
     { pageSize: 10 }
   );
 }
 ---
 
-<Articles
-  title="Articles"
-  articles={page.data}
-  description="A personal blog, comprising of whatever stuff I find interesting to post."
-  total={page.total}
->
+<ArticleList articles={page.data}>
   <Pagination page={page} />
-</Articles>
+</ArticleList>
