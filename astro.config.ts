@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import { base } from './src/site.config';
 
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
@@ -17,11 +16,7 @@ import tableOfContents from 'remark-toc';
 
 // https://astro.build/config
 export default defineConfig({
-  site: `https://${base.siteName}`,
-  experimental: {
-    assets: true,
-    viewTransitions: true,
-  },
+  site: `https://arciniega.one`,
   markdown: {
     shikiConfig: {
       theme: 'material-theme-ocean',

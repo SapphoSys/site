@@ -6,7 +6,7 @@ import { parseISO } from 'date-fns';
 
 const articles = await getCollection('articles');
 
-export const get = () =>
+export const GET = () =>
   rss({
     title: blog.rss.title,
     description: blog.rss.description,
