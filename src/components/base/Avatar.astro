@@ -1,0 +1,19 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  class?: string;
+  width: number;
+  height: number;
+}
+
+const { class: className, width, height } = Astro.props;
+---
+
+<Image
+  class:list={[className, 'inline-flex aspect-square overflow-hidden rounded-full']}
+  {width}
+  {height}
+  src="/avatar.webp"
+  alt="A link to my avatar. The character displayed here is Silver Wolf from the videogame Honkai: Star Rail."
+/>

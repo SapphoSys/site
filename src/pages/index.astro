@@ -1,8 +1,7 @@
 ---
 import Layout from '@layouts/Page.astro';
+import Avatar from '@components/base/Avatar.astro';
 import Friends from '@components/home/Friends.astro';
-
-import { Image } from 'astro:assets';
 ---
 
 <Layout
@@ -16,13 +15,7 @@ import { Image } from 'astro:assets';
       title="A link to my avatar. The character displayed here is Silver Wolf from the videogame Honkai: Star Rail."
       target="_blank"
     >
-      <Image
-        class="inline-flex aspect-square w-20 overflow-hidden rounded-full"
-        src="/avatar.webp"
-        width={50}
-        height={50}
-        alt="A link to my avatar. The character displayed here is Silver Wolf from the videogame Honkai: Star Rail."
-      />
+      <Avatar class="w-20" width={50} height={50} />
     </a>
 
     <div class="order-first flex flex-col py-3">
@@ -46,6 +39,7 @@ import { Image } from 'astro:assets';
 
   <section class="pt-5 motion-reduce:hidden">
     <h1 class="title">Friends</h1>
+
     <Friends />
   </section>
 </Layout>
