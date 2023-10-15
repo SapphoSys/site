@@ -13,7 +13,7 @@ interface Props {
 const { description, pageTitle, title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html class="flex flex-col" lang="en">
   <Head description={description} pageTitle={pageTitle} title={title}>
     <slot name="head" />
@@ -37,9 +37,8 @@ const { description, pageTitle, title } = Astro.props;
         @apply max-w-[45em] px-[1em] py-[2em] md:px-[2.5em];
       }
 
-      [astro-icon] {
+      [data-icon] {
         @apply text-ctp-mauve dark:text-ctp-pink;
-        @apply inline;
       }
     </style>
   </body>
