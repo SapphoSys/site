@@ -945,7 +945,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify/tools@npm:latest":
+"@iconify-json/mdi@npm:^1.1.54":
+  version: 1.1.54
+  resolution: "@iconify-json/mdi@npm:1.1.54"
+  dependencies:
+    "@iconify/types": "*"
+  checksum: e4e6dc65bdd93f80d5162e5cbe2133624baa575b605864cd8e3aebf050603de2e3faaebb83f5108e615b267ac216079c6762bfbc81a18dfe78d4e98033650e95
+  languageName: node
+  linkType: hard
+
+"@iconify/tools@npm:^3.0.1, @iconify/tools@npm:latest":
   version: 3.0.5
   resolution: "@iconify/tools@npm:3.0.5"
   dependencies:
@@ -963,14 +972,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify/types@npm:^2.0.0":
+"@iconify/types@npm:*, @iconify/types@npm:^2.0.0":
   version: 2.0.0
   resolution: "@iconify/types@npm:2.0.0"
   checksum: 029f58542c160e9d4a746869cf2e475b603424d3adf3994c5cc8d0406c47e6e04a3b898b2707840c1c5b9bd5563a1660a34b110d89fce43923baca5222f4e597
   languageName: node
   linkType: hard
 
-"@iconify/utils@npm:^2.1.7":
+"@iconify/utils@npm:^2.1.5, @iconify/utils@npm:^2.1.7":
   version: 2.1.11
   resolution: "@iconify/utils@npm:2.1.11"
   dependencies:
@@ -1157,6 +1166,7 @@ __metadata:
     "@fec/remark-a11y-emoji": ^3.1.0
     "@fontsource/atkinson-hyperlegible": ^5.0.15
     "@fontsource/iosevka": ^5.0.7
+    "@iconify-json/mdi": ^1.1.54
     "@microflash/remark-figure-caption": ^2.0.2
     "@tailwindcss/typography": ^0.5.10
     "@types/eslint": ^8.44.4
@@ -1165,6 +1175,7 @@ __metadata:
     astro: ^3.3.0
     astro-compress: ^2.0.15
     astro-eslint-parser: ^0.16.0
+    astro-icon: next
     astro-iconify: ^1.2.0
     astro-seo: ^0.8.0
     astro-worker-links: ^0.2.0
@@ -2032,6 +2043,17 @@ __metadata:
     espree: ^9.0.0
     semver: ^7.3.8
   checksum: 1ce6250240d5400151b62f66d0239c2571ce11316d80aa1259bc04f78f73a2866c5017439a41d058a2fe43db6982b8eae8e151f806cdb8757045c16a94ed468c
+  languageName: node
+  linkType: hard
+
+"astro-icon@npm:next":
+  version: 1.0.0-next.2
+  resolution: "astro-icon@npm:1.0.0-next.2"
+  dependencies:
+    "@iconify/tools": ^3.0.1
+    "@iconify/types": ^2.0.0
+    "@iconify/utils": ^2.1.5
+  checksum: 137ff2a286abc8cbe17d8c2f30be49a5ee74d7c693b40b38894a55b10f2c75f112b9b567b10832cf30ee0b16440c91b30e44d7f72d275b067ee1bfa6d2fb502f
   languageName: node
   linkType: hard
 

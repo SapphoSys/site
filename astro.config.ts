@@ -4,6 +4,7 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import compress from 'astro-compress';
+import icon from 'astro-icon';
 import workerLinks from 'astro-worker-links';
 
 import a11yEmoji from '@fec/remark-a11y-emoji';
@@ -59,6 +60,11 @@ export default defineConfig({
   integrations: [
     tailwind(),
     mdx(),
+    icon({
+      include: {
+        mdi: ['*'],
+      },
+    }),
     sitemap(),
     workerLinks({
       domain: 'https://solstice.tf',
