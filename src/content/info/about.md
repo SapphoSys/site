@@ -8,9 +8,11 @@ description: A little more info about me.
 Hi there! I'm **Chloe**. I used to go by a lot of names before, but I currently use **solely** and **solelychloe** as my
 aliases on the Internet.
 
-I'm a software engineer who has a fascination for anything related to System Administration. And as a hobbyist sysadmin,
+I'm a computer science student at [AlmaU][almau], specializing in Software Engineering. I have a fascination for anything related to System Administration. And as a hobbyist sysadmin,
 I run media & game servers and utilize Virtual Machines for my specialized needs. I also tinker around with vintage
 computer hardware!
+
+[almau]: https://almau.edu.kz 'Almaty Management University'
 
 I'm currently contributing to the following third party Destiny 2 applications as a translator:
 
@@ -39,47 +41,53 @@ Rain 2**, and **Tetris Effect**.
 
 Here are some open-source projects I've contributed to:
 
-- [arciniega.one][chloe]: The site you're viewing right now!  
-  _Made in Astro and Tailwind CSS._
-- [Parallel Program Report][parallel]: Tracks Guardians who have the Parallel Program emblem in Destiny 2.  
-  _Made in Astro, Tailwind CSS and TypeScript._
 - [simple-fm][simple-fm]: A simple, asynchronous Last.fm library written in TypeScript.  
   _Made in TypeScript._
+- [tailwindcss.com][tailwind-site]: Rapidly build modern websites without ever leaving your HTML.  
+  _Made in Next.js._
+- [parallel.report][parallel]: Track Guardians who have the Parallel Program emblem in Destiny 2.  
+  _Made in Astro, Tailwind CSS and TypeScript._
+- [arciniega.one][chloe]: The site you're viewing right now!  
+  _Made in Astro and Tailwind CSS._
 - [Felicity][felicity]: Home page for Felicity, a powerful Discord bot that's designed to enhance your Destiny 2 gaming
   experience.  
   _Made in Astro and Starlight._
-- [simple-fm Docs][simple-fm-docs]: Documentation page for simple-fm.  
-  _Made in Astro and Starlight._
+- [Unofficial Last.fm API Docs][lfm-docs]: Community-made docs for the Last.fm API, with a goal of being up-to-date and as accurate as possible.  
+  _Made in MkDocs._
 
+[tailwind-site]: https://tailwindcss.com 'Website for TailwindCSS'
+[simple-fm]: https://simple.arciniega.one 'Website for simple-fm'
+[parallel]: https://parallel.report 'Parallel Program Report'
 [chloe]: https://arciniega.one "Chloe Arciniega's website"
 [felicity]: https://felicity.pages.dev 'Felicity'
-[parallel]: https://parallel.report 'Parallel Program Report'
-[simple-fm]: https://github.com/solelychloe/simple-fm 'simple-fm GitHub repository'
-[simple-fm-docs]: https://simple.arciniega.one 'simple-fm Docs'
+[lfm-docs]: https://lastfm-docs.github.io/api-docs 'Unofficial Last.fm API docs'
 
 ## Music
 
-I've been listening to alternative rock/metal and indie music recently. Here are some of my favourite artists / bands at
-the moment:
+I've been listening to alternative rock/metal and indie music recently. Here are some of my favourite artists and bands at the moment:
 
 - [Audioslave][audioslave]
 - [Ace of Hearts][ace]
-- [Bring Me The Horizon][bmth]
+- [Alice in Chains][aic]
 - [Evanescence][evanescence]
-- [Franz Ferdinand][franz]
+- [Infected Mushroom][infected]
 - [Paramore][paramore]
 - [Pierce The Veil][ptv]
+- [Porter Robinson][porter]
 - [Set It Off][sio]
+- [Soundgarden][soundgarden]
 - [The Used][theused]
 
 [audioslave]: https://www.youtube.com/@audioslaveofficial 'Audioslave'
 [ace]: https://www.youtube.com/@aceofheartsfan7607 'Ace of Hearts'
-[bmth]: https://www.youtube.com/@BringMeTheHorizon 'Bring Me The Horizon'
-[evanescence]: https://www.youtube.com/@Evanescence
-[franz]: https://www.youtube.com/@franz_ferdinand 'Franz Ferdinand'
+[aic]: https://www.youtube.com/@aliceinchains 'Alice in Chains'
+[evanescence]: https://www.youtube.com/@Evanescence 'Evanescence'
+[infected]: https://www.youtube.com/@infectedmushroom 'Infected Mushroom'
 [paramore]: https://www.youtube.com/@Paramore 'Paramore'
 [ptv]: https://www.youtube.com/@PierceTheVeil 'Pierce The Veil'
+[porter]: https://www.youtube.com/@PorterRobinson 'Porter Robinson'
 [sio]: https://www.youtube.com/@SetItOff 'Set It Off'
+[soundgarden]: https://www.youtube.com/@Soundgarden 'Soundgarden'
 [theused]: https://www.youtube.com/@theusedchannel 'The Used'
 
 You can check out my [Last.fm profile][lastfm] for more info.
