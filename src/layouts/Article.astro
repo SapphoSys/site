@@ -4,6 +4,7 @@ import Layout from '@layouts/Page.astro';
 import { blog } from '@config';
 import { format, parseISO } from 'date-fns';
 
+import Avatar from '@components/base/Avatar.astro';
 import Comments from '@components/blog/Comments.astro';
 import Separator from '@components/Separator.astro';
 
@@ -44,7 +45,14 @@ const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
 
     {
       !info && (
-        <div class="flex flex-row flex-wrap gap-1 pb-3 text-ctp-subtext0">
+        <div class="flex flex-row flex-wrap gap-1.5 pb-3 text-ctp-subtext1">
+          <div class="flex gap-1.5">
+            <Avatar class="w-7" width={24} height={24} />
+            <p>Chloe A</p>
+          </div>
+
+          <Separator />
+
           <p
             transition:name={`date-${slug}`}
             class="text-ctp-subtext0"
