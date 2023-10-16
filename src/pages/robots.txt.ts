@@ -1,11 +1,11 @@
+import type { APIRoute } from 'astro';
 import { base } from '@config';
 
-export function GET() {
-  return new Response(JSON.stringify({
-    body: `
+const robots = `
 User-agent: *
 Allow: /
-Sitemap: https://${base.siteName}/sitemap-index.xml
-    `.trim(),
-  }));
-}
+
+Sitemap: ${new URL('sitemap-index.xml', `https://${base.siteName}`).href}
+`.trim();
+
+export const GET: APIRoute = () => new Response(robots, { headers: { 'Content-Type': 'text/plain' } });
