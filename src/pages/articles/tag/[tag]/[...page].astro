@@ -3,7 +3,7 @@ import ArticleList from '@layouts/ArticleList.astro';
 import Pagination from '@components/blog/Pagination.astro';
 
 import { getCollection, type CollectionEntry } from 'astro:content';
-import type { GetStaticPathsOptions } from 'astro';
+import type { GetStaticPaths, GetStaticPathsOptions } from 'astro';
 
 interface Props {
   page: {
@@ -18,7 +18,7 @@ interface Props {
 
 const { page } = Astro.props;
 
-export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+export const getStaticPaths: GetStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
   const articleCollection = await getCollection('articles');
 
   const sortedArticles = articleCollection.sort(
@@ -43,7 +43,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
       }
     );
   });
-}
+};
 ---
 
 <ArticleList articles={page.data.map((p) => p.props)}>

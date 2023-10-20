@@ -1,20 +1,21 @@
 ---
 import ArticleLayout from '@layouts/Article.astro';
 
+import type { GetStaticPaths } from 'astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 
-export async function getStaticPaths() {
+interface Props {
+  info: CollectionEntry<'info'>;
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
   const entries = await getCollection('info');
 
   return entries.map((info) => ({
     params: { slug: info.slug },
     props: { info },
   }));
-}
-
-interface Props {
-  info: CollectionEntry<'info'>;
-}
+};
 
 const { info } = Astro.props;
 const { Content } = await info.render();
