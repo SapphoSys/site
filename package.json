@@ -18,7 +18,7 @@
     "test": "eslint . --ext .ts,.js,.astro && prettier --c ."
   },
   "repository": "https://github.com/solelychloe/arciniega.one",
-  "packageManager": "yarn@3.6.0",
+  "packageManager": "yarn@3.6.4",
   "dependencies": {
     "astro": "^3.3.2"
   },
