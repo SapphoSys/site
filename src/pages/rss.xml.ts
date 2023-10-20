@@ -1,12 +1,14 @@
 import rss from '@astrojs/rss';
 
+import type { APIRoute } from 'astro';
 import { blog } from '@config';
+
 import { getCollection } from 'astro:content';
 import { parseISO } from 'date-fns';
 
 const articles = await getCollection('articles');
 
-export const GET = () =>
+export const GET: APIRoute = () =>
   rss({
     title: blog.rss.title,
     description: blog.rss.description,
