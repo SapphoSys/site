@@ -34,8 +34,8 @@ const { articles } = Astro.props;
     articles
       .sort((a, b) => new Date(b.data.created).valueOf() - new Date(a.data.created).valueOf())
       .map(async (article) => {
-        const { remarkPluginFrontmatter } = await article.render();
-        return <BlogCard data={article.data} slug={article.slug} minutesRead={remarkPluginFrontmatter.minutesRead} />;
+        const { remarkPluginFrontmatter: frontmatter } = await article.render();
+        return <BlogCard data={article.data} slug={article.slug} minutesRead={frontmatter.minutesRead} />;
       })
   }
 
