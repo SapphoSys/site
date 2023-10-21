@@ -1,11 +1,10 @@
 ---
 import { format, parseISO } from 'date-fns';
 import Separator from '@components/Separator.astro';
-import type { HTMLAttributes } from 'astro/types';
 
 const formatDate = (date: Date) => format(date, 'MMMM d, yyyy');
 
-interface Props extends HTMLAttributes<'a'> {
+interface Props {
   data: {
     title: string;
     description: string;

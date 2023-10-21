@@ -2,6 +2,12 @@
 import { SEO } from 'astro-seo';
 import { base, blog } from '@config';
 
+interface Props {
+  description?: string;
+  pageTitle: string;
+  title: string;
+}
+
 const { description, pageTitle, title } = Astro.props;
 
 const siteName = Astro.site?.hostname;
