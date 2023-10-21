@@ -24,7 +24,7 @@ interface Props {
   info?: boolean;
 }
 
-const { info, title, description, created, modified, slug, tag, minutesRead, comments } = Astro.props;
+const { slug, title, description, created, modified, tag, minutesRead, comments, info } = Astro.props;
 
 const checkComments = () => blog.comments && comments;
 
@@ -36,7 +36,7 @@ const backlinkPath = Astro.url.pathname.replace('/article', '');
 const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
 ---
 
-<Layout description={description} pageTitle={title} title={`${title} | Chloe Arciniega`}>
+<Layout {description} pageTitle={title} title={`${title} | Chloe Arciniega`}>
   {checkComments() && <meta slot="head" name="giscus:backlink" content={backlink} />}
 
   <header class="flex flex-col">

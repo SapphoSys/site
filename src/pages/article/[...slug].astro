@@ -22,9 +22,12 @@ const {
   article: { slug },
 } = Astro.props;
 
-const { Content, remarkPluginFrontmatter: frontmatter } = await article.render();
+const {
+  Content,
+  remarkPluginFrontmatter: { minutesRead },
+} = await article.render();
 ---
 
-<ArticleLayout {...article.data} {slug} minutesRead={frontmatter.minutesRead}>
+<ArticleLayout {...article.data} {slug} {minutesRead}>
   <Content />
 </ArticleLayout>

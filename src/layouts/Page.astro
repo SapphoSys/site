@@ -15,7 +15,7 @@ const { description, pageTitle, title } = Astro.props;
 
 <!doctype html>
 <html class="flex flex-col" lang="en">
-  <Head description={description} pageTitle={pageTitle} title={title}>
+  <Head {description} {pageTitle} {title}>
     <slot name="head" />
   </Head>
 
