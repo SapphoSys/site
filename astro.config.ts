@@ -3,7 +3,6 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
-import compress from 'astro-compress';
 import icon from 'astro-icon';
 import workerLinks from 'astro-worker-links';
 
@@ -12,10 +11,12 @@ import autolinkHeadings from 'rehype-autolink-headings';
 import codeTitle from 'remark-code-title';
 import externalLinks from 'rehype-external-links';
 import figureCaption from '@microflash/remark-figure-caption';
+import readingTime from './src/utils/post';
 import slug from 'rehype-slug';
 import tableOfContents from 'remark-toc';
 
-import readingTime from './src/utils/post';
+// TODO: Re-enable later
+// import compress from 'astro-compress';
 
 // https://astro.build/config
 export default defineConfig({
@@ -85,6 +86,5 @@ export default defineConfig({
           });
       },
     }),
-    compress(),
   ],
 });
