@@ -42,12 +42,12 @@ const image = new URL(base.favicon?.fileName || '/favicon.png', Astro.site).href
     link: [
       { rel: 'icon', href: image },
       { rel: 'me', href: 'https://tech.lgbt/@solely' },
-      {
-        rel: 'alternate',
-        title: blog.rss && blog.rss.title,
-        href: blog.rss && `https://${base.siteName}/rss.xml`,
-        type: 'application/rss+xml',
-      },
     ],
   }}
 />
+
+{
+  blog.rss.enabled && (
+    <link rel="alternate" title={blog.rss.title} href={`https://${base.siteName}/rss.xml`} type="application/rss+xml" />
+  )
+}

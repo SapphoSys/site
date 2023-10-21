@@ -1,18 +1,24 @@
+---
+import { blog } from '@config';
+const {
+  comments: { options: option },
+} = blog;
+---
+
 <div class="giscus"></div>
 <script
   is:inline
   src="https://giscus.app/client.js"
-  data-repo="solelychloe/arciniega.one"
-  data-repo-id="MDEwOlJlcG9zaXRvcnkzODQ2OTI0OTY="
-  data-category="Comments"
-  data-category-id="DIC_kwDOFu3xEM4CTiMS"
-  data-mapping="og:title"
-  data-strict="1"
-  data-reactions-enabled="1"
-  data-emit-metadata="0"
-  data-input-position="top"
-  data-theme="preferred_color_scheme"
-  data-lang="en"
-  crossorigin="anonymous"
-  async
-></script>
+  data-repo={option['data-repo']}
+  data-repo-id={option['data-repo-id']}
+  data-category={option['data-category']}
+  data-category-id={option['data-category-id']}
+  data-mapping={option['data-mapping']}
+  data-strict={option['data-strict']}
+  data-reactions-enabled={option['data-reactions-enabled']}
+  data-emit-metadata={option['data-emit-metadata']}
+  data-input-position={option['data-input-position']}
+  data-theme={option['data-theme']}
+  data-lang={option['data-lang']}
+  crossorigin={option['crossorigin']}
+  async></script>

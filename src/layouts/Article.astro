@@ -26,7 +26,7 @@ interface Props {
 
 const { slug, title, description, created, modified, tag, minutesRead, comments, info } = Astro.props;
 
-const checkComments = () => blog.comments && comments;
+const checkComments = () => blog.comments.enabled && comments;
 
 const formatDate = (date: Date) => format(date, 'MMMM d, yyyy');
 const createdAt = created ? formatDate(parseISO(created)) : undefined;
