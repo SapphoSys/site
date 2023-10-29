@@ -17,6 +17,7 @@ interface Props {
 }
 
 const { page } = Astro.props;
+const { tag: filterTag } = Astro.params;
 
 export const getStaticPaths: GetStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
   const articleCollection = await getCollection('articles');
@@ -46,6 +47,6 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }: GetStaticPath
 };
 ---
 
-<ArticleList articles={page.data.map((p) => p.props)}>
+<ArticleList {filterTag} articles={page.data.map((p) => p.props)}>
   <Pagination {page} />
 </ArticleList>
