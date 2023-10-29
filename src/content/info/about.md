@@ -3,7 +3,7 @@ title: About me
 description: A little more info about me.
 ---
 
-## Who am I?
+### Who am I?
 
 Hi there! I'm **Chloe**. I used to go by a lot of names before, but I currently use **solely** and **solelychloe** as my
 aliases on the Internet.
@@ -37,7 +37,7 @@ my content is where I want to start first of all.
 I like to play video games in my spare time! My favourite games at the moment are **CrossCode**, **OneShot**, **Risk of
 Rain 2**, and **Tetris Effect**.
 
-## Open source
+### Open source
 
 Here are some open-source projects I've contributed to:
 
@@ -62,7 +62,7 @@ Here are some open-source projects I've contributed to:
 [felicity]: https://felicity.pages.dev 'Felicity'
 [lfm-docs]: https://lastfm-docs.github.io/api-docs 'Unofficial Last.fm API docs'
 
-## Music
+### Music
 
 I've been listening to alternative rock/metal and indie music recently. Here are some of my favourite artists and bands at the moment:
 
