@@ -40,7 +40,9 @@ const image = new URL(ogImage?.src ?? base.favicon?.fileName, Astro.site).href;
       description,
     },
     image: {
-      alt: base.favicon.altText,
+      width: ogImage ? 1200 : undefined,
+      height: ogImage ? 600 : undefined,
+      alt: ogImage?.alt ?? base.favicon.altText,
     },
   }}
   twitter={{
