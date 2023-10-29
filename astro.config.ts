@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import icon from 'astro-icon';
 import workerLinks from 'astro-worker-links';
+import compress from 'astro-compress';
 
 import a11yEmoji from '@fec/remark-a11y-emoji';
 import autolinkHeadings from 'rehype-autolink-headings';
@@ -14,9 +15,6 @@ import figureCaption from '@microflash/remark-figure-caption';
 import readingTime from './src/utils/post';
 import slug from 'rehype-slug';
 import tableOfContents from 'remark-toc';
-
-// TODO: Re-enable later
-// import compress from 'astro-compress';
 
 // https://astro.build/config
 export default defineConfig({
@@ -86,5 +84,6 @@ export default defineConfig({
           });
       },
     }),
+    compress(),
   ],
 });
