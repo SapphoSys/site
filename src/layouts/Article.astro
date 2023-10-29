@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/Page.astro';
 
-import { blog } from '@config';
+import { base, blog } from '@config';
 import { format, parseISO } from 'date-fns';
 
 import Avatar from '@components/base/Avatar.astro';
@@ -34,9 +34,19 @@ const modifiedAt = modified ? formatDate(parseISO(modified)) : undefined;
 
 const backlinkPath = Astro.url.pathname.replace('/article', '');
 const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
+
+const image = slug
+  ? {
+      src: `/article/${slug}.png`,
+      alt: title,
+    }
+  : {
+      src: base.favicon.fileName,
+      alt: base.favicon.altText,
+    };
 ---
 
-<Layout {description} pageTitle={title} title={`${title} | Chloe Arciniega`}>
+<Layout {description} pageTitle={title} title={`${title} | Chloe Arciniega`} ogImage={image}>
   {checkComments() && <meta slot="head" name="giscus:backlink" content={backlink} />}
 
   <header class="flex flex-col">

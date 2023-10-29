@@ -16,6 +16,8 @@ import readingTime from './src/utils/post';
 import slug from 'rehype-slug';
 import tableOfContents from 'remark-toc';
 
+import { readFileSync } from 'node:fs';
+
 // https://astro.build/config
 export default defineConfig({
   site: `https://arciniega.one`,
@@ -86,4 +88,23 @@ export default defineConfig({
     }),
     compress(),
   ],
+  vite: {
+    plugins: [rawFonts(['.ttf'])],
+    optimizeDeps: { exclude: ['@resvg/resvg-js'] },
+  },
 });
+
+function rawFonts(ext: string[]) {
+  return {
+    name: 'vite-plugin-raw-fonts',
+    transform(_: unknown, id: string) {
+      if (ext.some((e) => id.endsWith(e))) {
+        const buffer = readFileSync(id);
+        return {
+          code: `export default ${JSON.stringify(buffer)}`,
+          map: null,
+        };
+      }
+    },
+  };
+}
