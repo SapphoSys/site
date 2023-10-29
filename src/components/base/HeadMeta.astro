@@ -6,13 +6,14 @@ interface Props {
   description?: string;
   pageTitle: string;
   title: string;
+  created?: string;
   ogImage?: {
     src?: string;
     alt?: string;
   };
 }
 
-const { description, pageTitle, ogImage, title } = Astro.props;
+const { description, pageTitle, ogImage, created, title } = Astro.props;
 
 const {
   blog: {
@@ -38,6 +39,9 @@ const image = new URL(ogImage?.src ?? base.favicon?.fileName, Astro.site).href;
     optional: {
       siteName,
       description,
+    },
+    article: {
+      publishedTime: created,
     },
     image: {
       width: ogImage ? 1200 : undefined,

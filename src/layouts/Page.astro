@@ -8,18 +8,19 @@ interface Props {
   description?: string;
   pageTitle: string;
   title: string;
+  created?: string;
   ogImage?: {
     src?: string;
     alt?: string;
   };
 }
 
-const { description, pageTitle, title, ogImage } = Astro.props;
+const { description, pageTitle, title, created, ogImage } = Astro.props;
 ---
 
 <!doctype html>
 <html class="flex flex-col" lang="en">
-  <Head {description} {pageTitle} {title} {ogImage}>
+  <Head {description} {pageTitle} {title} {created} {ogImage}>
     <slot name="head" />
   </Head>
 

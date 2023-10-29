@@ -4,7 +4,6 @@ import Layout from '@layouts/Page.astro';
 import { base, blog } from '@config';
 import { format, parseISO } from 'date-fns';
 
-import Avatar from '@components/base/Avatar.astro';
 import Comments from '@components/blog/Comments.astro';
 import Separator from '@components/base/Separator.astro';
 
@@ -46,23 +45,13 @@ const image = slug
     };
 ---
 
-<Layout {description} pageTitle={title} title={`${title} | Chloe Arciniega`} ogImage={image}>
+<Layout {description} pageTitle={title} title={`${title} | Chloe Arciniega`} ogImage={image} created={createdAt}>
   {checkComments() && <meta slot="head" name="giscus:backlink" content={backlink} />}
 
   <header class="flex flex-col">
-    <h1 transition:name={`title-${slug}`} class="title pt-1">{title}</h1>
-    <p transition:name={`description-${slug}`} class="pb-3 pt-2">{description}</p>
-
     {
       !info && (
-        <div class="flex flex-row flex-wrap gap-1.5 pb-3 text-ctp-subtext1">
-          <div class="flex gap-1.5">
-            <Avatar class="w-7" width={24} height={24} />
-            <p>Chloe A</p>
-          </div>
-
-          <Separator />
-
+        <div class="flex flex-row flex-wrap gap-1.5 text-ctp-subtext1">
           <p
             transition:name={`date-${slug}`}
             class="text-ctp-subtext0"
@@ -72,6 +61,12 @@ const image = slug
           </p>
 
           <Separator transition:name={`sep-1-${slug}`} />
+
+          <p>
+            by <span class="font-bold">Chloe Arciniega</span>
+          </p>
+
+          <Separator />
 
           <a transition:name={`tag-${slug}`} href={`/articles/tag/${tag}`} title={`Article tagged with ${tag}`}>
             {tag}
@@ -83,7 +78,11 @@ const image = slug
         </div>
       )
     }
+    <h1 transition:name={`title-${slug}`} class="title pt-1">{title}</h1>
+    <p transition:name={`description-${slug}`} class="pb-3 pt-2">{description}</p>
   </header>
+
+  <hr class="text-ctp-mauve dark:text-ctp-pink" />
 
   <section class="article-content prose dark:prose-invert">
     <slot />
