@@ -10,8 +10,8 @@ const articles = await getCollection('articles');
 
 export const GET: APIRoute = () =>
   rss({
-    title: blog.rss.title,
-    description: blog.rss.description,
+    title: blog.rss.options.title,
+    description: blog.rss.options.description,
     site: import.meta.env.SITE,
     items: articles.map((article) => ({
       description: article.data.description,

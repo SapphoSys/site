@@ -1,8 +1,4 @@
-interface Webring {
-  name: string;
-  link: string;
-  image: string;
-}
+import type { Webring } from '@typings/utils';
 
 const friends = [
   {

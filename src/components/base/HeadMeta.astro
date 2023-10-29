@@ -10,6 +10,13 @@ interface Props {
 
 const { description, pageTitle, title } = Astro.props;
 
+const {
+  blog: {
+    rss,
+    rss: { options },
+  },
+} = await import('@config');
+
 const siteName = Astro.site?.hostname;
 const image = new URL(base.favicon?.fileName || '/favicon.png', Astro.site).href;
 ---
@@ -52,8 +59,4 @@ const image = new URL(base.favicon?.fileName || '/favicon.png', Astro.site).href
   }}
 />
 
-{
-  blog.rss.enabled && (
-    <link rel="alternate" title={blog.rss.title} href={`https://${base.siteName}/rss.xml`} type="application/rss+xml" />
-  )
-}
+{rss.enabled && <link rel="alternate" {...options} type="application/rss+xml" />}
