@@ -50,7 +50,7 @@ const image = new URL(ogImage?.src ?? base.favicon?.fileName, Astro.site).href;
     },
   }}
   twitter={{
-    card: 'summary',
+    card: ogImage ? 'summary_large_image' : 'summary',
     creator: 'solelychloe',
 
     image,
