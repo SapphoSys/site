@@ -33,13 +33,13 @@ const { description, pageTitle, title, created, ogImage } = Astro.props;
 
     <style is:global>
       a {
-        @apply font-medium text-ctp-mauve transition ease-out hover:underline hover:opacity-60 dark:text-ctp-pink;
+        @apply text-ctp-mauve transition ease-out hover:underline hover:opacity-60 dark:text-ctp-pink;
       }
 
       body {
         @apply font-body;
         @apply ctp-latte bg-ctp-base text-ctp-text dark:ctp-mocha selection:bg-ctp-mauve selection:text-ctp-crust dark:selection:bg-ctp-pink;
-        @apply max-w-[45em] px-[1em] py-[2em] md:px-[2.5em];
+        @apply w-auto px-8 py-14 sm:px-14 sm:lg:w-[50em];
       }
 
       [data-icon] {
