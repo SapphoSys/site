@@ -1,6 +1,6 @@
 ---
 import { SEO } from 'astro-seo';
-import { base, blog } from '@config';
+import { base } from '@config';
 
 interface Props {
   description?: string;
@@ -23,7 +23,7 @@ const {
 } = await import('@config');
 
 const siteName = Astro.site?.hostname;
-const image = new URL(ogImage?.src ?? base.favicon?.fileName, Astro.site).href;
+const image = new URL(base.favicon?.fileName, Astro.site).href;
 ---
 
 <SEO
@@ -37,15 +37,13 @@ const image = new URL(ogImage?.src ?? base.favicon?.fileName, Astro.site).href;
       image,
     },
     optional: {
-      siteName,
+      siteName: ogImage ? 'Chloe Arciniega' : siteName,
       description,
     },
     article: {
       publishedTime: created,
     },
     image: {
-      width: ogImage ? 1200 : undefined,
-      height: ogImage ? 600 : undefined,
       alt: ogImage?.alt ?? base.favicon.altText,
     },
   }}
