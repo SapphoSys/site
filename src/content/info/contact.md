@@ -3,15 +3,17 @@ title: Contact
 description: If you're trying to reach me, you can do so here through one of the options below.
 ---
 
-### Social links
+### Places to find me
 
 - Bluesky: [@arciniega.one][bsky]
-- Discord: [solelychloe][discord]
-- GitHub: [solelychloe][github]
-- Mastodon: [solely@tech.lgbt][mastodon]
+- Cohost: [@solely][cohost]
+- Discord: [@solelychloe][discord]
+- GitHub: [@solelychloe][github]
+- Mastodon: [@solely@tech.lgbt][mastodon]
 - Twitter: [@solelychloe][twitter]
 
 [bsky]: https://solstice.tf/bsky 'My Bluesky page. (@arciniega.one)'
+[cohost]: https://cohost.org/solely 'My Cohost page. (@solely)'
 [discord]: https://solstice.tf/discord 'My Discord profile. (@solelychloe)'
 [github]: https://solstice.tf/github 'My GitHub page. (@solelychloe)'
 [mastodon]: https://solstice.tf/fediverse 'My Mastodon page. (@solely@tech.lgbt)'
