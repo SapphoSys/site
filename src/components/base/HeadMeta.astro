@@ -24,7 +24,7 @@ const {
 
 const siteName = Astro.site?.hostname;
 const isArticle = Astro.url.pathname.startsWith('/article/');
-const image = new URL(base.favicon.fileName, Astro.site).href;
+const image = (image?: string) => new URL(image ?? base.favicon.fileName, Astro.site).href;
 ---
 
 <SEO
@@ -35,7 +35,7 @@ const image = new URL(base.favicon.fileName, Astro.site).href;
     basic: {
       title: pageTitle,
       type: 'website',
-      image,
+      image: image(),
     },
     optional: {
       siteName: ogImage ? 'Chloe Arciniega' : siteName,
@@ -53,7 +53,7 @@ const image = new URL(base.favicon.fileName, Astro.site).href;
     creator: 'solelychloe',
     description,
 
-    image: isArticle ? ogImage?.src : image,
+    image: image(ogImage?.src),
     imageAlt: isArticle ? ogImage?.alt : base.favicon?.altText,
   }}
   extend={{
@@ -63,7 +63,7 @@ const image = new URL(base.favicon.fileName, Astro.site).href;
       { name: 'theme-color', content: base.themeColor },
     ],
     link: [
-      { rel: 'icon', href: image },
+      { rel: 'icon', href: image() },
       { rel: 'me', href: 'https://tech.lgbt/@solely' },
     ],
   }}
