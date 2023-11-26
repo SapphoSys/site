@@ -30,7 +30,11 @@ const {
       {title}
     </a>
 
-    <header class="flex flex-wrap gap-1.5">
+    <p transition:name={`description-${slug}`} class="description italic">
+      {description}
+    </p>
+
+    <header class="flex flex-wrap gap-x-1.5">
       <p transition:name={`date-${slug}`} class="text-ctp-subtext1 dark:text-ctp-subtext0">
         {formatDate(parseISO(created))}
       </p>
@@ -46,9 +50,5 @@ const {
         {minutesRead}
       </p>
     </header>
-
-    <p transition:name={`description-${slug}`} class="description italic">
-      {description}
-    </p>
   </div>
 </article>
