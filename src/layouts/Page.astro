@@ -7,7 +7,7 @@ import '@fontsource/atkinson-hyperlegible/400.css';
 interface Props {
   description?: string;
   pageTitle: string;
-  title: string;
+  title?: string;
   created?: string;
   ogImage?: {
     src?: string;
@@ -15,7 +15,13 @@ interface Props {
   };
 }
 
-const { description, pageTitle, title, created, ogImage } = Astro.props;
+const {
+  description = 'Software engineer, sysadmin, community manager.',
+  pageTitle,
+  title = 'Chloe Arciniega',
+  created,
+  ogImage,
+} = Astro.props;
 ---
 
 <!doctype html>
