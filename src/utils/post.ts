@@ -1,4 +1,4 @@
-import type { PostData } from '@typings/utils';
+import type { PostData } from '@typings/utils.type';
 
 import { toString } from 'mdast-util-to-string';
 import getReadingTime from 'reading-time';

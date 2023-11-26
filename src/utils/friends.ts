@@ -1,4 +1,4 @@
-import type { Webring } from '@typings/utils';
+import type { Webring } from '@typings/utils.type';
 
 const friends = [
   {

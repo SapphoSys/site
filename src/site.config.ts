@@ -1,4 +1,4 @@
-import type Config from '@typings/config';
+import type { Config } from '@typings/config.type';
 
 export const base: Config['base'] = {
   favicon: {
@@ -40,7 +40,7 @@ export const blog: Config['blog'] = {
 };
 
 export const misc: Config['misc'] = {
-  // If you're using Vercel, you must also edit the rewrites found in the vercel.json file.
+  // Edit the rewrites found in the vercel.json file if you're using Vercel.
   // Read more about Plausible here: https://plausible.io/
   plausible: {
     enabled: true,
