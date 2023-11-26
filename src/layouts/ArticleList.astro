@@ -7,7 +7,7 @@ import { Icon } from 'astro-icon/components';
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
-  filterTag?: string;
+  filterTag?: string | number;
   articles: CollectionEntry<'articles'>[];
 }
 
@@ -30,17 +30,16 @@ const { filterTag, articles } = Astro.props;
 
     {
       filterTag && (
-        <div class="flex">
-          <Icon size={25} class="mr-1" name="mdi:information" />
-          <p>
-            Showing articles with the tag <span class="font-bold">{filterTag}</span>.
-          </p>
+        <div class="flex flex-row flex-wrap gap-x-1">
+          <Icon size={25} name="mdi:filter-cog" />
+          <span>
+            Showing <span class="font-bold">{filterTag}</span> articles.
+          </span>
+          <a href="/articles">[Close]</a>
         </div>
       )
     }
   </header>
-
-  <hr class="text-ctp-mauve dark:text-ctp-pink" />
 
   {
     articles
