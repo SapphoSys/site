@@ -23,7 +23,8 @@ const {
 } = await import('@config');
 
 const siteName = Astro.site?.hostname;
-const image = new URL(base.favicon?.fileName, Astro.site).href;
+const isArticle = Astro.url.pathname.startsWith('/article/');
+const image = new URL(base.favicon.fileName, Astro.site).href;
 ---
 
 <SEO
@@ -44,15 +45,16 @@ const image = new URL(base.favicon?.fileName, Astro.site).href;
       publishedTime: created,
     },
     image: {
-      alt: ogImage?.alt ?? base.favicon.altText,
+      alt: isArticle ? ogImage?.alt : base.favicon.altText,
     },
   }}
   twitter={{
-    card: ogImage ? 'summary_large_image' : 'summary',
+    card: isArticle ? 'summary_large_image' : 'summary',
     creator: 'solelychloe',
+    description,
 
-    image,
-    imageAlt: ogImage?.alt ?? base.favicon?.altText,
+    image: isArticle ? ogImage?.src : image,
+    imageAlt: isArticle ? ogImage?.alt : base.favicon?.altText,
   }}
   extend={{
     meta: [
