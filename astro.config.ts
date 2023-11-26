@@ -18,9 +18,14 @@ import tableOfContents from 'remark-toc';
 
 import { readFileSync } from 'node:fs';
 
+const site = 'https://arciniega.one';
+
 // https://astro.build/config
 export default defineConfig({
-  site: `https://arciniega.one`,
+  site,
+  server: {
+    open: true,
+  },
   markdown: {
     shikiConfig: {
       theme: 'material-theme-ocean',
