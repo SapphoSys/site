@@ -97,7 +97,7 @@ export default {
     ({ addComponents }: PluginAPI) => {
       addComponents({
         '.title': {
-          '@apply text-4xl font-bold': {},
+          '@apply text-3xl font-bold': {},
         },
       });
     },
