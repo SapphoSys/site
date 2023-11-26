@@ -1,29 +1,58 @@
 ---
+import { Icon } from 'astro-icon/components';
+import Avatar from '@components/base/Avatar.astro';
 import NavLink from '@components/base/NavLink.astro';
-import Separator from '@components/base/Separator.astro';
 
 interface Link {
   href: string;
   text: string;
+  icon: string;
 }
 
 const links = [
-  { href: '/', text: 'Home' },
-  { href: '/about', text: 'About' },
-  { href: '/articles', text: 'Articles' },
-  { href: '/contact', text: 'Contact' },
+  { href: '/', text: 'home', icon: 'home' },
+  { href: '/about', text: 'about', icon: 'information' },
+  { href: '/articles', text: 'articles', icon: 'pencil' },
+  { href: '/contact', text: 'contact', icon: 'link-variant' },
 ] satisfies Link[];
 ---
 
-<nav class="flex flex-row flex-wrap justify-center gap-2 pb-6 md:gap-2.5">
-  {
-    links.map((link, index) => {
-      return (
-        <>
-          <NavLink href={link.href} text={link.text} />
-          {index < links.length - 1 && <Separator />}
-        </>
-      );
-    })
-  }
+<nav class="flex flex-row flex-wrap items-center justify-between gap-5 pb-5">
+  <div class="flex flex-wrap items-center gap-3">
+    <a
+      href="https://solstice.tf/avatar"
+      title="A link to my avatar. The character displayed here is Silver Wolf from the videogame Honkai: Star Rail."
+      target="_blank"
+    >
+      <Avatar class="w-16" width={50} height={50} />
+    </a>
+
+    <div class="flex flex-col">
+      <h1 class="text-4xl">Chloe A.</h1>
+      <p class="text-ctp-overlay1">(she/it/they)</p>
+    </div>
+  </div>
+
+  <div class="flex flex-row flex-wrap gap-3 md:gap-2.5">
+    {
+      links.map(({ href, text, icon }) => {
+        return (
+          <NavLink
+            {href}
+            {text}
+            class="flex items-center gap-1 rounded-full border border-ctp-mauve bg-ctp-mauve px-3 py-0.5 dark:border-ctp-pink dark:bg-ctp-pink"
+          >
+            <Icon size={25} name={`mdi:${icon}`} />
+          </NavLink>
+        );
+      })
+    }
+  </div>
 </nav>
+
+<style>
+  [data-icon],
+  a {
+    @apply text-ctp-base;
+  }
+</style>
