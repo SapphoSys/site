@@ -73,7 +73,7 @@ const friends = [
   },
   {
     name: 'cin',
-    link: 'https://moon.rip',
+    link: 'https:///hytracer.ink',
     image: 'cin.png',
   },
   {
