@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/Page.astro';
 import Friends from '@components/home/Friends.astro';
+import OtherButtons from '@components/home/OtherButtons.astro';
 ---
 
 <Layout pageTitle="Chloe Arciniega">
@@ -17,5 +18,11 @@ import Friends from '@components/home/Friends.astro';
     <h1 class="title">Friends</h1>
 
     <Friends />
+  </section>
+
+  <section class="pt-5 motion-reduce:hidden" aria-label="other-buttons">
+    <h1 class="title">Other</h1>
+
+    <OtherButtons />
   </section>
 </Layout>
