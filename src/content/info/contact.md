@@ -22,5 +22,7 @@ description: If you're trying to reach me, you can do so here through one of the
 ### Other forms of contact
 
 - Mail: [solely@riseup.net][mail]
+- Matrix: [@solelychloe:matrix.org][matrix]
 
 [mail]: https://solstice.tf/email 'My email address. (solely@riseup.net)'
+[matrix]: https://matrix.to/#/@solelychloe:matrix.org 'My Matrix account. (@solelychloe:matrix.org)'
