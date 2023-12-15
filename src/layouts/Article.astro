@@ -59,17 +59,17 @@ const image = slug
             class="flex flex-row gap-x-1"
             title={`Published on ${createdAt}${modifiedAt ? `, edited on ${modifiedAt}` : ''}`}
           >
-            <Icon size={25} name="mdi:calendar" />
+            <Icon class="text-ctp-pink" size={25} name="mdi:calendar" />
             {createdAt}
           </p>
 
           <span class="flex w-max flex-row gap-x-1" title={`Article tagged with ${tag}`}>
-            <Icon size={25} name="mdi:tag-text-outline" />
+            <Icon class="text-ctp-pink" size={25} name="mdi:tag-text-outline" />
             <a href={`/articles/tag/${tag}`}>{tag}</a>
           </span>
 
           <p class="flex flex-row gap-x-1">
-            <Icon size={25} name="mdi:clock-outline" /> {Math.round(minutesRead!)} min read
+            <Icon class="text-ctp-pink" size={25} name="mdi:clock-outline" /> {Math.round(minutesRead!)} min read
           </p>
         </div>
       )
