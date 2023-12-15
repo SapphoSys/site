@@ -9,14 +9,14 @@ description: If you're trying to reach me, you can do so here through one of the
 - Cohost: [@solely][cohost]
 - Discord: [@solelychloe][discord]
 - GitHub: [@solelychloe][github]
-- Mastodon: [@solely@tech.lgbt][mastodon]
+- Mastodon: [@chloe@wetdry.world][mastodon]
 - Twitter: [@solelychloe][twitter]
 
 [bsky]: https://solstice.tf/bsky 'My Bluesky page. (@arciniega.one)'
 [cohost]: https://cohost.org/solely 'My Cohost page. (@solely)'
 [discord]: https://solstice.tf/discord 'My Discord profile. (@solelychloe)'
 [github]: https://solstice.tf/github 'My GitHub page. (@solelychloe)'
-[mastodon]: https://solstice.tf/fediverse 'My Mastodon page. (@solely@tech.lgbt)'
+[mastodon]: https://solstice.tf/fediverse 'My Mastodon page. (@chloe@wetdry.world)'
 [twitter]: https://solstice.tf/twitter 'My Twitter page. (@solelychloe)'
 
 ### Other forms of contact
