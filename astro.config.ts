@@ -26,6 +26,9 @@ export default defineConfig({
   server: {
     open: true,
   },
+  devToolbar: {
+    enabled: false,
+  },
   markdown: {
     shikiConfig: {
       theme: 'material-theme-ocean',
