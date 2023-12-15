@@ -2,11 +2,6 @@ import type { Webring } from '@typings/utils.type';
 
 const friends = [
   {
-    name: 'solely',
-    link: 'https://arciniega.one',
-    image: 'solely.png',
-  },
-  {
     name: 'espi',
     link: 'https://espi.me',
     image: 'espi.png',
@@ -15,6 +10,11 @@ const friends = [
     name: 'adryd',
     link: 'https://adryd.com',
     image: 'adryd.png',
+  },
+  {
+    name: 'maia',
+    link: 'https://maia.crimew.gay',
+    image: 'maia.png',
   },
   {
     name: 'Ven',
@@ -32,6 +32,31 @@ const friends = [
     image: 'alula.png',
   },
   {
+    name: 'erin',
+    link: 'https://e2.pm',
+    image: 'erin.png',
+  },
+  {
+    name: 'InvoxiPlayGames',
+    link: 'https://invoxiplaygames.uk',
+    image: 'ipg.webp',
+  },
+  {
+    name: 'Cynthia',
+    link: 'https://c7.pm',
+    image: 'cynthia.png',
+  },
+  {
+    name: 'UtsuhoRocks',
+    link: 'https://utsuho.rocks',
+    image: 'utsuho.png',
+  },
+  {
+    name: 'Vin',
+    link: 'https://vin.pet',
+    image: 'vin.png',
+  },
+  {
     name: 'Ovyerus',
     link: 'https://ovyerus.com',
     image: 'ovyerus.png',
@@ -45,36 +70,6 @@ const friends = [
     name: 'lewisakura',
     link: 'https://lewisakura.moe',
     image: 'lewi.png',
-  },
-  {
-    name: 'zeroptr',
-    link: 'https://zptr.cc',
-    image: 'zptr.gif',
-  },
-  {
-    name: 'erin',
-    link: 'https://e2.pm',
-    image: 'erin.png',
-  },
-  {
-    name: 'Vin',
-    link: 'https://vin.pet',
-    image: 'vin.png',
-  },
-  {
-    name: 'Cynthia',
-    link: 'https://c7.pm',
-    image: 'cynthia.png',
-  },
-  {
-    name: 'UtsuhoRocks',
-    link: 'https://utsuho.rocks',
-    image: 'utsuho.png',
-  },
-  {
-    name: 'cin',
-    link: 'https:///hytracer.ink',
-    image: 'cin.png',
   },
   {
     name: 'Spotlight',
@@ -96,6 +91,17 @@ const friends = [
     link: 'https://auravoid.dev',
     image: 'auravoid.png',
   },
+  {
+    name: 'zeroptr',
+    link: 'https://zptr.cc',
+    image: 'zptr.gif',
+  },
+  {
+    name: 'cin',
+    link: 'https:///hytracer.ink',
+    image: 'cin.png',
+  },
+
   {
     name: 'pihnea',
     link: 'https://botoaca.github.io',
