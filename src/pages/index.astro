@@ -4,7 +4,7 @@ import Friends from '@components/home/Friends.astro';
 ---
 
 <Layout pageTitle="Chloe Arciniega">
-  <section class="flex flex-col gap-5 pt-3">
+  <section class="flex flex-col gap-5 pt-3" aria-label="introduction">
     <h1 class="title">Hello!</h1>
 
     <p>
@@ -13,7 +13,7 @@ import Friends from '@components/home/Friends.astro';
     </p>
   </section>
 
-  <section class="pt-5 motion-reduce:hidden">
+  <section class="pt-5 motion-reduce:hidden" aria-label="friends">
     <h1 class="title">Friends</h1>
 
     <Friends />

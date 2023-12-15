@@ -35,7 +35,7 @@ const {
   <body class="flex flex-col text-xl md:self-center">
     <NavBar />
 
-    <main class="flex flex-col gap-2" transition:animate={slide({ duration: '0.4s' })}>
+    <main class="flex flex-col gap-2" aria-label="content" transition:animate={slide({ duration: '0.4s' })}>
       <slot />
     </main>
 
