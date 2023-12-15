@@ -3,6 +3,8 @@ import Head from '@components/base/Head.astro';
 import NavBar from '@components/base/NavBar.astro';
 
 import '@fontsource/atkinson-hyperlegible/400.css';
+import { slide } from 'astro:transitions';
+import Footer from '@components/base/Footer.astro';
 
 interface Props {
   description?: string;
@@ -33,23 +35,21 @@ const {
   <body class="flex flex-col text-xl md:self-center">
     <NavBar />
 
-    <main class="flex flex-col gap-2">
+    <main class="flex flex-col gap-2" transition:animate={slide({ duration: '0.4s' })}>
       <slot />
     </main>
 
+    <Footer />
+
     <style is:global>
       a {
-        @apply text-ctp-mauve transition ease-out hover:underline hover:opacity-60 dark:text-ctp-pink;
+        @apply text-ctp-mauve transition ease-out hover:underline hover:opacity-50 dark:text-ctp-pink;
       }
 
       body {
         @apply font-body;
-        @apply ctp-latte bg-ctp-base text-ctp-text dark:ctp-mocha selection:bg-ctp-mauve selection:text-ctp-crust dark:selection:bg-ctp-pink;
-        @apply w-auto px-8 py-14 sm:px-14 sm:lg:w-[50em];
-      }
-
-      [data-icon] {
-        @apply text-ctp-mauve dark:text-ctp-pink;
+        @apply ctp-latte bg-ctp-crust text-ctp-text dark:ctp-mocha selection:bg-ctp-mauve selection:text-ctp-crust dark:selection:bg-ctp-pink;
+        @apply w-auto px-8 py-14 sm:lg:w-[40em];
       }
     </style>
   </body>

@@ -1,7 +1,7 @@
 ---
-import { Icon } from 'astro-icon/components';
 import Avatar from '@components/base/Avatar.astro';
 import NavLink from '@components/base/NavLink.astro';
+import { Image } from 'astro:assets';
 
 interface Link {
   href: string;
@@ -10,49 +10,55 @@ interface Link {
 }
 
 const links = [
-  { href: '/', text: 'home', icon: 'home' },
-  { href: '/about', text: 'about', icon: 'information' },
-  { href: '/articles', text: 'articles', icon: 'pencil' },
-  { href: '/contact', text: 'contact', icon: 'link-variant' },
+  { href: '/', text: 'Home', icon: 'home' },
+  { href: '/about', text: 'About', icon: 'information' },
+  { href: '/articles', text: 'Articles', icon: 'pencil' },
+  { href: '/contact', text: 'Contact', icon: 'link-variant' },
 ] satisfies Link[];
 ---
 
-<nav class="flex flex-row flex-wrap items-center justify-between gap-5 pb-5">
-  <div class="flex flex-wrap items-center gap-3">
-    <a
-      href="https://solstice.tf/avatar"
-      title="A link to my avatar. The character displayed here is Silver Wolf from the videogame Honkai: Star Rail."
-      target="_blank"
-    >
-      <Avatar class="w-16" width={50} height={50} />
-    </a>
-
+<header class="pb-5">
+  <div class="flex items-center gap-3 pb-2">
+    <Avatar class="w-20 rounded-full border-none" width={50} height={50} />
     <div class="flex flex-col">
-      <h1 class="text-4xl">Chloe A.</h1>
+      <h1 class="text-3xl font-semibold">Chloe A.</h1>
+
       <p class="text-ctp-overlay1">(she/it/they)</p>
+
+      <div class="flex flex-row items-center gap-x-2 pt-1">
+        <a
+          href="https://en.pronouns.page/dictionary/terminology#transgender"
+          title="Trans pride flag. The link redirects you to the terminology of the word 'transgender'."
+        >
+          <Image class="h-6 w-6" src="/pride/trans.webp" alt="Trans pride flag." width={50} height={50} />
+        </a>
+        <a
+          href="https://en.pronouns.page/dictionary/terminology#non-binary"
+          title="Non-binary pride flag. The link redirects you to the terminology of the word 'non-binary'."
+        >
+          <Image class="h-6 w-6" src="/pride/enby.webp" alt="Non-binary pride flag." width={50} height={50} />
+        </a>
+        <a
+          href="https://en.pronouns.page/dictionary/terminology#lesbian"
+          title="Lesbian pride flag. The link redirects you to the terminology of the word 'lesbian'."
+        >
+          <Image class="h-6 w-6" src="/pride/lesbian.webp" alt="Lesbian pride flag." width={50} height={50} />
+        </a>
+        <a
+          href="https://en.pronouns.page/dictionary/terminology#queer"
+          title="Pride flag. The link redirects you to the terminology of the word 'queer'."
+        >
+          <Image class="h-6 w-6" src="/pride/pride.png" alt="Pride flag." width={50} height={50} />
+        </a>
+      </div>
     </div>
   </div>
 
-  <div class="flex flex-row flex-wrap gap-3 md:gap-2.5">
+  <nav class="flex gap-3" aria-label="navigation-links">
     {
-      links.map(({ href, text, icon }) => {
-        return (
-          <NavLink
-            {href}
-            {text}
-            class="flex items-center gap-1 rounded-full border border-ctp-mauve bg-ctp-mauve px-3 py-0.5 dark:border-ctp-pink dark:bg-ctp-pink"
-          >
-            <Icon size={25} name={`mdi:${icon}`} />
-          </NavLink>
-        );
+      links.map(({ href, text }) => {
+        return <NavLink {href} {text} class="text-ctp-pink underline-offset-4" />;
       })
     }
-  </div>
-</nav>
-
-<style>
-  [data-icon],
-  a {
-    @apply text-ctp-base;
-  }
-</style>
+  </nav>
+</header>

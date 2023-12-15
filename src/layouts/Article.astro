@@ -49,14 +49,13 @@ const image = slug
   {checkComments() && <meta slot="head" name="giscus:backlink" content={backlink} />}
 
   <header class="flex flex-col">
-    <h1 transition:name={`title-${slug}`} class="title pt-1">{title}</h1>
-    <p transition:name={`description-${slug}`} class="pb-3 pt-2">{description}</p>
+    <h1 class="py-2 text-4xl font-semibold">{title}</h1>
+    {info && <p>{description}</p>}
 
     {
       !info && (
         <div class="flex flex-col pt-1">
           <p
-            transition:name={`date-${slug}`}
             class="flex flex-row gap-x-1"
             title={`Published on ${createdAt}${modifiedAt ? `, edited on ${modifiedAt}` : ''}`}
           >
@@ -64,15 +63,10 @@ const image = slug
             {createdAt}
           </p>
 
-          <a
-            class="flex w-max flex-row gap-x-1"
-            transition:name={`tag-${slug}`}
-            href={`/articles/tag/${tag}`}
-            title={`Article tagged with ${tag}`}
-          >
+          <span class="flex w-max flex-row gap-x-1" title={`Article tagged with ${tag}`}>
             <Icon size={25} name="mdi:tag-text-outline" />
-            {tag}
-          </a>
+            <a href={`/articles/tag/${tag}`}>{tag}</a>
+          </span>
 
           <p class="flex flex-row gap-x-1" transition:name={`time-${slug}`}>
             <Icon size={25} name="mdi:clock-outline" /> {minutesRead}
@@ -93,7 +87,7 @@ const image = slug
   .article-content {
     @apply max-w-none;
     @apply text-xl;
-    @apply pb-5 pt-3;
+    @apply pt-3;
 
     & :is(h1, h2, h3, h4, h5, h6, p, strong, li) {
       @apply text-ctp-text;

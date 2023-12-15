@@ -21,7 +21,7 @@ if (!href) {
 }
 ---
 
-<a class:list={[className, { 'font-extrabold opacity-50': isActive }]} {href} {...props} title={`${text} page`}>
+<a class:list={[className, { 'font-extrabold underline': isActive }]} {href} {...props} title={`${text} page`}>
   <slot />
   {text}
 </a>

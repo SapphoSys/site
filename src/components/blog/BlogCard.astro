@@ -1,6 +1,6 @@
 ---
 import { format, parseISO } from 'date-fns';
-import Separator from '@components/base/Separator.astro';
+import { Icon } from 'astro-icon/components';
 
 const formatDate = (date: Date) => format(date, 'MMMM d, yyyy');
 
@@ -12,7 +12,7 @@ interface Props {
     tag: string;
   };
   slug: string;
-  minutesRead: string;
+  minutesRead: number;
 }
 
 const {
@@ -23,32 +23,24 @@ const {
 ---
 
 <article class="flex flex-col gap-2 md:gap-1">
-  <div
-    class="flex flex-col gap-1 rounded-lg border-4 border-ctp-surface1 bg-ctp-surface1 p-3.5 py-5 dark:border-ctp-mantle dark:bg-ctp-mantle"
-  >
-    <a transition:name={`title-${slug}`} class="text-3xl font-semibold" href={`/article/${slug}`} {title}>
-      {title}
-    </a>
+  <div class="flex flex-col gap-y-3 rounded-xl pb-5 hover:bg-ctp-crust hover:no-underline">
+    <a href={`/article/${slug}`} class="text-2xl font-extrabold text-ctp-pink">{title}</a>
 
-    <p transition:name={`description-${slug}`} class="description italic">
-      {description}
-    </p>
+    <p class="text-lg font-medium text-ctp-text">{description}</p>
 
-    <header class="flex flex-wrap gap-x-1.5">
-      <p transition:name={`date-${slug}`} class="text-ctp-subtext1 dark:text-ctp-subtext0">
+    <a class="w-max text-lg" href={`/articles/tag/${tag}`}>#{tag}</a>
+
+    <hr class="text-ctp-surface2" />
+
+    <div class="flex flex-col gap-y-2 text-lg font-medium">
+      <time class="flex flex-row items-center gap-x-1.5" datetime={formatDate(parseISO(created))}>
+        <Icon size={20} name="mdi:calendar" />
         {formatDate(parseISO(created))}
+      </time>
+      <p class="flex flex-row items-center gap-x-1.5">
+        <Icon size={20} name="mdi:clock-outline" />
+        {Math.round(minutesRead)} minute read
       </p>
-
-      <Separator transition:name={`sep-1-${slug}`} />
-
-      <a transition:name={`tag-${slug}`} href={`/articles/tag/${tag}`} title={`Article tagged with ${tag}`}>
-        {tag}
-      </a>
-
-      <Separator transition:name={`sep-2-${slug}`} />
-      <p transition:name={`time-${slug}`} class="text-ctp-subtext1 dark:text-ctp-subtext0">
-        {minutesRead}
-      </p>
-    </header>
+    </div>
   </div>
 </article>

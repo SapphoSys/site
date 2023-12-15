@@ -19,19 +19,19 @@ const { filterTag, articles } = Astro.props;
   pageTitle="Articles"
   title="Articles | Chloe Arciniega"
 >
-  <header class="flex flex-col gap-3 pb-3">
-    <h1 class="title">Articles</h1>
+  <header class="flex flex-col gap-3 pb-5">
+    <h1 class="pt-2 text-4xl font-semibold">Articles</h1>
     <p>A personal blog, comprising of whatever stuff I find interesting to post.</p>
 
     <section class="flex">
-      <Icon size={25} class="mr-1" name="mdi:rss" />
+      <Icon size={25} class="mr-1 text-ctp-pink" name="mdi:rss" />
       <a title="Subscribe to my RSS feed" href="/rss.xml"> Subscribe to RSS</a>
     </section>
 
     {
       filterTag && (
         <div class="flex flex-row flex-wrap gap-x-1">
-          <Icon size={25} name="mdi:filter-cog" />
+          <Icon size={25} class="text-ctp-pink" name="mdi:filter-cog" />
           <span>
             Showing <span class="font-bold">{filterTag}</span> articles.
           </span>

@@ -1,0 +1,42 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<footer class="pt-5">
+  <hr class="text-ctp-surface1" />
+  <p class="pt-3">&copy; {new Date().getFullYear()} Chloe Arciniega.</p>
+
+  <div class="flex flex-row flex-wrap gap-x-4 gap-y-2 pt-3">
+    <div class="flex gap-1">
+      <Icon name="mdi:heart" size={20} aria-hidden={true} />
+      <a
+        href="https://ko-fi.com/solelychloe"
+        title="A link to my Ko-fi page, where you can choose to support me with financial means, if you wish."
+      >
+        Support me</a
+      >
+    </div>
+
+    <div class="flex gap-1">
+      <Icon name="mdi:rss" size={20} aria-hidden={true} />
+      <a href="/rss.xml" title="A link to my RSS feed for my blog articles."> RSS feed</a>
+    </div>
+
+    <div class="flex gap-1">
+      <Icon name="mdi:source-branch" size={20} aria-hidden={true} />
+      <a
+        href="https://github.com/solelychloe/arciniega.one"
+        title="A link to the source code that houses this website."
+      >
+        Source code</a
+      >
+    </div>
+  </div>
+</footer>
+
+<style>
+  [data-icon] {
+    @apply mt-1;
+    @apply text-ctp-pink;
+  }
+</style>
