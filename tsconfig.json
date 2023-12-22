@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": "/home/solely/projects/arciniega.one",
+    "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"],
       "@components/*": ["src/components/*"],
