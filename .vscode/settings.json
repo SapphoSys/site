@@ -2,10 +2,11 @@
   "eslint.enable": true,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "files.associations": {
-    "*.mdx": "markdown"
+    "*.mdx": "markdown",
+    "*.mdoc": "markdown"
   },
   "eslint.validate": ["javascript", "astro", "typescript"],
   "prettier.documentSelectors": ["**/*.astro"],
