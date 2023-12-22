@@ -1,6 +1,6 @@
 ---
 import { SEO } from 'astro-seo';
-import { base } from '@config';
+import { base } from '$config';
 
 interface Props {
   description?: string;
@@ -20,7 +20,7 @@ const {
     rss,
     rss: { options },
   },
-} = await import('@config');
+} = await import('$config');
 
 const siteName = Astro.site?.hostname;
 const isArticle = Astro.url.pathname.startsWith('/article/');
@@ -58,14 +58,12 @@ const image = (image?: string) => new URL(image ?? base.favicon.fileName, Astro.
   }}
   extend={{
     meta: [
+      { name: 'darkreader-lock' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'generator', content: Astro.generator },
       { name: 'theme-color', content: base.themeColor },
     ],
-    link: [
-      { rel: 'icon', href: image() },
-      { rel: 'me', href: 'https://tech.lgbt/@solely' },
-    ],
+    link: [{ rel: 'me', href: 'https://wetdry.world/@chloe' }],
   }}
 />
 

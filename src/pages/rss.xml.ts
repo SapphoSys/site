@@ -1,7 +1,7 @@
 import rss from '@astrojs/rss';
 
 import type { APIRoute } from 'astro';
-import { blog } from '@config';
+import { blog } from '$config';
 
 import { getCollection } from 'astro:content';
 import { parseISO } from 'date-fns';
