@@ -1,6 +1,6 @@
 ---
 import { SEO } from 'astro-seo';
-import { base } from '$config';
+import { base } from '@config';
 
 interface Props {
   description?: string;
@@ -20,7 +20,7 @@ const {
     rss,
     rss: { options },
   },
-} = await import('$config');
+} = await import('@config');
 
 const siteName = Astro.site?.hostname;
 const isArticle = Astro.url.pathname.startsWith('/article/');
