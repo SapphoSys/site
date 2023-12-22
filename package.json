@@ -18,6 +18,13 @@
     "test": "eslint . --ext .ts,.js,.astro && prettier --c ."
   },
   "repository": "https://github.com/solelychloe/arciniega.one",
+  "postcss": {
+    "plugins": {
+      "tailwindcss/nesting": {},
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
+  },
   "dependencies": {
     "@astrojs/markdoc": "^0.8.1",
     "@astrojs/react": "^3.0.8",
