@@ -114,4 +114,4 @@ const friends = [
   },
 ] satisfies Webring[];
 
-export default friends;
+export { friends };

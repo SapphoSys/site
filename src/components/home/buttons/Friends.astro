@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import friends from '@utils/friends';
+import { friends } from '@utils/buttons';
 ---
 
 <div class="flex flex-wrap gap-5 pt-5 md:gap-2.5 lg:gap-4">
@@ -10,7 +10,7 @@ import friends from '@utils/friends';
         <a href={friend.link} title={`${friend.name}'s site`} target="_blank">
           <Image
             class="h-[31px] w-[88px]"
-            src={`/friends/${friend.image}`}
+            src={`/buttons/friends/${friend.image}`}
             alt={`Webring of ${friend.name}`}
             width={88}
             height={31}

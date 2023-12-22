@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+import { other } from '@utils/buttons';
+---
+
+<div class="flex flex-wrap gap-5 pb-3 pt-5 md:gap-2.5 lg:gap-4">
+  {
+    other.map((button) => {
+      const image: HTMLElement = <Image src={`/buttons/other/${button.image}`} alt={button.name} width={88} height={31} />;
+
+      return !button.link?.startsWith('javascript:') ? (
+        <a href={button.link ?? null} title={button.name} target="_blank">
+          {image}
+        </a>
+      ) : (
+        <button title={button.name} onclick={button.link}>
+          {image}
+        </button>
+      );
+    })
+  }
+</div>

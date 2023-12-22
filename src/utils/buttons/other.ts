@@ -1,6 +1,6 @@
 import type { OtherButton } from '@typings/utils.type';
 
-const buttons = [
+const other = [
   {
     name: '88x31',
     link: 'https://cyber.dabamos.de/88x31/index.html',
@@ -375,4 +375,4 @@ const buttons = [
   },
 ] satisfies OtherButton[];
 
-export default buttons;
+export { other };
