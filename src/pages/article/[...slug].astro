@@ -3,6 +3,7 @@ import ArticleLayout from '@layouts/Article.astro';
 
 import type { GetStaticPaths } from 'astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { readTime } from '@utils/post';
 
 interface Props {
   article: CollectionEntry<'articles'>;
@@ -13,7 +14,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return articles.map((article) => ({
     params: { slug: article.slug },
-    props: { article },
+    props: {
+      article: {
+        ...article,
+        data: {
+          ...article.data,
+          minutesRead: readTime(article),
+        },
+      },
+    },
   }));
 };
 
@@ -22,12 +31,9 @@ const {
   article: { slug },
 } = Astro.props;
 
-const {
-  Content,
-  remarkPluginFrontmatter: { minutesRead },
-} = await article.render();
+const { Content } = await article.render();
 ---
 
-<ArticleLayout {...article.data} {slug} {minutesRead}>
+<ArticleLayout {...article.data} {slug}>
   <Content />
 </ArticleLayout>

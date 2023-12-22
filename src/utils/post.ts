@@ -13,4 +13,9 @@ const remarkReadingTime = () => {
   };
 };
 
+const readTime = (post: { body: string }) => {
+  return getReadingTime(post.body).text;
+};
+
 export default remarkReadingTime;
+export { readTime };

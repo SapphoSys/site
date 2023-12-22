@@ -17,7 +17,7 @@ interface Props {
   created?: string;
   modified?: string;
   tag?: string;
-  minutesRead?: number;
+  minutesRead?: string;
 
   comments?: boolean;
   info?: boolean;
@@ -69,7 +69,7 @@ const image = slug
           </span>
 
           <p class="flex flex-row gap-x-1">
-            <Icon class="text-ctp-pink" size={25} name="mdi:clock-outline" /> {Math.round(minutesRead!)} min read
+            <Icon class="text-ctp-pink" size={25} name="mdi:clock-outline" /> {minutesRead}
           </p>
         </div>
       )
