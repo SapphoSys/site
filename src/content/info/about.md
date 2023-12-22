@@ -108,7 +108,7 @@ If you want to include my 88x31 button, copy paste the following to your website
 
 ![My 88x31 button.][button]
 
-[button]: /friends/solely.png 'My 88x31 button.'
+[button]: /buttons/friends/solely.png 'My 88x31 button.'
 
 ### Other
 
