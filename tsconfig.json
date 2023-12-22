@@ -1,16 +1,16 @@
 {
-  // Astro TSConfig base configuration
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    // Aliases
-    "baseUrl": ".",
+    "baseUrl": "/home/solely/projects/arciniega.one",
     "paths": {
       "~/*": ["src/*"],
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
       "@typings/*": ["src/typings/*"],
       "@utils/*": ["src/utils/*"],
-      "@config": ["src/site.config.ts"]
-    }
+      "$config": ["src/site.config.ts"]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

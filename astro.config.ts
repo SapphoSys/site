@@ -1,8 +1,14 @@
 import { defineConfig } from 'astro/config';
+import { readFileSync } from 'node:fs';
 
-import mdx from '@astrojs/mdx';
+import markdoc from '@astrojs/markdoc';
 import sitemap from '@astrojs/sitemap';
+import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
+import vercel from '@astrojs/vercel/serverless';
+
+import keystatic from '@keystatic/astro';
+
 import icon from 'astro-icon';
 import workerLinks from 'astro-worker-links';
 import compress from 'astro-compress';
@@ -16,12 +22,11 @@ import readingTime from './src/utils/post';
 import slug from 'rehype-slug';
 import tableOfContents from 'remark-toc';
 
-import { readFileSync } from 'node:fs';
-
 const site = 'https://arciniega.one';
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'hybrid',
   site,
   server: {
     open: true,
@@ -68,7 +73,6 @@ export default defineConfig({
   },
   integrations: [
     tailwind(),
-    mdx(),
     icon({
       include: {
         mdi: ['*'],
@@ -95,11 +99,17 @@ export default defineConfig({
       },
     }),
     compress(),
+    react(),
+    markdoc(),
+    keystatic(),
   ],
   vite: {
     plugins: [rawFonts(['.ttf'])],
-    optimizeDeps: { exclude: ['@resvg/resvg-js'] },
+    optimizeDeps: {
+      exclude: ['@resvg/resvg-js'],
+    },
   },
+  adapter: vercel(),
 });
 
 function rawFonts(ext: string[]) {
