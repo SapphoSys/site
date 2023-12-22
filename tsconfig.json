@@ -8,7 +8,7 @@
       "@layouts/*": ["src/layouts/*"],
       "@typings/*": ["src/typings/*"],
       "@utils/*": ["src/utils/*"],
-      "$config": ["src/site.config.ts"]
+      "@config": ["src/site.config.ts"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"

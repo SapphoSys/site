@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { base } from '$config';
+import { base } from '@config';
 
 const robots = `
 User-agent: *
