@@ -1,0 +1,40 @@
+---
+import { format, parseISO } from 'date-fns';
+import { Icon } from 'astro-icon/components';
+
+const formatDate = (date: Date) => format(date, 'MMMM d, yyyy');
+
+interface Props {
+  data: {
+    title: string;
+    description: string;
+    created: string;
+    tag: string;
+  };
+  slug: string;
+}
+
+const {
+  data: { title, description, created, tag },
+  slug,
+} = Astro.props;
+---
+
+<article class="flex flex-col gap-2 md:gap-1">
+  <div class="flex flex-col gap-y-3 rounded-xl pb-5 hover:bg-ctp-crust hover:no-underline">
+    <a href={`/article/${slug}`} class="text-2xl font-extrabold text-ctp-pink">{title}</a>
+
+    <p class="text-lg font-medium text-ctp-text">{description}</p>
+
+    <a class="w-max text-lg" href={`/articles/tag/${tag}`}>#{tag}</a>
+
+    <hr class="text-ctp-surface2" />
+
+    <div class="flex flex-col gap-y-2 text-lg font-medium">
+      <time class="flex flex-row items-center gap-x-1.5" datetime={formatDate(parseISO(created))}>
+        <Icon size={20} name="mdi:calendar" />
+        {formatDate(parseISO(created))}
+      </time>
+    </div>
+  </div>
+</article>
