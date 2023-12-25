@@ -3,7 +3,7 @@ import ArticleLayout from '@layouts/Article.astro';
 
 import type { GetStaticPaths } from 'astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { readTime } from '@utils/post';
+import { readTime } from '@utils/article';
 
 interface Props {
   article: CollectionEntry<'articles'>;
@@ -31,9 +31,9 @@ const {
   article: { slug },
 } = Astro.props;
 
-const { Content } = await article.render();
+const { Content, headings } = await article.render();
 ---
 
 <ArticleLayout {...article.data} {slug}>
-  <Content />
+  <Content toc={headings} />
 </ArticleLayout>

@@ -7,7 +7,7 @@ const readTimeSchema = z.object({
   words: z.number(),
 });
 
-const postSchema = z.object({
+const articleSchema = z.object({
   data: z.object({
     astro: z.object({
       frontmatter: z.object({
@@ -35,6 +35,6 @@ const otherButtonSchema = z.object({
   image: z.string(),
 });
 
-export type PostData = z.infer<typeof postSchema>;
+export type ArticleData = z.infer<typeof articleSchema>;
 export type Webring = z.infer<typeof webringSchema>;
 export type OtherButton = z.infer<typeof otherButtonSchema>;

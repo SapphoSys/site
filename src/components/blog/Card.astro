@@ -1,8 +1,8 @@
 ---
-import { format, parseISO } from 'date-fns';
+import { format } from 'date-fns';
 import { Icon } from 'astro-icon/components';
 
-const formatDate = (date: Date) => format(date, 'MMMM d, yyyy');
+const formatDate = (date: string) => format(new Date(date), 'MMMM d, yyyy');
 
 interface Props {
   data: {
@@ -31,9 +31,9 @@ const {
     <hr class="text-ctp-surface2" />
 
     <div class="flex flex-col gap-y-2 text-lg font-medium">
-      <time class="flex flex-row items-center gap-x-1.5" datetime={formatDate(parseISO(created))}>
+      <time class="flex flex-row items-center gap-x-1.5" datetime={formatDate(created)}>
         <Icon size={20} name="mdi:calendar" />
-        {formatDate(parseISO(created))}
+        {formatDate(created)}
       </time>
     </div>
   </div>

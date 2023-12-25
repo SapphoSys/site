@@ -27,9 +27,9 @@ const { slug, title, description, created, modified, tag, minutesRead, comments,
 
 const checkComments = () => blog.comments.enabled && comments;
 
-const formatDate = (date: Date) => format(date, 'MMMM d, yyyy');
-const createdAt = created ? formatDate(parseISO(created)) : undefined;
-const modifiedAt = modified ? formatDate(parseISO(modified)) : undefined;
+const formatDate = (date: string) => format(new Date(date), 'MMMM d, yyyy');
+const createdAt = created ? formatDate(created) : undefined;
+const modifiedAt = modified ? formatDate(modified) : undefined;
 
 const backlinkPath = Astro.url.pathname.replace('/article', '');
 const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
@@ -87,7 +87,7 @@ const image = slug
   .article-content {
     @apply max-w-none;
     @apply text-xl;
-    @apply pt-3;
+    @apply mt-[-20px];
 
     & :is(h1, h2, h3, h4, h5, h6, p, strong, li) {
       @apply text-ctp-text;

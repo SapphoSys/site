@@ -13,72 +13,28 @@ import icon from 'astro-icon';
 import workerLinks from 'astro-worker-links';
 import compress from 'astro-compress';
 
-import a11yEmoji from '@fec/remark-a11y-emoji';
-import autolinkHeadings from 'rehype-autolink-headings';
-import codeTitle from 'remark-code-title';
-import externalLinks from 'rehype-external-links';
-import figureCaption from '@microflash/remark-figure-caption';
-import readingTime from './src/utils/post';
-import slug from 'rehype-slug';
-import tableOfContents from 'remark-toc';
-
 const site = 'https://arciniega.one';
 
 // https://astro.build/config
 export default defineConfig({
   output: 'hybrid',
+  adapter: vercel(),
   site,
-  server: {
-    open: true,
-  },
   devToolbar: {
     enabled: false,
   },
-  markdown: {
-    shikiConfig: {
-      theme: 'material-theme-ocean',
-    },
-    remarkPlugins: [
-      a11yEmoji,
-      codeTitle,
-      figureCaption,
-      [
-        tableOfContents,
-        {
-          tight: true,
-        },
-      ],
-      readingTime,
-    ],
-    rehypePlugins: [
-      slug,
-      [
-        autolinkHeadings,
-        {
-          behavior: 'append',
-          content: {
-            type: 'text',
-            value: '#',
-          },
-        },
-      ],
-      [
-        externalLinks,
-        {
-          target: '_blank',
-          rel: ['nofollow', 'noopener'],
-        },
-      ],
-    ],
-  },
   integrations: [
     tailwind(),
+    markdoc(),
+    react(),
+    keystatic(),
     icon({
       include: {
         mdi: ['*'],
       },
     }),
     sitemap(),
+    compress(),
     workerLinks({
       domain: 'https://solstice.tf',
       secret: process.env.WORKER_SECRET!,
@@ -98,10 +54,6 @@ export default defineConfig({
           });
       },
     }),
-    compress(),
-    react(),
-    markdoc(),
-    keystatic(),
   ],
   vite: {
     plugins: [rawFonts(['.ttf'])],
@@ -109,7 +61,6 @@ export default defineConfig({
       exclude: ['@resvg/resvg-js'],
     },
   },
-  adapter: vercel(),
 });
 
 function rawFonts(ext: string[]) {

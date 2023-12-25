@@ -8,9 +8,9 @@ tag: cloudflare
 
 ## Introduction
 
-I have a compute instance that is running [Owncloud][owncloud], which I use to backup my files and whatnot.  
-While I was configuring the instance and uploading my files, I quickly realized that my instance's storage is very
-limited and did not have enough space to actually house all of my potential future backups.
+I have a compute instance that is running [Owncloud][owncloud], which I use to backup my files and whatnot. While I was
+configuring the instance and uploading my files, I quickly realized that my instance's storage is very limited and did
+not have enough space to actually house all of my potential future backups.
 
 But then I had an idea: what if I could hook up [Cloudflare's R2 service][r2] to Owncloud?
 
@@ -19,11 +19,10 @@ Stick with me as I show you how to do exactly that in this article.
 [owncloud]: https://owncloud.com 'Owncloud'
 [r2]: https://www.cloudflare.com/products/r2/ 'R2 home page'
 
-## Table of contents
-
 ## Preamble
 
-**💡 This guide assumes you're running an instance of Owncloud on a Docker container using `docker-compose`**.
+**{% emoji name="warning" /%} This guide assumes you're running an instance of Owncloud on a Docker container using
+`docker-compose`**.
 
 If you don't have an instance of Owncloud running on Docker, follow these steps:
 
@@ -35,13 +34,15 @@ If you don't have an instance of Owncloud running on Docker, follow these steps:
 [docker-install]: https://docs.docker.com/engine/install/#server 'Docker Installation page'
 [owncloud-install]: https://doc.owncloud.com/server/10.12/admin_manual/installation/docker 'Owncloud Installation page'
 
+{% toc headings=$toc /%}
+
 ## Creating a bucket
 
 Go to your [Cloudflare dashboard][cloudflare-dash] and navigate to the R2 page. Then click on the **Create bucket**
 button.
 
-**💡 When creating a bucket, make sure you give this bucket a unique name because you won't be able to change it
-afterwards!**
+**{% emoji name="bulb" /%} When creating a bucket, make sure you give this bucket a unique name because you won't be
+able to change it afterwards!**
 
 For the purposes of this guide, I'll stick with the bucket name `owncloud-instance`.
 
@@ -66,7 +67,7 @@ Let's go through each of the options on the page:
 When you're done, click on the **Create API Token** button.
 
 You'll be able to see your **Access Key ID** and **Secret Access Key** values here. Keep them somewhere safe, as you
-will not be able to see them again!  
+will not be able to see them again!
 ![The R2 API token being successfully created with the "Access Key ID" and "Secret Access Key" values provided.](https://elixi.re/i/3rlfx.png 'The R2 API token being successfully created with the "Access Key ID" and "Secret Access Key" values provided.')
 
 ## Installing the S3 extension for Owncloud
@@ -90,20 +91,20 @@ You're done with all that? Great. It's time to configure R2 to work on your Ownc
 
 Run the following command to access the filesystem of your Owncloud Docker instance:
 
-```bash title="Terminal"
+```bash title
 > docker exec -t -i owncloud_server /bin/bash
 ```
 
 Head over to the **config** folder. The **config** folder should have the following files:
 
-```bash title="Terminal"
+```bash title
 > ls
 config.php  objectstore.config.php  overwrite.config.php
 ```
 
 We're looking to edit the **config.php** file. Add the following to the configuration file:
 
-```php title="config.php"
+```php title
 'objectstore' => [
   'class' => '\\OC\\Files\\ObjectStore\\S3',
   'arguments' => [
@@ -123,12 +124,11 @@ We're looking to edit the **config.php** file. Add the following to the configur
 
 You'll want to replace the following options:
 
-- **bucket**: This is your unique R2 bucket name that you created earlier.  
-  _(I used `owncloud-instance` for this guide)_
+- **bucket**: This is your unique R2 bucket name that you created earlier. _(I used `owncloud-instance` for this guide)_
 - **key**: This is the Access Key ID that you obtained when creating the R2 bucket.
 - **secret**: This is the Secret Access Key that you obtained when creating the R2 bucket.
-- **hostname**: You can find the bucket hostname on the bucket page itself. Make sure to only include the URL name!  
-  (the `/owncloud-instance` bit from the URL can be removed)
+- **hostname**: You can find the bucket hostname on the bucket page itself. Make sure to only include the URL name! (the
+  `/owncloud-instance` bit from the URL can be removed)
 
 ![The R2 bucket hostname.](https://elixi.re/i/y8e7l.png 'The R2 bucket hostname.')
 

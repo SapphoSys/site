@@ -38,6 +38,7 @@ const { filterTag, articles } = Astro.props;
 
   {
     articles
+      .filter((article) => !article.data.draft)
       .sort((a, b) => new Date(b.data.created).valueOf() - new Date(a.data.created).valueOf())
       .map(async (article) => {
         return <BlogCard data={article.data} slug={article.slug} />;
