@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content';
 import { format, parseISO } from 'date-fns';
 import satori from 'satori';
 import Atkinson from '@utils/fonts/AtkinsonHyperlegible-Regular.ttf';
+import type { ReactNode } from 'react';
 
 const formatDate = (date: Date) => format(date, 'MMMM d, yyyy');
 
@@ -43,7 +44,7 @@ export async function GET(context: APIContext) {
   const imageTemplate = html`
     <div class="flex h-full w-full flex-col bg-[#1e1e2e] text-[#cdd6f4]">
       <div class="flex h-4/5 w-full flex-col justify-center p-10">
-        <span class="text-xl text-[#a6adc8]">${createdAt}</span>
+        <span class="text-xl	text-[#9399b2]">${createdAt}</span>
         <h1 class="text-6xl font-bold">${title}</h1>
         <h2>${description}</h2>
       </div>
@@ -64,7 +65,7 @@ export async function GET(context: APIContext) {
     </div>
   `;
 
-  const svg = await satori(imageTemplate, {
+  const svg = await satori(imageTemplate as ReactNode, {
     fonts: [
       {
         name: 'Atkinson Hyperlegible',
