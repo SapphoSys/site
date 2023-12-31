@@ -2,6 +2,11 @@ import type { Webring } from '@typings/utils.type';
 
 const friends = [
   {
+    name: 'Alyxia Sother',
+    link: 'https://alyxia.dev',
+    image: 'alyxia.png',
+  },
+  {
     name: 'espi',
     link: 'https://espi.me',
     image: 'espi.png',
