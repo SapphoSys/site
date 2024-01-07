@@ -16,7 +16,7 @@ const infoCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    modified: z.coerce.date().optional(),
+    modified: z.string().optional(),
   }),
 });
 
