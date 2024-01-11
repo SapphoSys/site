@@ -9,16 +9,16 @@ interface StatusResponse {
   };
 }
 
-const { status }: StatusResponse = await fetch('https://status.solstice.tf').then((res) => res.json());
+const response = await fetch('https://status.solstice.tf');
+const { status }: StatusResponse = await response.json();
+
 const timeDistance = formatDistance(new Date(status.date), new Date(), { addSuffix: true });
 const timeTitle = format(new Date(status.date), 'E, MMM do yyyy, HH:mm:ss');
 ---
 
 <div class="flex flex-col gap-y-2 rounded-md border border-ctp-pink bg-ctp-base p-5">
-  <h1 class="text-2xl">Current status:</h1>
-
   <div>
-    <ph3 class="text-2xl font-bold">{status.title}</ph3>
+    <h3 class="text-2xl font-bold">{status.title}</h3>
     <p>{status.body}</p>
     <time class="text-base text-ctp-subtext0" title={`${timeTitle} in your locale`}>{timeDistance}</time>
   </div>

@@ -12,6 +12,7 @@ import keystatic from '@keystatic/astro';
 import icon from 'astro-icon';
 import workerLinks from 'astro-worker-links';
 import compress from 'astro-compress';
+import simpleStackStream from 'simple-stack-stream';
 
 const site = 'https://arciniega.one';
 
@@ -54,6 +55,7 @@ export default defineConfig({
           });
       },
     }),
+    simpleStackStream(),
   ],
   vite: {
     plugins: [rawFonts(['.ttf'])],
