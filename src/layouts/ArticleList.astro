@@ -26,7 +26,7 @@ const { filterTag, articles } = Astro.props;
     {
       filterTag && (
         <div class="flex flex-row flex-wrap gap-x-1">
-          <Icon size={25} class="text-ctp-pink" name="mdi:filter-cog" />
+          <Icon size={25} name="mdi:filter-cog" aria-hidden={true} />
           <span>
             Showing <span class="font-bold">{filterTag}</span> articles.
           </span>

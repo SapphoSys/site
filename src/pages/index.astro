@@ -33,13 +33,13 @@ import OtherButtons from '@components/home/buttons/Other.astro';
     </Suspense>
   </section> -->
 
-  <section class="pt-5 motion-reduce:hidden" aria-label="friends">
+  <section class="pt-5 motion-reduce:hidden" aria-hidden={true}>
     <h1 class="title">Friends</h1>
 
     <Friends />
   </section>
 
-  <section class="pt-5 motion-reduce:hidden" aria-label="other-buttons">
+  <section class="pt-5 motion-reduce:hidden" aria-hidden={true}>
     <h1 class="title">Other</h1>
 
     <OtherButtons />

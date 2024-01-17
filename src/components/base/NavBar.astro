@@ -31,7 +31,7 @@ const links = [
 
       <p class="text-ctp-overlay1">(she/it/they)</p>
 
-      <div class="flex flex-row items-center gap-x-2 pt-1" aria-label="pride-flags">
+      <div class="flex flex-row items-center gap-x-2 pt-1" aria-hidden={true}>
         <a
           href="https://en.pronouns.page/dictionary/terminology#transgender"
           title="Trans pride flag. The link redirects you to the terminology of the word 'transgender'."
@@ -63,7 +63,7 @@ const links = [
   <nav class="flex gap-3" aria-label="navigation-links">
     {
       links.map(({ href, text }) => {
-        return <NavLink {href} {text} class="text-ctp-pink underline-offset-4" />;
+        return <NavLink {href} {text} class="underline-offset-4" />;
       })
     }
   </nav>

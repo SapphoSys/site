@@ -26,17 +26,18 @@ import { Icon } from 'astro-icon/components';
       class="progress-filled:bg-ctp-green progress-unfilled:bg-ctp-base w-full"
       class="w-full"
       value="16"
-      max="100"></progress>
+      max="100"
+      aria-hidden={true}></progress>
   </div>
 
   <div class="flex flex-row flex-wrap gap-x-5 gap-y-2">
     <div class="flex gap-1">
-      <Icon size={20} name="simple-icons:kofi" />
+      <Icon size={20} name="simple-icons:kofi" aria-hidden={true} />
       <a href="https://ko-fi.com/solelychloe">Donate via Ko-fi</a>
     </div>
 
     <div class="flex gap-1">
-      <Icon size={20} name="simple-icons:paypal" />
+      <Icon size={20} name="simple-icons:paypal" aria-hidden={true} />
       <a href="https://paypal.me/solsticesol">Donate via PayPal</a>
     </div>
   </div>

@@ -21,8 +21,8 @@ const {
 ---
 
 <article class="flex flex-col gap-2 md:gap-1">
-  <div class="flex flex-col gap-y-3 rounded-xl pb-5 hover:bg-ctp-crust hover:no-underline">
-    <a href={`/article/${slug}`} class="text-2xl font-extrabold text-ctp-pink">{title}</a>
+  <div class="flex flex-col gap-y-3 rounded-xl pb-5">
+    <a href={`/article/${slug}`} class="text-2xl font-extrabold">{title}</a>
 
     <p class="text-lg font-medium text-ctp-text">{description}</p>
 
@@ -32,7 +32,7 @@ const {
 
     <div class="flex flex-col gap-y-2 text-lg font-medium">
       <time class="flex flex-row items-center gap-x-1.5" datetime={formatDate(created)}>
-        <Icon size={20} name="mdi:calendar" />
+        <Icon size={20} name="mdi:calendar" aria-hidden={true} />
         {formatDate(created)}
       </time>
     </div>
