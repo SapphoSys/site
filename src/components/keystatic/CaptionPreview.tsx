@@ -24,6 +24,7 @@ function getImageUrl(src: ImageData | string | null): string {
   } else if (src?.data) {
     return URL.createObjectURL(new Blob([src.data.buffer]));
   }
+
   return '';
 }
 
