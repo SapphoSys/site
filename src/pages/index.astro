@@ -1,8 +1,8 @@
 ---
 export const prerender = false;
 
-import { Icon } from 'astro-icon/components';
 import Layout from '@layouts/Page.astro';
+import Donation from '@components/home/Donation.astro';
 import Friends from '@components/home/buttons/Friends.astro';
 import OtherButtons from '@components/home/buttons/Other.astro';
 // import Status from '@components/home/Status.astro';
@@ -10,47 +10,7 @@ import OtherButtons from '@components/home/buttons/Other.astro';
 ---
 
 <Layout pageTitle="Chloe Arciniega">
-  <div class="flex flex-col gap-5 rounded-md border border-ctp-pink bg-ctp-base p-5">
-    <div class="flex flex-col gap-y-2">
-      <h3 class="text-2xl font-bold">⚠️ URGENT! Please read!</h3>
-
-      <p>
-        I'm trying to move out from my abusive parents. If you're able to help in any way,
-        <span class="font-bold italic">please</span>
-        consider donating. If not, please share the below link(s) with others. My Ko-fi page and goal goes into more detail
-        about my situation.
-      </p>
-
-      <p>If Ko-fi doesn't work for you, you can also donate to me directly via PayPal.</p>
-
-      <p>Thank you all so much. Any donation will go a long way. 💖</p>
-    </div>
-
-    <div class="flex flex-col gap-y-1">
-      <h3 class="text-2xl font-bold">Donation progress:</h3>
-      <p>16% of our way there! ($1,565/$17,500)</p>
-
-      <progress
-        id="donation"
-        class="progress-filled:bg-ctp-green progress-unfilled:bg-ctp-base w-full"
-        id="donation"
-        class="w-full"
-        value="16"
-        max="100"></progress>
-    </div>
-
-    <div class="flex flex-row flex-wrap gap-x-5 gap-y-2">
-      <div class="flex gap-1">
-        <Icon class="text-ctp-pink" size={20} name="simple-icons:kofi" />
-        <a href="https://ko-fi.com/solelychloe">Visit Ko-fi page</a>
-      </div>
-
-      <div class="flex gap-1">
-        <Icon class="text-ctp-pink" size={20} name="simple-icons:paypal" />
-        <a href="https://paypal.me/solsticesol">Donate via PayPal</a>
-      </div>
-    </div>
-  </div>
+  <Donation />
 
   <section class="flex flex-col gap-y-5 pt-3" aria-label="introduction">
     <h1 class="title">Hello!</h1>

@@ -1,0 +1,43 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<div class="flex flex-col gap-5 rounded-md border border-ctp-mauve bg-ctp-base p-5 dark:border-ctp-pink">
+  <div class="flex flex-col gap-y-2">
+    <h3 class="text-2xl font-bold">⚠️ URGENT! Please read!</h3>
+
+    <p>
+      I'm trying to escape from my abusive parents and move out. If you're able to help in any way,
+      <span class="font-bold italic">please</span>
+      consider donating. If not, please share the below link(s) with others. My Ko-fi page and goal goes into more detail
+      about my situation.
+    </p>
+
+    <p>If Ko-fi doesn't work for you, you can also donate to me directly via PayPal.</p>
+
+    <p>Thank you all so much. Any donation will go a long way. 💖</p>
+  </div>
+
+  <div class="flex flex-col gap-y-1">
+    <h3 class="text-2xl font-bold">Donation progress:</h3>
+    <p>16% of our way there! ($1,565/$17,500)</p>
+
+    <progress
+      class="progress-filled:bg-ctp-green progress-unfilled:bg-ctp-base w-full"
+      class="w-full"
+      value="16"
+      max="100"></progress>
+  </div>
+
+  <div class="flex flex-row flex-wrap gap-x-5 gap-y-2">
+    <div class="flex gap-1">
+      <Icon size={20} name="simple-icons:kofi" />
+      <a href="https://ko-fi.com/solelychloe">Donate via Ko-fi</a>
+    </div>
+
+    <div class="flex gap-1">
+      <Icon size={20} name="simple-icons:paypal" />
+      <a href="https://paypal.me/solsticesol">Donate via PayPal</a>
+    </div>
+  </div>
+</div>
