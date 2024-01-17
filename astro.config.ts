@@ -32,6 +32,7 @@ export default defineConfig({
     icon({
       include: {
         mdi: ['*'],
+        'simple-icons': ['paypal', 'kofi'],
       },
     }),
     sitemap(),
