@@ -9,7 +9,7 @@ import { other } from '@utils/buttons';
       const image = <Image src={`/buttons/other/${button.image}`} alt={button.name} width={88} height={31} />;
 
       return !button.link?.startsWith('javascript:') ? (
-        <a href={button.link ?? null} title={button.name} target="_blank">
+        <a href={button.link ?? undefined} title={button.name} target="_blank">
           {image}
         </a>
       ) : (
