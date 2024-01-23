@@ -6,7 +6,7 @@ export const donation = {
   goal: 17500,
 
   kofi: 'https://ko-fi.com/solelychloe',
-  paypal: 'https://paypal.me/solelychloe',
+  paypal: 'https://paypal.me/solsticesol',
 };
 
 export const base: Config['base'] = {
