@@ -1,5 +1,14 @@
 import type { Config } from '@typings/config.type';
 
+export const donation = {
+  percent: 19,
+  donated: 1777,
+  goal: 17500,
+
+  kofi: 'https://ko-fi.com/solelychloe',
+  paypal: 'https://paypal.me/solelychloe',
+};
+
 export const base: Config['base'] = {
   favicon: {
     altText: 'A pink lotus flower in full bloom.',

@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { donation } from '@config';
 ---
 
 <div class="flex flex-col gap-5 rounded-md border border-ctp-mauve bg-ctp-base p-5 dark:border-ctp-pink">
@@ -20,12 +21,12 @@ import { Icon } from 'astro-icon/components';
 
   <div class="flex flex-col gap-y-1">
     <h3 class="text-2xl font-bold">Donation progress:</h3>
-    <p>16% of our way there! ($1,565/$17,500)</p>
+    <p>{donation.percent}% of our way there! ({donation.donated}/{donation.goal})</p>
 
     <progress
-      class="progress-filled:bg-ctp-green progress-unfilled:bg-ctp-base w-full"
+      class="w-full progress-unfilled:bg-ctp-base progress-filled:bg-ctp-green"
       class="w-full"
-      value="16"
+      value={donation.donated}
       max="100"
       aria-hidden={true}></progress>
   </div>
@@ -33,17 +34,15 @@ import { Icon } from 'astro-icon/components';
   <div class="flex flex-row flex-wrap gap-x-5 gap-y-2">
     <div class="flex gap-1">
       <Icon size={20} name="simple-icons:kofi" aria-hidden={true} />
-      <a
-        href="https://ko-fi.com/solelychloe"
-        title="A link to my Ko-fi page, where you can choose to donate me."
-        target="_blank">Donate via Ko-fi</a
+      <a href={donation.kofi} title="A link to my Ko-fi page, where you can choose to donate me." target="_blank"
+        >Donate via Ko-fi</a
       >
     </div>
 
     <div class="flex gap-1">
       <Icon size={20} name="simple-icons:paypal" aria-hidden={true} />
       <a
-        href="https://paypal.me/solsticesol"
+        href={donation.paypal}
         title="A link to my PayPal page if Ko-fi doesn't work for you, where you can choose to donate me."
         target="_blank">Donate via PayPal</a
       >
