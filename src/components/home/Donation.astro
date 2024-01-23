@@ -21,12 +21,16 @@ import { donation } from '@config';
 
   <div class="flex flex-col gap-y-1">
     <h3 class="text-2xl font-bold">Donation progress:</h3>
-    <p>{donation.percent}% of our way there! ({donation.donated}/{donation.goal})</p>
+    <p>
+      {donation.percent}% of our way there! (${donation.donated.toLocaleString('en-US')}/${
+        donation.goal.toLocaleString('en-US')
+      })
+    </p>
 
     <progress
       class="w-full progress-unfilled:bg-ctp-base progress-filled:bg-ctp-green"
       class="w-full"
-      value={donation.donated}
+      value={donation.percent}
       max="100"
       aria-hidden={true}></progress>
   </div>
