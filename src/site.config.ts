@@ -1,8 +1,8 @@
 import type { Config } from '@typings/config.type';
 
-export const donation = {
-  percent: 19,
-  donated: 1777,
+export const donation: Config['donation'] = {
+  percent: 25,
+  donated: 2300,
   goal: 17500,
 
   kofi: 'https://ko-fi.com/solelychloe',
