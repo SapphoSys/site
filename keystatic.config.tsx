@@ -6,17 +6,7 @@ import info from '@utils/keystatic/collections/info';
 const IS_PROD = import.meta.env.MODE === 'production';
 
 export default config({
-  storage: IS_PROD
-    ? {
-        kind: 'github',
-        repo: {
-          owner: 'solelychloe',
-          name: 'arciniega.one',
-        },
-      }
-    : {
-        kind: 'local',
-      },
+  storage: { kind: 'local' },
   ui: {
     brand: {
       name: "Chloe's Article Posts",
