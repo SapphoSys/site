@@ -9,7 +9,10 @@ export default config({
   storage: IS_PROD
     ? {
         kind: 'github',
-        repo: 'solelychloe/arciniega.one',
+        repo: {
+          owner: 'solelychloe',
+          name: 'arciniega.one',
+        },
       }
     : {
         kind: 'local',
