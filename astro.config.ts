@@ -28,7 +28,7 @@ export default defineConfig({
     tailwind(),
     markdoc(),
     react(),
-    keystatic(),
+    ...(process.env.SKIP_KEYSTATIC ? [] : [keystatic()]),
     icon({
       include: {
         mdi: ['*'],
