@@ -15,6 +15,7 @@ import compress from 'astro-compress';
 import simpleStackStream from 'simple-stack-stream';
 
 const site = 'https://arciniega.one';
+const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 
 // https://astro.build/config
 export default defineConfig({
@@ -28,7 +29,7 @@ export default defineConfig({
     tailwind(),
     markdoc(),
     react(),
-    ...(process.env.SKIP_KEYSTATIC ? [] : [keystatic()]),
+    ...(IS_PRODUCTION ? [] : [keystatic()]),
     icon({
       include: {
         mdi: ['*'],
