@@ -1,35 +1,86 @@
 import { defineConfig } from 'astro/config';
-import { readFileSync } from 'node:fs';
+import { rawFonts } from './src/utils/misc';
+import { base } from './src/site.config';
 
-import markdoc from '@astrojs/markdoc';
-import sitemap from '@astrojs/sitemap';
+import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
+import keystatic from '@keystatic/astro';
+
+import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import vercel from '@astrojs/vercel/serverless';
 
-import keystatic from '@keystatic/astro';
+// Rehype and Remark plugins
+import a11yEmoji from '@fec/remark-a11y-emoji';
+import figureCaption from '@microflash/remark-figure-caption';
+import autolinkHeadings from 'rehype-autolink-headings';
+import externalLinks from 'rehype-external-links';
+import slug from 'rehype-slug';
+import codeTitle from 'remark-code-title';
+import tableOfContents from 'remark-toc';
+import readingTime from './src/utils/article';
 
+import autoImport from 'astro-auto-import';
+import compress from 'astro-compress';
 import icon from 'astro-icon';
 import workerLinks from 'astro-worker-links';
-import compress from 'astro-compress';
-import simpleStackStream from 'simple-stack-stream';
-
-const site = 'https://arciniega.one';
-const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 
 // https://astro.build/config
 export default defineConfig({
   output: 'hybrid',
   adapter: vercel(),
-  site,
-  devToolbar: {
-    enabled: false,
+  site: base.site.url,
+  markdown: {
+    shikiConfig: {
+      theme: 'material-theme-ocean',
+    },
+    remarkPlugins: [
+      a11yEmoji,
+      codeTitle,
+      figureCaption,
+      [
+        tableOfContents,
+        {
+          tight: true,
+        },
+      ],
+      readingTime,
+    ],
+    rehypePlugins: [
+      slug,
+      [
+        autolinkHeadings,
+        {
+          behavior: 'append',
+          content: {
+            type: 'text',
+            value: '#',
+          },
+        },
+      ],
+      [
+        externalLinks,
+        {
+          contentProperties: { className: ['external-icon'] },
+          content: {
+            type: 'element',
+            tagName: 'Icon',
+            properties: { name: 'mdi:external-link' },
+          },
+          target: '_blank',
+          rel: ['nofollow', 'noopener'],
+        },
+      ],
+    ],
   },
   integrations: [
     tailwind(),
-    markdoc(),
+    autoImport({
+      imports: [{ 'astro-icon/components': ['Icon'] }, './src/components/mdx/Caption.astro'],
+    }),
+    mdx(),
+    keystatic(),
     react(),
-    ...(IS_PRODUCTION ? [] : [keystatic()]),
     icon({
       include: {
         mdi: ['*'],
@@ -45,19 +96,20 @@ export default defineConfig({
         return pages
           .filter(
             (url) =>
-              url.pathname !== '/articles/' &&
-              url.pathname.includes('/articles') &&
-              !url.pathname.includes('/articles/tag')
+              url.pathname !== '/article/' &&
+              url.pathname.includes('/article') &&
+              !url.pathname.includes('/article/tag')
           )
           .map((url) => {
             return {
               page: url.href,
-              shortlink: url.pathname.replace('/articles', ''),
+              shortlink: url.pathname.replace('/article', ''),
             };
           });
       },
     }),
-    simpleStackStream(),
+    // TODO: Re-enable later
+    // simpleStackStream(),
   ],
   vite: {
     plugins: [rawFonts(['.ttf'])],
@@ -66,18 +118,3 @@ export default defineConfig({
     },
   },
 });
-
-function rawFonts(ext: string[]) {
-  return {
-    name: 'vite-plugin-raw-fonts',
-    transform(_: unknown, id: string) {
-      if (ext.some((e) => id.endsWith(e))) {
-        const buffer = readFileSync(id);
-        return {
-          code: `export default ${JSON.stringify(buffer)}`,
-          map: null,
-        };
-      }
-    },
-  };
-}

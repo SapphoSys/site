@@ -1,19 +1,21 @@
 ---
 import { Image } from 'astro:assets';
-import { other } from '@utils/buttons';
+import { singletons } from '@lib/keystatic';
+
+const other = (await singletons.buttons.readOrThrow()).other;
 ---
 
 <div class="flex flex-wrap gap-5 pb-3 pt-5 md:gap-2.5 lg:gap-4">
   {
     other.map((button) => {
-      const image = <Image src={`/buttons/other/${button.image}`} alt={button.name} width={88} height={31} />;
+      const image = <Image src={button.image} alt={button.name} width={88} height={31} />;
 
-      return !button.link?.startsWith('javascript:') ? (
-        <a href={button.link ?? undefined} title={button.name} target="_blank">
+      return !button.url?.startsWith('javascript:') ? (
+        <a href={button.url ?? undefined} title={button.name} target="_blank">
           {image}
         </a>
       ) : (
-        <button title={button.name} onclick={button.link}>
+        <button title={button.name} onclick={button.url}>
           {image}
         </button>
       );

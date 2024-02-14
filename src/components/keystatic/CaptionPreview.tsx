@@ -5,36 +5,37 @@ interface ImageData {
 }
 
 interface Props {
-  fields: {
+  value: {
     src: {
+      discriminant: boolean;
       value: ImageData | string | null;
     };
-    alt: {
-      value: string;
-    };
-    caption: {
-      value: string;
-    };
+    alt: string;
+    caption: string;
   };
 }
 
-function getImageUrl(src: ImageData | string | null): string {
+const getImageUrl = (src: Props['value']['src']['value']) => {
   if (typeof src === 'string') {
     return src;
-  } else if (src?.data) {
+  }
+
+  if (src?.data) {
     return URL.createObjectURL(new Blob([src.data.buffer]));
   }
 
-  return '';
-}
+  return undefined;
+};
 
-export default function Preview(props: Props) {
-  const src = getImageUrl(props.fields.src.value);
+const Preview = (props: Props) => {
+  const src = getImageUrl(props.value.src.value);
 
   return (
     <div>
-      <img src={src} alt={props.fields.alt.value} />
-      <figcaption style={{ fontStyle: 'italic' }}>Caption: {props.fields.caption.value}</figcaption>
+      <img src={src} alt={props.value.alt} />
+      <figcaption style={{ fontStyle: 'italic' }}>Caption: {props.value.caption}</figcaption>
     </div>
   );
-}
+};
+
+export default Preview;

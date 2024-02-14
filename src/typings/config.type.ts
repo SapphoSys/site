@@ -10,8 +10,12 @@ const configSchema = z.object({
       fileName: z.string(),
     }),
     themeColor: z.string().regex(urlExpression),
-    siteName: z.string(),
+    site: z.object({
+      name: z.string(),
+      url: z.string(),
+    }),
   }),
+
   blog: z.object({
     comments: z.object({
       enabled: z.boolean(),
@@ -74,9 +78,10 @@ const configSchema = z.object({
           ])
           .optional(),
         'data-loading': z.enum(['lazy']).optional(),
-        'crossorigin': z.enum(['anonymous']),
+        crossorigin: z.enum(['anonymous']),
       }),
     }),
+
     rss: z.object({
       enabled: z.boolean(),
       options: z.object({
@@ -93,7 +98,7 @@ const configSchema = z.object({
       options: z.object({
         'data-domain': z.string(),
         'data-api': z.string(),
-        'src': z.string(),
+        src: z.string(),
       }),
     }),
   }),

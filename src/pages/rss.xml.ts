@@ -1,10 +1,10 @@
 import rss from '@astrojs/rss';
 
 import type { APIRoute } from 'astro';
-import { blog } from '@config';
-
 import { getCollection } from 'astro:content';
 import { parseISO } from 'date-fns';
+
+import { blog } from '$config';
 
 const articles = await getCollection('articles');
 

@@ -15,7 +15,10 @@ export const base: Config['base'] = {
     fileName: '/lotus.png',
   },
   themeColor: '#EF8496',
-  siteName: 'arciniega.one',
+  site: {
+    name: 'arciniega.one',
+    url: 'https://arciniega.one',
+  },
 };
 
 export const blog: Config['blog'] = {
@@ -43,7 +46,7 @@ export const blog: Config['blog'] = {
     options: {
       title: "Chloe's Article Posts",
       description: 'A personal blog, comprising of whatever stuff I find interesting to post.',
-      href: `https://${base.siteName}/rss.xml`,
+      href: `https://${base.site.name}/rss.xml`,
     },
   },
 };
@@ -54,9 +57,9 @@ export const misc: Config['misc'] = {
   plausible: {
     enabled: true,
     options: {
-      'data-domain': base.siteName,
+      'data-domain': base.site.name,
       'data-api': '/api/event',
-      'src': '/js/script.js',
+      src: '/js/script.js',
     },
   },
 };
