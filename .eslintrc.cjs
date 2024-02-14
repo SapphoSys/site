@@ -33,6 +33,12 @@ module.exports = {
       },
     },
     {
+      files: ['*.d.ts'],
+      rules: {
+        '@typescript-eslint/triple-slash-reference': 'off',
+      },
+    },
+    {
       files: ['**/*.astro/*.js', '*.astro/*.js'],
       parser: '@typescript-eslint/parser',
     },
