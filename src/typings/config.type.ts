@@ -4,6 +4,14 @@ const urlExpression =
   /(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z]{2,}(\.[a-zA-Z]{2,})(\.[a-zA-Z]{2,})?\/[a-zA-Z0-9]{2,}|((https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z]{2,}(\.[a-zA-Z]{2,})(\.[a-zA-Z]{2,})?)|(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,})?/g;
 
 const configSchema = z.object({
+  donation: z.object({
+    percent: z.number(),
+    donated: z.number(),
+    goal: z.number(),
+    kofi: z.string().regex(urlExpression),
+    paypal: z.string().regex(urlExpression),
+  }),
+
   base: z.object({
     favicon: z.object({
       altText: z.string(),
