@@ -1,10 +1,11 @@
 ---
+import { slide } from 'astro:transitions';
+
+import Footer from '@components/base/Footer.astro';
 import Head from '@components/base/Head.astro';
 import NavBar from '@components/base/NavBar.astro';
 
 import '@fontsource/atkinson-hyperlegible/400.css';
-import { slide } from 'astro:transitions';
-import Footer from '@components/base/Footer.astro';
 
 interface Props {
   description?: string;
@@ -35,7 +36,7 @@ const {
   <body class="flex flex-col text-xl md:self-center">
     <NavBar />
 
-    <main class="flex flex-col gap-2" aria-label="content" transition:animate={slide({ duration: '0.4s' })}>
+    <main class="flex flex-col gap-2" aria-label="content" transition:animate={slide({ duration: '0.36s' })}>
       <slot />
     </main>
 

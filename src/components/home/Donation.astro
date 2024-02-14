@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { donation } from '@config';
+import { donation } from '$config';
 ---
 
 <div class="flex flex-col gap-5 rounded-md border border-ctp-mauve bg-ctp-base p-5 dark:border-ctp-pink">
@@ -40,9 +40,9 @@ import { donation } from '@config';
   <div class="flex flex-row flex-wrap gap-x-5 gap-y-2">
     <div class="flex gap-1">
       <Icon size={20} name="simple-icons:kofi" aria-hidden={true} />
-      <a href={donation.kofi} title="A link to my Ko-fi page, where you can choose to donate me." target="_blank"
-        >Donate via Ko-fi</a
-      >
+      <a href={donation.kofi} title="A link to my Ko-fi page, where you can choose to donate me." target="_blank">
+        Donate via Ko-fi
+      </a>
     </div>
 
     <div class="flex gap-1">
@@ -50,8 +50,10 @@ import { donation } from '@config';
       <a
         href={donation.paypal}
         title="A link to my PayPal page if Ko-fi doesn't work for you, where you can choose to donate me."
-        target="_blank">Donate via PayPal</a
+        target="_blank"
       >
+        Donate via PayPal
+      </a>
     </div>
   </div>
 </div>

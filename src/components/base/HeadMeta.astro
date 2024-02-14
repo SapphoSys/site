@@ -1,6 +1,6 @@
 ---
 import { SEO } from 'astro-seo';
-import { base } from '@config';
+import { base } from '$config';
 
 interface Props {
   description?: string;
@@ -15,12 +15,7 @@ interface Props {
 
 const { description, pageTitle, ogImage, created, title } = Astro.props;
 
-const {
-  blog: {
-    rss,
-    rss: { options },
-  },
-} = await import('@config');
+import { blog } from '$config';
 
 const siteName = Astro.site?.hostname;
 const isArticle = Astro.url.pathname.startsWith('/article/');
@@ -67,4 +62,4 @@ const image = (image?: string) => new URL(image ?? base.favicon.fileName, Astro.
   }}
 />
 
-{rss.enabled && <link rel="alternate" {...options} type="application/rss+xml" />}
+{blog.rss.enabled && <link rel="alternate" {...blog.rss.options} type="application/rss+xml" />}

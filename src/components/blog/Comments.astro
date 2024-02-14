@@ -1,10 +1,6 @@
 ---
-const {
-  blog: {
-    comments: { options },
-  },
-} = await import('@config');
+import { blog } from '$config';
 ---
 
 <div class="giscus"></div>
-<script is:inline src="https://giscus.app/client.js" {...options} async></script>
+<script is:inline src="https://giscus.app/client.js" {...blog.comments.options} async></script>
