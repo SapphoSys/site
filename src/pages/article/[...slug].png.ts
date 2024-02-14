@@ -20,7 +20,7 @@ interface Props {
   created: string;
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   const articles = await getCollection('articles');
 
   return articles.map((article) => {
@@ -35,9 +35,9 @@ export async function getStaticPaths() {
       },
     };
   });
-}
+};
 
-export async function GET(context: APIContext) {
+export const GET = async (context: APIContext) => {
   const { title, description, created } = context.props as Props;
   const createdAt = formatDate(parseISO(created)) ?? undefined;
 
@@ -88,4 +88,4 @@ export async function GET(context: APIContext) {
       'Content-Type': 'image/png',
     },
   });
-}
+};

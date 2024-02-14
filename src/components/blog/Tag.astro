@@ -1,0 +1,11 @@
+---
+interface Props {
+  tag: string;
+}
+
+const { tag } = Astro.props;
+---
+
+<span class="mr-1">
+  <a href={`/articles/tag/${tag}`} title={`Article tagged with ${tag}`}>#{tag}</a>
+</span>

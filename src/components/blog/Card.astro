@@ -1,6 +1,7 @@
 ---
 import { format } from 'date-fns';
 import { Icon } from 'astro-icon/components';
+import Tag from '@components/blog/Tag.astro';
 
 const formatDate = (date: string) => format(new Date(date), 'MMMM d, yyyy');
 
@@ -9,32 +10,47 @@ interface Props {
     title: string;
     description: string;
     created: string;
-    tag: string;
+    tags: any[];
   };
   slug: string;
+  minutesRead: string;
 }
 
 const {
-  data: { title, description, created, tag },
+  data: { title, description, created, tags },
   slug,
+  minutesRead,
 } = Astro.props;
 ---
 
 <article class="flex flex-col gap-2 md:gap-1">
   <div class="flex flex-col gap-y-3 rounded-xl pb-5">
-    <a href={`/article/${slug}`} class="text-2xl font-extrabold">{title}</a>
+    <a href={`/article/${slug}`} class="text-3xl font-extrabold">{title}</a>
 
     <p class="text-lg font-medium text-ctp-text">{description}</p>
 
-    <a class="w-max text-lg" href={`/articles/tag/${tag}`}>#{tag}</a>
+    <div class="flex flex-row gap-1">
+      <Icon size={20} name="mdi:tags" aria-hidden={true} />
 
-    <hr class="text-ctp-surface2" />
+      {tags.map((tag) => <Tag {tag} />)}
+    </div>
 
-    <div class="flex flex-col gap-y-2 text-lg font-medium">
+    <div class="metadata flex flex-row gap-x-3">
       <time class="flex flex-row items-center gap-x-1.5" datetime={formatDate(created)}>
         <Icon size={20} name="mdi:calendar" aria-hidden={true} />
         {formatDate(created)}
       </time>
+
+      <div class="flex flex-row items-center gap-x-1.5">
+        <Icon size={20} name="mdi:clock-outline" aria-hidden={true} />
+        {minutesRead}
+      </div>
     </div>
   </div>
 </article>
+
+<style>
+  div.metadata [data-icon] {
+    @apply mt-0;
+  }
+</style>

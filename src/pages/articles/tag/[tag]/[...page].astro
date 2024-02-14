@@ -19,6 +19,8 @@ interface Props {
 const { page } = Astro.props;
 const { tag: filterTag } = Astro.params;
 
+const articles = page.data.map((p) => p.props);
+
 export const getStaticPaths: GetStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
   const articleCollection = await getCollection('articles');
 
@@ -28,16 +30,14 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }: GetStaticPath
 
   const articles = sortedArticles.map((article) => ({
     params: { slug: article.slug },
-    props: {
-      ...article,
-    },
+    props: { ...article },
   }));
 
-  const tags = Array.from(new Set(sortedArticles.flatMap((article) => article.data.tag)));
+  const tags = Array.from(new Set(sortedArticles.flatMap((article) => article.data.tags)));
 
   return tags.flatMap((tag) => {
     return paginate(
-      articles.filter((article) => tag && article.props.data.tag?.includes(tag)),
+      articles.filter(({ props }) => tag && props.data.tags?.includes(tag)),
       {
         params: { tag },
         pageSize: 10,
@@ -47,6 +47,6 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }: GetStaticPath
 };
 ---
 
-<ArticleList {filterTag} articles={page.data.map((p) => p.props)}>
+<ArticleList {filterTag} {articles}>
   <Pagination {page} />
 </ArticleList>

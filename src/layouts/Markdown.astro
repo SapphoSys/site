@@ -1,0 +1,24 @@
+---
+import Layout from '@layouts/Page.astro';
+
+import '@fontsource/iosevka/400.css';
+import '@styles/article.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<Layout {description} pageTitle={title} title={`${title} | Chloe Arciniega`}>
+  <header class="flex flex-col">
+    <h1 class="py-2 text-4xl font-semibold">{title}</h1>
+    <p>{description}</p>
+  </header>
+
+  <section class="article-content prose pt-10 dark:prose-invert">
+    <slot />
+  </section>
+</Layout>

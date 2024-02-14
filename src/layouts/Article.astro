@@ -1,29 +1,31 @@
 ---
 import Layout from '@layouts/Page.astro';
 
-import { base, blog } from '@config';
-import { format, parseISO } from 'date-fns';
-
-import Comments from '@components/blog/Comments.astro';
+import { base, blog } from '$config';
+import { format } from 'date-fns';
 import { Icon } from 'astro-icon/components';
 
+import Comments from '@components/blog/Comments.astro';
+import Tag from '@components/blog/Tag.astro';
+
 import '@fontsource/iosevka/400.css';
+import '@styles/article.css';
 
 interface Props {
   slug?: string;
 
   title: string;
-  description?: string;
-  created?: string;
+  description: string;
+  draft?: boolean;
+  created: string;
   modified?: string;
-  tag?: string;
+  tags: any[];
   minutesRead?: string;
 
   comments?: boolean;
-  info?: boolean;
 }
 
-const { slug, title, description, created, modified, tag, minutesRead, comments, info } = Astro.props;
+const { slug, title, description, draft, created, modified, tags, minutesRead, comments } = Astro.props;
 
 const checkComments = () => blog.comments.enabled && comments;
 
@@ -48,89 +50,50 @@ const image = slug
 <Layout {description} pageTitle={title} title={`${title} | Chloe Arciniega`} ogImage={image} created={createdAt}>
   {checkComments() && <meta slot="head" name="giscus:backlink" content={backlink} />}
 
-  <header class="flex flex-col">
-    <h1 class="py-2 text-4xl font-semibold">{title}</h1>
-    {info && <p>{description}</p>}
-
-    {
-      !info && (
-        <div class="flex flex-col pt-1">
-          <p
-            class="flex flex-row gap-x-1"
-            title={`Published on ${createdAt}${modifiedAt ? `, edited on ${modifiedAt}` : ''}`}
-          >
-            <Icon size={25} name="mdi:calendar" aria-hidden={true} />
-            {createdAt}
-          </p>
-
-          <span class="flex w-max flex-row gap-x-1" title={`Article tagged with ${tag}`}>
-            <Icon size={25} name="mdi:tag-text-outline" aria-hidden={true} />
-            <a href={`/articles/tag/${tag}`}>{tag}</a>
-          </span>
-
-          <p class="flex flex-row gap-x-1">
-            <Icon size={25} name="mdi:clock-outline" aria-hidden={true} /> {minutesRead}
-          </p>
+  {
+    draft && (
+      <div class="flex flex-col gap-1 border-2 border-ctp-pink p-3">
+        <div class="flex flex-row gap-x-1 font-bold">
+          <Icon size={25} name="mdi:alert-circle" aria-hidden={true} />
+          <h1>Warning</h1>
         </div>
-      )
-    }
+
+        <span>This article is a draft and is not ready for public viewing.</span>
+      </div>
+    )
+  }
+
+  <header class="flex flex-col">
+    <div class="flex flex-col gap-2 pb-2">
+      <h1 class="text-4xl font-semibold">{title}</h1>
+      <p>{description}</p>
+    </div>
+
+    <div class="flex flex-col pt-1">
+      <p
+        class="flex flex-row gap-x-1"
+        title={`Published on ${createdAt}${modifiedAt ? `, edited on ${modifiedAt}` : ''}`}
+      >
+        <Icon size={25} name="mdi:calendar" aria-hidden={true} />
+        {createdAt}
+      </p>
+
+      <span class="flex w-max flex-row gap-x-1">
+        <Icon size={25} name="mdi:tags" aria-hidden={true} />
+
+        {tags.map((tag) => <Tag {tag} />)}
+      </span>
+
+      <p class="flex flex-row gap-x-1">
+        <Icon size={25} name="mdi:clock-outline" aria-hidden={true} />
+        {minutesRead}
+      </p>
+    </div>
   </header>
 
-  <section class="article-content prose dark:prose-invert">
+  <section class="article-content prose pt-10 dark:prose-invert">
     <slot />
   </section>
 
   {checkComments() && <Comments />}
 </Layout>
-
-<style is:global>
-  .article-content {
-    @apply max-w-none;
-    @apply text-xl;
-    @apply mt-[-20px];
-
-    & :is(h1, h2, h3, h4, h5, h6, p, strong, li) {
-      @apply text-ctp-text;
-    }
-
-    & code {
-      @apply whitespace-pre-wrap;
-
-      & > .line {
-        @apply font-mono;
-      }
-    }
-
-    & pre {
-      @apply border border-ctp-mantle;
-    }
-
-    [data-remark-code-title] {
-      @apply rounded-t-lg border border-ctp-crust bg-ctp-crust px-5 py-2 font-mono text-sm dark:bg-ctp-mantle;
-
-      & + pre {
-        @apply m-0 rounded-t-none border-t-0;
-      }
-    }
-
-    & :is(h1, h2, h3, h4, h5, h6) {
-      @apply gap-1;
-      @apply flex;
-
-      & a {
-        @apply transition delay-[1ms] ease-in;
-        @apply opacity-0;
-        @apply pl-1;
-
-        &:hover {
-          @apply font-bold;
-          @apply transition ease-out hover:opacity-60;
-        }
-      }
-
-      &:hover a {
-        @apply opacity-100;
-      }
-    }
-  }
-</style>

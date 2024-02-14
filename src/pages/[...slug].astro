@@ -1,5 +1,5 @@
 ---
-import ArticleLayout from '@layouts/Article.astro';
+import MarkdownLayout from '@layouts/Markdown.astro';
 
 import type { GetStaticPaths } from 'astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
@@ -21,6 +21,6 @@ const { info } = Astro.props;
 const { Content } = await info.render();
 ---
 
-<ArticleLayout {...info.data} info>
+<MarkdownLayout {...info.data}>
   <Content />
-</ArticleLayout>
+</MarkdownLayout>

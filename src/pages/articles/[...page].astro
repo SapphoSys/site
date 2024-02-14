@@ -22,9 +22,7 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }: GetStaticPath
 
   const articles = sortedArticles.map((article) => ({
     params: { slug: article.slug },
-    props: {
-      ...article,
-    },
+    props: { ...article },
   }));
 
   return paginate(
