@@ -3,6 +3,10 @@
   @apply text-xl;
   @apply -mt-5;
 
+  .external-link {
+    @apply text-sm;
+  }
+
   /* Codeblocks */
   & code {
     @apply whitespace-pre-wrap;
