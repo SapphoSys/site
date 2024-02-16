@@ -47,7 +47,7 @@
 }
 
 .external-icon {
-  @apply inline-flex;
+  @apply inline-block;
 
   svg {
     @apply pl-1 pt-1.5;
