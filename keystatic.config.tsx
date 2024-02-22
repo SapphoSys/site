@@ -6,14 +6,10 @@ import singletons from '@lib/keystatic/singletons';
 const IS_PROD = import.meta.env.MODE === 'production';
 
 export default config({
-  storage: IS_PROD
-    ? {
-        kind: 'github',
-        repo: 'solelychloe/arciniega.one',
-      }
-    : {
-        kind: 'local',
-      },
+  storage: {
+    kind: 'github',
+    repo: 'solelychloe/arciniega.one',
+  },
 
   ui: {
     brand: {
