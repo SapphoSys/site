@@ -62,7 +62,7 @@ export default defineConfig({
         externalLinks,
         {
           contentProperties: { className: ['external-link'] },
-          content: { type: 'text', value: ' 🡥' },
+          content: { type: 'text', value: ' ↗' },
         },
       ],
     ],
