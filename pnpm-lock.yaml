@@ -160,9 +160,6 @@ devDependencies:
   satori-html:
     specifier: ^0.3.2
     version: 0.3.2
-  simple-stack-stream:
-    specifier: ^0.0.3
-    version: 0.0.3(astro@4.4.0)
   tailwindcss:
     specifier: ^3.4.1
     version: 3.4.1
@@ -8684,15 +8681,6 @@ packages:
       once: 1.4.0
       simple-concat: 1.0.1
     optional: true
-
-  /simple-stack-stream@0.0.3(astro@4.4.0):
-    resolution: {integrity: sha512-bydRsh/f/2Sed4TusLCnLSjil9Xi4/2UCTfE/vgJp2wV9tnr0fmK+ff8ZbNwnWpF6F8K0gfx7jClUxwJoGbSDg==}
-    peerDependencies:
-      astro: ^3.6.0 || ^4.0.0
-    dependencies:
-      astro: 4.4.0(typescript@5.3.3)
-      nanoid: 5.0.5
-    dev: true
 
   /simple-swizzle@0.2.2:
     resolution: {integrity: sha512-JA//kQgZtbuY83m+xT+tXJkmJncGMTFT+C+g2h2R9uxkYIrE2yy9sgmcLhCnw57/WSD+Eh3J97FPEDFnbXnDUg==}

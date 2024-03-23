@@ -5,18 +5,18 @@ import { donation } from '$config';
 
 <div class="flex flex-col gap-5 rounded-md border border-ctp-mauve bg-ctp-base p-5 dark:border-ctp-pink">
   <div class="flex flex-col gap-y-2">
-    <h3 class="text-2xl font-bold">⚠️ URGENT! Please read!</h3>
+    <h3 class="text-2xl font-bold">👋 Hey! While you're here...</h3>
 
-    <p>I'm trying to escape from my abusive, overprotective parents and move out.</p>
+    <p>We're trying to escape from our abusive, overprotective parents and move out.</p>
 
     <p>
-      If you're able to help in any way,
+      If you're able to help us in any way,
       <span class="font-bold italic">please</span>
-      consider donating. If not, please share the below link(s) with others. My Ko-fi page and goal goes into more detail
-      about my situation.
+      consider donating. If not, please share the below link(s) with others. Our Ko-fi page goes into more detail about our
+      situation.
     </p>
 
-    <p>If Ko-fi doesn't work for you, you can also donate to me directly via PayPal.</p>
+    <p>If Ko-fi doesn't work for you, you can also donate to us directly via PayPal.</p>
 
     <p>Thank you so much. Any donation will go a long way. 💖</p>
   </div>
@@ -24,9 +24,9 @@ import { donation } from '$config';
   <div class="flex flex-col gap-y-1">
     <h3 class="text-2xl font-bold">Donation progress:</h3>
     <p>
-      {donation.percent}% of our way there! (${donation.donated.toLocaleString('en-US')}/${
-        donation.goal.toLocaleString('en-US')
-      })
+      <span class="font-bold">{donation.percent}%</span> of our way there! (${
+        donation.donated.toLocaleString('en-US')
+      }/${donation.goal.toLocaleString('en-US')})
     </p>
 
     <progress
@@ -40,7 +40,7 @@ import { donation } from '$config';
   <div class="flex flex-row flex-wrap gap-x-5 gap-y-2">
     <div class="flex gap-1">
       <Icon size={20} name="simple-icons:kofi" aria-hidden={true} />
-      <a href={donation.kofi} title="A link to my Ko-fi page, where you can choose to donate me." target="_blank">
+      <a href={donation.kofi} title="A link to our Ko-fi page, where you can choose to donate to us." target="_blank">
         Donate via Ko-fi
       </a>
     </div>
@@ -49,7 +49,7 @@ import { donation } from '$config';
       <Icon size={20} name="simple-icons:paypal" aria-hidden={true} />
       <a
         href={donation.paypal}
-        title="A link to my PayPal page if Ko-fi doesn't work for you, where you can choose to donate me."
+        title="A link to our PayPal page if Ko-fi doesn't work for you, where you can choose to donate to us."
         target="_blank"
       >
         Donate via PayPal

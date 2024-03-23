@@ -53,13 +53,13 @@ export const GET = async (context: APIContext) => {
         <div class="flex items-center">
           <img src="https://avatars.githubusercontent.com/u/22654782?v=4" class="h-15 w-15 rounded-full" />
           <div class="flex flex-col pl-3">
-            <span class="text-2xl">Chloe Arciniega</span>
-            <span class="text-[#f5c2e7]">(she/it/they)</span>
+            <span class="text-2xl">Sapphic Angels</span>
+            <span class="text-[#f5c2e7]">(she/it/they - plural)</span>
           </div>
         </div>
         <div class="flex items-center">
-          <img src="https://arciniega.one/lotus.png" class="h-15 w-15" />
-          <span class="pl-3 text-2xl text-[#f5c2e7]">arciniega.one</span>
+          <img src="https://em-content.zobj.net/source/google/387/cherry-blossom_1f338.png" class="h-15 w-15" />
+          <span class="pl-3 text-2xl text-[#f5c2e7]">sapphic.moe</span>
         </div>
       </div>
     </div>

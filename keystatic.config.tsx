@@ -3,17 +3,15 @@ import { config } from '@keystatic/core';
 import collections from '@lib/keystatic/collections';
 import singletons from '@lib/keystatic/singletons';
 
-const IS_PROD = import.meta.env.MODE === 'production';
-
 export default config({
   storage: {
     kind: 'github',
-    repo: 'solelychloe/arciniega.one',
+    repo: 'solelychloe/sapphic.moe',
   },
 
   ui: {
     brand: {
-      name: "Chloe's Article Posts",
+      name: "Sapphic Angels' articles",
       mark: () => {
         return (
           <img

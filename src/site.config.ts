@@ -1,8 +1,8 @@
 import type { Config } from '@typings/config.type';
 
 export const donation: Config['donation'] = {
-  percent: 25,
-  donated: 2300,
+  percent: 12,
+  donated: 2465,
   goal: 17500,
 
   kofi: 'https://ko-fi.com/solelychloe',
@@ -12,12 +12,12 @@ export const donation: Config['donation'] = {
 export const base: Config['base'] = {
   favicon: {
     altText: 'A pink lotus flower in full bloom.',
-    fileName: '/lotus.png',
+    fileName: '/favicon.ico',
   },
   themeColor: '#EF8496',
   site: {
-    name: 'arciniega.one',
-    url: 'https://arciniega.one',
+    name: 'sapphic.moe',
+    url: 'https://sapphic.moe',
   },
 };
 
@@ -26,7 +26,7 @@ export const blog: Config['blog'] = {
   comments: {
     enabled: true,
     options: {
-      'data-repo': 'solelychloe/arciniega.one',
+      'data-repo': 'solelychloe/sapphic.moe',
       'data-repo-id': 'MDEwOlJlcG9zaXRvcnkzODQ2OTI0OTY=',
       'data-category': 'Comments',
       'data-category-id': 'DIC_kwDOFu3xEM4CTiMS',
@@ -44,8 +44,8 @@ export const blog: Config['blog'] = {
   rss: {
     enabled: true,
     options: {
-      title: "Chloe's Article Posts",
-      description: 'A personal blog, comprising of whatever stuff I find interesting to post.',
+      title: "Sapphic Angels' articles",
+      description: 'A personal blog, comprising of whatever stuff we find interesting to post.',
       href: `https://${base.site.name}/rss.xml`,
     },
   },

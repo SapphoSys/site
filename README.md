@@ -22,6 +22,6 @@
 
 This website is licensed under the [zlib][license] license.
 
-&copy; 2023 Chloe Arciniega.
+&copy; 2024 Sapphic Angels.
 
-[license]: https://github.com/solelychloe/arciniega.one/blob/main/LICENSE 'zlib License'
+[license]: https://github.com/solelychloe/sapphic.moe/blob/main/LICENSE 'zlib License'

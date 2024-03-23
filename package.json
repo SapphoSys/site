@@ -2,7 +2,7 @@
   "name": "@solely/site",
   "version": "3.0.0",
   "type": "module",
-  "author": "Chloe Arciniega <solely@riseup.net>",
+  "author": "Sapphic Angels <chloe@sapphic.moe>",
   "license": "zlib",
   "private": true,
   "scripts": {
@@ -17,7 +17,7 @@
     "sync": "astro sync",
     "test": "eslint . --ext .ts,.js,.astro && prettier --c ."
   },
-  "repository": "https://github.com/solelychloe/arciniega.one",
+  "repository": "https://github.com/solelychloe/sapphic.moe",
   "postcss": {
     "plugins": {
       "tailwindcss/nesting": {},
@@ -79,7 +79,6 @@
     "remark-toc": "^9.0.0",
     "satori": "^0.10.13",
     "satori-html": "^0.3.2",
-    "simple-stack-stream": "^0.0.3",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   }

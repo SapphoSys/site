@@ -1,17 +1,14 @@
-# All root domains owned (on a registry level) by Chloe Arciniega (arciniega.one)
+# All root domains owned (on a registry level) by Sapphic Angels.
 # Domains that redirect to domains not in this list may not be in complete control.
-# Content outside of these domains cannot be guarenteed to be owned or managed by Chloe.
+# Content outside of these domains cannot be guarenteed to be owned or managed by Sapphic Angels.
 
 # Last updated: 2023-05-01T17:16:26.486Z
 
-# My main site
-arciniega.one
+# Our main site
+sapphic.moe
 
 # URL shortener
 solstice.tf
 
 # Parallel Program Report. (donated by Leaf, thank you!)
 parallel.report
-
-# Unused
-solelychloe.dev

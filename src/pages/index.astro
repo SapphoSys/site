@@ -3,34 +3,19 @@ import Layout from '@layouts/Page.astro';
 import Donation from '@components/home/Donation.astro';
 import Friends from '@components/home/buttons/Friends.astro';
 import OtherButtons from '@components/home/buttons/Other.astro';
-
-// import Status from '@components/home/Status.astro';
-// import { Suspense, ResolveSuspended } from 'simple-stack-stream/components';
 ---
 
-<Layout pageTitle="Chloe Arciniega">
+<Layout pageTitle="Sapphic Angels">
   <Donation />
 
   <section class="flex flex-col gap-y-5 pt-3" aria-label="introduction">
     <h1 class="title">Hello!</h1>
 
     <p>
-      I'm Chloe, a software engineer with a fascination for system administration and messing about with pieces of
-      technology. Feel free to look around to get to know me better! ^w^
+      We're the Sapphic Angels system. We're software engineers with a fascination for system administration and messing
+      about with pieces of technology. Feel free to look around to get to know us better! ^w^
     </p>
   </section>
-
-  <!-- TODO: Re-enable later -->
-  <!-- <section class="flex flex-col gap-y-5 pt-5" aria-label="status">
-    <h1 class="title">Current status</h1>
-
-    <Suspense>
-      <Status />
-      <div slot="fallback">
-        <p>Loading status...</p>
-      </div>
-    </Suspense>
-  </section> -->
 
   <section class="pt-5 motion-reduce:hidden" aria-hidden={true}>
     <h1 class="title">Friends</h1>
@@ -43,14 +28,4 @@ import OtherButtons from '@components/home/buttons/Other.astro';
 
     <OtherButtons />
   </section>
-
-  <!-- <ResolveSuspended /> -->
 </Layout>
-
-<!-- <style>
-  @media (scripting: none) {
-    section[aria-label='status'] {
-      display: none;
-    }
-  }
-</style> -->

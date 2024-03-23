@@ -102,8 +102,6 @@ export default defineConfig({
           });
       },
     }),
-    // TODO: Re-enable later
-    // simpleStackStream(),
   ],
   vite: {
     plugins: [rawFonts(['.ttf'])],
