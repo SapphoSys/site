@@ -6,6 +6,7 @@ export const donation: Config['donation'] = {
   goal: 17500,
 
   kofi: 'https://ko-fi.com/solelychloe',
+  patreon: 'https://patreon.com/solelychloe',
   paypal: 'https://paypal.me/solsticesol',
 };
 
