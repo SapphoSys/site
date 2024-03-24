@@ -13,9 +13,15 @@ const configSchema = z.object({
   }),
 
   base: z.object({
-    favicon: z.object({
-      altText: z.string(),
-      fileName: z.string(),
+    images: z.object({
+      favicon: z.object({
+        altText: z.string(),
+        fileName: z.string(),
+      }),
+      twitter: z.object({
+        altText: z.string(),
+        fileName: z.string(),
+      }),
     }),
     themeColor: z.string().regex(urlExpression),
     site: z.object({

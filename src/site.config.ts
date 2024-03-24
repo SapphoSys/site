@@ -10,9 +10,17 @@ export const donation: Config['donation'] = {
 };
 
 export const base: Config['base'] = {
-  favicon: {
-    altText: 'A pink lotus flower in full bloom.',
-    fileName: '/favicon.ico',
+  images: {
+    favicon: {
+      altText:
+        'The pink flower of a cherry blossom tree. Depicted as a single, light-pink cherry blossom with five, notched petals and red-tipped stamens in a yellow or white center.',
+      fileName: '/favicon.ico',
+    },
+    twitter: {
+      altText:
+        'The pink flower of a cherry blossom tree. Depicted as a single, light-pink cherry blossom with five, notched petals and red-tipped stamens in a yellow or white center.',
+      fileName: '/favicon.png',
+    },
   },
   themeColor: '#EF8496',
   site: {

@@ -22,10 +22,23 @@ const isArticle = Astro.url.pathname.startsWith('/article/');
 
 const IS_PRODUCTION = import.meta.env.NODE_ENV === 'production';
 
-const image = (image?: string) =>
-  IS_PRODUCTION ? new URL(image ?? base.favicon.fileName, Astro.site).href : image ?? base.favicon.fileName;
+const generateFavicon = (image?: string) => {
+  return {
+    src: IS_PRODUCTION
+      ? new URL(image ?? base.images.favicon.fileName, Astro.site).href
+      : image ?? base.images.favicon.fileName,
+    alt: isArticle ? ogImage?.alt : base.images.favicon.altText,
+  };
+};
 
-console.log(image(ogImage?.src));
+const generateTwitterImage = (image?: string) => {
+  return {
+    src: IS_PRODUCTION
+      ? new URL(image ?? base.images.twitter.fileName, Astro.site).href
+      : image ?? base.images.twitter.fileName,
+    alt: isArticle ? ogImage?.alt : base.images.twitter.altText,
+  };
+};
 ---
 
 <SEO
@@ -36,7 +49,7 @@ console.log(image(ogImage?.src));
     basic: {
       title: pageTitle,
       type: 'website',
-      image: image(),
+      image: generateFavicon().src,
     },
     optional: {
       siteName: ogImage ? 'Sapphic Angels' : siteName,
@@ -46,7 +59,7 @@ console.log(image(ogImage?.src));
       publishedTime: created,
     },
     image: {
-      alt: isArticle ? ogImage?.alt : base.favicon.altText,
+      alt: generateFavicon().alt,
     },
   }}
   twitter={{
@@ -54,8 +67,8 @@ console.log(image(ogImage?.src));
     creator: 'solelychloe',
     description,
 
-    image: image(ogImage?.src),
-    imageAlt: isArticle ? ogImage?.alt : base.favicon?.altText,
+    image: generateTwitterImage(ogImage?.src).src,
+    imageAlt: generateTwitterImage().alt,
   }}
   extend={{
     meta: [
