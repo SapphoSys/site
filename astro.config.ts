@@ -78,7 +78,7 @@ export default defineConfig({
     icon({
       include: {
         mdi: ['*'],
-        'simple-icons': ['paypal', 'kofi'],
+        'simple-icons': ['kofi', 'patreon', 'paypal'],
       },
     }),
     sitemap(),
