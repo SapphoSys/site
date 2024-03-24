@@ -8,7 +8,9 @@ const configSchema = z.object({
     percent: z.number(),
     donated: z.number(),
     goal: z.number(),
+
     kofi: z.string().regex(urlExpression),
+    patreon: z.string().regex(urlExpression),
     paypal: z.string().regex(urlExpression),
   }),
 
