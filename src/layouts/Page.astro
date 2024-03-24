@@ -54,6 +54,10 @@ const {
         @apply w-auto px-8 py-14 sm:lg:w-[40em];
       }
 
+      .article-content :is(h1, h2, h3, p, ul, li, strong) {
+        @apply text-ctp-text;
+      }
+
       [data-icon] {
         @apply mt-1;
         @apply text-ctp-mauve dark:text-ctp-pink;
