@@ -5,7 +5,7 @@ import { singletons } from '@lib/keystatic';
 const friends = (await singletons.buttons.readOrThrow()).friends;
 ---
 
-<div class="flex flex-wrap gap-5 pt-5 md:gap-2.5 lg:gap-4">
+<div class="flex flex-wrap gap-4 pt-5 sm:gap-3 md:gap-5">
   {
     friends.map((friend) => {
       return (
@@ -22,3 +22,9 @@ const friends = (await singletons.buttons.readOrThrow()).friends;
     })
   }
 </div>
+
+<style>
+  div {
+    image-rendering: pixelated;
+  }
+</style>

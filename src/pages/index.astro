@@ -2,7 +2,6 @@
 import Layout from '@layouts/Page.astro';
 import Donation from '@components/home/Donation.astro';
 import Friends from '@components/home/buttons/Friends.astro';
-import OtherButtons from '@components/home/buttons/Other.astro';
 ---
 
 <Layout pageTitle="Sapphic Angels">
@@ -21,11 +20,5 @@ import OtherButtons from '@components/home/buttons/Other.astro';
     <h1 class="title">Friends</h1>
 
     <Friends />
-  </section>
-
-  <section class="pt-5 motion-reduce:hidden" aria-hidden={true}>
-    <h1 class="title">Other</h1>
-
-    <OtherButtons />
   </section>
 </Layout>
