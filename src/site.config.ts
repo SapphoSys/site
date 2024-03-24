@@ -25,7 +25,7 @@ export const base: Config['base'] = {
   themeColor: '#EF8496',
   site: {
     name: 'sapphic.moe',
-    url: 'https://sapphic.moe',
+    url: 'https://beta.arciniega.one',
   },
 };
 
