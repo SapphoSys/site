@@ -23,6 +23,7 @@ import readingTime from './src/utils/article';
 import autoImport from 'astro-auto-import';
 import compress from 'astro-compress';
 import icon from 'astro-icon';
+import pages from 'astro-pages';
 import workerLinks from 'astro-worker-links';
 
 // https://astro.build/config
@@ -68,6 +69,7 @@ export default defineConfig({
     ],
   },
   integrations: [
+    pages('routes'),
     tailwind(),
     autoImport({
       imports: [{ 'astro-icon/components': ['Icon'] }, './src/components/mdx/Caption.astro'],

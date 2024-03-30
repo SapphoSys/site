@@ -46,7 +46,7 @@ export const GET = async (context: APIContext) => {
       <div class="flex h-4/5 w-full flex-col justify-center p-10">
         <span class="text-xl	text-[#9399b2]">${createdAt}</span>
         <h1 class="text-6xl font-bold">${title}</h1>
-        <h2>${description}</h2>
+        <h2 class="opacity-60">${description}</h2>
       </div>
 
       <div class="flex h-1/5 w-full items-center justify-between border-t-4 border-[#f5c2e7] p-10">
@@ -58,8 +58,8 @@ export const GET = async (context: APIContext) => {
           </div>
         </div>
         <div class="flex items-center">
-          <img src="https://em-content.zobj.net/source/google/387/cherry-blossom_1f338.png" class="h-15 w-15" />
-          <span class="pl-3 text-2xl text-[#f5c2e7]">sapphic.moe</span>
+          <img class="h-10 w-10" src="https://em-content.zobj.net/source/google/387/cherry-blossom_1f338.png" />
+          <span class="pl-3 text-2xl text-[#f5c2e7]">Article on sapphic.moe</span>
         </div>
       </div>
     </div>
