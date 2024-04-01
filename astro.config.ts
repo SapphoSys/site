@@ -62,7 +62,10 @@ export default defineConfig({
       [
         externalLinks,
         {
-          contentProperties: { className: ['external-link'] },
+          contentProperties: {
+            ariaHidden: true,
+            className: ['external-link'],
+          },
           content: { type: 'text', value: ' ↗' },
         },
       ],
@@ -72,7 +75,11 @@ export default defineConfig({
     pages('routes'),
     tailwind(),
     autoImport({
-      imports: [{ 'astro-icon/components': ['Icon'] }, './src/components/mdx/Caption.astro'],
+      imports: [
+        { 'astro-icon/components': ['Icon'] },
+        './src/components/mdx/Caption.astro',
+        './src/components/mdx/Spoiler.astro',
+      ],
     }),
     mdx(),
     keystatic(),

@@ -1,0 +1,35 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  description: string;
+  src: {
+    discriminant: boolean;
+    value: string;
+  };
+  alt: string;
+  caption?: string;
+}
+
+const {
+  description,
+  src: { value: src },
+  alt,
+  caption,
+} = Astro.props;
+---
+
+<details class="border-4 border-ctp-pink p-4 [&_svg[data-icon='mdi:arrow-down']]:open:-rotate-180">
+  <summary class="flex cursor-pointer items-center gap-4">
+    <Icon name="mdi:arrow-down" class="mb-1" aria-disabled={true} />
+
+    <div class="flex flex-row gap-2">
+      SPOILER: {description}
+    </div>
+  </summary>
+
+  <div class="flex flex-col pt-5">
+    <img class="-mt-0.5" {src} {alt} />
+    <figcaption class="-mt-6">{caption}</figcaption>
+  </div>
+</details>
