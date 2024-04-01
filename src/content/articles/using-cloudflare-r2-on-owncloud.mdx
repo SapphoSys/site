@@ -1,6 +1,6 @@
 ---
 title: Using Cloudflare R2 as your primary storage on Owncloud
-description: A guide on how to set up Cloudflare R2 on Owncloud.
+description: A guide on how to set up Cloudflare R2 on Owncloud and use it as your storage.
 draft: false
 created: '2023-04-02'
 modified: '2024-03-24'
@@ -11,11 +11,11 @@ comments: true
 ---
 ## Introduction
 
-I have a compute instance that is running [Owncloud](https://owncloud.com), which I use to backup my files and whatnot. While I was configuring the instance and uploading my files, I quickly realized that my instance's storage is very limited and did not have enough space to actually house all of my potential future backups.
+We have a compute instance that is running [Owncloud](https://owncloud.com), which we use to backup our files and whatnot. While we were configuring the instance and uploading our files, we quickly realized that our instance's storage is very limited and did not have enough space to actually house all of our potential future backups.
 
-But then I had an idea: what if I could hook up [Cloudflare's R2 service](https://www.cloudflare.com/products/r2/) to Owncloud?
+But then we had an idea: what if we could hook up [Cloudflare's R2 service](https://www.cloudflare.com/products/r2/) to Owncloud?
 
-Stick with us as I show you how to do exactly that in this article.&#x20;
+Stick with us as we show you how to do exactly that in this article.
 
 ## Table of contents
 
@@ -36,7 +36,7 @@ button.
 
 **💡 When creating a bucket, make sure you give this bucket a unique name because you won't be able to change it afterwards!**
 
-For the purposes of this guide, I'll stick with the bucket name `owncloud-instance`.
+For the purposes of this guide, we'll stick with the bucket name `owncloud-instance`.
 
 <Caption src={{"discriminant":true,"value":"https://elixi.re/i/eq5h5.png"}} alt="The unique name for your Cloudflare R2 bucket." caption="The unique name for your Cloudflare R2 bucket.">
 
@@ -66,7 +66,7 @@ You'll be able to see your **Access Key ID** and **Secret Access Key** values he
 
 Once you're done creating an R2 bucket, head over to your Owncloud admin dashboard.
 
-Click on the menu bar located in the upper left corner, and select the **Market** tab.&#x20;
+Click on the menu bar located in the upper left corner, and select the **Market** tab.
 
 <Caption src={{"discriminant":true,"value":"https://elixi.re/i/7zakj.png"}} alt="The Market tab on your Owncloud instance." caption="The Market tab on your Owncloud instance.">
 
@@ -141,7 +141,7 @@ And that's it! Log back in to your Owncloud admin dashboard, and your instance s
 
 Overall, it's pretty painless for your Owncloud instance to utilize Cloudflare's R2 service.
 
-I will warn you though, Cloudflare's base plan for R2 only includes 10 GB of storage per month.
+We will warn you though, Cloudflare's base plan for R2 only includes 10 GB of storage per month.
 
 <Caption src={{"discriminant":true,"value":"https://elixi.re/i/kwujy.png"}} alt="The pricing plans for Cloudflare's R2 service." caption="The pricing plans for Cloudflare's R2 service.">
 
@@ -153,4 +153,4 @@ But it all depends if you're fine with that. :)
 
 *Hey! If you're still here...*
 
-*This is the first time I'm writing a blog post of this sort. Let us know if I did well, or if there's anything I can improve with future blog posts. Thank you! ❤️*
+*This is the first time we're writing a blog post of this sort. Let us know if we did well, or if there's anything we can improve with future blog posts. Thank you! ❤️*
