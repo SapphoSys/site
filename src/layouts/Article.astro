@@ -25,7 +25,8 @@ interface Props {
   comments?: boolean;
 }
 
-const { slug, title, description, draft, created, modified, tags, minutesRead, comments } = Astro.props;
+const { slug, title, description, draft, created, modified, tags, minutesRead, comments } =
+  Astro.props;
 
 const checkComments = () => blog.comments.enabled && comments;
 
@@ -47,7 +48,13 @@ const image = slug
     };
 ---
 
-<Layout {description} pageTitle={title} title={`${title} | Sapphic Angels`} ogImage={image} created={createdAt}>
+<Layout
+  {description}
+  pageTitle={title}
+  title={`${title} | Sapphic Angels`}
+  ogImage={image}
+  created={createdAt}
+>
   {checkComments() && <meta slot="head" name="giscus:backlink" content={backlink} />}
 
   {

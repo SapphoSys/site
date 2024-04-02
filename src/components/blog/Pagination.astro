@@ -6,7 +6,7 @@ const { page } = Astro.props;
 
 {
   page.url.next && (
-    <div class="flex flex-row-reverse">
+    <div class="flex flex-row-reverse pt-2">
       <Icon size={30} name="mdi:arrow-right" aria-hidden={true} />
       <a href={page.url.next} title="See more articles">
         See more articles
@@ -17,7 +17,7 @@ const { page } = Astro.props;
 
 {
   page.url.prev && (
-    <div class="flex">
+    <div class="flex pt-2">
       <Icon size={30} name="mdi:arrow-left" aria-hidden={true} />
       <a href={page.url.prev} title="See newer articles">
         See newer articles
@@ -25,9 +25,3 @@ const { page } = Astro.props;
     </div>
   )
 }
-
-<style>
-  .flex {
-    @apply pt-2;
-  }
-</style>
