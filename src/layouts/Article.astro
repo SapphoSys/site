@@ -17,7 +17,7 @@ interface Props {
   title: string;
   description: string;
   draft?: boolean;
-  created: string;
+  created: string | Date;
   modified?: string;
   tags: any[];
   minutesRead?: string;
@@ -30,7 +30,7 @@ const { slug, title, description, draft, created, modified, tags, minutesRead, c
 
 const checkComments = () => blog.comments.enabled && comments;
 
-const formatDate = (date: string) => format(new Date(date), 'MMMM d, yyyy');
+const formatDate = (date: string | Date) => format(new Date(date), 'MMMM d, yyyy');
 const createdAt = created ? formatDate(created) : undefined;
 const modifiedAt = modified ? formatDate(modified) : undefined;
 

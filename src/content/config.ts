@@ -5,7 +5,7 @@ const articlesCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     draft: z.boolean().optional().default(false),
-    created: z.string(),
+    created: z.string().or(z.date()),
     modified: z.string().optional(),
     tags: z.array(z.any()),
     comments: z.boolean().optional().default(true),
