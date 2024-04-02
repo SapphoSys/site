@@ -1,5 +1,5 @@
 import { fields } from '@keystatic/core';
-import content from '../fields/content';
+import content from '@lib/keystatic/fields/content';
 
 export default {
   title: fields.slug({
@@ -78,5 +78,6 @@ export default {
     description: 'Should this article have comments enabled?',
     defaultValue: true,
   }),
+
   content: content({ type: 'article', typeInfo: 'article' }),
 };
