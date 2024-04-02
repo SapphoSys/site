@@ -30,8 +30,8 @@ export default wrapper({
       false: fields.image({
         label: 'Image',
         description: 'Upload an image.',
-        directory: 'src/content/articles/images',
-        publicPath: '/src/content/articles/images/',
+        directory: 'public/images/article',
+        publicPath: '/images/article',
         validation: {
           isRequired: true,
         },
