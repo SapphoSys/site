@@ -24,7 +24,6 @@ import autoImport from 'astro-auto-import';
 import compress from 'astro-compress';
 import expressiveCode from 'astro-expressive-code';
 import icon from 'astro-icon';
-import pages from 'astro-pages';
 import workerLinks from 'astro-worker-links';
 
 import catppuccinMocha from '@catppuccin/vscode/themes/mocha.json';
@@ -74,7 +73,6 @@ export default defineConfig({
     ],
   },
   integrations: [
-    // pages('routes'),
     tailwind(),
     expressiveCode({
       themes: [catppuccinMocha],

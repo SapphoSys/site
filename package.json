@@ -58,7 +58,6 @@
     "astro-compress": "^2.2.21",
     "astro-eslint-parser": "^0.16.3",
     "astro-icon": "1.1.0",
-    "astro-pages": "^0.2.1",
     "astro-seo": "^0.8.3",
     "astro-worker-links": "^0.3.1",
     "autoprefixer": "^10.4.19",

@@ -97,9 +97,6 @@ devDependencies:
   astro-icon:
     specifier: 1.1.0
     version: 1.1.0
-  astro-pages:
-    specifier: ^0.2.1
-    version: 0.2.1(astro-integration-kit@0.8.0)(astro@4.5.12)
   astro-seo:
     specifier: ^0.8.3
     version: 0.8.3(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.3)
@@ -4294,13 +4291,6 @@ packages:
     resolution: {integrity: sha512-OH/2E5Fg20h2aPrbe+QL8JZQFko0YZaF+j4mnQ7BGhfavO7OpSLa8a0y9sBwomHdSbkhTS8TQNayBfnW5DwbvQ==}
     dev: true
 
-  /ast-types@0.16.1:
-    resolution: {integrity: sha512-6t10qk83GOG8p0vKmaCr8eiilZwO171AvbROMtvvNiwrTly62t+7XkA8RdIIVbpMhCASAsxgAzdRSwh6nw/5Dg==}
-    engines: {node: '>=4'}
-    dependencies:
-      tslib: 2.6.2
-    dev: true
-
   /astring@1.8.6:
     resolution: {integrity: sha512-ISvCdHdlTDlH5IpxQJIex7BWBywFWgjJSVdwst+/iQCoEYnyOaQ95+X1JGshuBjGp6nxKUy1jMgE3zPqN7fQdg==}
     hasBin: true
@@ -4371,54 +4361,6 @@ packages:
       '@iconify/utils': 2.1.22
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /astro-integration-kit@0.8.0(astro@4.5.12)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-YTdSYrE6xrYpYWZghUUhsTs6Mt1H+/Mucv2VUPfhHoeY8IS9XbpA2adFEBRMd4n+sFd8W490gCUtjmWxnhEs9Q==}
-    peerDependencies:
-      '@astrojs/db': ^0.9.0
-      '@vitejs/plugin-react': ^4.2.1
-      astro: ^4.4.1
-      preact: ^10.19.4
-      react: ^18.2.0
-      react-dom: ^18.2.0
-      solid-js: ^1.8.15
-      svelte: ^4.2.11
-      vue: ^3.4.19
-    peerDependenciesMeta:
-      '@astrojs/db':
-        optional: true
-      '@vitejs/plugin-react':
-        optional: true
-      preact:
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
-      solid-js:
-        optional: true
-      svelte:
-        optional: true
-      vue:
-        optional: true
-    dependencies:
-      astro: 4.5.12(typescript@5.4.3)
-      pathe: 1.1.2
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      recast: 0.23.6
-    dev: true
-
-  /astro-pages@0.2.1(astro-integration-kit@0.8.0)(astro@4.5.12):
-    resolution: {integrity: sha512-gcaBIO3uk/YtFTkRhRem5NKmDZSOMT5ZFNUAynhy5rUQ4Uph7k0Cn340EZ4YPUIOa6SnO2PehuLlOu6THJ++nA==}
-    peerDependencies:
-      astro: '>=3'
-      astro-integration-kit: '>=0.1.0'
-    dependencies:
-      astro: 4.5.12(typescript@5.4.3)
-      astro-integration-kit: 0.8.0(astro@4.5.12)(react-dom@18.2.0)(react@18.2.0)
-      fast-glob: 3.3.2
     dev: true
 
   /astro-seo@0.8.3(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.3):
@@ -8673,17 +8615,6 @@ packages:
     resolution: {integrity: sha512-onYyVhBNr4CmAxFsKS7bz+uTLRakypIe4R+5A824vBSkQy/hB3fZepoVEf8OVAxzLvK+H/jm9TzpI3ETSm64Kg==}
     dev: true
 
-  /recast@0.23.6:
-    resolution: {integrity: sha512-9FHoNjX1yjuesMwuthAmPKabxYQdOgihFYmT5ebXfYGBcnqXZf3WOVz+5foEZ8Y83P4ZY6yQD5GMmtV+pgCCAQ==}
-    engines: {node: '>= 4'}
-    dependencies:
-      ast-types: 0.16.1
-      esprima: 4.0.1
-      source-map: 0.6.1
-      tiny-invariant: 1.3.3
-      tslib: 2.6.2
-    dev: true
-
   /reflect.getprototypeof@1.0.6:
     resolution: {integrity: sha512-fmfw4XgoDke3kdI6h4xcUz1dG8uaiv5q9gcEwLS4Pnth2kxT+GZ7YehS1JTMGBQmtV7Y4GFGbs2re2NqhdozUg==}
     engines: {node: '>= 0.4'}
@@ -9632,10 +9563,6 @@ packages:
 
   /tiny-invariant@1.0.6:
     resolution: {integrity: sha512-FOyLWWVjG+aC0UqG76V53yAWdXfH8bO6FNmyZOuUrzDzK8DI3/JRY25UD7+g49JWM1LXwymsKERB+DzI0dTEQA==}
-    dev: true
-
-  /tiny-invariant@1.3.3:
-    resolution: {integrity: sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg==}
     dev: true
 
   /tiny-warning@1.0.3:
