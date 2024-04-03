@@ -101,9 +101,5 @@ export default {
           '@apply text-3xl font-bold': {},
         },
       }),
-    ({ addVariant }: PluginAPI) => {
-      addVariant('progress-unfilled', ['&::-webkit-progress-bar', '&']);
-      addVariant('progress-filled', ['&::-webkit-progress-value', '&::-moz-progress-bar', '&']);
-    },
   ],
 } satisfies Config;

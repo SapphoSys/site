@@ -33,12 +33,9 @@ import { donation } from '$config';
       } / ${donation.goal.toLocaleString('en-US')})
     </p>
 
-    <progress
-      class="w-full progress-unfilled:bg-ctp-base progress-filled:bg-ctp-green"
-      class="w-full"
-      value={donation.percent}
-      max="100"
-      aria-hidden={true}></progress>
+    <span id="progress-bar" class="h-1 py-2" style={`width: ${donation.percent}%`}>
+      <span class="block h-4 bg-ctp-pink"></span>
+    </span>
   </div>
 
   <div class="flex flex-col flex-wrap gap-x-5 gap-y-2">
@@ -71,7 +68,7 @@ import { donation } from '$config';
         <Icon size={20} name="simple-icons:paypal" aria-hidden={true} />
         <a
           href={donation.paypal}
-          title="A link to our PayPal page if Ko-fi doesn't work for you, where you can choose to donate to us."
+          title="A link to our PayPal page if Ko-fi doesn't work2 for you, where you can choose to donate to us."
           target="_blank"
         >
           PayPal
