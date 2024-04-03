@@ -10,9 +10,9 @@
       "@styles/*": ["src/styles/*"],
       "@typings/*": ["src/typings/*"],
       "@utils/*": ["src/utils/*"],
-      "$config": ["src/site.config.ts"],
+      "$config": ["src/site.config.ts"]
     },
     "jsx": "react-jsx",
-    "jsxImportSource": "react",
-  },
+    "jsxImportSource": "react"
+  }
 }
