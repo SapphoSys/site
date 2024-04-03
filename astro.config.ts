@@ -2,10 +2,10 @@ import { defineConfig } from 'astro/config';
 import { rawFonts } from './src/utils/misc';
 import { base } from './src/site.config';
 
+// Official Astro integrations
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import keystatic from '@keystatic/astro';
-
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import vercel from '@astrojs/vercel/serverless';
@@ -15,16 +15,19 @@ import a11yEmoji from '@fec/remark-a11y-emoji';
 import figureCaption from '@microflash/remark-figure-caption';
 import autolinkHeadings from 'rehype-autolink-headings';
 import externalLinks from 'rehype-external-links';
-import slug from 'rehype-slug';
-import codeTitle from 'remark-code-title';
-import tableOfContents from 'remark-toc';
 import readingTime from './src/utils/article';
+import slug from 'rehype-slug';
+import tableOfContents from 'remark-toc';
 
+// Third-party Astro integrations
 import autoImport from 'astro-auto-import';
 import compress from 'astro-compress';
+import expressiveCode from 'astro-expressive-code';
 import icon from 'astro-icon';
 import pages from 'astro-pages';
 import workerLinks from 'astro-worker-links';
+
+import catppuccinMocha from '@catppuccin/vscode/themes/mocha.json';
 
 // https://astro.build/config
 export default defineConfig({
@@ -32,12 +35,8 @@ export default defineConfig({
   adapter: vercel(),
   site: base.site.url,
   markdown: {
-    shikiConfig: {
-      theme: 'material-theme-ocean',
-    },
     remarkPlugins: [
       a11yEmoji,
-      codeTitle,
       figureCaption,
       [
         tableOfContents,
@@ -66,7 +65,10 @@ export default defineConfig({
             ariaHidden: true,
             className: ['external-link'],
           },
-          content: { type: 'text', value: ' ↗' },
+          content: {
+            type: 'text',
+            value: ' ↗',
+          },
         },
       ],
     ],
@@ -74,9 +76,21 @@ export default defineConfig({
   integrations: [
     pages('routes'),
     tailwind(),
+    expressiveCode({
+      themes: [catppuccinMocha],
+      styleOverrides: {
+        frames: {
+          shadowColor: '#000',
+          editorActiveTabIndicatorTopColor: '#f5c2e7',
+          editorActiveTabForeground: '#f5c2e7',
+        },
+      },
+    }),
     autoImport({
       imports: [
-        { 'astro-icon/components': ['Icon'] },
+        {
+          'astro-icon/components': ['Icon'],
+        },
         './src/components/mdx/Caption.astro',
         './src/components/mdx/Spoiler.astro',
       ],
