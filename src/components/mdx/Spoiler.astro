@@ -19,9 +19,11 @@ const {
 } = Astro.props;
 ---
 
-<details class="border-2 border-ctp-pink p-3 [&_svg[data-icon='mdi:arrow-down']]:open:-rotate-180">
+<details
+  class="border-2 border-ctp-mauve bg-ctp-crust p-4 dark:border-ctp-pink [&_svg[data-icon='mdi:arrow-down']]:open:-rotate-180"
+>
   <summary class="flex cursor-pointer items-center gap-4">
-    <Icon name="mdi:arrow-down" class="mb-1" aria-disabled={true} />
+    <Icon name="mdi:arrow-down" class="mb-1" size={30} aria-disabled={true} />
 
     <div class="flex flex-row gap-2">
       SPOILER: {description}
