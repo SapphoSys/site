@@ -60,6 +60,7 @@ export default defineConfig({
       [
         externalLinks,
         {
+          target: '_blank',
           contentProperties: {
             ariaHidden: true,
             className: ['external-link'],
