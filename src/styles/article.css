@@ -7,8 +7,11 @@
     @apply text-sm;
   }
 
+  :is(h1, h2, h3, p, ul, li, strong, span, figcaption) {
+    @apply text-ctp-text;
+  }
+
   figcaption {
-    @apply prose dark:prose-invert;
     @apply text-center;
   }
 
