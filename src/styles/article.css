@@ -7,25 +7,9 @@
     @apply text-sm;
   }
 
-  /* Codeblocks */
-  & code {
-    @apply whitespace-pre-wrap;
-
-    & > .line {
-      @apply font-mono;
-    }
-  }
-
-  & pre {
-    @apply border border-ctp-mantle;
-  }
-
-  [data-remark-code-title] {
-    @apply rounded-t-lg border border-ctp-crust bg-ctp-crust px-5 py-2 font-mono text-sm dark:bg-ctp-mantle;
-
-    & + pre {
-      @apply m-0 rounded-t-none border-t-0;
-    }
+  figcaption {
+    @apply prose dark:prose-invert;
+    @apply text-center;
   }
 
   /* Heading links */
