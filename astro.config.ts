@@ -74,7 +74,7 @@ export default defineConfig({
     ],
   },
   integrations: [
-    pages('routes'),
+    // pages('routes'),
     tailwind(),
     expressiveCode({
       themes: [catppuccinMocha],
