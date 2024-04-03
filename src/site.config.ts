@@ -35,7 +35,7 @@ export const blog: Config['blog'] = {
   comments: {
     enabled: true,
     options: {
-      'data-repo': 'solelychloe/sapphic.moe',
+      'data-repo': 'SapphicMoe/sapphic.moe',
       'data-repo-id': 'MDEwOlJlcG9zaXRvcnkzODQ2OTI0OTY=',
       'data-category': 'Comments',
       'data-category-id': 'DIC_kwDOFu3xEM4CTiMS',
