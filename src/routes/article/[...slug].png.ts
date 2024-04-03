@@ -1,11 +1,13 @@
 import type { APIContext } from 'astro';
+import type { ReactNode } from 'react';
+
 import { html } from 'satori-html';
 import { Resvg } from '@resvg/resvg-js';
 import { getCollection } from 'astro:content';
 import { format, parseISO } from 'date-fns';
+
 import satori from 'satori';
 import Atkinson from '@utils/fonts/AtkinsonHyperlegible-Regular.ttf';
-import type { ReactNode } from 'react';
 
 const formatDate = (date: Date) => format(date, 'MMMM d, yyyy');
 
@@ -17,7 +19,7 @@ const dimensions = {
 interface Props {
   title: string;
   description: string;
-  created: string;
+  created: string | Date;
 }
 
 export const getStaticPaths = async () => {
@@ -39,7 +41,8 @@ export const getStaticPaths = async () => {
 
 export const GET = async (context: APIContext) => {
   const { title, description, created } = context.props as Props;
-  const createdAt = formatDate(parseISO(created)) ?? undefined;
+  const createdAt =
+    formatDate(typeof created === 'string' ? parseISO(created) : created) ?? undefined;
 
   const imageTemplate = html`
     <div class="flex h-full w-full flex-col bg-[#1e1e2e] text-[#cdd6f4]">
