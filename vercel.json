@@ -3,11 +3,11 @@
   "rewrites": [
     {
       "source": "/js/script.js",
-      "destination": "https://stats.ovy.sh/js/script.js"
+      "destination": "https://stats.sapphic.moe/js/script.js"
     },
     {
       "source": "/api/event",
-      "destination": "https://stats.ovy.sh/api/event"
+      "destination": "https://stats.sapphic.moe/api/event"
     },
     {
       "source": "/domains",
