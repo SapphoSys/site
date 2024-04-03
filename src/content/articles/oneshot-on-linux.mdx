@@ -1,0 +1,192 @@
+---
+title: 'OneShot on Linux: The Definitive Guide'
+description: >-
+  The resource to help you play, complete, and enjoy OneShot on Linux
+  distrubutions.
+draft: false
+created: 2024-04-02
+tags:
+  - oneshot
+  - linux
+comments: true
+---
+*Note: this guide assumes you have the *[*Steam version*](https://store.steampowered.com/app/420530/OneShot/)* of OneShot.*
+*For the *[*itch.io version*](https://futurecat.itch.io/oneshot)* of OneShot, you can just run the ****`.appimage`**** file.*
+
+OneShot is one of our favourite games out there. It helped get us through some of our darkest times and it's our comfort game. We could spend hours talking about it.
+
+Unfortunately, getting it to work on Linux can be quite the challenge. Though the game has a native Linux version, you have to delete certain files for it to launch - but even that is not a guarantee that it will work on all Linux distributions.
+
+It's simply not feasible for an average user to have to scour the wide Internet for possible solutions just to be able to play OneShot.
+
+That's why we have decided to write an article guide to make sure one can enjoy the game on Linux with close to no hurdles.
+
+## Table of Contents
+
+## Caveats
+
+Unfortunately, due to the nature of the game, your immersion may be slightly ruined.
+
+For example, the game automatically changing your desktop wallpaper during a certain puzzle won't work on Linux. See the [**Desktop wallpaper not changing**](#desktop-wallpaper-not-updating) section for more information.
+
+OneShot is best played and experienced on a Windows environment.
+
+If you don't mind this trade-off though or simply don't care, keep on reading.
+
+## Prerequisites
+
+You will need to install [Protontricks](https://github.com/Matoking/protontricks).
+
+## Installing Protontricks
+
+There are several ways to install Protontricks.
+
+*If you already have Protontricks installed, you can skip to the *[***Running the game***](#running-the-game)* section.*
+
+### 1. Installing Protontricks via Flatpak
+
+If you have Flatpak installed, you can run the following command to install Protontricks:
+
+```bash title="Terminal"
+flatpak install flathub com.github.Matoking.protontricks
+```
+
+To install Flatpak for your Linux distribution, you can follow [Flathub's guide](https://flathub.org/setup).
+
+### 2. Installing Protontricks as a system package
+
+Here are the following commands to install Protontricks for the most popular Linux distributions:
+
+* **Arch Linux**: Protontricks is available via the [AUR](https://aur.archlinux.org/packages/protontricks).
+
+  * paru: `paru -S protontricks`
+
+  * yay: `yay -S protontricks`
+
+* **Debian 12+**: `sudo apt install protontricks`
+
+* **Fedora 32+**: `sudo dnf install protontricks`
+
+* **NixOS 21+**: `nix-env -iA protontricks`
+
+* **Ubuntu 22+**: `sudo apt install protontricks`
+
+* **Void Linux**: `xbps-install protontricks`
+
+If your Linux distribution is not listed here, check out the ["Installation" section on the Protontricks repository](https://github.com/Matoking/protontricks?tab=readme-ov-file#installation) for more information.
+
+## Running the game
+
+We'll be using Valve's Proton compatibility layer to play OneShot.
+
+For the majority of the game, you won't have to use **Protontricks**. It's only near the end that you'll be forced to run a certain executable file in order to progress further. [*(Jump to 'Later stages of the game' section)*](#later-stages-of-the-game)
+
+Head over to your library, right click OneShot, select "**Properties..."** and head over to the **Compatibility** tab.
+
+Enable "**Force the use of a specific Steam Play compatibility tool**", and select **Proton 7.0-6**. This will download that specific Proton version, which might take a while.
+
+<Caption src={{"discriminant":false,"value":"/images/article/oneshot-on-linux/compatibility-tab.png"}} alt="Compatibility tab for OneShot with Proton version 7.0-6 being selected." caption="Compatibility tab for OneShot.">
+  Once that's done, you can launch OneShot from your Steam library and the majority of the game will run just fine!
+</Caption>
+
+### Desktop wallpaper not updating
+
+Unfortunately, the game will not automatically change your desktop wallpaper on Linux during a certain puzzle in the Glen region. We have not found a solution for this issue.
+
+For the time being, you can change the wallpaper manually by going to the `~/.steam/steam/steamapps/common/OneShot/Wallpaper` and selecting `desktop.png` as your wallpaper. You can change the wallpaper back after you're done with the puzzle.
+
+## Interacting with documents
+
+In some parts of the game, you may have to interact with files. Usually, these files are located in the **My Documents** folder on Windows.
+
+With Proton, your documents for OneShot are located in the `~/.steam/steam/steamapps/compatdata/420530/pfx/drive_c/users/steamuser/Documents` folder.
+
+I'm sure you don't feel like memorizing that, so let's create a symlink (think of it as a shortcut, basically) for easy access!
+
+We'll be creating a symlink in your home directory.
+Run the following command to create a **ProtonDocuments** symlink in your Documents folder:
+
+```bash title="Terminal"
+ln -s ~/.steam/steam/steamapps/compatdata/420530/pfx/drive_c/users/steamuser/Documents ~/Documents/ProtonDocuments
+```
+
+Now whenever the game creates a document file, you can always access it under your Documents folder! (`~/Documents/ProtonDocuments`)
+
+<Caption src={{"discriminant":false,"value":"/images/article/oneshot-on-linux/protondocuments.png"}} alt="GNOME File Explorer (Nautilus) showing the ProtonDocuments symlink in your home directory's Documents folder." caption="The ProtonDocuments symlink in your home directory's Documents folder.">
+
+</Caption>
+
+You may see additional folders like Downloads, Templates, Videos and so on in the **ProtonDocuments** folder, but don't worry about them!
+
+### Where can I view my save files for OneShot?
+
+Your save and config files for OneShot are located in the `~/.steam/steam/steamapps/compatdata/420530/pfx/drive_c/users/steamuser/AppData/Roaming/Oneshot` folder.
+
+If you end up interacting with your save files often, you can create run the following command:
+
+```bash title="Terminal"
+ln -s ~/.steam/steam/steamapps/compatdata/420530/pfx/drive_c/users/steamuser/AppData/Roaming/Oneshot ~/Documents/OneShotSaves
+```
+
+This will create a **OneShotSaves** symlink in your Documents folder for easy access:
+
+<Caption src={{"discriminant":false,"value":"/images/article/oneshot-on-linux/oneshotsaves.png"}} alt="The OneShotSaves symlink in your home directory's Documents folder. It contains your save files for OneShot, as well as some configuration files." caption="The OneShotSaves symlink in your home directory's Documents folder. It contains your save files for OneShot, as well as some configuration files.">
+
+</Caption>
+
+## Later stages of the game
+
+Though most of the game will work and play fine, eventually, you'll have to run a file named `_______.exe` (we'll be calling this the "clover program" for the rest of the guide) in order to progress further in the game. This is where Protontricks comes into play.
+
+Using `protontricks-launch`, run the following command to launch the clover program:
+
+```bash title="Terminal"
+protontricks-launch --appid 420530 ~/.steam/steam/steamapps/compatdata/420530/pfx/drive_c/users/steamuser/Documents/My\ Games/Oneshot/_______.exe
+```
+
+Afterwards, launch OneShot via its `steamshim` binary:
+
+```bash title="Terminal"
+protontricks-launch --appid 420530 ~/.steam/steam/steamapps/common/OneShot/steamshim.exe
+```
+
+**Note**: The Steam overlay will be unavailable under Protontricks, however achievements will work pretty much just fine.
+
+### Aliasing the commands
+
+If you want to have these commands at an easy reach, you can add them as an alias to your shell file. In our case, we'll be using Bash, but you can modify the example below to work with zsh, fish, and other shells.
+
+Open the `~/.bashrc` file with the editor of your choice, and add the following code to the end of the file:
+
+```sh title=".bashrc"
+alias launch-oneshot="
+protontricks-launch --appid 420530 ~/.steam/steam/steamapps/common/OneShot/steamshim.exe
+"
+
+alias launch-oneshot-clover="
+protontricks-launch --appid 420530 ~/.steam/steam/steamapps/compatdata/420530/pfx/drive_c/users/steamuser/Documents/My\ Games/Oneshot/_______.exe
+"
+```
+
+Now you can launch OneShot and the clover program by just typing `launch-oneshot` and `launch-oneshot-clover` respectively in your terminal!
+
+<Spoiler
+  description="OneShot and the clover program being open at the same time near the end of the game"
+  src={{"discriminant":false,"value":"/images/article/oneshot-on-linux/spoiler-clover-program.png"}}
+  alt="OneShot and the clover program being open at the same time on the way to the Tower on Linux.
+Niko is saying: &#x22;It's the lightbulb. Thank goodness it's safe...&#x22;.
+The clover program reads: &#x22;I did not realize things could end like this... please forgive me.&#x22;"
+  caption="OneShot and the clover program being open at the same time on the way to the Tower on Linux."
+>
+
+</Spoiler>
+
+## Concluding thoughts
+
+As much as we love OneShot, we honestly wish it was updated to work well to run natively on Linux just fine with no additional tweaking, or at the very least, updating the game to work on the latest Proton versions.
+
+No hate towards the developers of the game though! We know it must be pretty hard to support the Linux version of OneShot and ensure it runs well across all distributions and configurations.
+
+Thank you for reading 'till the end!
+
+If you want to support us, please donate to [our Ko-fi page](https://ko-fi.com/solelychloe) as we're trying to run away from our abusive family.
