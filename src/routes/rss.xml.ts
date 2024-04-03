@@ -2,7 +2,6 @@ import rss from '@astrojs/rss';
 
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
-import { parseISO } from 'date-fns';
 
 import { blog } from '$config';
 
@@ -16,7 +15,7 @@ export const GET: APIRoute = () =>
     items: articles.map((article) => ({
       description: article.data.description,
       link: `article/${article.slug}`,
-      pubDate: parseISO(article.data.created),
+      pubDate: new Date(article.data.created),
       title: article.data.title,
     })),
   });
