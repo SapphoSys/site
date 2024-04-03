@@ -3,13 +3,13 @@ import { format } from 'date-fns';
 import { Icon } from 'astro-icon/components';
 import Tag from '@components/blog/Tag.astro';
 
-const formatDate = (date: string) => format(new Date(date), 'MMMM d, yyyy');
+const formatDate = (date: string | Date) => format(new Date(date), 'MMMM d, yyyy');
 
 interface Props {
   data: {
     title: string;
     description: string;
-    created: string;
+    created: string | Date;
     tags: any[];
   };
   slug: string;
