@@ -19,19 +19,21 @@ const {
 } = Astro.props;
 ---
 
-<details
-  class="border-2 border-ctp-mauve bg-ctp-crust p-4 dark:border-ctp-pink [&_svg[data-icon='mdi:arrow-down']]:open:-rotate-180"
->
-  <summary class="flex cursor-pointer items-center gap-4">
-    <Icon name="mdi:arrow-down" class="mb-1" size={30} aria-disabled={true} />
+<div class="flex flex-col gap-4">
+  <span>{description} (spoiler warning!)</span>
 
-    <div class="flex flex-row gap-2">
-      SPOILER: {description}
+  <details
+    class="border-2 border-ctp-mauve bg-ctp-crust p-4 dark:border-ctp-pink [&_svg[data-icon='mdi:caret-down']]:open:-rotate-180"
+  >
+    <summary class="flex cursor-pointer flex-wrap items-center justify-between gap-4">
+      <div class="flex flex-row gap-2">Spoiler</div>
+
+      <Icon name="mdi:caret-down" class="mb-1" size={30} aria-disabled={true} />
+    </summary>
+
+    <div class="flex flex-col pt-5">
+      <img class="-mt-0.5" {src} {alt} />
+      <figcaption class="-mt-6">{caption}</figcaption>
     </div>
-  </summary>
-
-  <div class="flex flex-col pt-5">
-    <img class="-mt-0.5" {src} {alt} />
-    <figcaption class="-mt-6">{caption}</figcaption>
-  </div>
-</details>
+  </details>
+</div>
