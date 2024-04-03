@@ -26,14 +26,14 @@
     }
   },
   "dependencies": {
-    "@astrojs/vercel": "^7.5.0",
-    "astro": "^4.5.12",
+    "@astrojs/vercel": "^7.5.2",
+    "astro": "^4.5.15",
     "astro-expressive-code": "^0.33.5"
   },
   "devDependencies": {
     "@astrojs/check": "^0.5.10",
-    "@astrojs/mdx": "^2.2.2",
-    "@astrojs/react": "^3.1.0",
+    "@astrojs/mdx": "^2.2.3",
+    "@astrojs/react": "^3.1.1",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.1.2",
     "@astrojs/tailwind": "^5.1.0",
@@ -45,12 +45,12 @@
     "@iconify-json/mdi": "^1.1.64",
     "@iconify-json/simple-icons": "^1.1.97",
     "@keystatic/astro": "^5.0.0",
-    "@keystatic/core": "^0.5.10",
+    "@keystatic/core": "^0.5.11",
     "@microflash/remark-figure-caption": "^2.0.2",
     "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/typography": "^0.5.12",
     "@types/eslint": "^8.56.7",
-    "@types/react": "^18.2.73",
+    "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.23",
     "@typescript-eslint/eslint-plugin": "^7.5.0",
     "@typescript-eslint/parser": "^7.5.0",
