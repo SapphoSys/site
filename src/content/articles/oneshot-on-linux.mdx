@@ -4,7 +4,8 @@ description: >-
   The resource to help you play, complete, and enjoy OneShot on Linux
   distrubutions.
 draft: false
-created: 2024-04-02
+created: 2024-04-03
+modified: 2024-04-04
 tags:
   - oneshot
   - linux
@@ -27,7 +28,7 @@ That's why we have decided to write an article guide to make sure one can enjoy 
 
 Unfortunately, due to the nature of the game, your immersion may be slightly ruined.
 
-For example, the game automatically changing your desktop wallpaper during a certain puzzle won't work on Linux. See the **[Desktop wallpaper not changing](#desktop-wallpaper-not-updating)** section for more information.
+For example, the game automatically changing your desktop wallpaper during a certain puzzle won't work on Linux. See the [**Desktop wallpaper not changing**](#desktop-wallpaper-not-updating) section for more information.
 
 OneShot is best played and experienced on a Windows environment.
 
@@ -41,7 +42,7 @@ You will need to install [Protontricks](https://github.com/Matoking/protontricks
 
 There are several ways to install Protontricks.
 
-*If you already have Protontricks installed, you can skip to the **[Running the game](#running-the-game)** section.*
+*If you already have Protontricks installed, you can skip to the *[***Running the game***](#running-the-game)* section.*
 
 ### 1. Installing Protontricks via Flatpak
 
@@ -95,9 +96,9 @@ Once that's done, you can launch OneShot from your Steam library and the majorit
 
 ### Desktop wallpaper not updating
 
-In the native Linux version of OneShot and on Windows, the game is able to automatically change your wallpaper during a certain puzzle in the Glen region.  
+In the native Linux version of OneShot and on Windows, the game is able to automatically change your wallpaper during a certain puzzle in the Glen region.
 
-Unfortunately, this is not possible with Proton as the game is running on Wine, which, to our knowledge anyway, is not able to change the host machine's desktop wallpaper. 
+Unfortunately, this is not possible with Proton as the game is running on Wine, which, to our knowledge anyway, is not able to change the host machine's desktop wallpaper.
 
 We have not found a solution for this issue. For the time being, you can change the wallpaper manually by going to the `~/.steam/steam/steamapps/common/OneShot/Wallpaper` folder and selecting `desktop.png` as your wallpaper. You can change the wallpaper back after you're done with the puzzle.
 
@@ -188,6 +189,20 @@ The clover program reads: &#x22;I did not realize things could end like this... 
 >
 
 </Spoiler>
+
+## Questions and answers
+
+### I'm getting the "Failed to initialize Steamworks" error!
+
+You need to have Steam running on your host machine when you execute the `steamshim` file.
+
+### Can I play Solstice with this?
+
+Yes. Just delete the `save_progress.oneshot` file in your `ProtonDocuments/My Games/Oneshot` folder and execute the `steamshim.exe` file with Protontricks (or run the `launch-oneshot` alias command above).
+
+### I know how to fix X or I want to include Y in this guide!
+
+Cool! Just leave a comment below or contact me and I'll update the article.
 
 ## Concluding thoughts
 
