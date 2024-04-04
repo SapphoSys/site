@@ -55,6 +55,8 @@ To install Flatpak for your Linux distribution, you can follow [Flathub's guide]
 
 ### 2. Installing Protontricks as a system package
 
+Alternatively, you can install Protontricks as a system package.
+
 Here are the following commands to install Protontricks for the most popular Linux distributions:
 
 * **Arch Linux**: Protontricks is available via the [AUR](https://aur.archlinux.org/packages/protontricks).
@@ -93,9 +95,13 @@ Once that's done, you can launch OneShot from your Steam library and the majorit
 
 ### Desktop wallpaper not updating
 
-Unfortunately, the game will not automatically change your desktop wallpaper on Linux during a certain puzzle in the Glen region. We have not found a solution for this issue.
+In the native Linux version of OneShot and on Windows, the game is able to automatically change your wallpaper during a certain puzzle in the Glen region.  
 
-For the time being, you can change the wallpaper manually by going to the `~/.steam/steam/steamapps/common/OneShot/Wallpaper` folder and selecting `desktop.png` as your wallpaper. You can change the wallpaper back after you're done with the puzzle.
+Unfortunately, this is not possible with Proton as the game is running on Wine, which, to our knowledge anyway, is not able to change the host machine's desktop wallpaper. 
+
+We have not found a solution for this issue. For the time being, you can change the wallpaper manually by going to the `~/.steam/steam/steamapps/common/OneShot/Wallpaper` folder and selecting `desktop.png` as your wallpaper. You can change the wallpaper back after you're done with the puzzle.
+
+Alternatively, you can just open the image for the duration of the puzzle.
 
 ## Interacting with documents
 
