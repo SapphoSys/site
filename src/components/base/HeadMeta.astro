@@ -22,11 +22,11 @@ const isArticle = Astro.url.pathname.startsWith('/article/');
 
 const IS_PRODUCTION = import.meta.env.NODE_ENV === 'production';
 
-const generateFavicon = (image?: string) => {
+const generateOpenGraphImage = () => {
   return {
     src: IS_PRODUCTION
-      ? new URL(image ?? base.images.favicon.fileName, Astro.site).href
-      : image ?? base.images.favicon.fileName,
+      ? new URL(ogImage?.src ?? base.images.favicon.fileName, Astro.site).href
+      : ogImage?.src ?? base.images.favicon.fileName,
     alt: isArticle ? ogImage?.alt : base.images.favicon.altText,
   };
 };
@@ -39,6 +39,8 @@ const generateTwitterImage = (image?: string) => {
     alt: isArticle ? ogImage?.alt : base.images.twitter.altText,
   };
 };
+
+console.log(generateOpenGraphImage());
 ---
 
 <SEO
@@ -49,7 +51,7 @@ const generateTwitterImage = (image?: string) => {
     basic: {
       title: pageTitle,
       type: 'website',
-      image: generateFavicon().src,
+      image: generateOpenGraphImage().src,
     },
     optional: {
       siteName: ogImage ? 'Sapphic Angels' : siteName,
@@ -59,7 +61,7 @@ const generateTwitterImage = (image?: string) => {
       publishedTime: created,
     },
     image: {
-      alt: generateFavicon().alt,
+      alt: generateOpenGraphImage().alt,
     },
   }}
   twitter={{
