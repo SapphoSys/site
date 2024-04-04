@@ -3,8 +3,9 @@
   @apply text-xl;
   @apply -mt-5;
 
+  /* ugly fix but whatever */
   .external-link {
-    @apply text-sm;
+    @apply text-ctp-pink;
   }
 
   :is(h1, h2, h3, p, ul, li, strong, span, figcaption) {
