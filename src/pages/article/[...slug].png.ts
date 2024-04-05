@@ -8,9 +8,6 @@ import { format } from 'date-fns';
 
 import satori from 'satori';
 import Atkinson from '@utils/fonts/AtkinsonHyperlegible-Regular.ttf';
-
-const formatDate = (date: Date) => format(date, 'MMMM d, yyyy');
-
 const dimensions = {
   width: 1200,
   height: 630,
@@ -41,8 +38,6 @@ export const getStaticPaths = async () => {
 
 export const GET = async (context: APIContext) => {
   const { title, description, created } = context.props as Props;
-  console.log(created);
-  console.log(formatDate(new Date(created)));
   const createdAt = format(new Date(created), 'MMMM d, yyyy');
 
   const imageTemplate = html`

@@ -11,8 +11,8 @@ tags:
   - linux
 comments: true
 ---
-*Note: this guide assumes you have the *[*Steam version*](https://store.steampowered.com/app/420530/OneShot/)* of OneShot.*
-*For the *[*itch.io version*](https://futurecat.itch.io/oneshot)* of OneShot, you can just run the ****`.appimage`**** file.*
+*Note: this guide assumes you have the *[*Steam version*](https://store.steampowered.com/app/420530/OneShot/)* of OneShot.*  
+*For the [itch.io version](https://futurecat.itch.io/oneshot) of OneShot, please see the "[I cannot get the itch.io version to run!](#i-cannot-get-the-itchio-version-to-run)" section.*
 
 OneShot is one of our favourite games out there. It helped get us through some of our darkest times and it's our comfort game. We could spend hours talking about it.
 
@@ -28,7 +28,7 @@ That's why we have decided to write an article guide to make sure one can enjoy 
 
 Unfortunately, due to the nature of the game, your immersion may be slightly ruined.
 
-For example, the game automatically changing your desktop wallpaper during a certain puzzle won't work on Linux. See the [**Desktop wallpaper not changing**](#desktop-wallpaper-not-updating) section for more information.
+For example, the game automatically changing your desktop wallpaper during a certain puzzle won't work on Linux. See the [Desktop wallpaper not changing](#desktop-wallpaper-not-updating) section for more information.
 
 OneShot is best played and experienced on a Windows environment.
 
@@ -42,9 +42,9 @@ You will need to install [Protontricks](https://github.com/Matoking/protontricks
 
 There are several ways to install Protontricks.
 
-*If you already have Protontricks installed, you can skip to the *[***Running the game***](#running-the-game)* section.*
+*If you already have Protontricks installed, you can skip to the *[*Running the game*](#running-the-game)* section.*
 
-### 1. Installing Protontricks via Flatpak
+### Method 1: Installing Protontricks via Flatpak
 
 If you have Flatpak installed, you can run the following command to install Protontricks:
 
@@ -54,7 +54,7 @@ flatpak install flathub com.github.Matoking.protontricks
 
 To install Flatpak for your Linux distribution, you can follow [Flathub's guide](https://flathub.org/setup).
 
-### 2. Installing Protontricks as a system package
+### Method 2: Installing Protontricks as a system package
 
 Alternatively, you can install Protontricks as a system package.
 
@@ -94,16 +94,6 @@ Enable "**Force the use of a specific Steam Play compatibility tool**", and sele
 
 Once that's done, you can launch OneShot from your Steam library and the majority of the game will run just fine!
 
-### Desktop wallpaper not updating
-
-In the native Linux version of OneShot and on Windows, the game is able to automatically change your wallpaper during a certain puzzle in the Glen region.
-
-Unfortunately, this is not possible with Proton as the game is running on Wine, which, to our knowledge anyway, is not able to change the host machine's desktop wallpaper.
-
-We have not found a solution for this issue. For the time being, you can change the wallpaper manually by going to the `~/.steam/steam/steamapps/common/OneShot/Wallpaper` folder and selecting `desktop.png` as your wallpaper. You can change the wallpaper back after you're done with the puzzle.
-
-Alternatively, you can just open the image for the duration of the puzzle.
-
 ## Interacting with documents
 
 In some parts of the game, you may have to interact with files. Usually, these files are located in the **My Documents** folder on Windows.
@@ -126,22 +116,6 @@ Now whenever the game creates a document file, you can always access it under yo
 </Caption>
 
 You may see additional folders like Downloads, Templates, Videos and so on in the **ProtonDocuments** folder, but don't worry about them!
-
-### Where can I view my save files for OneShot?
-
-Your save and config files for OneShot are located in the `~/.steam/steam/steamapps/compatdata/420530/pfx/drive_c/users/steamuser/AppData/Roaming/Oneshot` folder.
-
-If you end up interacting with your save files often, you can create run the following command:
-
-```bash title="Terminal"
-ln -s ~/.steam/steam/steamapps/compatdata/420530/pfx/drive_c/users/steamuser/AppData/Roaming/Oneshot ~/Documents/OneShotSaves
-```
-
-This will create a **OneShotSaves** symlink in your Documents folder for easy access:
-
-<Caption src={{"discriminant":false,"value":"/images/article/oneshot-on-linux/oneshotsaves.png"}} alt="The OneShotSaves symlink in your home directory's Documents folder. It contains your save files for OneShot, as well as some configuration files." caption="The OneShotSaves symlink in your home directory's Documents folder. It contains your save files for OneShot, as well as some configuration files.">
-
-</Caption>
 
 ## Later stages of the game
 
@@ -195,6 +169,54 @@ The clover program reads: &#x22;I did not realize things could end like this... 
 ### I'm getting the "Failed to initialize Steamworks" error!
 
 You need to have Steam running on your host machine when you execute the `steamshim` file.
+
+### I cannot get the itch.io version to run!
+
+Due to an AppImageKit bug, the .appimage file provided on the itch.io version of OneShot is broken.
+
+For the time being, you can use the following snippet provided by [Leo](https://vriska.dev).
+
+```sh frame="code" title="AppImageScript.sh"
+./OneShot.AppImage --appimage-extract
+
+rm squashfs-root/usr/lib/libgmodule-2.0.so.0
+rm squashfs-root/usr/lib/libgtk-x11-2.0.so.0
+rm squashfs-root/usr/lib/libgdk-x11-2.0.so.0
+
+wget https://archive.archlinux.org/packages/l/libffi/libffi-3.3-4-x86_64.pkg.tar.zst
+mkdir libffi
+tar -xC libffi/ -f libffi-3.3-4-x86_64.pkg.tar.zst
+cp libffi/usr/lib/libffi.so.7.1.0 squashfs-root/usr/lib/libffi.so.7
+
+./squashfs-root/usr/bin/oneshot
+```
+
+### Where can I view my save files for OneShot?
+
+Your save and config files for OneShot are located in the `~/.steam/steam/steamapps/compatdata/420530/pfx/drive_c/users/steamuser/AppData/Roaming/Oneshot` folder.
+
+If you end up interacting with your save files often, you can create run the following command:
+
+```bash title="Terminal"
+ln -s ~/.steam/steam/steamapps/compatdata/420530/pfx/drive_c/users/steamuser/AppData/Roaming/Oneshot ~/Documents/OneShotSaves
+```
+
+This will create a **OneShotSaves** symlink in your Documents folder for easy access:
+
+<Caption src={{"discriminant":false,"value":"/images/article/oneshot-on-linux/oneshotsaves.png"}} alt="The OneShotSaves symlink in your home directory's Documents folder. It contains your save files for OneShot, as well as some configuration files." caption="The OneShotSaves symlink in your home directory's Documents folder. It contains your save files for OneShot, as well as some configuration files.">
+
+</Caption>
+
+### My desktop wallpaper is not updating!
+
+In the native Linux version of OneShot and on Windows, the game is able to automatically change your wallpaper during a certain puzzle in the Glen region.
+
+Unfortunately, this is not possible with Proton as the game is running on Wine, which, to our knowledge anyway, is not able to change the host machine's desktop wallpaper.
+
+We have not found a solution for this issue.
+For the time being, you can change the wallpaper manually by going to the `~/.steam/steam/steamapps/common/OneShot/Wallpaper` folder and selecting `desktop.png` as your wallpaper. You can change the wallpaper back after you're done with the puzzle.
+
+Alternatively, you can just open the image for the duration of the puzzle.
 
 ### Can I play Solstice with this?
 
