@@ -27,11 +27,11 @@
   },
   "dependencies": {
     "@astrojs/vercel": "^7.5.4",
-    "astro": "^4.7.0",
-    "astro-expressive-code": "^0.35.2"
+    "astro": "^4.7.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.5.10",
+    "@astrojs/markdown-remark": "^5.1.0",
     "@astrojs/mdx": "^2.3.1",
     "@astrojs/react": "^3.3.1",
     "@astrojs/rss": "^4.0.5",
@@ -57,6 +57,7 @@
     "astro-auto-import": "^0.4.2",
     "astro-compress": "^2.2.22",
     "astro-eslint-parser": "^1.0.1",
+    "astro-expressive-code": "^0.35.2",
     "astro-icon": "1.1.0",
     "astro-seo": "^0.8.3",
     "astro-worker-links": "^0.3.1",
