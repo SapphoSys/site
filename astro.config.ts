@@ -126,12 +126,7 @@ export default defineConfig({
     }),
   ],
   vite: {
-    plugins: [rawFonts(['.ttf'])],
-    build: {
-      rollupOptions: {
-        external: ['@astrojs/markdown-remark'],
-      },
-    },
+    plugins: [rawFonts(['.ttf'])],,
     optimizeDeps: {
       exclude: ['@resvg/resvg-js'],
     },
