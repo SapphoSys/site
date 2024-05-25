@@ -1,33 +1,62 @@
-import rss, { type RSSFeedItem } from '@astrojs/rss';
-import { createArticleRenderer } from '@utils/feed';
-
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 
 import { dedent } from 'ts-dedent';
 import { base, blog } from '$config';
 
-const getURL = () => import.meta.env.PROD ? 'https://sapphic.moe/' : 'http://localhost:4321/';
+import { experimental_AstroContainer as AstroContainer } from 'astro/container';
+import { transform, walk } from 'ultrahtml';
+import rss from '@astrojs/rss';
+import sanitize from 'ultrahtml/transformers/sanitize';
 
-const articles = await getCollection('articles');
-const processor = await createArticleRenderer();
+import RSSRenderer from '@components/blog/RSSRenderer.astro';
 
-const items: RSSFeedItem[] = await Promise.all(
-  articles.map(async ({ slug, data, body }) => {
-    const { code: content } = await processor.render(body);
+export const GET: APIRoute = async ({ generator }) => {
+  let baseUrl = import.meta.env.PROD ? 'https://sapphic.moe' : 'http://localhost:4321';
+  if (baseUrl.at(-1) === '/') baseUrl = baseUrl.slice(0, -1);
 
-    return {
-      title: data.title,
-      description: data.description,
-      pubDate: new Date(data.created),
-      link: `article/${slug}`,
-      content,
-    }
-  })
-)
+  const articles = await getCollection('articles');
 
-export const GET: APIRoute = ({ generator }) =>
-  rss({
+  const items = [];
+  const container = await AstroContainer.create({
+    renderers: [
+      {
+        name: '@astrojs/mdx',
+        serverEntrypoint: 'astro/jsx/server.js',
+      },
+    ],
+  });
+
+  for (const article of articles) {
+    const html = await container.renderToString(RSSRenderer, {
+      params: { slug: article.slug },
+    });
+
+    const sanitized = await transform(html, [
+      async (node) => {
+        await walk(node, (node) => {
+          if (node.name === 'a' && node.attributes.href?.startsWith('/')) {
+            node.attributes.href = baseUrl + node.attributes.href;
+          }
+          if (node.name === 'img' && node.attributes.src?.startsWith('/')) {
+            node.attributes.src = baseUrl + node.attributes.src;
+          }
+        });
+        return node;
+      },
+      sanitize({ dropElements: ['script', 'style'] }),
+    ]);
+
+    items.push({
+      title: article.data.title,
+      description: article.data.description,
+      pubDate: new Date(article.data.created),
+      link: `/article/${article.slug}`,
+      content: sanitized,
+    });
+  }
+
+  return await rss({
     title: blog.rss.options.title,
     description: blog.rss.options.description,
     site: import.meta.env.SITE,
@@ -37,9 +66,10 @@ export const GET: APIRoute = ({ generator }) =>
       <webMaster>contact@sapphic.moe</webMaster>
       <generator>${generator}</generator>
       <image>
-        <url>${getURL()}${base.images.favicon.fileName}</url>
+        <url>${baseUrl}${base.images.favicon.fileName}</url>
         <title>${blog.rss.options.title}</title>
-        <link>${getURL()}</link>
+        <link>${baseUrl}</link>
       </image>
-    `
+    `,
   });
+};
