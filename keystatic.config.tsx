@@ -4,10 +4,14 @@ import collections from '@lib/keystatic/collections';
 import singletons from '@lib/keystatic/singletons';
 
 export default config({
-  storage: {
-    kind: 'github',
-    repo: 'solelychloe/sapphic.moe',
-  },
+  storage: import.meta.env.PROD
+    ? {
+        kind: 'github',
+        repo: 'SapphicMoe/sapphic.moe',
+      }
+    : {
+        kind: 'local',
+      },
 
   ui: {
     brand: {
