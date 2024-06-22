@@ -4,6 +4,9 @@ import { getCollection } from 'astro:content';
 import { dedent } from 'ts-dedent';
 import { base, blog } from '$config';
 
+import { getContainerRenderer } from '@astrojs/mdx';
+import { loadRenderers } from 'astro:container';
+
 import { experimental_AstroContainer as AstroContainer } from 'astro/container';
 import { transform, walk } from 'ultrahtml';
 import rss from '@astrojs/rss';
@@ -19,12 +22,7 @@ export const GET: APIRoute = async ({ generator }) => {
 
   const items = [];
   const container = await AstroContainer.create({
-    renderers: [
-      {
-        name: '@astrojs/mdx',
-        serverEntrypoint: 'astro/jsx/server.js',
-      },
-    ],
+    renderers: await loadRenderers([getContainerRenderer()]),
   });
 
   for (const article of articles) {
