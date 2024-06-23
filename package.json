@@ -25,7 +25,6 @@
       "autoprefixer": {}
     }
   },
-  "packageManager": "pnpm@9.4.0",
   "dependencies": {
     "@astrojs/vercel": "^7.7.1",
     "astro": "^4.11.0"
@@ -59,7 +58,7 @@
     "astro-compress": "^2.2.28",
     "astro-eslint-parser": "^1.0.2",
     "astro-expressive-code": "^0.35.3",
-    "astro-icon": "1.1.0",
+    "astro-icon": "^1.1.0",
     "astro-seo": "^0.8.4",
     "astro-worker-links": "^0.3.1",
     "autoprefixer": "^10.4.19",
