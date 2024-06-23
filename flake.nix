@@ -1,4 +1,3 @@
-
 {
   description = "🌸 The website for the Sapphic Angels system. Made with Astro.";
 
