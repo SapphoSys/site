@@ -3,11 +3,11 @@
   "rewrites": [
     {
       "source": "/js/script.js",
-      "destination": "https://stats.sapphic.moe/js/script.js"
+      "destination": "https://stats.sappho.systems/js/script.js"
     },
     {
       "source": "/api/event",
-      "destination": "https://stats.sapphic.moe/api/event"
+      "destination": "https://stats.sappho.systems/api/event"
     },
     {
       "source": "/domains",
