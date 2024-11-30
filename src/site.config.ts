@@ -23,7 +23,7 @@ export const base: Config['base'] = {
       fileName: '/favicon.png',
     },
   },
-  themeColor: '#EF8496',
+  themeColor: '#f5c2e7',
   site: {
     name: 'sapphic.moe',
     url: 'https://sapphic.moe',
@@ -44,7 +44,7 @@ export const blog: Config['blog'] = {
       'data-reactions-enabled': '1',
       'data-emit-metadata': '0',
       'data-input-position': 'top',
-      'data-theme': 'preferred_color_scheme',
+      'data-theme': 'http://127.0.0.1:4321/giscus.css',
       'data-lang': 'en',
       crossorigin: 'anonymous',
     },
@@ -54,7 +54,7 @@ export const blog: Config['blog'] = {
     enabled: true,
     options: {
       title: "Sapphic Angels' articles",
-      description: 'A personal blog, comprising of whatever stuff we find interesting to post.',
+      description: 'A personal blog, comprising of whatever stuff we feel like rambling about.',
       href: `https://${base.site.name}/rss.xml`,
     },
   },
