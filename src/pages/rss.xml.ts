@@ -7,12 +7,16 @@ import { base, blog } from '$config';
 import { getContainerRenderer } from '@astrojs/mdx';
 import { loadRenderers } from 'astro:container';
 
+import { format } from 'date-fns';
 import { experimental_AstroContainer as AstroContainer } from 'astro/container';
 import { transform, walk } from 'ultrahtml';
-import rss from '@astrojs/rss';
+
+import rss, { type RSSFeedItem } from '@astrojs/rss';
 import sanitize from 'ultrahtml/transformers/sanitize';
 
 import RSSRenderer from '@components/blog/RSSRenderer.astro';
+
+const formatDate = (date: string | Date) => format(new Date(date), 'MMMM d, yyyy');
 
 export const GET: APIRoute = async ({ generator }) => {
   let baseUrl = import.meta.env.PROD ? 'https://sapphic.moe' : 'http://localhost:4321';
@@ -20,7 +24,7 @@ export const GET: APIRoute = async ({ generator }) => {
 
   const articles = await getCollection('articles');
 
-  const items = [];
+  const items: RSSFeedItem[] = [];
   const container = await AstroContainer.create({
     renderers: await loadRenderers([getContainerRenderer()]),
   });
@@ -50,7 +54,11 @@ export const GET: APIRoute = async ({ generator }) => {
       description: article.data.description,
       pubDate: new Date(article.data.created),
       link: `/article/${article.slug}`,
+      categories: article.data.tags,
       content: sanitized,
+      customData: dedent`
+        <prettyDate>${formatDate(article.data.created)}</prettyDate>
+      `,
     });
   }
 
@@ -59,6 +67,7 @@ export const GET: APIRoute = async ({ generator }) => {
     description: blog.rss.options.description,
     site: import.meta.env.SITE,
     items,
+    stylesheet: '/rss/feed.xsl',
 
     customData: dedent`
       <webMaster>contact@sapphic.moe</webMaster>
