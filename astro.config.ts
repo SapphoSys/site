@@ -8,7 +8,7 @@ import react from '@astrojs/react';
 import keystatic from '@keystatic/astro';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
-import vercel from '@astrojs/vercel/serverless';
+import vercel from '@astrojs/vercel';
 
 // Rehype and Remark plugins
 import a11yEmoji from '@fec/remark-a11y-emoji';
@@ -30,7 +30,7 @@ import catppuccinMocha from '@catppuccin/vscode/themes/mocha.json';
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'hybrid',
+  output: 'server',
   adapter: vercel(),
   site: base.site.url,
   markdown: {
