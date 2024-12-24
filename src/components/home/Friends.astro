@@ -1,8 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import { singletons } from '@lib/keystatic';
-
-const friends = (await singletons.buttons.readOrThrow()).friends;
+import { friends } from '~/utils/friends';
 ---
 
 <div class="flex flex-wrap gap-4 pt-5 sm:gap-3 md:gap-5">
@@ -12,7 +10,7 @@ const friends = (await singletons.buttons.readOrThrow()).friends;
         <a href={friend.url} title={`${friend.name}'s site`} target="_blank">
           <Image
             class="h-[31px] w-[88px]"
-            src={friend.image}
+            src={`/buttons/friends/${friend.image}`}
             alt={`Webring of ${friend.name}`}
             width={88}
             height={31}
