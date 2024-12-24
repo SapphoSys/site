@@ -4,11 +4,8 @@ import { base } from './src/site.config';
 
 // Official Astro integrations
 import mdx from '@astrojs/mdx';
-import react from '@astrojs/react';
-import keystatic from '@keystatic/astro';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
-import vercel from '@astrojs/vercel';
 
 // Rehype and Remark plugins
 import a11yEmoji from '@fec/remark-a11y-emoji';
@@ -30,8 +27,6 @@ import catppuccinMocha from '@catppuccin/vscode/themes/mocha.json';
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
-  adapter: vercel(),
   site: base.site.url,
   markdown: {
     remarkPlugins: [
@@ -95,8 +90,6 @@ export default defineConfig({
       ],
     }),
     mdx(),
-    keystatic(),
-    react(),
     icon({
       include: {
         mdi: ['*'],
