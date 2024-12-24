@@ -6,10 +6,9 @@
   "license": "zlib",
   "private": true,
   "scripts": {
-    "astro:check": "astro check",
-    "build": "pnpm build:check && astro build",
-    "build:check": "pnpm astro:check && tsc --noEmit",
-    "dev": "astro dev --host 127.0.0.1",
+    "build": "bun build:check && astro build",
+    "build:check": "astro check && tsc --noEmit",
+    "dev": "astro dev",
     "format:prettier": "prettier --w --plugin-search-dir=. --cache .",
     "lint:eslint": "eslint --fix src/**/*.{ts,astro}",
     "start": "astro preview",
