@@ -16,6 +16,24 @@ import sanitize from 'ultrahtml/transformers/sanitize';
 
 import RSSRenderer from '@components/blog/RSSRenderer.astro';
 
+export async function fixLinks(html: string, baseUrl: string) {
+  return await transform(html, [
+    async (node) => {
+      await walk(node, (node) => {
+        if (node.name === 'a' && node.attributes.href?.startsWith('/')) {
+          node.attributes.href = baseUrl + node.attributes.href;
+        }
+        if (node.name === 'img' && node.attributes.src?.startsWith('/')) {
+          node.attributes.src = baseUrl + node.attributes.src;
+        }
+      });
+      return node;
+    },
+
+    sanitize({ dropElements: ['script', 'style'] }),
+  ]);
+}
+
 const formatDate = (date: string | Date) => format(new Date(date), 'MMMM d, yyyy');
 
 export const GET: APIRoute = async ({ generator }) => {
@@ -30,24 +48,11 @@ export const GET: APIRoute = async ({ generator }) => {
   });
 
   for (const article of articles) {
-    const html = await container.renderToString(RSSRenderer, {
-      params: { slug: article.slug },
+    let html = await container.renderToString(RSSRenderer, {
+      params: { id: article.slug },
     });
 
-    const sanitized = await transform(html, [
-      async (node) => {
-        await walk(node, (node) => {
-          if (node.name === 'a' && node.attributes.href?.startsWith('/')) {
-            node.attributes.href = baseUrl + node.attributes.href;
-          }
-          if (node.name === 'img' && node.attributes.src?.startsWith('/')) {
-            node.attributes.src = baseUrl + node.attributes.src;
-          }
-        });
-        return node;
-      },
-      sanitize({ dropElements: ['script', 'style'] }),
-    ]);
+    html = await fixLinks(html, baseUrl);
 
     items.push({
       title: article.data.title,
@@ -55,7 +60,7 @@ export const GET: APIRoute = async ({ generator }) => {
       pubDate: new Date(article.data.created),
       link: `/article/${article.slug}`,
       categories: article.data.tags,
-      content: sanitized,
+      content: html,
       customData: dedent`
         <prettyDate>${formatDate(article.data.created)}</prettyDate>
       `,
