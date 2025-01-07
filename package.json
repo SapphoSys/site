@@ -38,6 +38,7 @@
     "@catppuccin/tailwindcss": "^0.1.6",
     "@catppuccin/vscode": "^3.16.0",
     "@fec/remark-a11y-emoji": "^4.0.2",
+    "@flydotio/dockerfile": "^0.5.9",
     "@fontsource/atkinson-hyperlegible": "^5.1.0",
     "@fontsource/iosevka": "^5.1.0",
     "@iconify-json/mdi": "^1.2.2",
@@ -46,6 +47,7 @@
     "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/typography": "^0.5.15",
     "@types/eslint": "^9.6.1",
+    "@types/react": "^19.0.2",
     "@typescript-eslint/eslint-plugin": "^8.18.1",
     "@typescript-eslint/parser": "^8.18.1",
     "astro-auto-import": "^0.4.4",
@@ -65,6 +67,7 @@
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.9",
+    "react": "^19.0.0",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-external-links": "^3.0.0",
@@ -79,6 +82,8 @@
     "ultrahtml": "^1.5.3"
   },
   "trustedDependencies": [
-    "@parcel/watcher"
+    "@parcel/watcher",
+    "esbuild",
+    "sharp"
   ]
 }
