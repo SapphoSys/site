@@ -21,7 +21,7 @@
           mkShell {
             buildInputs = [
               nodejs
-              corepack_latest
+              bun
             ];
           };
       }
