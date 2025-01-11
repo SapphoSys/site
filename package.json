@@ -6,13 +6,11 @@
   "license": "zlib",
   "private": true,
   "scripts": {
-    "build": "bun build:check && astro build",
-    "build:check": "astro check && tsc --noEmit",
+    "build": "bun astro check && astro build",
     "dev": "astro dev",
-    "format:prettier": "prettier --w --plugin-search-dir=. --cache .",
-    "lint:eslint": "eslint --fix src/**/*.{ts,astro}",
+    "format": "prettier --w --plugin-search-dir=. --cache .",
+    "lint": "eslint --fix src/**/*.{ts,astro}",
     "start": "astro preview",
-    "start:dev": "astro dev",
     "sync": "astro sync",
     "test": "eslint . --ext .ts,.js,.astro && prettier --c ."
   },
