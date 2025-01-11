@@ -12,20 +12,20 @@ interface Props {
     created: string | Date;
     tags: any[];
   };
-  slug: string;
+  id: string;
   minutesRead: string;
 }
 
 const {
   data: { title, description, created, tags },
-  slug,
+  id,
   minutesRead,
 } = Astro.props;
 ---
 
 <article class="flex flex-col gap-2 md:gap-1">
   <div class="flex flex-col gap-y-3 rounded-xl pb-5">
-    <a href={`/article/${slug}`} class="text-3xl font-extrabold">{title}</a>
+    <a href={`/article/${id}`} class="text-3xl font-extrabold">{title}</a>
 
     <p class="text-lg font-medium text-ctp-text">{description}</p>
 

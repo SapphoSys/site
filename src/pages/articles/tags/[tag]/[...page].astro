@@ -9,7 +9,7 @@ interface Props {
   page: {
     data: Array<{
       params: {
-        slug: string;
+        id: string;
       };
       props: CollectionEntry<'articles'>;
     }>;
@@ -29,7 +29,7 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }: GetStaticPath
   );
 
   const articles = sortedArticles.map((article) => ({
-    params: { slug: article.slug },
+    params: { id: article.id },
     props: { ...article },
   }));
 

@@ -1,7 +1,7 @@
 ---
 import ArticleLayout from '@layouts/Article.astro';
 
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection, type CollectionEntry, render, getEntry } from 'astro:content';
 
 interface Props {
   article: CollectionEntry<'articles'>;
@@ -11,22 +11,20 @@ export const getStaticPaths = async () => {
   const articles = await getCollection('articles');
 
   return articles.map((article) => ({
-    params: { slug: article.slug },
+    params: { id: article.id },
     props: { article },
   }));
 };
 
 const {
   article,
-  article: { slug },
+  article: { id },
 } = Astro.props;
 
-const {
-  Content,
-  remarkPluginFrontmatter: { minutesRead },
-} = await article.render();
+const entry = await getEntry('articles', id)!;
+const { Content, remarkPluginFrontmatter: { minutesRead }, } = await render(entry)
 ---
 
-<ArticleLayout {...article.data} {slug} {minutesRead}>
+<ArticleLayout {...article.data} {id} {minutesRead}>
   <Content />
 </ArticleLayout>

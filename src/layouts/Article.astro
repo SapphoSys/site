@@ -12,7 +12,7 @@ import '@fontsource/iosevka/400.css';
 import '@styles/article.css';
 
 interface Props {
-  slug?: string;
+  id?: string;
 
   title: string;
   description: string;
@@ -25,7 +25,7 @@ interface Props {
   comments?: boolean;
 }
 
-const { slug, title, description, draft, created, modified, tags, minutesRead, comments } =
+const { id, title, description, draft, created, modified, tags, minutesRead, comments } =
   Astro.props;
 
 const checkComments = () => blog.comments.enabled && comments;
@@ -37,9 +37,9 @@ const modifiedAt = modified ? formatDate(modified) : undefined;
 const backlinkPath = Astro.url.pathname.replace('/article', '');
 const backlink = new URL(backlinkPath, 'https://solstice.tf').href;
 
-const image = slug
+const image = id
   ? {
-      src: `/article/${slug}.png`,
+      src: `/article/${id}.png`,
       alt: title,
     }
   : {

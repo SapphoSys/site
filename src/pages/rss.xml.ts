@@ -49,7 +49,7 @@ export const GET: APIRoute = async ({ generator }) => {
 
   for (const article of articles) {
     let html = await container.renderToString(RSSRenderer, {
-      params: { id: article.slug },
+      params: { id: article.id },
     });
 
     html = await fixLinks(html, baseUrl);
@@ -58,7 +58,7 @@ export const GET: APIRoute = async ({ generator }) => {
       title: article.data.title,
       description: article.data.description,
       pubDate: new Date(article.data.created),
-      link: `/article/${article.slug}`,
+      link: `/article/${article.id}`,
       categories: article.data.tags,
       content: html,
       customData: dedent`

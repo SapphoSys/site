@@ -2,7 +2,7 @@
 import MarkdownLayout from '@layouts/Markdown.astro';
 
 import type { GetStaticPaths } from 'astro';
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection, type CollectionEntry, getEntry, render } from 'astro:content';
 
 interface Props {
   info: CollectionEntry<'info'>;
@@ -12,13 +12,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const entries = await getCollection('info');
 
   return entries.map((info) => ({
-    params: { slug: info.slug },
+    params: { id: info.id },
     props: { info },
   }));
 };
 
 const { info } = Astro.props;
-const { Content } = await info.render();
+const entry = await getEntry('info', info.id!)!;
+
+const { Content } = await render(entry);
 ---
 
 <MarkdownLayout {...info.data}>
