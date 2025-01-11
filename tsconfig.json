@@ -6,12 +6,11 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"],
-      "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@lib/*": ["src/lib/*"],
-      "@styles/*": ["src/styles/*"],
-      "@typings/*": ["src/typings/*"],
-      "@utils/*": ["src/utils/*"],
+      "$components/*": ["src/components/*"],
+      "$layouts/*": ["src/layouts/*"],
+      "$styles/*": ["src/styles/*"],
+      "$typings/*": ["src/typings/*"],
+      "$utils/*": ["src/utils/*"],
       "$config": ["src/site.config.ts"]
     },
     "jsx": "react-jsx",
