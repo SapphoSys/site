@@ -14,7 +14,7 @@ import { transform, walk } from 'ultrahtml';
 import rss, { type RSSFeedItem } from '@astrojs/rss';
 import sanitize from 'ultrahtml/transformers/sanitize';
 
-import RSSRenderer from '@components/blog/RSSRenderer.astro';
+import RSSRenderer from '$components/blog/RSS.astro';
 
 export async function fixLinks(html: string, baseUrl: string) {
   return await transform(html, [

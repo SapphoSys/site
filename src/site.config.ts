@@ -1,4 +1,4 @@
-import type { Config } from '@typings/config.type';
+import type { Config } from '$typings/config.type';
 
 export const donation: Config['donation'] = {
   percent: 12,

@@ -1,4 +1,4 @@
-import type { ArticleData } from '@typings/utils.type';
+import type { ArticleData } from '$typings/utils.type';
 
 import { toString as convertToString } from 'mdast-util-to-string';
 import getReadingTime from 'reading-time';

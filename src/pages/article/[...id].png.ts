@@ -6,14 +6,14 @@ import { Resvg } from '@resvg/resvg-js';
 import { getCollection } from 'astro:content';
 import { format } from 'date-fns';
 
-import HTMLTemplate from '@components/blog/OGImage.astro';
+import HTMLTemplate from '$components/blog/OGImage.astro';
 
 import { getContainerRenderer } from '@astrojs/mdx';
 import { loadRenderers } from 'astro:container';
 import { experimental_AstroContainer as AstroContainer } from 'astro/container';
 
 import satori from 'satori';
-import Atkinson from '@utils/fonts/AtkinsonHyperlegible-Regular.ttf';
+import Atkinson from '$utils/fonts/AtkinsonHyperlegible-Regular.ttf';
 const dimensions = {
   width: 1200,
   height: 630,

@@ -1,15 +1,15 @@
 ---
-import Layout from '@layouts/Page.astro';
+import Layout from '$layouts/Page.astro';
 
 import { base, blog } from '$config';
 import { format } from 'date-fns';
 import { Icon } from 'astro-icon/components';
 
-import Comments from '@components/blog/Comments.astro';
-import Tag from '@components/blog/Tag.astro';
+import Comments from '$components/blog/Comments.astro';
+import Tag from '$components/blog/Tag.astro';
 
 import '@fontsource/iosevka/400.css';
-import '@styles/article.css';
+import '$styles/article.css';
 
 interface Props {
   id?: string;
