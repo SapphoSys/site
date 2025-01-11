@@ -18,7 +18,6 @@ import tableOfContents from 'remark-toc';
 
 // Third-party Astro integrations
 import autoImport from 'astro-auto-import';
-import compress from 'astro-compress';
 import expressiveCode from 'astro-expressive-code';
 import icon from 'astro-icon';
 import workerLinks from 'astro-worker-links';
@@ -97,7 +96,6 @@ export default defineConfig({
       },
     }),
     sitemap(),
-    compress(),
     workerLinks({
       domain: 'https://solstice.tf',
       secret: process.env.WORKER_SECRET!,
