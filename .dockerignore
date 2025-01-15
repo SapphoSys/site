@@ -6,8 +6,6 @@ dist/
 
 # dependencies
 node_modules/
-.yarn/cache
-.yarn/install-state.gz
 
 # logs
 logs
