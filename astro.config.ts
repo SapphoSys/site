@@ -25,6 +25,7 @@ import arrayBuffer from 'vite-plugin-arraybuffer';
 
 // Expressive Code theme
 import catppuccinMocha from '@catppuccin/vscode/themes/mocha.json';
+
 // https://astro.build/config
 export default defineConfig({
   site: base.site.url,
@@ -109,5 +110,8 @@ export default defineConfig({
   ],
   vite: {
     plugins: [arrayBuffer()],
+    optimizeDeps: {
+      exclude: ['@resvg/resvg-js'],
+    },
   },
 });
