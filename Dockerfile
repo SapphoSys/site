@@ -7,6 +7,7 @@ ENV PATH="$PNPM_HOME:$PATH"
 
 # Enable corepack to use pnpm
 RUN corepack enable
+ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
 
 # Set working directory and copy files
 WORKDIR /app
