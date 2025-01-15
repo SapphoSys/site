@@ -1,14 +1,14 @@
 import type { Config } from '$typings/config.type';
 
-export const donation: Config['donation'] = {
-  percent: 12,
-  donated: 2465,
-  goal: 17500,
+// export const donation: Config['donation'] = {
+//   percent: 12,
+//   donated: 2465,
+//   goal: 17500,
 
-  kofi: 'https://ko-fi.com/solelychloe',
-  patreon: 'https://patreon.com/solelychloe',
-  paypal: 'https://paypal.me/solsticesol',
-};
+//   kofi: 'https://ko-fi.com/solelychloe',
+//   patreon: 'https://patreon.com/solelychloe',
+//   paypal: 'https://paypal.me/solsticesol',
+// };
 
 export const base: Config['base'] = {
   images: {
