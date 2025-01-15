@@ -12,6 +12,7 @@
     "format": "prettier --w --plugin-search-dir=. --cache .",
     "lint": "eslint --fix src/**/*.{ts,astro}",
     "start": "astro preview",
+    "serve": "caddy run --config Caddyfile",
     "sync": "astro sync",
     "test": "eslint .; prettier -c ."
   },
