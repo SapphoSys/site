@@ -11,6 +11,8 @@ tags:
   - linux
 comments: true
 ---
+import Spoiler from '$components/mdx/Spoiler.astro';
+
 *Note: this guide assumes you have the *[*Steam version*](https://store.steampowered.com/app/420530/OneShot/)* of OneShot.*  
 *For the [itch.io version](https://futurecat.itch.io/oneshot) of OneShot, please see the "[I cannot get the itch.io version to run!](#i-cannot-get-the-itchio-version-to-run)" section.*
 
@@ -88,9 +90,8 @@ Head over to your library, right click OneShot, select "**Properties..."** and h
 
 Enable "**Force the use of a specific Steam Play compatibility tool**", and select **Proton 7.0-6**. This will download that specific Proton version, which might take a while.
 
-<Caption src={{"discriminant":false,"value":"/images/article/oneshot-on-linux/compatibility-tab.png"}} alt="The Steam compatibility tab for OneShot with Proton version 7.0-6 being selected." caption="The Steam compatibility tab for OneShot.">
+![The Steam compatibility tab for OneShot with Proton version 7.0-6 being selected.](/images/article/oneshot-on-linux/compatibility-tab.png "The Steam compatibility tab for OneShot.")
 
-</Caption>
 
 Once that's done, you can launch OneShot from your Steam library and the majority of the game will run just fine!
 
@@ -111,9 +112,8 @@ ln -s ~/.steam/steam/steamapps/compatdata/420530/pfx/drive_c/users/steamuser/Doc
 
 Now whenever the game creates a document file, you can always access it under your Documents folder! (`~/Documents/ProtonDocuments`)
 
-<Caption src={{"discriminant":false,"value":"/images/article/oneshot-on-linux/protondocuments.png"}} alt="GNOME File Explorer (Nautilus) showing the ProtonDocuments symlink in your home directory's Documents folder." caption="The ProtonDocuments symlink in your home directory's Documents folder.">
+![GNOME File Explorer (Nautilus) showing the ProtonDocuments symlink in your home directory's Documents folder.](/images/article/oneshot-on-linux/protondocuments.png "The ProtonDocuments symlink in your home directory's Documents folder.")
 
-</Caption>
 
 You may see additional folders like Downloads, Templates, Videos and so on in the **ProtonDocuments** folder, but don't worry about them!
 
@@ -154,11 +154,8 @@ protontricks-launch --appid 420530 ~/.steam/steam/steamapps/compatdata/420530/pf
 Now you can launch OneShot and the clover program by just typing `launch-oneshot` and `launch-oneshot-clover` respectively in your terminal!
 
 <Spoiler
-  description="Here's OneShot and the clover program being open at the same time."
-  src={{"discriminant":false,"value":"/images/article/oneshot-on-linux/spoiler-clover-program.png"}}
-  alt="OneShot and the clover program being open at the same time on the way to the Tower on Linux.
-Niko is saying: &#x22;It's the lightbulb. Thank goodness it's safe...&#x22;.
-The clover program reads: &#x22;I did not realize things could end like this... please forgive me.&#x22;"
+  description="OneShot and the clover program being open at the same time"
+  image="/images/article/oneshot-on-linux/spoiler-clover-program.png"
   caption="OneShot and the clover program being open at the same time on the way to the Tower on Linux."
 >
 
@@ -203,9 +200,7 @@ ln -s ~/.steam/steam/steamapps/compatdata/420530/pfx/drive_c/users/steamuser/App
 
 This will create a **OneShotSaves** symlink in your Documents folder for easy access:
 
-<Caption src={{"discriminant":false,"value":"/images/article/oneshot-on-linux/oneshotsaves.png"}} alt="The OneShotSaves symlink in your home directory's Documents folder. It contains your save files for OneShot, as well as some configuration files." caption="The OneShotSaves symlink in your home directory's Documents folder. It contains your save files for OneShot, as well as some configuration files.">
-
-</Caption>
+![The OneShotSaves symlink in your home directory's Documents folder. It contains your save files for OneShot, as well as some configuration files.](/images/article/oneshot-on-linux/oneshotsaves.png "The OneShotSaves symlink in your home directory's Documents folder. It contains your save files for OneShot, as well as some configuration files.")
 
 ### My desktop wallpaper is not updating!
 

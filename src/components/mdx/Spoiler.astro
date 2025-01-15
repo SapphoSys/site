@@ -3,36 +3,42 @@ import { Icon } from 'astro-icon/components';
 
 interface Props {
   description: string;
-  src: {
-    discriminant: boolean;
-    value: string;
-  };
-  alt: string;
+  image: string;
   caption?: string;
 }
 
 const {
   description,
-  src: { value: src },
-  alt,
+  image,
   caption,
 } = Astro.props;
 ---
 
 <div class="flex flex-col gap-4">
-  <span>{description} (spoiler warning!)</span>
+  <details class="group border-2 border-ctp-mauve bg-ctp-crust p-4 dark:border-ctp-pink">
+    <summary class="flex cursor-pointer items-center select-none justify-between gap-4">
+      <div class="flex flex-col flex-wrap gap-2">
+        <span class="font-bold">Spoiler:</span> {description}
+      </div>
 
-  <details
-    class="border-2 border-ctp-mauve bg-ctp-crust p-4 dark:border-ctp-pink [&_svg[data-icon='mdi:caret-down']]:open:-rotate-180"
-  >
-    <summary class="flex cursor-pointer flex-wrap items-center justify-between gap-4">
-      <div class="flex flex-row gap-2">Spoiler</div>
-
-      <Icon name="mdi:caret-down" class="mb-1" size={30} aria-disabled={true} />
+      <div class="relative w-10 h-10">
+        <Icon
+          name="mdi:plus"
+          class="absolute opacity-100 group-open:opacity-0"
+          size={40}
+          aria-hidden="true"
+        />
+        <Icon
+          name="mdi:minus"
+          class="absolute opacity-0 group-open:opacity-100"
+          size={40}
+          aria-hidden="true"
+        />
+      </div>
     </summary>
 
     <div class="flex flex-col pt-5">
-      <img class="-mt-0.5" {src} {alt} />
+      <img class="-mt-0.5" src={image} alt={caption} />
       <figcaption class="-mt-6">{caption}</figcaption>
     </div>
   </details>

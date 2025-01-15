@@ -17,7 +17,6 @@ import slug from 'rehype-slug';
 import tableOfContents from 'remark-toc';
 
 // Third-party Astro integrations
-import autoImport from 'astro-auto-import';
 import expressiveCode from 'astro-expressive-code';
 import icon from 'astro-icon';
 // import workerLinks from 'astro-worker-links';
@@ -78,15 +77,6 @@ export default defineConfig({
           editorActiveTabForeground: '#f5c2e7',
         },
       },
-    }),
-    autoImport({
-      imports: [
-        {
-          'astro-icon/components': ['Icon'],
-        },
-        './src/components/mdx/Caption.astro',
-        './src/components/mdx/Spoiler.astro',
-      ],
     }),
     mdx(),
     icon({
