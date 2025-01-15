@@ -1,5 +1,6 @@
 import { z } from 'astro/zod';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const articleSchema = z.object({
   data: z.object({
     astro: z.object({
