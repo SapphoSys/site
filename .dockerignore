@@ -1,20 +1,28 @@
 # build output
 dist/
-.astro/
+
+# astro
+.astro
 
 # dependencies
 node_modules/
 
-# logs
-logs
-npm-debug.log*
-
 # environment variables
-.env
+**/.env.example
 
-# IntelliJ IDEA / WebStorm
+# editors / ides
 .idea
+.vscode
 
-# OS-specific files
-.DS_Store
-desktop.ini
+# git
+.git
+
+# nix
+**/flake.nix
+**/flake.lock
+
+# toolchains
+**/.editorconfig
+**/.prettierignore
+**/.prettierrc.json
+**/eslint.config.ts
