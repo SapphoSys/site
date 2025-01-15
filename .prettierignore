@@ -17,7 +17,6 @@ npm-debug.log*
 
 # lock
 package-lock.json
-yarn.lock
 
 *.md
 *.mdx
