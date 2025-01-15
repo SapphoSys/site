@@ -6,7 +6,8 @@
   "license": "zlib",
   "private": true,
   "scripts": {
-    "build": "bun astro check && astro build",
+    "build": "astro build",
+    "check": "astro check",
     "dev": "astro dev",
     "format": "prettier --w --plugin-search-dir=. --cache .",
     "lint": "eslint --fix src/**/*.{ts,astro}",
@@ -14,7 +15,8 @@
     "sync": "astro sync",
     "test": "eslint . --ext .ts,.js,.astro && prettier --c ."
   },
-  "repository": "https://github.com/solelychloe/sapphic.moe",
+  "repository": "https://github.com/SapphicMoe/sapphic.moe",
+  "packageManager": "pnpm@9.15.4",
   "postcss": {
     "plugins": {
       "tailwindcss/nesting": {},
@@ -78,10 +80,5 @@
     "ts-dedent": "^2.2.0",
     "typescript": "^5.7.2",
     "ultrahtml": "^1.5.3"
-  },
-  "trustedDependencies": [
-    "@parcel/watcher",
-    "esbuild",
-    "sharp"
-  ]
+  }
 }

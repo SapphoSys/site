@@ -21,7 +21,9 @@
           mkShell {
             buildInputs = [
               nodejs
-              bun
+              corepack_latest
+              flyctl
+              caddy
             ];
           };
       }
