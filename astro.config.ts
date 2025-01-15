@@ -1,11 +1,15 @@
 import { defineConfig } from 'astro/config';
-import { rawFonts } from './src/utils/misc';
 import { base } from './src/site.config';
 
 // Official Astro integrations
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
+
+// Third-party Astro integrations
+import expressiveCode from 'astro-expressive-code';
+import icon from 'astro-icon';
+// import workerLinks from 'astro-worker-links';
 
 // Rehype and Remark plugins
 import a11yEmoji from '@fec/remark-a11y-emoji';
@@ -16,13 +20,11 @@ import readingTime from './src/utils/article';
 import slug from 'rehype-slug';
 import tableOfContents from 'remark-toc';
 
-// Third-party Astro integrations
-import expressiveCode from 'astro-expressive-code';
-import icon from 'astro-icon';
-// import workerLinks from 'astro-worker-links';
+// Vite
+import arrayBuffer from 'vite-plugin-arraybuffer';
 
+// Expressive Code theme
 import catppuccinMocha from '@catppuccin/vscode/themes/mocha.json';
-
 // https://astro.build/config
 export default defineConfig({
   site: base.site.url,
@@ -82,7 +84,6 @@ export default defineConfig({
     icon({
       include: {
         mdi: ['*'],
-        'simple-icons': ['kofi', 'patreon', 'paypal'],
       },
     }),
     sitemap(),
@@ -107,9 +108,6 @@ export default defineConfig({
     // }),
   ],
   vite: {
-    plugins: [rawFonts(['.ttf'])],
-    optimizeDeps: {
-      exclude: ['@resvg/resvg-js'],
-    },
+    plugins: [arrayBuffer()],
   },
 });
