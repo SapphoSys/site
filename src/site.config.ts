@@ -61,7 +61,7 @@ export const blog: Config['blog'] = {
 };
 
 export const misc: Config['misc'] = {
-  // Edit the rewrites found in the vercel.json file if you're using Vercel.
+  // Edit the rewrites found in Caddyfile.
   // Read more about Plausible here: https://plausible.io/
   plausible: {
     enabled: true,
