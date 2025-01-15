@@ -20,7 +20,7 @@ import tableOfContents from 'remark-toc';
 import autoImport from 'astro-auto-import';
 import expressiveCode from 'astro-expressive-code';
 import icon from 'astro-icon';
-import workerLinks from 'astro-worker-links';
+// import workerLinks from 'astro-worker-links';
 
 import catppuccinMocha from '@catppuccin/vscode/themes/mocha.json';
 
@@ -96,25 +96,25 @@ export default defineConfig({
       },
     }),
     sitemap(),
-    workerLinks({
-      domain: 'https://solstice.tf',
-      secret: process.env.WORKER_SECRET!,
-      getPageMapping(pages) {
-        return pages
-          .filter(
-            (url) =>
-              url.pathname !== '/article/' &&
-              url.pathname.includes('/article') &&
-              !url.pathname.includes('/article/tag')
-          )
-          .map((url) => {
-            return {
-              page: url.href,
-              shortlink: url.pathname.replace('/article', ''),
-            };
-          });
-      },
-    }),
+    // workerLinks({
+    //   domain: 'https://solstice.tf',
+    //   secret: process.env.WORKER_SECRET!,
+    //   getPageMapping(pages) {
+    //     return pages
+    //       .filter(
+    //         (url) =>
+    //           url.pathname !== '/article/' &&
+    //           url.pathname.includes('/article') &&
+    //           !url.pathname.includes('/article/tag')
+    //       )
+    //       .map((url) => {
+    //         return {
+    //           page: url.href,
+    //           shortlink: url.pathname.replace('/article', ''),
+    //         };
+    //       });
+    //   },
+    // }),
   ],
   vite: {
     plugins: [rawFonts(['.ttf'])],
