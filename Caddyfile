@@ -6,6 +6,11 @@
 }
 
 :8080 {
+  @localhost {
+    host localhost
+  }
+
+  root @localhost dist
   root * /var/www/html
   encode gzip # TODO: check options
   file_server
