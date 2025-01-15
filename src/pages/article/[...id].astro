@@ -22,7 +22,10 @@ const {
 } = Astro.props;
 
 const entry = await getEntry('articles', id)!;
-const { Content, remarkPluginFrontmatter: { minutesRead }, } = await render(entry)
+const {
+  Content,
+  remarkPluginFrontmatter: { minutesRead },
+} = await render(entry);
 ---
 
 <ArticleLayout {...article.data} {id} {minutesRead}>
