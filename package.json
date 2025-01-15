@@ -26,12 +26,10 @@
     }
   },
   "dependencies": {
-    "@astrojs/vercel": "^8.0.1",
     "astro": "^5.1.1"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/markdown-remark": "^6.0.1",
     "@astrojs/mdx": "^4.0.3",
     "@astrojs/rss": "^4.0.10",
     "@astrojs/sitemap": "^3.2.1",
@@ -39,17 +37,14 @@
     "@catppuccin/tailwindcss": "^0.1.6",
     "@catppuccin/vscode": "^3.16.0",
     "@fec/remark-a11y-emoji": "^4.0.2",
-    "@flydotio/dockerfile": "^0.5.9",
     "@fontsource/atkinson-hyperlegible": "^5.1.0",
     "@fontsource/iosevka": "^5.1.0",
     "@iconify-json/mdi": "^1.2.2",
-    "@iconify-json/simple-icons": "^1.2.16",
     "@microflash/remark-figure-caption": "^2.0.2",
     "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/typography": "^0.5.15",
     "@types/eslint": "^9.6.1",
     "@types/react": "^19.0.2",
-    "astro-auto-import": "^0.4.4",
     "astro-compress": "^2.3.5",
     "astro-eslint-parser": "^1.1.0",
     "astro-expressive-code": "^0.38.3",
