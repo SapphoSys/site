@@ -16,6 +16,11 @@
   file_server
   log
 
+  @giscusCSS path /giscus.css
+  header @giscusCSS Access-Control-Allow-Origin "*"
+  header @giscusCSS Access-Control-Allow-Methods "GET, OPTIONS"
+  header @giscusCSS Access-Control-Allow-Headers "Content-Type"
+
   reverse_proxy /script.js https://umami.sappho.systems {
     header_up Host {upstream_hostport}
   }

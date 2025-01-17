@@ -29,9 +29,6 @@ import catppuccinMocha from '@catppuccin/vscode/themes/mocha.json';
 // https://astro.build/config
 export default defineConfig({
   site: base.site.url,
-  security: {
-    checkOrigin: false
-  },
   markdown: {
     remarkPlugins: [
       a11yEmoji,
