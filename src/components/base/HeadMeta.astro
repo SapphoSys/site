@@ -26,7 +26,7 @@ const generateOpenGraphImage = () => {
   return {
     src: IS_PRODUCTION
       ? new URL(ogImage?.src ?? base.images.favicon.fileName, Astro.site).href
-      : ogImage?.src ?? base.images.favicon.fileName,
+      : (ogImage?.src ?? base.images.favicon.fileName),
     alt: isArticle ? ogImage?.alt : base.images.favicon.altText,
   };
 };
@@ -35,7 +35,7 @@ const generateTwitterImage = (image?: string) => {
   return {
     src: IS_PRODUCTION
       ? new URL(image ?? base.images.twitter.fileName, Astro.site).href
-      : image ?? base.images.twitter.fileName,
+      : (image ?? base.images.twitter.fileName),
     alt: isArticle ? ogImage?.alt : base.images.twitter.altText,
   };
 };

@@ -1,6 +1,3 @@
 {
-  "origins": [
-    "https://sapphic.moe",
-    "https://sapphic.fly.dev"
-  ]
+  "origins": ["https://sapphic.moe", "https://sapphic.fly.dev"]
 }

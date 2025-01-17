@@ -14,7 +14,8 @@ import { experimental_AstroContainer as AstroContainer } from 'astro/container';
 
 import satori from 'satori';
 import Atkinson from '@fontsource/atkinson-hyperlegible/files/atkinson-hyperlegible-latin-400-normal.woff?arraybuffer';
-  const dimensions = {
+
+const dimensions = {
   width: 1200,
   height: 630,
 };
@@ -54,7 +55,7 @@ export const GET = async (context: APIContext) => {
     props: {
       title,
       description,
-      created: createdAt
+      created: createdAt,
     },
   });
 

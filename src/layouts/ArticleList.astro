@@ -42,7 +42,9 @@ const { filterTag, articles } = Astro.props;
       .map(async ({ data, id }) => {
         const entry = await getEntry('articles', id!)!;
 
-        const { remarkPluginFrontmatter: { minutesRead }, } = await render(entry);
+        const {
+          remarkPluginFrontmatter: { minutesRead },
+        } = await render(entry);
 
         return <BlogCard {data} {id} {minutesRead} />;
       })
