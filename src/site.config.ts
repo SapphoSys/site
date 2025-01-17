@@ -44,7 +44,7 @@ export const blog: Config['blog'] = {
       'data-reactions-enabled': '1',
       'data-emit-metadata': '0',
       'data-input-position': 'top',
-      'data-theme': 'http://127.0.0.1:4321/giscus.css',
+      'data-theme': 'https://sapphic.moe/giscus.css',
       'data-lang': 'en',
       crossorigin: 'anonymous',
     },
