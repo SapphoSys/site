@@ -1,8 +1,10 @@
 {
   "recommendations": [
     "astro-build.astro-vscode",
-    "dbaeumer.vscode-eslint",
+    "matthewpi.caddyfile-support",
     "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "unifiedjs.vscode-mdx",
     "esbenp.prettier-vscode",
     "bradlc.vscode-tailwindcss"
   ],
