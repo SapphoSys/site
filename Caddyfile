@@ -5,6 +5,25 @@
   auto_https off
 }
 
+(cors) {
+	@cors_preflight method OPTIONS
+
+	header {
+		Access-Control-Allow-Origin "{header.origin}"
+    Access-Control-Expose-Headers *
+		Vary Origin
+	}
+
+	handle @cors_preflight {
+		header {
+			Access-Control-Allow-Methods "GET"
+			Access-Control-Max-Age "3600"
+		}
+		respond "" 204
+	}
+}
+
+
 :8080 {
   @localhost {
     host localhost
@@ -16,9 +35,7 @@
   file_server
   log
 
-  header /giscus.css Access-Control-Allow-Origin "*"
-  header /giscus.css Access-Control-Allow-Methods "GET, OPTIONS"
-  header /giscus.css Access-Control-Allow-Headers "Content-Type"
+  import cors https://giscus.app
 
   reverse_proxy /script.js https://umami.sappho.systems {
     header_up Host {upstream_hostport}
