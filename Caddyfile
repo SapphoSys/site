@@ -6,24 +6,10 @@
 }
 
 (cors) {
-  @cors_preflight method OPTIONS
   @giscus_css path /giscus.css
 
   header @giscus_css {
     Access-Control-Allow-Origin https://giscus.app
-    Access-Control-Allow-Methods GET
-    Access-Control-Allow-Headers *
-    Access-Control-Expose-Headers *
-  }
-
-  handle @cors_preflight {
-    header {
-      Access-Control-Allow-Methods "GET, POST, OPTIONS"
-      Access-Control-Allow-Origin https://giscus.app
-      Access-Control-Allow-Headers *
-      Access-Control-Max-Age 3600
-    }
-    respond "" 204
   }
 }
 
