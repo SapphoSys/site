@@ -19,6 +19,9 @@
   reverse_proxy /script.js https://umami.sappho.systems {
     header_up Host {upstream_hostport}
   }
+  reverse_proxy /api/send https://umami.sappho.systems {
+    header_up Host {upstream_hostport}
+  }
 
   handle_errors {
     @404 {
