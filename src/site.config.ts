@@ -62,13 +62,12 @@ export const blog: Config['blog'] = {
 
 export const misc: Config['misc'] = {
   // Edit the rewrites found in Caddyfile.
-  // Read more about Plausible here: https://plausible.io/
-  plausible: {
+  // Read more about Umami here: https://umami.is/
+  umami: {
     enabled: true,
     options: {
-      'data-domain': base.site.name,
-      'data-api': '/api/event',
-      src: '/js/script.js',
+      'data-website-id': '1279cae7-78b6-4bfd-b13c-10d4dd9893ee',
+      src: 'script.js',
     },
   },
 };

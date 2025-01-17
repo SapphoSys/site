@@ -16,10 +16,7 @@
   file_server
   log
 
-  reverse_proxy /js/script.js https://umami.sappho.systems {
-    header_up Host {upstream_hostport}
-  }
-  reverse_proxy /api/event https://umami.sappho.systems {
+  reverse_proxy /script.js https://umami.sappho.systems {
     header_up Host {upstream_hostport}
   }
 

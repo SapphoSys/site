@@ -110,11 +110,10 @@ const configSchema = z.object({
   }),
 
   misc: z.object({
-    plausible: z.object({
+    umami: z.object({
       enabled: z.boolean(),
       options: z.object({
-        'data-domain': z.string(),
-        'data-api': z.string(),
+        'data-website-id': z.string(),
         src: z.string(),
       }),
     }),
