@@ -15,7 +15,7 @@ COPY . .
 
 # Build stage
 FROM base AS build
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile --prod
 ENV ASTRO_TELEMETRY_DISABLED=1
 RUN pnpm run build
 
