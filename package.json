@@ -58,6 +58,7 @@
     "vite-plugin-arraybuffer": "^0.0.8"
   },
   "devDependencies": {
+    "@eslint/js": "^9.18.0",
     "@types/eslint": "^9.6.1",
     "@types/react": "^19.0.2",
     "astro-eslint-parser": "^1.1.0",
