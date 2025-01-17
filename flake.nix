@@ -2,30 +2,28 @@
   description = "🌸 The website for the Sapphic Angels system. Made with Astro.";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
   };
 
-  outputs = {
-    flake-utils,
-    nixpkgs,
-    ...
-  }:
-    flake-utils.lib.eachDefaultSystem (
-      system: let
-        pkgs = import nixpkgs {
-          inherit system;
+  outputs =
+    { self, nixpkgs }@inputs:
+    let
+      forAllSystems =
+        function:
+        nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed (
+          system: function nixpkgs.legacyPackages.${system}
+        );
+    in
+    {
+      devShells = forAllSystems (pkgs: {
+        default = pkgs.mkShellNoCC {
+          packages = with pkgs; [
+            nodejs
+            pnpm
+            flyctl
+            caddy
+          ];
         };
-      in {
-        devShells.default = with pkgs;
-          mkShell {
-            buildInputs = [
-              nodejs
-              corepack_latest
-              flyctl
-              caddy
-            ];
-          };
-      }
-    );
+      });
+    };
 }
