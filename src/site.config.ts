@@ -67,7 +67,7 @@ export const misc: Config['misc'] = {
     enabled: true,
     options: {
       'data-website-id': '1279cae7-78b6-4bfd-b13c-10d4dd9893ee',
-      src: 'script.js',
+      src: '/script.js',
     },
   },
 };
