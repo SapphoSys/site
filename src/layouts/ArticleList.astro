@@ -6,11 +6,11 @@ import BlogCard from '$components/blog/Card.astro';
 import { Icon } from 'astro-icon/components';
 import { type CollectionEntry, render, getEntry } from 'astro:content';
 interface Props {
-  filterTag?: string | number;
+  tag?: string | number;
   articles: CollectionEntry<'articles'>[];
 }
 
-const { filterTag, articles } = Astro.props;
+const { tag, articles } = Astro.props;
 ---
 
 <Layout
@@ -23,11 +23,11 @@ const { filterTag, articles } = Astro.props;
     <p>A personal blog, comprising of whatever stuff we feel like rambling about.</p>
 
     {
-      filterTag && (
+      tag && (
         <div class="flex flex-row flex-wrap gap-x-1">
           <Icon size={25} name="mdi:filter-cog" aria-hidden={true} />
           <span>
-            Showing <span class="font-bold">{filterTag}</span> articles.
+            Showing <span class="font-bold">{tag}</span> articles.
           </span>
           <a href="/articles">[Close]</a>
         </div>
