@@ -5,15 +5,6 @@
   auto_https off
 }
 
-(cors) {
-  @giscus_css path /giscus.css
-
-  header @giscus_css {
-    Access-Control-Allow-Origin https://giscus.app
-  }
-}
-
-
 :8080 {
   @localhost {
     host localhost
@@ -24,8 +15,6 @@
   encode gzip # TODO: check options
   file_server
   log
-
-  import cors
 
   reverse_proxy /script.js https://umami.sappho.systems {
     header_up Host {upstream_hostport}

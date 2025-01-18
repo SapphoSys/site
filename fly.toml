@@ -1,6 +1,10 @@
-# fly.toml app configuration file for sapphic
-app = "sapphic"
-primary_region = "fra"
+# fly.toml app configuration file generated for sapphic on 2025-01-15T05:46:32+05:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'sapphic'
+primary_region = 'fra'
 
 [build]
 
@@ -10,21 +14,7 @@ force_https = true
 auto_stop_machines = true
 auto_start_machines = true
 min_machines_running = 0
-processes = ["app"]
+processes = ['app']
 
-[[services]]
-internal_port = 8080
-protocol = "tcp"
-
-[[services.ports]]
-handlers = ["tls", "http"]
-port = 443
-
-[[services.http_headers]]
-# Allow CORS headers for Giscus requests
-for = "https://sapphic.moe"
-[services.http_headers.response]
-Access-Control-Allow-Origin = "https://giscus.app"
-Access-Control-Allow-Methods = "GET, OPTIONS"
-Access-Control-Allow-Headers = "*"
-Access-Control-Expose-Headers = "*"
+[[vm]]
+size = 'shared-cpu-1x'
