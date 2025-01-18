@@ -9,6 +9,9 @@
   },
   "eslint.validate": ["javascript", "astro", "typescript"],
   "prettier.documentSelectors": ["**/*.astro"],
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
