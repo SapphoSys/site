@@ -19,8 +19,17 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 ENV ASTRO_TELEMETRY_DISABLED=1
 RUN pnpm run build
 
+# Caddy builder stage for Cloudflare DNS
+FROM caddy:builder-alpine AS caddy-builder
+
+RUN xcaddy build \
+  --with github.com/caddy-dns/cloudflare
+
 # Final stage using Caddy
-FROM caddy:latest
+FROM caddy:alpine
+
+# Copy the built Caddy with Cloudflare DNS support
+COPY --from=caddy-builder /usr/bin/caddy /usr/bin/caddy
 
 # Copy built static files to Caddy's serving directory
 COPY --from=build /app/dist /var/www/html
