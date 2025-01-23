@@ -3,6 +3,9 @@
 # HTTPS is expected to be handled by Cloudflare or some other reverse proxy.
 {
   auto_https off
+
+  # see: https://caddyserver.com/docs/caddyfile/directives#directive-order
+  order umami after route
 }
 
 :8080 {
@@ -16,12 +19,13 @@
   file_server
   log
 
-  reverse_proxy /script.js https://umami.sappho.systems {
-    header_up Host {upstream_hostport}
-  }
-  reverse_proxy /api/send https://umami.sappho.systems {
-    header_up Host {upstream_hostport}
-  }
+	umami {
+		event_endpoint "https://umami.sappho.systems/api/send"
+		website_uuid "1279cae7-78b6-4bfd-b13c-10d4dd9893ee"
+		client_ip_header X-Real-IP
+    allowed_extensions "" .html .xml .png
+		device_detection
+	}
 
   handle_errors {
     @404 {

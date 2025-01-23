@@ -23,7 +23,8 @@ RUN pnpm run build
 FROM caddy:builder-alpine AS caddy-builder
 
 RUN xcaddy build \
-  --with github.com/caddy-dns/cloudflare
+  --with github.com/caddy-dns/cloudflare \
+  --with github.com/jonaharagon/caddy-umami
 
 # Final stage using Caddy
 FROM caddy:alpine
