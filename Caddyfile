@@ -23,7 +23,6 @@
 		event_endpoint "https://umami.sappho.systems/api/send"
 		website_uuid "1279cae7-78b6-4bfd-b13c-10d4dd9893ee"
     trusted_ip_header "X-Forwarded-For"
-    client_ip_header "CF-Connecting-IP"
     allowed_extensions "" .html .xml .png
 		device_detection
 	}
