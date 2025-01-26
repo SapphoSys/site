@@ -40,8 +40,8 @@ export default defineConfig({
       styleOverrides: {
         frames: {
           shadowColor: '#000',
-          editorActiveTabIndicatorTopColor: '#f5c2e7',
-          editorActiveTabForeground: '#f5c2e7',
+          editorActiveTabIndicatorTopColor: catppuccinMocha.colors['terminal.ansiMagenta'],
+          editorActiveTabForeground: catppuccinMocha.colors['terminal.ansiMagenta'],
         },
       },
     }),
