@@ -7,6 +7,8 @@ import { base, blog } from '$config';
 import { getContainerRenderer } from '@astrojs/mdx';
 import { loadRenderers } from 'astro:container';
 
+import reactRenderer from '@astrojs/react/server.js';
+
 import { format } from 'date-fns';
 import { experimental_AstroContainer as AstroContainer } from 'astro/container';
 import { transform, walk } from 'ultrahtml';
@@ -46,6 +48,8 @@ export const GET: APIRoute = async ({ generator }) => {
   const container = await AstroContainer.create({
     renderers: await loadRenderers([getContainerRenderer()]),
   });
+
+  container.addServerRenderer({ name: '@astrojs/react', renderer: reactRenderer });
 
   for (const article of articles) {
     let html = await container.renderToString(RSSRenderer, {
