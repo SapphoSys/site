@@ -57,5 +57,9 @@ export default tseslint.config(
 
       'astro/semi': ['error', 'always'],
     },
+  },
+  {
+    files: ['**/*.astro'],
+    extends: [tseslint.configs.disableTypeChecked],
   }
 );
