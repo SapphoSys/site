@@ -2,7 +2,7 @@ import type { APIContext } from 'astro';
 import type { ReactNode } from 'react';
 
 import { html } from 'satori-html';
-import { Resvg } from '@resvg/resvg-js';
+import { Transformer } from '@napi-rs/image';
 import { getCollection } from 'astro:content';
 import { format } from 'date-fns';
 
@@ -72,14 +72,9 @@ export const GET = async (context: APIContext) => {
     ...dimensions,
   });
 
-  const image = new Resvg(svg, {
-    fitTo: {
-      mode: 'width',
-      value: dimensions.width,
-    },
-  }).render();
+  const image = await Transformer.fromSvg(svg).crop(0, 0, 1200, 630).png();
 
-  return new Response(image.asPng(), {
+  return new Response(image, {
     headers: {
       'Content-Type': 'image/png',
     },

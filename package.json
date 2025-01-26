@@ -38,7 +38,7 @@
     "@fontsource/iosevka": "^5.1.0",
     "@iconify-json/mdi": "^1.2.2",
     "@microflash/remark-figure-caption": "^2.0.2",
-    "@resvg/resvg-js": "^2.6.2",
+    "@napi-rs/image": "^1.9.2",
     "@tailwindcss/typography": "^0.5.16",
     "astro": "^5.1.7",
     "astro-auto-import": "^0.4.4",
