@@ -6,6 +6,7 @@
   /* ugly fix but whatever */
   .external-link {
     @apply text-ctp-pink;
+    @apply select-none;
   }
 
   :is(h1, h2, h3, p, ul, li, strong, span, figcaption) {

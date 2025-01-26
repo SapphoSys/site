@@ -3,13 +3,14 @@ import { base } from './src/site.config';
 
 // Official Astro integrations
 import mdx from '@astrojs/mdx';
+import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 
 // Third-party Astro integrations
+import autoImport from 'astro-auto-import';
 import expressiveCode from 'astro-expressive-code';
 import icon from 'astro-icon';
-// import workerLinks from 'astro-worker-links';
 
 // Rehype and Remark plugins
 import a11yEmoji from '@fec/remark-a11y-emoji';
@@ -29,17 +30,41 @@ import catppuccinMocha from '@catppuccin/vscode/themes/mocha.json';
 // https://astro.build/config
 export default defineConfig({
   site: base.site.url,
+  integrations: [
+    tailwind(),
+    autoImport({
+      imports: ['$components/markdown/Image.astro', '$components/markdown/Spoiler.astro'],
+    }),
+    expressiveCode({
+      themes: [catppuccinMocha],
+      styleOverrides: {
+        frames: {
+          shadowColor: '#000',
+          editorActiveTabIndicatorTopColor: '#f5c2e7',
+          editorActiveTabForeground: '#f5c2e7',
+        },
+      },
+    }),
+    mdx(),
+    icon({
+      include: {
+        mdi: ['*'],
+      },
+    }),
+    sitemap(),
+    react(),
+  ],
   markdown: {
     remarkPlugins: [
       a11yEmoji,
       figureCaption,
+      readingTime,
       [
         tableOfContents,
         {
           tight: true,
         },
       ],
-      readingTime,
     ],
     rehypePlugins: [
       slug,
@@ -69,49 +94,7 @@ export default defineConfig({
       ],
     ],
   },
-  integrations: [
-    tailwind(),
-    expressiveCode({
-      themes: [catppuccinMocha],
-      styleOverrides: {
-        frames: {
-          shadowColor: '#000',
-          editorActiveTabIndicatorTopColor: '#f5c2e7',
-          editorActiveTabForeground: '#f5c2e7',
-        },
-      },
-    }),
-    mdx(),
-    icon({
-      include: {
-        mdi: ['*'],
-      },
-    }),
-    sitemap(),
-    // workerLinks({
-    //   domain: 'https://solstice.tf',
-    //   secret: process.env.WORKER_SECRET!,
-    //   getPageMapping(pages) {
-    //     return pages
-    //       .filter(
-    //         (url) =>
-    //           url.pathname !== '/article/' &&
-    //           url.pathname.includes('/article') &&
-    //           !url.pathname.includes('/article/tag')
-    //       )
-    //       .map((url) => {
-    //         return {
-    //           page: url.href,
-    //           shortlink: url.pathname.replace('/article', ''),
-    //         };
-    //       });
-    //   },
-    // }),
-  ],
   vite: {
     plugins: [arrayBuffer()],
-    optimizeDeps: {
-      exclude: ['@resvg/resvg-js'],
-    },
   },
 });

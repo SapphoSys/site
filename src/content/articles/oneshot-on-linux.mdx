@@ -10,8 +10,6 @@ tags:
   - linux
 comments: true
 ---
-import Spoiler from '$components/mdx/Spoiler.astro';
-
 *Note: this guide assumes you have the *[*Steam version*](https://store.steampowered.com/app/420530/OneShot/)* of OneShot.*  
 *For the [itch.io version](https://futurecat.itch.io/oneshot) of OneShot, please see the "[I cannot get the itch.io version to run!](#i-cannot-get-the-itchio-version-to-run)" section.*
 
@@ -89,8 +87,10 @@ Head over to your library, right click OneShot, select "**Properties..."** and h
 
 Enable "**Force the use of a specific Steam Play compatibility tool**", and select **Proton 7.0-6**. This will download that specific Proton version, which might take a while.
 
-![The Steam compatibility tab for OneShot with Proton version 7.0-6 being selected.](https://elixi.re/i/svtnl.png "The Steam compatibility tab for OneShot.")
-
+<Image 
+  src="compatibility-tab.png" 
+  alt="The Steam compatibility tab for OneShot." 
+/>
 
 Once that's done, you can launch OneShot from your Steam library and the majority of the game will run just fine!
 
@@ -111,7 +111,10 @@ ln -s ~/.steam/steam/steamapps/compatdata/420530/pfx/drive_c/users/steamuser/Doc
 
 Now whenever the game creates a document file, you can always access it under your Documents folder! (`~/Documents/ProtonDocuments`)
 
-![GNOME File Explorer (Nautilus) showing the ProtonDocuments symlink in your home directory's Documents folder.](https://elixi.re/i/fpbhf.png "The ProtonDocuments symlink in your home directory's Documents folder.")
+<Image 
+  src="protondocuments.png" 
+  alt="GNOME File Explorer (Nautilus) showing the ProtonDocuments symlink in your home directory's Documents folder." 
+/>
 
 
 You may see additional folders like Downloads, Templates, Videos and so on in the **ProtonDocuments** folder, but don't worry about them!
@@ -154,7 +157,7 @@ Now you can launch OneShot and the clover program by just typing `launch-oneshot
 
 <Spoiler
   description="OneShot and the clover program being open at the same time"
-  image="https://elixi.re/i/yprwr.png"
+  image="spoiler-clover-program.png"
   caption="OneShot and the clover program being open at the same time on the way to the Tower on Linux."
 >
 
@@ -199,7 +202,10 @@ ln -s ~/.steam/steam/steamapps/compatdata/420530/pfx/drive_c/users/steamuser/App
 
 This will create a **OneShotSaves** symlink in your Documents folder for easy access:
 
-![The OneShotSaves symlink in your home directory's Documents folder. It contains your save files for OneShot, as well as some configuration files.](https://elixi.re/i/0nlwl.png "The OneShotSaves symlink in your home directory's Documents folder. It contains your save files for OneShot, as well as some configuration files.")
+<Image 
+  src="oneshotsaves.png" 
+  alt="The OneShotSaves symlink in your home directory's Documents folder. It contains your save files for OneShot, as well as some configuration files." 
+/>
 
 ### My desktop wallpaper is not updating!
 
