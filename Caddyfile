@@ -26,9 +26,7 @@
 		device_detection
 	}
 
-  handle_path /.well-known/webfinger {
-    reverse_proxy https://sappho.systems
-  }
+  redir /.well-known/webfinger https://sappho.systems/.well-known/webfinger
 
   handle_errors {
     @404 {
