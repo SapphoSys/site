@@ -26,7 +26,7 @@
 		device_detection
 	}
 
-  redir /.well-known/webfinger https://sappho.systems/.well-known/webfinger
+  redir /.well-known/webfinger https://auth.sappho.systems/.well-known/webfinger
 
   handle_errors {
     @404 {
