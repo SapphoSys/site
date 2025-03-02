@@ -26,6 +26,10 @@
 		device_detection
 	}
 
+  handle_path /.well-known/webfinger {
+    reverse_proxy https://sappho.systems
+  }
+
   handle_errors {
     @404 {
       expression {http.error.status_code} == 404
