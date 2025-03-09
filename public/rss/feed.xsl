@@ -65,7 +65,7 @@
 
                   <p>Tags:
                     <xsl:for-each select="category">
-                      <a href="https://sapphic.moe/articles/tag/{.}" target="_blank">
+                      <a href="https://sapphic.moe/articles/tags/{.}" target="_blank">
                         <span>
                           <xsl:value-of select="." />
                         </span>
