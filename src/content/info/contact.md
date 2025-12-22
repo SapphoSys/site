@@ -18,7 +18,7 @@ We also moderate the [r/Destiny2 Discord server][destiny2], so come say hi!
 ### Other useful links
 - Bluesky: [`@sapphic.moe`][bsky]
 - Codeberg: [`@sapphic`][codeberg]
-- GitHub: [`@SapphoSys`][github]
+- GitHub: [`@sapphies`][github]
 - Mastodon: [`@chloe@wetdry.world`][mastodon]
 - Signal: Available upon demand if we know you enough.
 - ~~Twitter: [`@SapphoSys`][twitter]~~  
@@ -28,7 +28,7 @@ We also moderate the [r/Destiny2 Discord server][destiny2], so come say hi!
 [codeberg]: https://codeberg.org/sapphic 'Our Codeberg page. (@sapphic)'
 [destiny2]: https://discord.gg/d2 'An invite to the Destiny 2 Discord server. (discord.gg/d2)'
 [discord]: https://discord.com/users/312145496179474434 'Our Discord profile. (@sapphic.moe)'
-[github]: https://github.com/SapphoSys 'Our GitHub page. (@SapphoSys)'
+[github]: https://github.com/sapphies 'Our GitHub page. (@sapphies)'
 [mail]: mailto:contact@sapphic.moe 'Our email address. (contact@sapphic.moe)'
 [mastodon]: https://wetdry.world/@sapphic 'Our Mastodon page. (@chloe@wetdry.world)'
 [twitter]: https://twitter.com/SapphoSys 'Our Twitter page. (@SapphoSys)'
