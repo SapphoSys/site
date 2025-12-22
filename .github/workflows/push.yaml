@@ -55,5 +55,5 @@ jobs:
         run: |
           nix build .#container --max-jobs auto --impure
           docker load < result
-          docker tag sapphic-moe ghcr.io/sapphosys/sapphic-moe:latest
-          docker push ghcr.io/sapphosys/sapphic-moe:latest
+          docker tag sapphic-moe ghcr.io/sapphies/sapphic-moe:latest
+          docker push ghcr.io/sapphies/sapphic-moe:latest
