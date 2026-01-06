@@ -27,6 +27,11 @@ export const friends = [
     url: 'https://anna.oa.ke',
   },
   {
+    name: 'aspyn',
+    image: 'aspyn.gif',
+    url: 'https://aspyn.gay',
+  },
+  {
     name: 'Bea (Juniper)',
     image: 'bea.png',
     url: 'https://eyes-like-fire.org',
@@ -67,11 +72,6 @@ export const friends = [
     url: 'https://e2.pm',
   },
   {
-    name: 'eris',
-    image: 'eris.gif',
-    url: 'https://erisdump.neocities.org',
-  },
-  {
     name: 'Espi Marisa',
     image: 'espi.png',
     url: 'https://espi.me',
@@ -102,6 +102,11 @@ export const friends = [
     url: 'https://isabelroses.com',
   },
   {
+    name: 'june',
+    image: 'june.png',
+    url: 'https://june.pet',
+  },
+  {
     name: 'kibty.town',
     image: 'kibty.gif',
     url: 'https://kibty.town',
@@ -115,11 +120,6 @@ export const friends = [
     name: 'lexd0g',
     image: 'lexd0g.png',
     url: 'https://lexd0g.eu.org',
-  },
-  {
-    name: 'lily',
-    image: 'lily.gif',
-    url: 'https://lily.pet',
   },
   {
     name: 'luna',
@@ -230,6 +230,11 @@ export const friends = [
     name: 'Vin',
     image: 'vin.png',
     url: 'https://vin.pet',
+  },
+  {
+    name: 'Wam',
+    image: 'wam.png',
+    url: 'https://wamwoowam.co.uk',
   },
   {
     name: 'ziad87',
