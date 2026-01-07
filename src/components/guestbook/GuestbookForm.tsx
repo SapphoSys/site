@@ -20,10 +20,13 @@ const GuestbookForm = () => {
   const [url, setUrl] = useState('');
   const [color, setColor] = useState('mauve');
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isMac, setIsMac] = useState(false);
   const [previewDate] = useState(() => new Date());
   const { isTurnstileCompleted, turnstileToken, turnstileContainerRef } = useTurnstileState();
 
   useEffect(() => {
+    setIsMac(/Mac/.test(navigator.userAgent));
+
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     setIsDarkMode(mediaQuery.matches);
     setColor(mediaQuery.matches ? 'pink' : 'mauve');
@@ -68,7 +71,7 @@ const GuestbookForm = () => {
 
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
-      if (event.ctrlKey && event.key === 'Enter' && isFormValid) {
+      if ((event.ctrlKey || event.metaKey) && event.key === 'Enter' && isFormValid) {
         const form = (event.target as HTMLElement).closest('form');
         if (form instanceof HTMLFormElement) {
           form.requestSubmit();
@@ -239,7 +242,7 @@ const GuestbookForm = () => {
         <span className="text-ctp-subtext1 max-sm:hidden">
           Or press{' '}
           <kbd className="rounded-md bg-ctp-mantle px-2 py-0.5 text-ctp-mauve dark:text-ctp-pink">
-            Ctrl
+            {isMac ? 'Cmd' : 'Ctrl'}
           </kbd>{' '}
           +{' '}
           <kbd className="rounded-md bg-ctp-mantle px-2 py-0.5 text-ctp-mauve dark:text-ctp-pink">

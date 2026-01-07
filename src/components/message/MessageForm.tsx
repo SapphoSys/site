@@ -10,7 +10,12 @@ const MessageForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [isMac, setIsMac] = useState(false);
   const { isTurnstileCompleted, turnstileToken, turnstileContainerRef } = useTurnstileState();
+
+  useEffect(() => {
+    setIsMac(/Mac/.test(navigator.userAgent));
+  }, []);
 
   const warningThreshold = Math.floor(MESSAGE_CHARACTER_LIMIT * 0.8);
 
@@ -33,7 +38,7 @@ const MessageForm = () => {
 
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
-      if (event.ctrlKey && event.key === 'Enter' && isFormValid) {
+      if ((event.ctrlKey || event.metaKey) && event.key === 'Enter' && isFormValid) {
         const form = (event.target as HTMLElement).closest('form');
         if (form instanceof HTMLFormElement) {
           form.requestSubmit();
@@ -132,7 +137,7 @@ const MessageForm = () => {
         <div className="text-ctp-subtext1 max-sm:hidden">
           Or press{' '}
           <kbd className="rounded-md bg-ctp-mantle px-2 py-0.5 text-ctp-mauve dark:text-ctp-pink">
-            Ctrl
+            {isMac ? 'Cmd' : 'Ctrl'}
           </kbd>{' '}
           +{' '}
           <kbd className="rounded-md bg-ctp-mantle px-2 py-0.5 text-ctp-mauve dark:text-ctp-pink">

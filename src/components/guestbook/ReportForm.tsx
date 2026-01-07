@@ -9,7 +9,12 @@ interface ReportFormProps {
 
 const ReportForm = ({ entryId }: ReportFormProps) => {
   const [reason, setReason] = useState('');
+  const [isMac, setIsMac] = useState(false);
   const { isTurnstileCompleted, turnstileToken, turnstileContainerRef } = useTurnstileState();
+
+  useEffect(() => {
+    setIsMac(/Mac/.test(navigator.userAgent));
+  }, []);
 
   const reasonCharacterLimit = 1000;
   const warningThreshold = Math.floor(reasonCharacterLimit * 0.8);
@@ -24,7 +29,7 @@ const ReportForm = ({ entryId }: ReportFormProps) => {
 
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
-      if (event.ctrlKey && event.key === 'Enter' && isFormValid) {
+      if ((event.ctrlKey || event.metaKey) && event.key === 'Enter' && isFormValid) {
         const form = (event.target as HTMLElement).closest('form');
         if (form instanceof HTMLFormElement) {
           form.requestSubmit();
@@ -99,7 +104,7 @@ const ReportForm = ({ entryId }: ReportFormProps) => {
       </div>
       <p className="pt-3 text-ctp-subtext1">
         <span className="font-semibold">TIP:</span> You can also press{' '}
-        <kbd className="rounded-md bg-ctp-mantle px-2 py-0.5 text-ctp-pink">Ctrl</kbd> +{' '}
+        <kbd className="rounded-md bg-ctp-mantle px-2 py-0.5 text-ctp-pink">{isMac ? 'Cmd' : 'Ctrl'}</kbd> +{' '}
         <kbd className="rounded-md bg-ctp-mantle px-2 py-0.5 text-ctp-pink">Enter</kbd> to submit
         your report.
       </p>
